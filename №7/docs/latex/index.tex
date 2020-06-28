@@ -1,0 +1,505 @@
+\begin{center} \subsection*{Варіант №4}\end{center} 
+
+\begin{center} \end{center}  Виконав студент групи КМ-\/82\+: {\bfseries Бубела Дмитро}~\newline
+ \subsubsection*{Завдання\+:}
+
+Для кожного варіанту потрібно взяти шаблон структури із варіанту для Лабораторної роботи №5 з відповідним номером. У кожному варіанті потрібно виконати всі дії зі структурами, перераховані в попередній роботі, з урахуванням технології роботи з однозв’язним списком, розміщеним у динамічній пам’яті. Написану програму потрібно доповнити функціями з пунктів попереднього підрозділу. Виведення вмісту списку (за відповідним пунктом меню) потрібно виконати у вигляді таблиці, стовпці якої відповідають полям шаблону варіанту структури, а рядки — вмісту кожного екземпляра структури зі сформованого списку. Поля під час виведення повинно бути відформатовано за допомогою табуляції.~\newline
+Для кожного з варіантів завдання потрібно розробити такі функції\+:~\newline
+
+\begin{DoxyItemize}
+\item створення списку;
+\item додавання елемента в список\+:
+\begin{DoxyEnumerate}
+\item у початок списку;
+\item у кінець списку;
+\item після елемента з заданим номером;
+\item після елемента з заданим ключем;
+\end{DoxyEnumerate}
+\item видалення елемента зі списку\+:
+\begin{DoxyEnumerate}
+\item з початку списку;
+\item з кінця списку;
+\item із заданим номером;
+\item із заданим ключем;
+\end{DoxyEnumerate}
+\item виведення вмісту списку на екран;
+\item упорядкування елементів списку за вибраною ознакою.~\newline
+\paragraph*{Основні функції, в тому числі для роботи з однозв\textquotesingle{}язним списком, знаходяться в файлі \hyperlink{main_8c}{main.\+c}.}
+\end{DoxyItemize}
+
+На початку виконання програми виконується завдання з 5 лабораторної роботи \hyperlink{main_8c_a581b30e0dc7f2e359199f4981fcffbab}{task\+\_\+1()}. Для виконання цього завдання використовується спільний зв\textquotesingle{}язний список {\ttfamily $\ast$task1\+\_\+list\+\_\+head}, щоб його можна було використати в меню, через яке можна здійснити різноманітні функції за бажанням користувача. Зауважте, що саме меню виконується функцією \hyperlink{main_8c_af06a9f0e060c21d8adec2d33546e07c2}{calling\+\_\+menu()}. Саме за її допомогою здійснюється продовження роботи програми або її припинення. Для зручнішого та логічного користування булевими змінними підключена бібліотека $<$stdbool.\+h$>$. Для детальнішого ознайомлення з роботою меню перейдіть за посиланням \hyperlink{main_8c_afd62a5de84ed382e0c4b2ff7f788e6d9}{menu()} \paragraph*{Нижче наведений сирцевий код прорами}
+
+
+\begin{DoxyCodeInclude}
+1 \textcolor{preprocessor}{#include <stdio.h>}
+3 \textcolor{preprocessor}{#include <string.h>}
+4 \textcolor{preprocessor}{#include <values.h>}
+5 \textcolor{preprocessor}{#include <stdlib.h>}
+6 \textcolor{preprocessor}{#include <ctype.h>}
+7 \textcolor{preprocessor}{#include <stdbool.h>}
+8 \textcolor{preprocessor}{#include "\hyperlink{lab__functions_8h}{lab\_functions.h}"}
+9 
+10 \textcolor{comment}{/*}
+11 \textcolor{comment}{ * Thank's to https://stackoverflow.com/questions/28331897/singly-linked-list-push-back}
+12 \textcolor{comment}{ * check returns!}
+13 \textcolor{comment}{ * NOTE:to function thats push put &head, 'cause SEGFAULT *NULL check}
+14 \textcolor{comment}{ */}
+15 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\hyperlink{structAEROFLOT__STRUCT}{AEROFLOT\_STRUCT}\{
+16     \textcolor{keywordtype}{char} *\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination};
+17     \textcolor{keywordtype}{int} \hyperlink{structAEROFLOT__STRUCT_a7f89c90169893ea6426d49cbfe252b6b}{flight\_number};
+18     \textcolor{keywordtype}{int} \hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type};
+19 \} \hyperlink{structAEROFLOT__STRUCT}{Aeroflot};
+20 
+21 \textcolor{keyword}{enum} \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900}{type\_of\_aeroplane}\{
+22     \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426}{ELSE},
+23     \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877}{CIVIL},
+24     MILITARY
+25 \};
+26 \textcolor{keyword}{enum} \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029f}{menu\_enum}\{
+27     \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa0cb1b2c6a7db1f1084886c98909a3f36}{INIT} = 1,
+28     \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fac19da14a6129e83c76c7ac5d1b48bdf6}{PUSH\_TOP},
+29     \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029facead49106e50d919b5e6b2c78170c761}{PUSH\_BACK},
+30     \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fab6a95ededfc57bc938450bda1066efca}{PUSH\_N},
+31     \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa5b5c3f5e5115e360c49d379f52ded058}{PUSH\_KEY},
+32     \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa061dcf4785583d8653942f2d252174fa}{POP},
+33     \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa6091654b8b9aedd5fd86976f5a1e96cf}{REMOVE\_BACK},
+34     \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa42637601e6022d5e586cbe28071a9b48}{REMOVE\_N},
+35     \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa72b88f8d3c8ad24bf832cafa6e086217}{REMOVE\_KEY},
+36     \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029faf6b54e2f964c3204c88d0d82a509f65a}{SHOW},
+37     \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa136486a15d68351e470b6b449ae7a246}{SORT},
+38     \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fae8221012d15767e99099fc09b63b77dc}{GET\_BY\_CITY},
+39     EXIT
+40 \};
+41 
+42 \textcolor{keywordtype}{char} *name\_of\_type[] = \{\textcolor{stringliteral}{"ELSE"}, \textcolor{stringliteral}{"CIVIL"}, \textcolor{stringliteral}{"MILITARY"}\};
+43 
+44 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\hyperlink{structsingle__linked__list__aeroflot__struct}{single\_linked\_list\_aeroflot\_struct}\{
+45     \hyperlink{structAEROFLOT__STRUCT}{Aeroflot} race;
+46     \textcolor{keyword}{struct }\hyperlink{structsingle__linked__list__aeroflot__struct}{single\_linked\_list\_aeroflot\_struct} *
+      \hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+47 \}\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot};
+48 
+49 
+57 \hyperlink{structAEROFLOT__STRUCT}{Aeroflot} \hyperlink{main_8c_a36302364b495f5e99251b65c3c5993d2}{aeroflot\_user\_fill}()\{
+58     \hyperlink{structAEROFLOT__STRUCT}{Aeroflot} aeroplane;
+59     aeroplane.\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination} = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Місце призначення: "});
+60     \hyperlink{lab__functions_8h_a1c51fdb7c84e94c1f88f8e6838f67499}{toupper\_chrs}(aeroplane.\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination});
+61     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Номер рейсу: "}, &aeroplane.\hyperlink{structAEROFLOT__STRUCT_a7f89c90169893ea6426d49cbfe252b6b}{flight\_number}, 0, INT\_MAX);
+62 
+63     \textcolor{keywordtype}{char} *type = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Тип літака (military/civil/else): "});
+64     putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+65     \hyperlink{lab__functions_8h_a1c51fdb7c84e94c1f88f8e6838f67499}{toupper\_chrs}(type);
+66     \textcolor{keywordflow}{if} (!strcmp(type, \textcolor{stringliteral}{"CIVIL"}))\{
+67         aeroplane.\hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type} = \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877}{CIVIL};
+68     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!strcmp(type, \textcolor{stringliteral}{"MILITARY"}))\{
+69         aeroplane.\hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type} = \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5}{MILITARY};
+70     \} \textcolor{keywordflow}{else}\{
+71         aeroplane.\hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type} = \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426}{ELSE};
+72     \}
+73     \textcolor{keywordflow}{return} aeroplane;
+74 \}
+85 \textcolor{keywordtype}{int} \hyperlink{main_8c_a268a550e94036d245188ea5dc9f89155}{aeroflot\_cmp}(\hyperlink{structAEROFLOT__STRUCT}{Aeroflot} *first, \hyperlink{structAEROFLOT__STRUCT}{Aeroflot} *second)\{
+86     \textcolor{keywordflow}{if} (first->\hyperlink{structAEROFLOT__STRUCT_a7f89c90169893ea6426d49cbfe252b6b}{flight\_number} != second->\hyperlink{structAEROFLOT__STRUCT_a7f89c90169893ea6426d49cbfe252b6b}{flight\_number})\textcolor{keywordflow}{return} 2;
+87     \textcolor{keywordflow}{if} (first->\hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type} != second->\hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type}) \textcolor{keywordflow}{return} 3;
+88     \textcolor{keywordflow}{if} (strcmp(first->\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination}, second->\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination})) \textcolor{keywordflow}{return} 1;
+89     \textcolor{comment}{//else}
+90     \textcolor{keywordflow}{return} 0;
+91 \}
+97 \textcolor{keywordtype}{void} \hyperlink{main_8c_ab2f3cf7027536425c3cc1aae1c07bc41}{print\_single\_aeroflot}(\hyperlink{structAEROFLOT__STRUCT}{Aeroflot} aeroplanes)\{
+98     printf(\textcolor{stringliteral}{"%-25s%-17d%-10s\(\backslash\)n"},
+99                aeroplanes.\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination},
+100                aeroplanes.\hyperlink{structAEROFLOT__STRUCT_a7f89c90169893ea6426d49cbfe252b6b}{flight\_number},
+101            name\_of\_type[aeroplanes.\hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type}]);
+102 \}
+108 \textcolor{keywordtype}{void} \hyperlink{main_8c_a39c2c82dccda45fa272ba55c57a3dbf9}{get\_by\_city}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **head)\{
+109     \textcolor{keywordtype}{char} *city = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть місто за яким здійснюється пошук рейсу\(\backslash\)n"});
+110     \hyperlink{lab__functions_8h_a1c51fdb7c84e94c1f88f8e6838f67499}{toupper\_chrs}(city);
+111     \textcolor{keywordtype}{bool} is = \textcolor{keyword}{false};
+112     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *iter = *head;
+113     printf(\textcolor{stringliteral}{"Місце призначення        Номер рейсу      Тип літака\(\backslash\)n"});
+114     \textcolor{keywordflow}{while} (iter)\{
+115         \textcolor{keywordflow}{if} (!strcmp(iter->\hyperlink{structsingle__linked__list__aeroflot__struct_af1c1f161b03433dfe3a7f4028dd58b71}{race}.\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination}, city))\{
+116             \hyperlink{main_8c_ab2f3cf7027536425c3cc1aae1c07bc41}{print\_single\_aeroflot}(iter->\hyperlink{structsingle__linked__list__aeroflot__struct_af1c1f161b03433dfe3a7f4028dd58b71}{race});
+117             is = \textcolor{keyword}{true};
+118         \}
+119         iter = iter->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+120     \}
+121     \textcolor{keywordflow}{if} (!is)\{
+122         printf(\textcolor{stringliteral}{"Відповідних рейсів не знайдено\(\backslash\)n"});
+123     \}
+124 \}
+132 \textcolor{keywordtype}{bool} \hyperlink{main_8c_a4d48471ab7b12b187d04943f4d808488}{is\_empty}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **head)\{
+133     \textcolor{keywordflow}{if} (*head == NULL)\{
+134         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+135     \}
+136     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+137 \}
+138 
+147 \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *\hyperlink{main_8c_aad7fee251ddf586df049ee9559353e06}{push\_top}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **old\_head, 
+      \hyperlink{structAEROFLOT__STRUCT}{Aeroflot} new\_race)\{
+148     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *new\_head = (\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *)malloc(\textcolor{keyword}{sizeof}(
+      \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot}));
+149     new\_head->\hyperlink{structsingle__linked__list__aeroflot__struct_af1c1f161b03433dfe3a7f4028dd58b71}{race} = new\_race;
+150     \textcolor{keywordflow}{if} (*old\_head == NULL)\{
+151         *old\_head = new\_head;
+152         new\_head->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} = NULL;
+153     \} \textcolor{keywordflow}{else}\{
+154         \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *head = *old\_head;
+155         new\_head->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} = head;
+156         *old\_head = new\_head;
+157     \}
+158     \textcolor{keywordflow}{return} new\_head;
+159 \}
+168 \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *\hyperlink{main_8c_a9f24f6c5839a268adcd9948fbdd9b0f9}{push\_back}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **head, 
+      \hyperlink{structAEROFLOT__STRUCT}{Aeroflot} new\_race)\{
+169     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *new\_node = (\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *)malloc(\textcolor{keyword}{sizeof}(
+      \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot}));
+170     new\_node->\hyperlink{structsingle__linked__list__aeroflot__struct_af1c1f161b03433dfe3a7f4028dd58b71}{race} = new\_race;
+171     new\_node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} = NULL;
+172     \textcolor{keywordflow}{if} (!*head)\{
+173         *head = new\_node;
+174         \textcolor{keywordflow}{return} new\_node;
+175     \}
+176     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *node = *head;
+177     \textcolor{keywordflow}{while} (node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next})\{
+178         node = node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+179     \}
+180     node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} = new\_node;
+181     \textcolor{keywordflow}{return} new\_node;
+182 \}
+192 \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *\hyperlink{main_8c_a88b5cd8a8b5ea867830b1a7d69ad578e}{push\_after\_n}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **head, 
+      \hyperlink{structAEROFLOT__STRUCT}{Aeroflot} new\_race, \textcolor{keywordtype}{int} N)\{
+193     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *node = *head;
+194     \textcolor{keywordtype}{int} i = 0;
+195     \textcolor{keywordflow}{while} (node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} != NULL && i != N)\{
+196         node = node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+197         i++;
+198     \}
+199     \textcolor{keywordflow}{if} (i == N)\{
+200         \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *new\_node = malloc(\textcolor{keyword}{sizeof}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot}));
+201         new\_node->\hyperlink{structsingle__linked__list__aeroflot__struct_af1c1f161b03433dfe3a7f4028dd58b71}{race} = new\_race;
+202         new\_node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} = node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+203         node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} = new\_node;
+204         \textcolor{keywordflow}{return} new\_node;
+205     \} \textcolor{keywordflow}{else}\{
+206         printf(\textcolor{stringliteral}{"\(\backslash\)x1b[6;30;41mПомилка!\(\backslash\)x1b[0m  Такого номера немає в списку\(\backslash\)n"});
+207     \}
+208     \textcolor{keywordflow}{return} *head;
+209 \}
+219 \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *\hyperlink{main_8c_a8c414ba7f65a93bf7e5a38f34ad43a93}{push\_after\_key}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **head, 
+      \hyperlink{structAEROFLOT__STRUCT}{Aeroflot} new\_race,  \hyperlink{structAEROFLOT__STRUCT}{Aeroflot} key\_race)\{
+220     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *node = *head;
+221     \textcolor{keywordflow}{while} (node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} != NULL && \hyperlink{main_8c_a268a550e94036d245188ea5dc9f89155}{aeroflot\_cmp}(&node->\hyperlink{structsingle__linked__list__aeroflot__struct_af1c1f161b03433dfe3a7f4028dd58b71}{race},&key\_race))\{
+222         node = node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+223     \}
+224     \textcolor{keywordflow}{if} (!\hyperlink{main_8c_a268a550e94036d245188ea5dc9f89155}{aeroflot\_cmp}(&node->\hyperlink{structsingle__linked__list__aeroflot__struct_af1c1f161b03433dfe3a7f4028dd58b71}{race},&key\_race))\{
+225         \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *new\_node = malloc(\textcolor{keyword}{sizeof}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot}));
+226         new\_node->\hyperlink{structsingle__linked__list__aeroflot__struct_af1c1f161b03433dfe3a7f4028dd58b71}{race} = new\_race;
+227         new\_node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} = node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+228         node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} = new\_node;
+229     \} \textcolor{keywordflow}{else}\{
+230         printf(\textcolor{stringliteral}{"\(\backslash\)x1b[6;30;41mПомилка!\(\backslash\)x1b[0m  Такого рейсу немає в списку\(\backslash\)n"});
+231     \}
+232     \textcolor{keywordflow}{return} *head;
+233 \}
+240 \textcolor{keywordtype}{void} \hyperlink{main_8c_a81b22e06ebb21b94865712c93f535f12}{remove\_aeroflot\_ptr}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **head, 
+      \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *node)\{
+241     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *cur\_node = *head;
+242     \textcolor{keywordflow}{if} (cur\_node == node)\{
+243         *head = cur\_node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+244         free(cur\_node);
+245         \textcolor{keywordflow}{return};
+246     \}
+247     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *node\_to\_delete;
+248     \textcolor{keywordflow}{while} (cur\_node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} != node) \{
+249         cur\_node = cur\_node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+250     \}
+251     node\_to\_delete = cur\_node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+252     cur\_node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} = node\_to\_delete->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+253     free(node\_to\_delete);
+254 \}
+261 \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *\hyperlink{main_8c_a7e397112c557e808e91ddfdb85d3323c}{pop}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **head)\{
+262     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a4d48471ab7b12b187d04943f4d808488}{is\_empty}(head))\{
+263         printf(\textcolor{stringliteral}{"Список порожній\(\backslash\)n"});
+264         \textcolor{keywordflow}{return} *head;
+265     \}
+266     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *head\_to\_return = malloc(\textcolor{keyword}{sizeof}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot}*));
+267     *head\_to\_return = **head;
+268     \hyperlink{main_8c_a81b22e06ebb21b94865712c93f535f12}{remove\_aeroflot\_ptr}(head,*head);
+269     \textcolor{keywordflow}{return} head\_to\_return;
+270 \}
+278 \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *\hyperlink{main_8c_a57b202125772bddb3ec4c84c4d68e664}{remove\_aeroflot\_n}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **head, \textcolor{keywordtype}{int} N) \{
+279     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *node = *head;
+280     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *node\_to\_return = malloc(\textcolor{keyword}{sizeof}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *));
+281     \textcolor{keywordtype}{int} i = 0;
+282     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a4d48471ab7b12b187d04943f4d808488}{is\_empty}(head)) \{
+283         printf(\textcolor{stringliteral}{"Список порожній!\(\backslash\)n"});
+284         \textcolor{keywordflow}{return} NULL;
+285     \}
+286     \textcolor{keywordflow}{while} (node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} != NULL && i != N)\{
+287         node = node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+288         i++;
+289     \}
+290     \textcolor{keywordflow}{if} (i==N)\{
+291         *node\_to\_return = *node;
+292         \hyperlink{main_8c_a81b22e06ebb21b94865712c93f535f12}{remove\_aeroflot\_ptr}(head, node);
+293         \textcolor{keywordflow}{return} node\_to\_return;
+294     \}
+295     printf(\textcolor{stringliteral}{"\(\backslash\)x1b[6;30;41mПомилка!\(\backslash\)x1b[0m  Такого рейсу немає в списку\(\backslash\)n"});
+296     \textcolor{keywordflow}{return} NULL;
+297 \}
+304 \textcolor{keywordtype}{void} \hyperlink{main_8c_a500943d070deae91216d10f37982c3f7}{remove\_aeroflot\_key}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **head, 
+      \hyperlink{structAEROFLOT__STRUCT}{Aeroflot} key)\{
+305     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *node = *head;
+306     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a4d48471ab7b12b187d04943f4d808488}{is\_empty}(head))\{
+307         printf(\textcolor{stringliteral}{"Список порожній\(\backslash\)n"});
+308         \textcolor{keywordflow}{return};
+309     \}
+310     \textcolor{keywordflow}{while} (node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} && \hyperlink{main_8c_a268a550e94036d245188ea5dc9f89155}{aeroflot\_cmp}(&node->\hyperlink{structsingle__linked__list__aeroflot__struct_af1c1f161b03433dfe3a7f4028dd58b71}{race}, &key))\{
+311         node = node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+312     \}
+313     \textcolor{keywordflow}{if} (!\hyperlink{main_8c_a268a550e94036d245188ea5dc9f89155}{aeroflot\_cmp}(&node->\hyperlink{structsingle__linked__list__aeroflot__struct_af1c1f161b03433dfe3a7f4028dd58b71}{race}, &key))\{
+314         \hyperlink{main_8c_a81b22e06ebb21b94865712c93f535f12}{remove\_aeroflot\_ptr}(head, node);
+315     \} \textcolor{keywordflow}{else}\{
+316         printf(\textcolor{stringliteral}{"\(\backslash\)x1b[6;30;41mПомилка!\(\backslash\)x1b[0m  Такого рейсу немає в списку\(\backslash\)n"});
+317     \}
+318 \}
+325 \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *\hyperlink{main_8c_a85d439fd81dd1e929276ba46d86eb80d}{remove\_back}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **head)\{
+326     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a4d48471ab7b12b187d04943f4d808488}{is\_empty}(head))\{
+327         printf(\textcolor{stringliteral}{"Список порожній\(\backslash\)n"});
+328         \textcolor{keywordflow}{return} *head;
+329     \}
+330     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *cur\_node = *head;
+331     \textcolor{keywordflow}{while} (cur\_node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next})\{
+332         cur\_node = cur\_node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+333     \}
+334     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *node\_to\_return = malloc(\textcolor{keyword}{sizeof}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *));
+335     *node\_to\_return = *cur\_node;
+336     \hyperlink{main_8c_a81b22e06ebb21b94865712c93f535f12}{remove\_aeroflot\_ptr}(head, cur\_node);
+337     \textcolor{keywordflow}{return} node\_to\_return;
+338 \}
+339 
+345 \textcolor{keywordtype}{void} \hyperlink{main_8c_a46177683269c93d16370b166da7b9b17}{remove\_list}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **head)\{
+346     \textcolor{keywordflow}{while} (*head)\{
+347         \hyperlink{main_8c_a7e397112c557e808e91ddfdb85d3323c}{pop}(head);
+348     \}
+349 \}
+355 \textcolor{keywordtype}{void} \hyperlink{main_8c_a5f6128fb431c14b0ec5e1b28f7d86f55}{print\_aeroflot\_list}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **head)\{
+356 
+357     \textcolor{keywordflow}{if} (head == NULL || *head == NULL)\{
+358         printf(\textcolor{stringliteral}{"Список порожній\(\backslash\)n"});
+359     \} \textcolor{keywordflow}{else}\{
+360         printf(\textcolor{stringliteral}{"Місце призначення        Номер рейсу      Тип літака\(\backslash\)n"});
+361         \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *node = *head;
+362         \textcolor{keywordflow}{while} (node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} != NULL)\{
+363             \hyperlink{main_8c_ab2f3cf7027536425c3cc1aae1c07bc41}{print\_single\_aeroflot}(node->\hyperlink{structsingle__linked__list__aeroflot__struct_af1c1f161b03433dfe3a7f4028dd58b71}{race});
+364             node = node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+365         \}
+366         \hyperlink{main_8c_ab2f3cf7027536425c3cc1aae1c07bc41}{print\_single\_aeroflot}(node->\hyperlink{structsingle__linked__list__aeroflot__struct_af1c1f161b03433dfe3a7f4028dd58b71}{race});
+367     \}
+368 \}
+375 \textcolor{keywordtype}{int} \hyperlink{main_8c_aeb0a5da00ce0333f62523ac630e42196}{get\_list\_length}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *head)\{
+376     \textcolor{keywordtype}{int} i = 0;
+377     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *node = head;
+378     \textcolor{keywordflow}{if} (node) \{
+379         i++;
+380         \textcolor{keywordflow}{while} (node = node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next})i++;
+381     \}
+382     \textcolor{keywordflow}{return} i;
+383 \}
+391 \textcolor{keywordtype}{bool} \hyperlink{main_8c_a6798a994749b47157e5391e31a110867}{less\_eq\_flight\_number}(\hyperlink{structAEROFLOT__STRUCT}{Aeroflot} *first, 
+      \hyperlink{structAEROFLOT__STRUCT}{Aeroflot} *second)\{
+392     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{bool})(first->\hyperlink{structAEROFLOT__STRUCT_a7f89c90169893ea6426d49cbfe252b6b}{flight\_number} <= second->\hyperlink{structAEROFLOT__STRUCT_a7f89c90169893ea6426d49cbfe252b6b}{flight\_number});
+393 \}
+401 \textcolor{keywordtype}{bool} \hyperlink{main_8c_af923d128a7526a5e663112c9c69d98b5}{less\_eq\_type}(\hyperlink{structAEROFLOT__STRUCT}{Aeroflot} *first, \hyperlink{structAEROFLOT__STRUCT}{Aeroflot} *second)\{
+402     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{bool})(first->\hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type} <= second->\hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type});
+403 \}
+411 \textcolor{keywordtype}{bool} \hyperlink{main_8c_a12f6a31fbcceae739f671b79d49b9f56}{less\_eq\_race\_destination}(\hyperlink{structAEROFLOT__STRUCT}{Aeroflot} *first, 
+      \hyperlink{structAEROFLOT__STRUCT}{Aeroflot} *second)\{
+412     \textcolor{keywordtype}{int} min = strlen(first->\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination});
+413     \textcolor{keywordflow}{if} (strlen(first->\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination}) > strlen(second->\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination})) min  = strlen(
+      second->\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination});
+414     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < min; ++i) \{
+415         \textcolor{keywordflow}{if} (tolower(first->\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination}[i]) == tolower(second->
+      \hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination}[i])) \textcolor{keywordflow}{continue};
+416         \textcolor{keywordflow}{if} (tolower(first->\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination}[i]) < tolower(second->
+      \hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination}[i])) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+417         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+418     \}
+419     \textcolor{keywordflow}{if} (strlen(first->\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination}) < strlen(second->\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination})) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+420     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+421 \}
+429 \textcolor{keywordtype}{bool} \hyperlink{main_8c_a79f4fb841d47c4dd1d7ccf275f49e31e}{less\_eq\_list}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *first, \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *second, \textcolor{keywordtype}{bool} (
+      *less\_equal)())\{
+430     \textcolor{keywordflow}{if} (!first) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+431     \textcolor{keywordflow}{if} (!second) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+432     \textcolor{keywordflow}{return} (*less\_equal)(&first->\hyperlink{structsingle__linked__list__aeroflot__struct_af1c1f161b03433dfe3a7f4028dd58b71}{race}, &second->\hyperlink{structsingle__linked__list__aeroflot__struct_af1c1f161b03433dfe3a7f4028dd58b71}{race});
+433 \}
+438 \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *\hyperlink{main_8c_a8373e4434f856813f4b7ef071545084e}{merge\_list}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *first, 
+      \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *second, \textcolor{keywordtype}{bool} (*less\_equal)()) \{
+439     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *head\_to\_return, *iter\_list;
+440     \textcolor{keywordflow}{if} (!first)\{
+441         \textcolor{keywordflow}{return} second;
+442     \}
+443     \textcolor{keywordflow}{if} (!second)\{
+444         \textcolor{keywordflow}{return} first;
+445     \}
+446     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a79f4fb841d47c4dd1d7ccf275f49e31e}{less\_eq\_list}(first, second, less\_equal))\{
+447         head\_to\_return = first;
+448         first = first->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+449     \} \textcolor{keywordflow}{else}\{
+450         head\_to\_return = second;
+451         second = second->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+452     \}
+453     iter\_list = head\_to\_return;
+454     \textcolor{keywordflow}{while} (first || second)\{
+455         \textcolor{keywordflow}{if} (\hyperlink{main_8c_a79f4fb841d47c4dd1d7ccf275f49e31e}{less\_eq\_list}(first, second, less\_equal))\{
+456             iter\_list->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} = first;
+457             first = first->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+458         \} \textcolor{keywordflow}{else}\{
+459             iter\_list->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} = second;
+460                 second = second->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+461         \}
+462         iter\_list = iter\_list->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+463     \}
+464     iter\_list->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} = NULL;
+465     \textcolor{keywordflow}{return} head\_to\_return;
+466 \}
+471 \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *\hyperlink{main_8c_aeaba90c3e4069dc783a06dd0ad1314a9}{sort\_aeroflot\_list} (\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *head, \textcolor{keywordtype}{int} 
+      length, \textcolor{keywordtype}{bool} (*less\_equal)())\{
+472     \textcolor{keywordflow}{if} (length < 2)\{
+473         \textcolor{keywordflow}{return} head;
+474     \}
+475     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *half\_head, *node = head;
+476     \textcolor{keywordtype}{int} i = 0;
+477     \textcolor{keywordflow}{while} (i<length/2-1)\{
+478         node = node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+479         i++;
+480     \}
+481     half\_head = node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next};
+482     node->\hyperlink{structsingle__linked__list__aeroflot__struct_a8aed81380fcda3f4230250e126b28d5e}{next} = NULL;
+483     \textcolor{keywordflow}{return} \hyperlink{main_8c_a8373e4434f856813f4b7ef071545084e}{merge\_list}(\hyperlink{main_8c_aeaba90c3e4069dc783a06dd0ad1314a9}{sort\_aeroflot\_list}(head, i+1, less\_equal), 
+      \hyperlink{main_8c_aeaba90c3e4069dc783a06dd0ad1314a9}{sort\_aeroflot\_list}(half\_head,length-i-1, less\_equal), less\_equal);
+484 \}
+491 \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} \hyperlink{main_8c_ae3896f900491d60fc8e9442b3e5ade4c}{re\_init\_list}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **old\_head)\{
+492     \hyperlink{main_8c_a46177683269c93d16370b166da7b9b17}{remove\_list}(old\_head);
+493     \hyperlink{main_8c_a9f24f6c5839a268adcd9948fbdd9b0f9}{push\_back}(old\_head, \hyperlink{main_8c_a36302364b495f5e99251b65c3c5993d2}{aeroflot\_user\_fill}());
+494     \textcolor{keywordflow}{return} **old\_head;
+495 \}
+501 \textcolor{keywordtype}{void} \hyperlink{main_8c_a802394bf54d1c43e588b2258e4b14653}{sort\_list}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **head)\{
+502     printf(\textcolor{stringliteral}{"За чим сортувати список?\(\backslash\)n"}
+503            \textcolor{stringliteral}{"1.  Місцем призначення\(\backslash\)n"}
+504            \textcolor{stringliteral}{"2.  Номером рейсу\(\backslash\)n"}
+505            \textcolor{stringliteral}{"3.  Типом літака\(\backslash\)n"}
+506     );
+507     bool (*l\_eq)();
+508     \textcolor{keywordflow}{switch} (\hyperlink{lab__functions_8h_a45e2d75e7b00ac6711c815431d42bcfd}{get\_int}(\textcolor{stringliteral}{""},1,3))\{
+509         \textcolor{keywordflow}{case} 1:
+510             l\_eq = \hyperlink{main_8c_a12f6a31fbcceae739f671b79d49b9f56}{less\_eq\_race\_destination};
+511             \textcolor{keywordflow}{break};
+512         \textcolor{keywordflow}{case} 2:
+513             l\_eq =  \hyperlink{main_8c_a6798a994749b47157e5391e31a110867}{less\_eq\_flight\_number};
+514             \textcolor{keywordflow}{break};
+515         \textcolor{keywordflow}{case} 3:
+516             l\_eq = \hyperlink{main_8c_af923d128a7526a5e663112c9c69d98b5}{less\_eq\_type};
+517             \textcolor{keywordflow}{break};
+518     \}
+519     *head = \hyperlink{main_8c_aeaba90c3e4069dc783a06dd0ad1314a9}{sort\_aeroflot\_list}(*head, \hyperlink{main_8c_aeb0a5da00ce0333f62523ac630e42196}{get\_list\_length}(*head), l\_eq);
+520 
+521 \}
+529 \textcolor{keywordtype}{bool} \hyperlink{main_8c_afd62a5de84ed382e0c4b2ff7f788e6d9}{menu}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **head)\{
+530     \textcolor{keywordtype}{int} choice;
+531     printf(\textcolor{stringliteral}{" \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\(\backslash\)n"}
+532            \textcolor{stringliteral}{"|                     Меню                        |\(\backslash\)n"});
+533     printf(\textcolor{stringliteral}{"%-50s|\(\backslash\)n"},\textcolor{stringliteral}{"|1.  Створення списку                             "});
+534     printf(\textcolor{stringliteral}{"%-50s|\(\backslash\)n"},\textcolor{stringliteral}{"|2.  Додавання в початок                          "});
+535     printf(\textcolor{stringliteral}{"%-50s|\(\backslash\)n"},\textcolor{stringliteral}{"|3.  Додавання в кінець                           "});
+536     printf(\textcolor{stringliteral}{"%-50s|\(\backslash\)n"},\textcolor{stringliteral}{"|4.  Додавання після елемента з номером n         "});
+537     printf(\textcolor{stringliteral}{"%-50s|\(\backslash\)n"},\textcolor{stringliteral}{"|5.  Додавання після елемента з заданим ключем    "});
+538     printf(\textcolor{stringliteral}{"%-50s|\(\backslash\)n"},\textcolor{stringliteral}{"|6.  Видалення елемента з початку списку          "});
+539     printf(\textcolor{stringliteral}{"%-50s|\(\backslash\)n"},\textcolor{stringliteral}{"|7.  Видалення елемента з кінця списку            "});
+540     printf(\textcolor{stringliteral}{"%-50s|\(\backslash\)n"},\textcolor{stringliteral}{"|8.  Видалення елемента з заданим номером в списку"});
+541     printf(\textcolor{stringliteral}{"%-50s|\(\backslash\)n"},\textcolor{stringliteral}{"|9.  Видалення елемента з заданим ключем          "});
+542     printf(\textcolor{stringliteral}{"%-50s|\(\backslash\)n"},\textcolor{stringliteral}{"|10. Виведення вмісту списку на екран             "});
+543     printf(\textcolor{stringliteral}{"%-50s|\(\backslash\)n"},\textcolor{stringliteral}{"|11. Упорядкування елементів                      "});
+544     printf(\textcolor{stringliteral}{"%-50s|\(\backslash\)n"},\textcolor{stringliteral}{"|12. Виведення рейсів в задане місто              "});
+545     printf(\textcolor{stringliteral}{"%-50s|\(\backslash\)n"},\textcolor{stringliteral}{"|13. Вихід                                        "});
+546     printf(\textcolor{stringliteral}{" ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\(\backslash\)n"});
+547     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Виберіть пункт меню\(\backslash\)n"}, &choice, 0, 13);
+548     \textcolor{keywordflow}{switch} (choice) \{
+549         \textcolor{keywordflow}{case} 0: \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+550         \textcolor{keywordflow}{case} \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa0cb1b2c6a7db1f1084886c98909a3f36}{INIT}:
+551             \hyperlink{main_8c_ae3896f900491d60fc8e9442b3e5ade4c}{re\_init\_list}(head);
+552             \textcolor{keywordflow}{break};
+553         \textcolor{keywordflow}{case} \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fac19da14a6129e83c76c7ac5d1b48bdf6}{PUSH\_TOP}:
+554             \hyperlink{main_8c_aad7fee251ddf586df049ee9559353e06}{push\_top}(head, \hyperlink{main_8c_a36302364b495f5e99251b65c3c5993d2}{aeroflot\_user\_fill}());
+555             \textcolor{keywordflow}{break};
+556         \textcolor{keywordflow}{case} \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029facead49106e50d919b5e6b2c78170c761}{PUSH\_BACK}:
+557             \hyperlink{main_8c_a9f24f6c5839a268adcd9948fbdd9b0f9}{push\_back}(head, \hyperlink{main_8c_a36302364b495f5e99251b65c3c5993d2}{aeroflot\_user\_fill}());
+558             \textcolor{keywordflow}{break};
+559         \textcolor{keywordflow}{case} \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fab6a95ededfc57bc938450bda1066efca}{PUSH\_N}:
+560             \hyperlink{main_8c_a88b5cd8a8b5ea867830b1a7d69ad578e}{push\_after\_n}(head, \hyperlink{main_8c_a36302364b495f5e99251b65c3c5993d2}{aeroflot\_user\_fill}(), 
+      \hyperlink{lab__functions_8h_a45e2d75e7b00ac6711c815431d42bcfd}{get\_int}(\textcolor{stringliteral}{"Після якого номера додати число?\(\backslash\)n"}, 0, INT\_MAX));
+561             \textcolor{keywordflow}{break};
+562         \textcolor{keywordflow}{case} \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa5b5c3f5e5115e360c49d379f52ded058}{PUSH\_KEY}:
+563             printf(\textcolor{stringliteral}{"Введіть новий ключ та ключ пошуку\(\backslash\)n"});
+564             \hyperlink{main_8c_a8c414ba7f65a93bf7e5a38f34ad43a93}{push\_after\_key}(head, \hyperlink{main_8c_a36302364b495f5e99251b65c3c5993d2}{aeroflot\_user\_fill}(), 
+      \hyperlink{main_8c_a36302364b495f5e99251b65c3c5993d2}{aeroflot\_user\_fill}());
+565             \textcolor{keywordflow}{break};
+566         \textcolor{keywordflow}{case} \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa061dcf4785583d8653942f2d252174fa}{POP}:
+567             \hyperlink{main_8c_a7e397112c557e808e91ddfdb85d3323c}{pop}(head);
+568             \textcolor{keywordflow}{break};
+569         \textcolor{keywordflow}{case} \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa6091654b8b9aedd5fd86976f5a1e96cf}{REMOVE\_BACK}:
+570             \hyperlink{main_8c_a85d439fd81dd1e929276ba46d86eb80d}{remove\_back}(head);
+571             \textcolor{keywordflow}{break};
+572         \textcolor{keywordflow}{case} \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa42637601e6022d5e586cbe28071a9b48}{REMOVE\_N}:
+573             \hyperlink{main_8c_a57b202125772bddb3ec4c84c4d68e664}{remove\_aeroflot\_n}(head, \hyperlink{lab__functions_8h_a45e2d75e7b00ac6711c815431d42bcfd}{get\_int}(\textcolor{stringliteral}{"Який номер видалити?\(\backslash\)n"}, 0, INT\_MAX));
+574             \textcolor{keywordflow}{break};
+575         \textcolor{keywordflow}{case} \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa72b88f8d3c8ad24bf832cafa6e086217}{REMOVE\_KEY}:
+576             printf(\textcolor{stringliteral}{"Введіть ключ пошуку\(\backslash\)n"});
+577             \hyperlink{main_8c_a500943d070deae91216d10f37982c3f7}{remove\_aeroflot\_key}(head, \hyperlink{main_8c_a36302364b495f5e99251b65c3c5993d2}{aeroflot\_user\_fill}());
+578             \textcolor{keywordflow}{break};
+579         \textcolor{keywordflow}{case} \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029faf6b54e2f964c3204c88d0d82a509f65a}{SHOW}:
+580             \hyperlink{main_8c_a5f6128fb431c14b0ec5e1b28f7d86f55}{print\_aeroflot\_list}(head);
+581             \textcolor{keywordflow}{break};
+582         \textcolor{keywordflow}{case} \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa136486a15d68351e470b6b449ae7a246}{SORT}:
+583             \hyperlink{main_8c_a802394bf54d1c43e588b2258e4b14653}{sort\_list}(head);
+584             \textcolor{keywordflow}{break};
+585         \textcolor{keywordflow}{case} \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fae8221012d15767e99099fc09b63b77dc}{GET\_BY\_CITY}:
+586             \hyperlink{main_8c_a39c2c82dccda45fa272ba55c57a3dbf9}{get\_by\_city}(head);
+587             \textcolor{keywordflow}{break};
+588         \textcolor{keywordflow}{case} \hyperlink{main_8c_ad5b035af54b12fffc80b6aa76ab4029fa7a10b5d68d31711288e1fe0fa17dbf4f}{EXIT}:
+589             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+590         \textcolor{keywordflow}{default}:
+591             printf(\textcolor{stringliteral}{"Something went wrong"});
+592     \}
+593     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+594 \}
+606 \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **\hyperlink{main_8c_a581b30e0dc7f2e359199f4981fcffbab}{task\_1}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **task1\_list\_head) \{
+607     printf(\textcolor{stringliteral}{"Виконується завдання з Лабораторної роботи номер 5\(\backslash\)n"});
+608     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 5; ++i) \{
+609         \hyperlink{main_8c_a9f24f6c5839a268adcd9948fbdd9b0f9}{push\_back}(task1\_list\_head, \hyperlink{main_8c_a36302364b495f5e99251b65c3c5993d2}{aeroflot\_user\_fill}());
+610     \}
+611     \hyperlink{main_8c_a5f6128fb431c14b0ec5e1b28f7d86f55}{print\_aeroflot\_list}(task1\_list\_head);
+612     printf(\textcolor{stringliteral}{"Виконується сортування за номером рейсу\(\backslash\)n"});
+613     *task1\_list\_head = \hyperlink{main_8c_aeaba90c3e4069dc783a06dd0ad1314a9}{sort\_aeroflot\_list}(*task1\_list\_head, 
+      \hyperlink{main_8c_aeb0a5da00ce0333f62523ac630e42196}{get\_list\_length}(*task1\_list\_head), \hyperlink{main_8c_a6798a994749b47157e5391e31a110867}{less\_eq\_flight\_number});
+614     \hyperlink{main_8c_a5f6128fb431c14b0ec5e1b28f7d86f55}{print\_aeroflot\_list}(task1\_list\_head);
+615     \textcolor{keywordflow}{return} task1\_list\_head;
+616 \}
+621 \textcolor{keywordtype}{void} \hyperlink{main_8c_af06a9f0e060c21d8adec2d33546e07c2}{calling\_menu}(\hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} **list)\{
+622     \textcolor{keywordtype}{bool} to\_continue;
+623     \textcolor{keywordflow}{do}\{
+624         to\_continue = \hyperlink{main_8c_afd62a5de84ed382e0c4b2ff7f788e6d9}{menu}(list);
+625     \}\textcolor{keywordflow}{while} (to\_continue);
+626 \}
+627 
+628 \textcolor{keywordtype}{int} main() \{
+629     \hyperlink{structsingle__linked__list__aeroflot__struct}{List\_aeroflot} *task1\_list\_head = NULL;
+630     clear();
+631     \hyperlink{main_8c_a581b30e0dc7f2e359199f4981fcffbab}{task\_1}(&task1\_list\_head);
+632     \hyperlink{main_8c_af06a9f0e060c21d8adec2d33546e07c2}{calling\_menu}(&task1\_list\_head);
+633     \textcolor{keywordflow}{return} 0;
+634 \}
+\end{DoxyCodeInclude}
+ 

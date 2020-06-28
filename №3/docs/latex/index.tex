@@ -1,0 +1,142 @@
+\begin{center} \subsection*{Варіант №4}\end{center} 
+
+\begin{center} \end{center}  Виконав студент групи КМ-\/82\+: {\bfseries Бубела Дмитро}~\newline
+ На початку виконяння програми виводиться інформація пов\textquotesingle{}язана з завданням(и) та автором.~\newline
+Викликається функція main() через функцію \hyperlink{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}{to\+\_\+repeat()} \subsubsection*{Завдання 1. Дано текст. Виділити з нього всі слова, які не містять однакових символів. Різницю малих і великих літер до уваги не брати.}
+
+\paragraph*{Виконується функцією \hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\+\_\+1()}}
+
+Спочатку програма зчитує ввід користувача та вираховує його довжину. Далі шукає слова по розділювачам, що є в {\ttfamily P\+A\+T\+T\+E\+RN}, запам\textquotesingle{}ятовуючи позиції початку і кінця. Перевіряє функцію \hyperlink{main_8c_a9f2357981154612b8f19cdb92afe9308}{is\+\_\+chars\+\_\+repeat()} чи є повтори символів у слові і відповідні слова виділяє, виводить функцією \hyperlink{main_8c_aade7efb4781be6777c4015fa8610569f}{print\+\_\+part()}. \paragraph*{Нижче наведений сирцевий код прорами}
+
+
+\begin{DoxyCodeInclude}
+1 \textcolor{preprocessor}{#include <stdio.h>}
+2 \textcolor{preprocessor}{#include <string.h>}
+3 \textcolor{preprocessor}{#include <ctype.h>}
+4 \textcolor{preprocessor}{#include <stdlib.h>}
+6 
+7 \textcolor{preprocessor}{#define clear() printf("\(\backslash\)033[H\(\backslash\)033[J")}
+8 \textcolor{preprocessor}{#define INT\_MIN -2147483648}
+9 \textcolor{preprocessor}{#define INT\_MAX 2147483647}
+10 
+16 \textcolor{keywordtype}{char} *\hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(\textcolor{keywordtype}{char} message[]);
+22 \textcolor{keywordtype}{int} \hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\_every\_digit}(\textcolor{keywordtype}{char} *str);
+29 \textcolor{keywordtype}{int} \hyperlink{main_8c_ab0ab11d738b0fee4c4d5a6ef5aa74cb5}{match\_char}(\textcolor{keywordtype}{char} *pattern, \textcolor{keywordtype}{char} str);
+37 \textcolor{keywordtype}{int} \hyperlink{main_8c_a9f2357981154612b8f19cdb92afe9308}{is\_chars\_repeat}(\textcolor{keywordtype}{char} *word, \textcolor{keywordtype}{int} begin, \textcolor{keywordtype}{int} end);
+44 \textcolor{keywordtype}{void} \hyperlink{main_8c_aade7efb4781be6777c4015fa8610569f}{print\_part}(\textcolor{keywordtype}{char} *phrase, \textcolor{keywordtype}{int} i, \textcolor{keywordtype}{int} j);
+49 \textcolor{keywordtype}{void} \hyperlink{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}{to\_repeat}(\textcolor{keywordtype}{void} (*func)(\textcolor{keywordtype}{void}));
+57 \textcolor{keywordtype}{void} \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{keywordtype}{char} message[], \textcolor{keywordtype}{int} *number,\textcolor{keywordtype}{int} lwr\_border, \textcolor{keywordtype}{int} hir\_border);
+58 
+66 \textcolor{keywordtype}{void} \hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\_1}();
+67 
+68 \textcolor{keywordtype}{int} main() \{
+69     \hyperlink{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}{to\_repeat}(\hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\_1});
+70     \textcolor{keywordflow}{return} 0;
+71 \}
+72 
+73 \textcolor{keywordtype}{void} \hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\_1}()\{
+74     \textcolor{keywordtype}{char} PATTERN[]=\textcolor{stringliteral}{",. "}; \textcolor{comment}{// типи розділювачів}
+75     \textcolor{keywordtype}{char} phrase[254];\textcolor{comment}{// фраза, яку ми зчитали}
+76     \textcolor{keywordtype}{int} j = 0;
+77     \textcolor{keywordtype}{int} length\_of\_phrase;\textcolor{comment}{// довжина фрази}
+78     clear();
+79     printf(\textcolor{stringliteral}{"Введіть речення, "}
+80            \textcolor{stringliteral}{"я виділю слова з буквами, що не повторюються\(\backslash\)n"});
+81     fgets(phrase, 253, stdin);
+82     length\_of\_phrase = strlen(phrase) - 1;
+83     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < length\_of\_phrase; ++i) \{
+84         \textcolor{keywordflow}{for} (j = i; !\hyperlink{main_8c_ab0ab11d738b0fee4c4d5a6ef5aa74cb5}{match\_char}(PATTERN, phrase[j]) && j < length\_of\_phrase; ++j);
+85         \textcolor{keywordflow}{if} (\hyperlink{main_8c_a9f2357981154612b8f19cdb92afe9308}{is\_chars\_repeat}(phrase, i, j)) \{
+86             \hyperlink{main_8c_aade7efb4781be6777c4015fa8610569f}{print\_part}(phrase, i, j);
+87         \} \textcolor{keywordflow}{else} \{
+88             printf(\textcolor{stringliteral}{"\(\backslash\)x1b[6;30;43m"});
+89             \hyperlink{main_8c_aade7efb4781be6777c4015fa8610569f}{print\_part}(phrase, i, j);
+90             printf(\textcolor{stringliteral}{"\(\backslash\)x1b[0m"});
+91         \}
+92         printf(\textcolor{stringliteral}{"%c"}, phrase[j]);
+93         i = j;
+94     \}
+95 \}
+96 
+97 \textcolor{keywordtype}{char} *\hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(\textcolor{keywordtype}{char} message[])\{
+98     \textcolor{keywordtype}{char} *usr\_input = (\textcolor{keywordtype}{char}*) malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})*254);
+99     printf(\textcolor{stringliteral}{"%s"}, message); \textcolor{comment}{// Виводимо повідомлення користувачу}
+100     fgets(usr\_input, 254, stdin);
+101     \textcolor{keywordflow}{return} usr\_input;
+102 \}
+103 
+104 \textcolor{keywordtype}{int} \hyperlink{main_8c_ab0ab11d738b0fee4c4d5a6ef5aa74cb5}{match\_char}(\textcolor{keywordtype}{char} *pattern, \textcolor{keywordtype}{char} str)\{
+109     \textcolor{keywordtype}{int} len = strlen(pattern);
+110     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < len; ++i) \{
+111         \textcolor{keywordflow}{if} (pattern[i]==str)\{
+112             \textcolor{keywordflow}{return} 1;
+113         \}
+114     \}
+115     \textcolor{keywordflow}{return} 0;
+116 \}
+117 
+118 \textcolor{keywordtype}{int} \hyperlink{main_8c_a9f2357981154612b8f19cdb92afe9308}{is\_chars\_repeat}(\textcolor{keywordtype}{char} *word, \textcolor{keywordtype}{int} begin, \textcolor{keywordtype}{int} end)\{
+124     \textcolor{keywordflow}{for} (begin; begin < end; ++begin) \{
+125         \textcolor{keywordflow}{if} (word[begin] != -47 && word[begin] != -48)\{\textcolor{comment}{// + укр алфавіт}
+126             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = begin+1; i < end; ++i) \{
+127                 \textcolor{keywordflow}{if} (tolower(word[begin])==tolower(word[i]))\{
+128                     \textcolor{keywordflow}{return} 1;
+129                 \}
+130 
+131             \}
+132         \}
+133     \}
+134     \textcolor{keywordflow}{return} 0;
+135 \}
+136 
+137 \textcolor{keywordtype}{void} \hyperlink{main_8c_aade7efb4781be6777c4015fa8610569f}{print\_part}(\textcolor{keywordtype}{char} *phrase, \textcolor{keywordtype}{int} i, \textcolor{keywordtype}{int} j)\{
+138     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = i; k < j; ++k) \{
+139         printf(\textcolor{stringliteral}{"%c"}, phrase[k]);
+140     \}
+141 \}
+142 
+143 \textcolor{keywordtype}{void} \hyperlink{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}{to\_repeat}(\textcolor{keywordtype}{void} (*func)(\textcolor{keywordtype}{void}))\{
+148     \textcolor{keywordtype}{int} choice;
+149     \textcolor{keywordflow}{do}\{
+150         (*func)();
+151         \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Бажаєте продовжити виконання цього завдання?:\(\backslash\)n"},&choice,0,1);
+152     \}\textcolor{keywordflow}{while} (choice);
+153 \}
+154 
+155 \textcolor{keywordtype}{void} \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{keywordtype}{char} message[], \textcolor{keywordtype}{int} *number,\textcolor{keywordtype}{int} lwr\_border, \textcolor{keywordtype}{int} hir\_border)\{
+163     \textcolor{keywordflow}{if} (lwr\_border == hir\_border)\{
+164         lwr\_border = INT\_MIN;
+165         hir\_border = INT\_MAX;
+166     \}
+167     \textcolor{keywordtype}{char} *usr\_input = \hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(message);
+168     \textcolor{keywordflow}{while} (!\hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\_every\_digit}(usr\_input) || atoi(usr\_input) < lwr\_border || atoi(usr\_input) > 
+      hir\_border)\{
+169         printf(\textcolor{stringliteral}{"ERROR INPUT\(\backslash\)n"});
+170         usr\_input = \hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(message);
+171     \}
+172     *number = atoi(usr\_input);
+173 \}
+174 
+175 \textcolor{keywordtype}{int} \hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\_every\_digit}(\textcolor{keywordtype}{char} *str)\{\textcolor{comment}{//uhh some potentially buggy function}
+181 \textcolor{comment}{}    \textcolor{keywordtype}{int} len = strlen(str);
+182     \textcolor{keywordflow}{if} (len>2 && (str[0] != \textcolor{charliteral}{'-'}) && ((!isdigit(str[0]))||len>11))\{
+183         \textcolor{keywordflow}{return} 0;\textcolor{comment}{//додатнє число більше 11 знаків або не з знаком - на початку}
+184     \}
+185     \textcolor{keywordflow}{if} ((str[0] == \textcolor{charliteral}{'-'}) && (len>12))\{
+186         \textcolor{keywordflow}{return} 0;\textcolor{comment}{//від'ємне число більше 11 знаків}
+187     \}
+188     \textcolor{keywordflow}{if} (len == 2 && !isdigit(str[0]))\{
+189         \textcolor{keywordflow}{return} 0;\textcolor{comment}{//не одна цифра}
+190     \}
+191     \textcolor{keywordflow}{if} (len==1)\{
+192         \textcolor{keywordflow}{return} 0;\textcolor{comment}{// читаєм \(\backslash\)n}
+193     \}
+194     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < len-1; ++i) \{
+195         \textcolor{keywordflow}{if} (!isdigit(str[i]))\{
+196             \textcolor{keywordflow}{return} 0;\textcolor{comment}{//будь-який знак - не цифра}
+197         \}
+198     \}
+199     \textcolor{keywordflow}{return} 1;
+200 \}
+\end{DoxyCodeInclude}
+ 

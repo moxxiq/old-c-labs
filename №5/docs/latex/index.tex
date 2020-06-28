@@ -1,0 +1,128 @@
+\begin{center} \subsection*{Варіант №4}\end{center} 
+
+\begin{center} \end{center}  Виконав студент групи КМ-\/82\+: {\bfseries Бубела Дмитро}~\newline
+ \subsubsection*{Завдання\+:}
+
+\subsubsection*{1. Описати структуру з іменем A\+E\+R\+O\+F\+L\+OT, що містить такі поля\+:}
+
+\subsubsection*{-\/ назва пункту призначення рейсу;}
+
+\subsubsection*{-\/ номер рейсу;}
+
+\subsubsection*{-\/ тип літака.}
+
+\subsubsection*{2. Написати програму, що виконує такі дії\+:}
+
+\subsubsection*{-\/ уведення з клавіатури даних у масив із 5 структур типу A\+E\+R\+O\+F\+L\+OT;}
+
+\subsubsection*{-\/ упорядкування записів за зростанням номера рейсу;}
+
+\subsubsection*{-\/ виведення на екран номерів рейсів і типів літаків, що вилітають у пункт призначення, назва якого збігається з назвою, уведеною з клавіатури;}
+
+\subsubsection*{якщо таких рейсів немає, вивести на екран відповідне повідомлення.}
+
+\paragraph*{Виконується функцією \hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\+\_\+1()}}
+
+Створюємо {\ttfamily N} об\textquotesingle{}єктів типу {\ttfamily A\+E\+R\+O\+F\+L\+OT} , користувач заповнює дані кожного рейсу \hyperlink{main_8c_a0e67aa1728da412b6d456dcd67400c28}{aeroflot\+\_\+user\+\_\+fill()} .~\newline
+Упорядкуєм рейси за зростанням номером рейсу модифікованою функцією сортування з попередньої лабораторної \hyperlink{main_8c_ada53f29a40add605d28459936c17d8df}{swaping\+\_\+sort\+\_\+struct()}~\newline
+ Виводимо відсортований список.~\newline
+Виконується пошук рейсів за місцем призначення заданим користувачем \hyperlink{main_8c_aba85c797baee5c4f44cfb1bdf805889d}{print\+\_\+aeroflot\+\_\+filter\+\_\+destination()} \paragraph*{Нижче наведений сирцевий код прорами}
+
+
+\begin{DoxyCodeInclude}
+1 \textcolor{preprocessor}{#include <stdio.h>}
+2 \textcolor{preprocessor}{#include <string.h>}
+3 \textcolor{preprocessor}{#include <values.h>}
+4 \textcolor{preprocessor}{#include <ctype.h>}
+5 \textcolor{preprocessor}{#include "\hyperlink{lab__functions_8h}{lab\_functions.h}"}
+7 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\hyperlink{structAEROFLOT__STRUCT}{AEROFLOT\_STRUCT}\{
+8     \textcolor{keywordtype}{char} *\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination};
+9     \textcolor{keywordtype}{int} \hyperlink{structAEROFLOT__STRUCT_a7f89c90169893ea6426d49cbfe252b6b}{flight\_number};
+10     \textcolor{keywordtype}{int} \hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type};
+11 \} \hyperlink{structAEROFLOT__STRUCT}{AEROFLOT};
+12 
+13 \textcolor{keyword}{enum} \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900}{type\_of\_aeroplane}\{
+14         \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426}{ELSE},
+15         \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877}{CIVIL},
+16         MILITARY
+17 \};
+24 \textcolor{keywordtype}{void} \hyperlink{main_8c_a86c3d2cb6728b6e961242f105a4c2579}{swap\_aeroflot}(\hyperlink{structAEROFLOT__STRUCT}{AEROFLOT} *first, \hyperlink{structAEROFLOT__STRUCT}{AEROFLOT} *second)\{
+25     \hyperlink{structAEROFLOT__STRUCT}{AEROFLOT} temp = *first;
+26     *first = *second;
+27     *second = temp;
+28 \}
+38 \textcolor{keywordtype}{void} \hyperlink{main_8c_ada53f29a40add605d28459936c17d8df}{swaping\_sort\_struct}(\hyperlink{structAEROFLOT__STRUCT}{AEROFLOT} *arr, \textcolor{keywordtype}{int} N)\{
+39     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N-1; ++i) \{
+40         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 1; j+i < N; ++j) \{
+41             \textcolor{keywordflow}{if} (arr[i].\hyperlink{structAEROFLOT__STRUCT_a7f89c90169893ea6426d49cbfe252b6b}{flight\_number}>arr[j+i].\hyperlink{structAEROFLOT__STRUCT_a7f89c90169893ea6426d49cbfe252b6b}{flight\_number})\{
+42                 \hyperlink{main_8c_a86c3d2cb6728b6e961242f105a4c2579}{swap\_aeroflot}(&arr[i],&arr[j+i]);
+43             \}
+44         \}
+45     \}
+46 \}
+52 \textcolor{keywordtype}{void} \hyperlink{main_8c_a0e67aa1728da412b6d456dcd67400c28}{aeroflot\_user\_fill}(\hyperlink{structAEROFLOT__STRUCT}{AEROFLOT} *aeroplane)\{
+53     aeroplane->\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination} = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Місце призначення: "});
+54     \hyperlink{lab__functions_8h_a1c51fdb7c84e94c1f88f8e6838f67499}{toupper\_chrs}(aeroplane->\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination});
+55     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Номер рейсу: "}, &aeroplane->\hyperlink{structAEROFLOT__STRUCT_a7f89c90169893ea6426d49cbfe252b6b}{flight\_number}, 0, INT\_MAX);
+56 
+57     \textcolor{keywordtype}{char} *type = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Тип літака: "});
+58     \hyperlink{lab__functions_8h_a1c51fdb7c84e94c1f88f8e6838f67499}{toupper\_chrs}(type);
+59     \textcolor{keywordflow}{if} (!strcmp(type, \textcolor{stringliteral}{"CIVIL"}))\{
+60         aeroplane->\hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type} = \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877}{CIVIL};
+61     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!strcmp(type, \textcolor{stringliteral}{"MILITARY"}))\{
+62         aeroplane->\hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type} = \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5}{MILITARY};
+63     \} \textcolor{keywordflow}{else}\{
+64         aeroplane->\hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type} = \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426}{ELSE};
+65     \}
+66 \}
+73 \textcolor{keywordtype}{void} \hyperlink{main_8c_a21680c209db21fa1a784acdcfb0783be}{print\_aeroflot}(\hyperlink{structAEROFLOT__STRUCT}{AEROFLOT} aeroplanes[], \textcolor{keywordtype}{int} N)\{
+74     printf(\textcolor{stringliteral}{"Місце призначення \(\backslash\)tНомер рейсу \(\backslash\)tНомер типу\(\backslash\)n"});
+75     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+76         printf(\textcolor{stringliteral}{"\(\backslash\)t%s \(\backslash\)t  \(\backslash\)t  \(\backslash\)t%d \(\backslash\)t  \(\backslash\)t  \(\backslash\)t  \(\backslash\)t%d\(\backslash\)n"},
+77                aeroplanes[i].destination,
+78                aeroplanes[i].\hyperlink{structAEROFLOT__STRUCT_a7f89c90169893ea6426d49cbfe252b6b}{flight\_number},
+79                aeroplanes[i].type);
+80     \}
+81 \}
+89 \textcolor{keywordtype}{void} \hyperlink{main_8c_aba85c797baee5c4f44cfb1bdf805889d}{print\_aeroflot\_filter\_destination}(\hyperlink{structAEROFLOT__STRUCT}{AEROFLOT} aeroplanes[], \textcolor{keywordtype}{int} 
+      N, \textcolor{keywordtype}{char} filter\_destination[])\{
+90     \hyperlink{lab__functions_8h_a1c51fdb7c84e94c1f88f8e6838f67499}{toupper\_chrs}(filter\_destination);
+91     \textcolor{keywordtype}{int} is\_match  = 0;
+92     printf(\textcolor{stringliteral}{"Місце призначення \(\backslash\)tНомер рейсу \(\backslash\)tНомер типу\(\backslash\)n"});
+93     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+94         \textcolor{keywordflow}{if} (!strcmp(filter\_destination,aeroplanes[i].destination))\{
+95             printf(\textcolor{stringliteral}{"\(\backslash\)t%s \(\backslash\)t  \(\backslash\)t  \(\backslash\)t%d \(\backslash\)t  \(\backslash\)t  \(\backslash\)t  \(\backslash\)t%d\(\backslash\)n"},
+96                    aeroplanes[i].destination,
+97                    aeroplanes[i].\hyperlink{structAEROFLOT__STRUCT_a7f89c90169893ea6426d49cbfe252b6b}{flight\_number},
+98                    aeroplanes[i].type);
+99             is\_match = 1;
+100         \}
+101     \}
+102     \textcolor{keywordflow}{if} (!is\_match)\{
+103         printf(\textcolor{stringliteral}{"Рейсів по цьому напрямку немає!\(\backslash\)n"});
+104     \}
+105 \}
+106 
+115 \textcolor{keywordtype}{void} \hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\_1}()\{
+116     \textcolor{keyword}{const} \textcolor{keywordtype}{int} N = 5;
+117     \textcolor{keywordtype}{char} destination[254];
+118     \hyperlink{structAEROFLOT__STRUCT}{AEROFLOT} kpi\_aeroplanes[N];
+119     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+120         printf(\textcolor{stringliteral}{"Рейс №%d\(\backslash\)n"}, i+1);
+121         \hyperlink{main_8c_a0e67aa1728da412b6d456dcd67400c28}{aeroflot\_user\_fill}(&kpi\_aeroplanes[i]);
+122     \}
+123     printf(\textcolor{stringliteral}{"Упорядкуєм рейси за зростанням номером рейсу\(\backslash\)n"});
+124     \hyperlink{main_8c_ada53f29a40add605d28459936c17d8df}{swaping\_sort\_struct}(kpi\_aeroplanes, N);
+125     \hyperlink{main_8c_a21680c209db21fa1a784acdcfb0783be}{print\_aeroflot}(kpi\_aeroplanes, N);
+126     printf(\textcolor{stringliteral}{"Пошук рейсів за місцем призначення\(\backslash\)n"});
+127     strcpy(destination,\hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Місце призначення: "}));
+128     \hyperlink{main_8c_aba85c797baee5c4f44cfb1bdf805889d}{print\_aeroflot\_filter\_destination}(kpi\_aeroplanes, N, destination);
+129 \}
+130 
+131 \textcolor{keywordtype}{int} main() \{
+132     clear();
+133     \hyperlink{lab__functions_8h_a770281b98587f9f65ca4cc75b1d061db}{to\_repeat}(\hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\_1}, \textcolor{stringliteral}{"Бажаєте повторити виконання завдання?\(\backslash\)n"});
+134     \textcolor{keywordflow}{return} 0;
+135 \}
+\end{DoxyCodeInclude}
+ 

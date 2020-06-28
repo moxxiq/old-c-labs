@@ -1,0 +1,286 @@
+\begin{center} \subsection*{Варіант №4}\end{center} 
+
+\begin{center} \end{center}  Виконав студент групи КМ-\/82\+: {\bfseries Бубела Дмитро}~\newline
+ На початку виконяння програми виводиться інформація пов\textquotesingle{}язана з завданням(и) та автором.~\newline
+Викликається функція \hyperlink{main_8c_a967daaa1c8b4c7d21c4ccf7a81fbe67d}{choose\+\_\+lab()} \subsubsection*{Завдання 1.\+1. Обчислити висоту паралелепіпеда.}
+
+\paragraph*{Виконується функцією \hyperlink{main_8c_ad0ae7d23ef39095cda907019fd94ed96}{task1sub1()}}
+
+Спочатку ініціалізуєм потрібні нам змінні.~\newline
+Вводимо об\textquotesingle{}єм та площу ({\ttfamily do} {\ttfamily while} цикли використовуєм для перевірки на невід\textquotesingle{}ємність).~\newline
+Здійснюємо обчислення. Виводим висоту паралелограма 
+\begin{DoxyCode}
+printf(\textcolor{stringliteral}{"Висота паралелограма (H = V/S) = "});
+printf(\textcolor{stringliteral}{"%.3lf\(\backslash\)n"}, H);
+\end{DoxyCode}
+ Реалізовано виконання функції ще раз за бажанням користувача. \subsubsection*{Завдання 1.\+2. Обчислити Евклідову відстань між двома точками.}
+
+\paragraph*{Виконується функцією \hyperlink{main_8c_ab6b6fe73040966990d9129dbf55cb110}{task1sub2()}}
+
+Ініціалізуєм змінні, вводим відповідні координати за допомогою \hyperlink{main_8c_aa9f623385e5c1c8ac44a985d44cf3c5a}{input\+D()}~\newline
+Обчислюєм відстань між точками $(x_1,y_1)$ і $(x_2,y_2) = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$ \subsubsection*{Завдання 2}
+
+Завдання складається з двох задач. У рамках завдання потрібно скласти дві підпрограми\+:
+\begin{DoxyItemize}
+\item перша підпрограма уводить складові частини структури даних, наdеденої у відповідному варіанті індивідуального завдання, і формує з них задану упаковану структуру;
+\item друга підпрограма уводить упаковану структуру як шістнадцяткове число й виводить значення окремих її складових частин.
+\end{DoxyItemize}
+
+Формат команди завантаження/збереження в обчислювальній системі має вигляд\+: \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{17}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ № розрядів }&\textbf{ 15 }&\textbf{ 14 }&\textbf{ 13 }&\textbf{ 12 }&\textbf{ 11 }&\textbf{ 10 }&\textbf{ 9 }&\textbf{ 8 }&\textbf{ 7 }&\textbf{ 6 }&\textbf{ 5 }&\textbf{ 4 }&\textbf{ 3 }&\textbf{ 2 }&\textbf{ 1 }&\textbf{ 0  }\\\cline{1-17}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ № розрядів }&\textbf{ 15 }&\textbf{ 14 }&\textbf{ 13 }&\textbf{ 12 }&\textbf{ 11 }&\textbf{ 10 }&\textbf{ 9 }&\textbf{ 8 }&\textbf{ 7 }&\textbf{ 6 }&\textbf{ 5 }&\textbf{ 4 }&\textbf{ 3 }&\textbf{ 2 }&\textbf{ 1 }&\textbf{ 0  }\\\cline{1-17}
+\endhead
+значення &1 &1 &1 &0 &0 &0 &1 &D &R &R &R &R &A &A &A &A \\\cline{1-17}
+\end{longtabu}
+Підпрограма 1 \hyperlink{main_8c_a49562a6161d394ce5f96b6731e07e440}{task2sub1()} Підпрограма2 \hyperlink{main_8c_a08a44a4f43367b221db5d4e7b2657623}{task2sub2()}~\newline
+\subsubsection*{Завдання 2.\+1.}
+
+Ініціалізація змінних.~\newline
+Для зчитування вводу користувача використовується допоміжна змінна {\ttfamily temp} На кожному етапі введення змінна є корректною, використовується функція \hyperlink{main_8c_aa9f623385e5c1c8ac44a985d44cf3c5a}{input\+D()}~\newline
+За допомогою бітових операцій до змінної {\ttfamily Unit\+State\+Word} записуються команди~\newline
+Команда виводиться.~\newline
+Реалізовано виконання функції ще раз за бажанням користувача. \subsubsection*{Завдання 2.\+2.}
+
+Вводиться шістнадцядкове число -\/ код стану та перевіяється на відповідність заданій у варіанті команді.~\newline
+Якщо число не є командою, яку ми хочем розібрати -\/ виводим користувачу повідомлення. При введенні вірної команди -\/ вона розбирається на операнди та виводиться користувачу. Реалізовано виконання функції ще раз за бажанням користувача. \paragraph*{Нижче наведений сирцевий код прорами}
+
+
+\begin{DoxyCodeInclude}
+1 \textcolor{preprocessor}{#include <stdio.h>}
+2 \textcolor{preprocessor}{#include <math.h>}
+3 \textcolor{preprocessor}{#include <stdlib.h>}
+4 
+21 \textcolor{keywordtype}{void} \hyperlink{main_8c_a967daaa1c8b4c7d21c4ccf7a81fbe67d}{choose\_lab}();
+26 \textcolor{keywordtype}{void} \hyperlink{main_8c_afde07648040c326129670547738a0c86}{task1}();
+38 \textcolor{keywordtype}{void} \hyperlink{main_8c_ad0ae7d23ef39095cda907019fd94ed96}{task1sub1}();
+44 \textcolor{keywordtype}{void} \hyperlink{main_8c_ab6b6fe73040966990d9129dbf55cb110}{task1sub2}();
+55 \textcolor{keywordtype}{void} \hyperlink{main_8c_afb35a54f26606b4808ac0a8d9ad55433}{task2}();
+65 \textcolor{keywordtype}{void} \hyperlink{main_8c_a49562a6161d394ce5f96b6731e07e440}{task2sub1}();
+74 \textcolor{keywordtype}{void} \hyperlink{main_8c_a08a44a4f43367b221db5d4e7b2657623}{task2sub2}();
+79 \textcolor{keywordtype}{char} \hyperlink{main_8c_a20531ce01d5668d3c0eafb037eb3c514}{get1char}();
+89 \textcolor{keywordtype}{void} \hyperlink{main_8c_aa9f623385e5c1c8ac44a985d44cf3c5a}{inputD}(\textcolor{keywordtype}{char} message[], \textcolor{keywordtype}{int} *number);
+95 \textcolor{keywordtype}{void} \hyperlink{main_8c_a67a83febb2bdcd536c9edefe419afb2e}{inputF}(\textcolor{keywordtype}{char} message[],\textcolor{keywordtype}{double} *number);
+96 
+97 \textcolor{keywordtype}{int} main() \{
+98     system(\textcolor{stringliteral}{"clear"});
+99     printf(\textcolor{stringliteral}{"ЛАБОРАТОРНА РОБОТА №1\(\backslash\)n"}
+100            \textcolor{stringliteral}{"БАЗОВІ ТИПИ ДАНИХ, УВЕДЕННЯ-ВИВЕДЕННЯ,\(\backslash\)n"}
+101            \textcolor{stringliteral}{"БІТОВІ ОПЕРАЦІЇ, ОПЕРАЦІЇ ЗСУВУ\(\backslash\)n"}
+102            \textcolor{stringliteral}{"Виконав студент групи КМ-82\(\backslash\)n"}
+103            \textcolor{stringliteral}{"Бубела Дмитро\(\backslash\)n"}
+104            \textcolor{stringliteral}{"Варіант №4\(\backslash\)n"});
+105     \hyperlink{main_8c_a967daaa1c8b4c7d21c4ccf7a81fbe67d}{choose\_lab}();
+106     \textcolor{keywordflow}{return} 0;
+107 \}
+108 
+109 \textcolor{keywordtype}{void} \hyperlink{main_8c_aa9f623385e5c1c8ac44a985d44cf3c5a}{inputD}(\textcolor{keywordtype}{char} message[], \textcolor{keywordtype}{int} *number)
+110 \{
+111     \textcolor{keywordtype}{int} isD = 0;
+112     *number = 0; \textcolor{comment}{// Зануляєм}
+113     \textcolor{keywordflow}{do}
+114     \{
+115         printf(\textcolor{stringliteral}{"%s"}, message); \textcolor{comment}{// Виводимо повідомлення користувачу}
+116         isD = scanf(\textcolor{stringliteral}{"%d"}, number);\textcolor{comment}{// якщо ввід коректний isD = 1}
+117         \textcolor{keywordflow}{while} (getchar()!=\textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{keywordflow}{continue}; \textcolor{comment}{// дуже важлива функція для очищення вхідного потоку}
+118     \}
+119     \textcolor{keywordflow}{while} (!isD);\textcolor{comment}{// поки корисувач не введе значення - повторюєм виконання циклу}
+120 \}
+121 
+122 \textcolor{keywordtype}{void} \hyperlink{main_8c_a67a83febb2bdcd536c9edefe419afb2e}{inputF}(\textcolor{keywordtype}{char} message[],\textcolor{keywordtype}{double} *number)
+123 \{
+124     \textcolor{keywordtype}{int} isF = 0;
+125     *number = 0.0;
+126     \textcolor{keywordflow}{do}
+127     \{
+128         printf(\textcolor{stringliteral}{"%s"}, message);
+129         isF = scanf(\textcolor{stringliteral}{"%lf"}, number);
+130         \textcolor{keywordflow}{while} (getchar()!=\textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{keywordflow}{continue};
+131     \}
+132     \textcolor{keywordflow}{while} (!isF);
+133 \}
+134 
+135 \textcolor{keywordtype}{char} \hyperlink{main_8c_a20531ce01d5668d3c0eafb037eb3c514}{get1char}()
+136 \{
+137     \textcolor{keywordtype}{char} i = getchar();
+138     \textcolor{keywordflow}{while} (getchar()!=\textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{keywordflow}{continue};
+139     \textcolor{keywordflow}{return} i;
+140 \}
+141 
+142 \textcolor{keywordtype}{void} \hyperlink{main_8c_a967daaa1c8b4c7d21c4ccf7a81fbe67d}{choose\_lab}()
+143 \{
+144     \textcolor{keywordtype}{int} labNumber;
+145     \textcolor{keywordflow}{do}
+146     \{
+147         \hyperlink{main_8c_aa9f623385e5c1c8ac44a985d44cf3c5a}{inputD}(\textcolor{stringliteral}{"Виберіть завдання з лабораторної роботи 1, 2:\(\backslash\)n"}, &labNumber);
+148     \}
+149     \textcolor{keywordflow}{while} (labNumber < 1 || labNumber > 2);
+150     \textcolor{comment}{//Вимагаєм у користувача цифру 1 або 2}
+151     \textcolor{keywordflow}{switch} (labNumber)
+152     \{
+153         \textcolor{comment}{//Виконуєм завдання лабораторнної}
+154         \textcolor{keywordflow}{case} 1: \hyperlink{main_8c_afde07648040c326129670547738a0c86}{task1}(); \textcolor{keywordflow}{break};
+155         \textcolor{keywordflow}{case} 2: \hyperlink{main_8c_afb35a54f26606b4808ac0a8d9ad55433}{task2}(); \textcolor{keywordflow}{break};
+156     \}
+157     printf(\textcolor{stringliteral}{"Хочете продовжити виконання лабораторної роботи? (0 / 1)\(\backslash\)n"});
+158     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a20531ce01d5668d3c0eafb037eb3c514}{get1char}() == \textcolor{charliteral}{'1'})
+159     \{
+160         \hyperlink{main_8c_a967daaa1c8b4c7d21c4ccf7a81fbe67d}{choose\_lab}();
+161     \}
+162 \}
+163 
+164 \textcolor{keywordtype}{void} \hyperlink{main_8c_afde07648040c326129670547738a0c86}{task1}()
+165 \{
+166     \textcolor{keywordtype}{int} subTask = 0;
+167     \textcolor{keywordflow}{do}
+168     \{
+169         \hyperlink{main_8c_aa9f623385e5c1c8ac44a985d44cf3c5a}{inputD}(\textcolor{stringliteral}{"Введіть номер підзавдання: 1, 2\(\backslash\)n"}, &subTask);
+170     \}
+171     \textcolor{keywordflow}{while} (subTask != 1 && subTask != 2);
+172     \textcolor{keywordflow}{switch} (subTask)
+173     \{
+174         \textcolor{keywordflow}{case} 1: \hyperlink{main_8c_ad0ae7d23ef39095cda907019fd94ed96}{task1sub1}(); \textcolor{keywordflow}{break};
+175         \textcolor{keywordflow}{case} 2: \hyperlink{main_8c_ab6b6fe73040966990d9129dbf55cb110}{task1sub2}(); \textcolor{keywordflow}{break};
+176     \}
+177     printf(\textcolor{stringliteral}{"Бажаєте повторити вибір першого завдання? (0/1)\(\backslash\)n"});
+178     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a20531ce01d5668d3c0eafb037eb3c514}{get1char}() == \textcolor{charliteral}{'1'})
+179     \{
+180         \hyperlink{main_8c_afde07648040c326129670547738a0c86}{task1}();
+181     \}
+182 \}
+183 
+184 \textcolor{keywordtype}{void} \hyperlink{main_8c_ad0ae7d23ef39095cda907019fd94ed96}{task1sub1}()
+185 \{
+186     \textcolor{keywordtype}{double} V,S,H;\textcolor{comment}{//Відповідні дані, що необхідні для здійснення обчислень}
+187     printf(\textcolor{stringliteral}{"Я програма для обчислення висоти паралелепіпеда за формулою H = V/S\(\backslash\)n"});
+188     \textcolor{keywordflow}{do}
+189     \{
+190         \hyperlink{main_8c_a67a83febb2bdcd536c9edefe419afb2e}{inputF}(\textcolor{stringliteral}{"Введіть об'єм паралелограма:"}, &V);
+191     \}
+192     \textcolor{keywordflow}{while} (V<0);
+193     \textcolor{keywordflow}{do}
+194     \{
+195         \hyperlink{main_8c_a67a83febb2bdcd536c9edefe419afb2e}{inputF}(\textcolor{stringliteral}{"Введіть площу основи паралелограма:"}, &S);
+196     \}
+197     \textcolor{keywordflow}{while} (S<0);
+198     H = V/S;
+199     printf(\textcolor{stringliteral}{"Висота паралелограма (H = V/S) = "});
+200     printf(\textcolor{stringliteral}{"%.3lf\(\backslash\)n"}, H);
+201     printf(\textcolor{stringliteral}{"Бажаєте повторити це завдання? (0/1)\(\backslash\)n"});
+202     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a20531ce01d5668d3c0eafb037eb3c514}{get1char}() == \textcolor{charliteral}{'1'})
+203     \{
+204         \hyperlink{main_8c_ad0ae7d23ef39095cda907019fd94ed96}{task1sub1}();
+205     \}
+206 \}
+207 
+208 \textcolor{keywordtype}{void} \hyperlink{main_8c_ab6b6fe73040966990d9129dbf55cb110}{task1sub2}()
+209 \{
+210     \textcolor{keywordtype}{double} distance;
+211     \textcolor{keywordtype}{int} x1,x2,y1,y2;
+212     printf(\textcolor{stringliteral}{"Я програма для обчислення відстаней між точками.\(\backslash\)n"});
+213     printf(\textcolor{stringliteral}{"Введіть координати 2х точок (x1;y1),(x1;y2)\(\backslash\)n"});
+214     \hyperlink{main_8c_aa9f623385e5c1c8ac44a985d44cf3c5a}{inputD}(\textcolor{stringliteral}{"x1 = "},&x1);
+215     \hyperlink{main_8c_aa9f623385e5c1c8ac44a985d44cf3c5a}{inputD}(\textcolor{stringliteral}{"y1 = "},&y1);
+216     \hyperlink{main_8c_aa9f623385e5c1c8ac44a985d44cf3c5a}{inputD}(\textcolor{stringliteral}{"x2 = "},&x2);
+217     \hyperlink{main_8c_aa9f623385e5c1c8ac44a985d44cf3c5a}{inputD}(\textcolor{stringliteral}{"y2 = "},&y2);
+218     distance = sqrt((x2 - x1)*(x2 - x1)+(y2 - y1)*(y2 - y1));
+219     printf(\textcolor{stringliteral}{"Відстань між точками = %.3lf\(\backslash\)n"}, distance);
+220     printf(\textcolor{stringliteral}{"Бажаєте повторити це завдання? (0/1)\(\backslash\)n"});
+221     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a20531ce01d5668d3c0eafb037eb3c514}{get1char}() == \textcolor{charliteral}{'1'})
+222     \{
+223         \hyperlink{main_8c_ab6b6fe73040966990d9129dbf55cb110}{task1sub2}();
+224     \}
+225 \}
+226 
+227 \textcolor{keywordtype}{void} \hyperlink{main_8c_afb35a54f26606b4808ac0a8d9ad55433}{task2}()
+228 \{
+229     \textcolor{keywordtype}{int} subTask = 0;
+230     \textcolor{keywordflow}{do}
+231     \{
+232         \hyperlink{main_8c_aa9f623385e5c1c8ac44a985d44cf3c5a}{inputD}(\textcolor{stringliteral}{"Введіть номер підзавдання (завантаження/збереження): 1, 2\(\backslash\)n"}, &subTask);
+233     \}
+234     \textcolor{keywordflow}{while} (subTask != 1 && subTask != 2);
+235     \textcolor{keywordflow}{switch} (subTask)
+236     \{
+237         \textcolor{keywordflow}{case} 1: \hyperlink{main_8c_a49562a6161d394ce5f96b6731e07e440}{task2sub1}(); \textcolor{keywordflow}{break};
+238         \textcolor{keywordflow}{case} 2: \hyperlink{main_8c_a08a44a4f43367b221db5d4e7b2657623}{task2sub2}(); \textcolor{keywordflow}{break};
+239     \}
+240     printf(\textcolor{stringliteral}{"Бажаєте повторити вибір першого завдання? (0/1)\(\backslash\)n"});
+241     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a20531ce01d5668d3c0eafb037eb3c514}{get1char}() == \textcolor{charliteral}{'1'})
+242     \{
+243         \hyperlink{main_8c_afb35a54f26606b4808ac0a8d9ad55433}{task2}();
+244     \}
+245 \}
+246 
+247 \textcolor{keywordtype}{void} \hyperlink{main_8c_a49562a6161d394ce5f96b6731e07e440}{task2sub1}()
+248 \{
+249     \textcolor{keywordtype}{char} D,R,A; \textcolor{comment}{// напрям у регістр/пам'ять // перший операнд (регістр) // регістр адреси другого операнда}
+250     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} UnitStateWord; \textcolor{comment}{//слово стану}
+251     \textcolor{keywordtype}{int} temp;
+252     printf(\textcolor{stringliteral}{"Я програма, що формує команду завантаження/збереження в обчислювальній системі\(\backslash\)n"});
+253     \textcolor{keywordflow}{do}
+254     \{
+255         \hyperlink{main_8c_aa9f623385e5c1c8ac44a985d44cf3c5a}{inputD}(\textcolor{stringliteral}{"Уведіть напрям запису у регістр/пам'ять (1/0)\(\backslash\)n"}, &temp);
+256     \}
+257     \textcolor{keywordflow}{while} (temp != 1 && temp != 0);
+258     D = temp;
+259     \textcolor{keywordflow}{do}
+260     \{
+261         \hyperlink{main_8c_aa9f623385e5c1c8ac44a985d44cf3c5a}{inputD}(\textcolor{stringliteral}{"Уведіть перший операнд (регістр) (0-15)\(\backslash\)n"}, &temp);
+262     \}
+263     \textcolor{keywordflow}{while} (temp < 0 || temp > 15);
+264     R = temp;
+265     \textcolor{keywordflow}{do}
+266     \{
+267         \hyperlink{main_8c_aa9f623385e5c1c8ac44a985d44cf3c5a}{inputD}(\textcolor{stringliteral}{"Уведіть регістр адреси другого операнда (0-15)\(\backslash\)n"}, &temp);
+268     \}
+269     \textcolor{keywordflow}{while} (temp < 0 || temp > 15);
+270     A = temp;
+271     UnitStateWord = 0x71<<9;
+272     UnitStateWord |= (D & 1)<<8;
+273     UnitStateWord |= (R & 0xF)<<4;
+274     UnitStateWord |= (A & 0xF);
+275     printf(\textcolor{stringliteral}{"Слово стану пристрою %04x\(\backslash\)n"},UnitStateWord);
+276     printf(\textcolor{stringliteral}{"Бажаєте повторити це завдання? (0/1)\(\backslash\)n"});
+277     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a20531ce01d5668d3c0eafb037eb3c514}{get1char}() == \textcolor{charliteral}{'1'})
+278     \{
+279         \hyperlink{main_8c_a49562a6161d394ce5f96b6731e07e440}{task2sub1}();
+280     \}
+281 \}
+282 
+283 \textcolor{keywordtype}{void} \hyperlink{main_8c_a08a44a4f43367b221db5d4e7b2657623}{task2sub2}()
+284 \{
+285     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} UnitStateWord; \textcolor{comment}{//слово стану}
+286     \textcolor{keywordtype}{int} isX;
+287     printf(\textcolor{stringliteral}{"Я програма, що розбирає команду завантаження/збереження в обчислювальній системі\(\backslash\)n"});
+288     \textcolor{keywordflow}{do}
+289     \{
+290         printf(\textcolor{stringliteral}{"Уведіть cлово стану пристрою\(\backslash\)n"}
+291                \textcolor{stringliteral}{"(16-кове число від 0 до e3ff):\(\backslash\)n"});
+292         isX = scanf(\textcolor{stringliteral}{"%x"}, &UnitStateWord);
+293         \textcolor{keywordflow}{while} (getchar()!=\textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{keywordflow}{continue};
+294     \}
+295     \textcolor{keywordflow}{while} (!isX || UnitStateWord>0xFFFF);
+296     \textcolor{keywordflow}{if} (UnitStateWord>>8 != 0xe3 && UnitStateWord>>8 != 0xe2)
+297     \{
+298         printf(\textcolor{stringliteral}{"Це не команда збереження/завантаження!!!\(\backslash\)n"});
+299     \}
+300     \textcolor{keywordflow}{else}
+301     \{
+302         printf(\textcolor{stringliteral}{"Напрямок передачі = %d\(\backslash\)n"}, (UnitStateWord>>8) & 1);
+303         printf(\textcolor{stringliteral}{"Перший операнд (регістр) = %d\(\backslash\)n"}, (UnitStateWord>>4) & 0xF);
+304         printf(\textcolor{stringliteral}{"Регістр адреси другого операнда = %d\(\backslash\)n"}, UnitStateWord & 0xF);
+305     \}
+306     printf(\textcolor{stringliteral}{"Бажаєте повторити це завдання? (0/1)\(\backslash\)n"});
+307     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a20531ce01d5668d3c0eafb037eb3c514}{get1char}() == \textcolor{charliteral}{'1'})
+308     \{
+309         \hyperlink{main_8c_a08a44a4f43367b221db5d4e7b2657623}{task2sub2}();
+310     \}
+311 \}
+\end{DoxyCodeInclude}
+ 

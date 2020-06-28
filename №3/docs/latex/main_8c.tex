@@ -1,0 +1,306 @@
+\hypertarget{main_8c}{}\section{Файл main.\+c}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Діаграма включених заголовочних файлів для main.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Макровизначення}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_aff606fb64ff89d5982673319bab86b19}\label{main_8c_aff606fb64ff89d5982673319bab86b19}} 
+\#define {\bfseries clear}()~printf(\char`\"{}\textbackslash{}033\mbox{[}H\textbackslash{}033\mbox{[}J\char`\"{})
+\item 
+\mbox{\Hypertarget{main_8c_a21658776274b3d146c674318b635a334}\label{main_8c_a21658776274b3d146c674318b635a334}} 
+\#define {\bfseries I\+N\+T\+\_\+\+M\+IN}~-\/2147483648
+\item 
+\mbox{\Hypertarget{main_8c_a9ec306f36d50c7375e74f0d1c55a3a67}\label{main_8c_a9ec306f36d50c7375e74f0d1c55a3a67}} 
+\#define {\bfseries I\+N\+T\+\_\+\+M\+AX}~2147483647
+\end{DoxyCompactItemize}
+\subsection*{Функції}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\+\_\+input} (char message\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Отримує від користувача ввід, перед яким виводить повідомлення \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\+\_\+every\+\_\+digit} (char $\ast$str)
+\item 
+int \hyperlink{main_8c_ab0ab11d738b0fee4c4d5a6ef5aa74cb5}{match\+\_\+char} (char $\ast$pattern, char str)
+\begin{DoxyCompactList}\small\item\em Перевіряє на входження {\ttfamily srt} в {\ttfamily pattern}. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a9f2357981154612b8f19cdb92afe9308}{is\+\_\+chars\+\_\+repeat} (char $\ast$word, int begin, int end)
+\item 
+void \hyperlink{main_8c_aade7efb4781be6777c4015fa8610569f}{print\+\_\+part} (char $\ast$phrase, int i, int j)
+\item 
+void \hyperlink{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}{to\+\_\+repeat} (void($\ast$func)(void))
+\begin{DoxyCompactList}\small\item\em Функція, що повторює задану їй функцію за бажанням користувача. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\+\_\+int} (char message\mbox{[}$\,$\mbox{]}, int $\ast$number, int lwr\+\_\+border, int hir\+\_\+border)
+\begin{DoxyCompactList}\small\item\em Реалізація корректного введення \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em Завдання №1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Опис функцій}
+\mbox{\Hypertarget{main_8c_a6f453bc035d85e967bd5032eca31a155}\label{main_8c_a6f453bc035d85e967bd5032eca31a155}} 
+\index{main.\+c@{main.\+c}!input\+\_\+int@{input\+\_\+int}}
+\index{input\+\_\+int@{input\+\_\+int}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{input\+\_\+int()}{input\_int()}}
+{\footnotesize\ttfamily void input\+\_\+int (\begin{DoxyParamCaption}\item[{char}]{message\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{number,  }\item[{int}]{lwr\+\_\+border,  }\item[{int}]{hir\+\_\+border }\end{DoxyParamCaption})}
+
+
+
+Реалізація корректного введення 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em message} & Повідомлення до користувача \\
+\hline
+{\em number} & Змінна в яку буде записуватися правильний ввід \\
+\hline
+{\em lwr\+\_\+border} & Нижня межа \\
+\hline
+{\em hir\+\_\+border} & Верхня межа \\
+\hline
+\end{DoxyParams}
+Якщо межі однакові, то вони стають мінімальними/максимальними.~\newline
+Виконується введеня користувачем, умова циклу while превіряє чи кожне введене число є десятковим за допомогою \hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\+\_\+every\+\_\+digit()}.~\newline
+Також виконується перевірка чи належить число відрізку lwr\+\_\+border hir\+\_\+border~\newline
+Наприкінці у змінну $\ast$number записується правильне число.
+\begin{DoxyCode}
+155                                                                           \{
+163     \textcolor{keywordflow}{if} (lwr\_border == hir\_border)\{
+164         lwr\_border = INT\_MIN;
+165         hir\_border = INT\_MAX;
+166     \}
+167     \textcolor{keywordtype}{char} *usr\_input = \hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(message);
+168     \textcolor{keywordflow}{while} (!\hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\_every\_digit}(usr\_input) || atoi(usr\_input) < lwr\_border || atoi(usr\_input) > 
+      hir\_border)\{
+169         printf(\textcolor{stringliteral}{"ERROR INPUT\(\backslash\)n"});
+170         usr\_input = \hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(message);
+171     \}
+172     *number = atoi(usr\_input);
+173 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a9f2357981154612b8f19cdb92afe9308}\label{main_8c_a9f2357981154612b8f19cdb92afe9308}} 
+\index{main.\+c@{main.\+c}!is\+\_\+chars\+\_\+repeat@{is\+\_\+chars\+\_\+repeat}}
+\index{is\+\_\+chars\+\_\+repeat@{is\+\_\+chars\+\_\+repeat}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{is\+\_\+chars\+\_\+repeat()}{is\_chars\_repeat()}}
+{\footnotesize\ttfamily int is\+\_\+chars\+\_\+repeat (\begin{DoxyParamCaption}\item[{char $\ast$}]{word,  }\item[{int}]{begin,  }\item[{int}]{end }\end{DoxyParamCaption})}
+
+Перевіряє чи є одракові однобайтні символи в тексті {\ttfamily word} 
+\begin{DoxyParams}{Аргументи}
+{\em word} & Текст, звідки береться слово \\
+\hline
+{\em begin} & Порядок першого символа слова в тексті \\
+\hline
+{\em end} & Порядок останнього символа слова в тексті \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Повертає}
+1 або 0 
+\end{DoxyReturn}
+Преревірка букв на повтори здійснюється шляхом почергового порівняння кожного символу з рештою у слові, що йдуть за ним. Також, якщо це двухбайтний {\ttfamily char} укр. алфавіту, то перший його байт буде = або -\/47 або -\/48
+\begin{DoxyCode}
+118                                                    \{
+124     \textcolor{keywordflow}{for} (begin; begin < end; ++begin) \{
+125         \textcolor{keywordflow}{if} (word[begin] != -47 && word[begin] != -48)\{\textcolor{comment}{// + укр алфавіт}
+126             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = begin+1; i < end; ++i) \{
+127                 \textcolor{keywordflow}{if} (tolower(word[begin])==tolower(word[i]))\{
+128                     \textcolor{keywordflow}{return} 1;
+129                 \}
+130 
+131             \}
+132         \}
+133     \}
+134     \textcolor{keywordflow}{return} 0;
+135 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a9594b83ee908d195f5ff508da5c23c58}\label{main_8c_a9594b83ee908d195f5ff508da5c23c58}} 
+\index{main.\+c@{main.\+c}!is\+\_\+every\+\_\+digit@{is\+\_\+every\+\_\+digit}}
+\index{is\+\_\+every\+\_\+digit@{is\+\_\+every\+\_\+digit}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{is\+\_\+every\+\_\+digit()}{is\_every\_digit()}}
+{\footnotesize\ttfamily int is\+\_\+every\+\_\+digit (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+Перевірка чи кожне введене число є десятковим (від\textquotesingle{}ємним також) 
+\begin{DoxyParams}{Аргументи}
+{\em str} & число у вигляді увеного масиву char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Повертає}
+1, якщо число десяткове, 0 якщо ні 
+\end{DoxyReturn}
+Знаходить довжину числа, враховуючи знак переходу~\newline
+З урахуванням \textquotesingle{}-\/\textquotesingle{} обмежує максимальну довжину числа згідно лімітів int. В коментарях можна побачити нюанси. Наприкінці перевіряєм чи всі символи є десятковими.
+\begin{DoxyCode}
+175                              \{\textcolor{comment}{//uhh some potentially buggy function}
+181 \textcolor{comment}{}    \textcolor{keywordtype}{int} len = strlen(str);
+182     \textcolor{keywordflow}{if} (len>2 && (str[0] != \textcolor{charliteral}{'-'}) && ((!isdigit(str[0]))||len>11))\{
+183         \textcolor{keywordflow}{return} 0;\textcolor{comment}{//додатнє число більше 11 знаків або не з знаком - на початку}
+184     \}
+185     \textcolor{keywordflow}{if} ((str[0] == \textcolor{charliteral}{'-'}) && (len>12))\{
+186         \textcolor{keywordflow}{return} 0;\textcolor{comment}{//від'ємне число більше 11 знаків}
+187     \}
+188     \textcolor{keywordflow}{if} (len == 2 && !isdigit(str[0]))\{
+189         \textcolor{keywordflow}{return} 0;\textcolor{comment}{//не одна цифра}
+190     \}
+191     \textcolor{keywordflow}{if} (len==1)\{
+192         \textcolor{keywordflow}{return} 0;\textcolor{comment}{// читаєм \(\backslash\)n}
+193     \}
+194     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < len-1; ++i) \{
+195         \textcolor{keywordflow}{if} (!isdigit(str[i]))\{
+196             \textcolor{keywordflow}{return} 0;\textcolor{comment}{//будь-який знак - не цифра}
+197         \}
+198     \}
+199     \textcolor{keywordflow}{return} 1;
+200 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_ab0ab11d738b0fee4c4d5a6ef5aa74cb5}\label{main_8c_ab0ab11d738b0fee4c4d5a6ef5aa74cb5}} 
+\index{main.\+c@{main.\+c}!match\+\_\+char@{match\+\_\+char}}
+\index{match\+\_\+char@{match\+\_\+char}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{match\+\_\+char()}{match\_char()}}
+{\footnotesize\ttfamily int match\+\_\+char (\begin{DoxyParamCaption}\item[{char $\ast$}]{pattern,  }\item[{char}]{str }\end{DoxyParamCaption})}
+
+
+
+Перевіряє на входження {\ttfamily srt} в {\ttfamily pattern}. 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em pattern} & Символи, один з яких може дорівнювати {\ttfamily str} \\
+\hline
+{\em str} & Символ, який порівнюється з кожним з {\ttfamily pattren} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Повертає}
+1 або 0 
+\end{DoxyReturn}
+Порівнює посимвольно з кожним з {\ttfamily pattern} 
+\begin{DoxyCode}
+104                                        \{
+109     \textcolor{keywordtype}{int} len = strlen(pattern);
+110     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < len; ++i) \{
+111         \textcolor{keywordflow}{if} (pattern[i]==str)\{
+112             \textcolor{keywordflow}{return} 1;
+113         \}
+114     \}
+115     \textcolor{keywordflow}{return} 0;
+116 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a638293d509eded9d6ef7552ae1b17f2b}\label{main_8c_a638293d509eded9d6ef7552ae1b17f2b}} 
+\index{main.\+c@{main.\+c}!message\+\_\+input@{message\+\_\+input}}
+\index{message\+\_\+input@{message\+\_\+input}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{message\+\_\+input()}{message\_input()}}
+{\footnotesize\ttfamily char $\ast$ message\+\_\+input (\begin{DoxyParamCaption}\item[{char}]{message\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Отримує від користувача ввід, перед яким виводить повідомлення 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em message} & Повідомлення, яке буде показане користувачу \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Повертає}
+Ввід користувача в форматі {\ttfamily char} 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+97                                    \{
+98     \textcolor{keywordtype}{char} *usr\_input = (\textcolor{keywordtype}{char}*) malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})*254);
+99     printf(\textcolor{stringliteral}{"%s"}, message); \textcolor{comment}{// Виводимо повідомлення користувачу}
+100     fgets(usr\_input, 254, stdin);
+101     \textcolor{keywordflow}{return} usr\_input;
+102 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_aade7efb4781be6777c4015fa8610569f}\label{main_8c_aade7efb4781be6777c4015fa8610569f}} 
+\index{main.\+c@{main.\+c}!print\+\_\+part@{print\+\_\+part}}
+\index{print\+\_\+part@{print\+\_\+part}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+part()}{print\_part()}}
+{\footnotesize\ttfamily void print\+\_\+part (\begin{DoxyParamCaption}\item[{char $\ast$}]{phrase,  }\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+Посимвольний вивід уривка з тексту {\ttfamily phrase} 
+\begin{DoxyParams}{Аргументи}
+{\em phrase} & Текст, уривок якого буде виведений \\
+\hline
+{\em i} & Номер першого символу уривка \\
+\hline
+{\em j} & Номер останнього символу уривка \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+137                                            \{
+138     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = i; k < j; ++k) \{
+139         printf(\textcolor{stringliteral}{"%c"}, phrase[k]);
+140     \}
+141 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a2e10594dc040249a898e2880b4c64322}\label{main_8c_a2e10594dc040249a898e2880b4c64322}} 
+\index{main.\+c@{main.\+c}!task\+\_\+1@{task\+\_\+1}}
+\index{task\+\_\+1@{task\+\_\+1}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{task\+\_\+1()}{task\_1()}}
+{\footnotesize\ttfamily void task\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Завдання №1. 
+
+Спочатку програма зчитує ввід користувача та вираховує його довжину. Далі шукає слова по розділювачам, що є в {\ttfamily P\+A\+T\+T\+E\+RN}, запам\textquotesingle{}ятовуючи позиції початку і кінця. Перевіряє функцію \hyperlink{main_8c_a9f2357981154612b8f19cdb92afe9308}{is\+\_\+chars\+\_\+repeat()} чи є повтори символів у слові і відповідні слова виділяє, виводить функцією \hyperlink{main_8c_aade7efb4781be6777c4015fa8610569f}{print\+\_\+part()}. 
+\begin{DoxyCode}
+73              \{
+74     \textcolor{keywordtype}{char} PATTERN[]=\textcolor{stringliteral}{",. "}; \textcolor{comment}{// типи розділювачів}
+75     \textcolor{keywordtype}{char} phrase[254];\textcolor{comment}{// фраза, яку ми зчитали}
+76     \textcolor{keywordtype}{int} j = 0;
+77     \textcolor{keywordtype}{int} length\_of\_phrase;\textcolor{comment}{// довжина фрази}
+78     clear();
+79     printf(\textcolor{stringliteral}{"Введіть речення, "}
+80            \textcolor{stringliteral}{"я виділю слова з буквами, що не повторюються\(\backslash\)n"});
+81     fgets(phrase, 253, stdin);
+82     length\_of\_phrase = strlen(phrase) - 1;
+83     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < length\_of\_phrase; ++i) \{
+84         \textcolor{keywordflow}{for} (j = i; !\hyperlink{main_8c_ab0ab11d738b0fee4c4d5a6ef5aa74cb5}{match\_char}(PATTERN, phrase[j]) && j < length\_of\_phrase; ++j);
+85         \textcolor{keywordflow}{if} (\hyperlink{main_8c_a9f2357981154612b8f19cdb92afe9308}{is\_chars\_repeat}(phrase, i, j)) \{
+86             \hyperlink{main_8c_aade7efb4781be6777c4015fa8610569f}{print\_part}(phrase, i, j);
+87         \} \textcolor{keywordflow}{else} \{
+88             printf(\textcolor{stringliteral}{"\(\backslash\)x1b[6;30;43m"});
+89             \hyperlink{main_8c_aade7efb4781be6777c4015fa8610569f}{print\_part}(phrase, i, j);
+90             printf(\textcolor{stringliteral}{"\(\backslash\)x1b[0m"});
+91         \}
+92         printf(\textcolor{stringliteral}{"%c"}, phrase[j]);
+93         i = j;
+94     \}
+95 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}\label{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}} 
+\index{main.\+c@{main.\+c}!to\+\_\+repeat@{to\+\_\+repeat}}
+\index{to\+\_\+repeat@{to\+\_\+repeat}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{to\+\_\+repeat()}{to\_repeat()}}
+{\footnotesize\ttfamily void to\+\_\+repeat (\begin{DoxyParamCaption}\item[{void($\ast$)(void)}]{func }\end{DoxyParamCaption})}
+
+
+
+Функція, що повторює задану їй функцію за бажанням користувача. 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em func} & Функція, яка буде повторюватись \\
+\hline
+\end{DoxyParams}
+Викорисковуються вказівники на функцію, щоб забезпечити її повторне виконання.
+\begin{DoxyCode}
+143                                   \{
+148     \textcolor{keywordtype}{int} choice;
+149     \textcolor{keywordflow}{do}\{
+150         (*func)();
+151         \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Бажаєте продовжити виконання цього завдання?:\(\backslash\)n"},&choice,0,1);
+152     \}\textcolor{keywordflow}{while} (choice);
+153 \}
+\end{DoxyCode}

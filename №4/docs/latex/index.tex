@@ -1,0 +1,224 @@
+\begin{center} \subsection*{Варіант №4}\end{center} 
+
+\begin{center} \end{center}  Виконав студент групи КМ-\/82\+: {\bfseries Бубела Дмитро}~\newline
+ \subsubsection*{Завдання 1.\+1 Округлення дійсного числа до значення з заданою точністю}
+
+\paragraph*{Виконується функцією \hyperlink{main_8c_a40968dfe24ede22947096429f30444a4}{task\+\_\+1\+\_\+1()}}
+
+\subsubsection*{Завдання 1.\+2 визначення послідовності чисел, що ділять задане число націло}
+
+\paragraph*{Виконується функцією \hyperlink{main_8c_a97a9145d16ec992fa06404b068bd4e18}{task\+\_\+1\+\_\+2()}}
+
+\subsubsection*{Завдання 2 Написати рекурсивну функцію, яка обчислює довжину рядка}
+
+\paragraph*{Виконується функцією \hyperlink{main_8c_a08570886a32f0508e2a3f23c4ea06339}{task\+\_\+2()}}
+
+\paragraph*{Нижче наведений сирцевий код прорами}
+
+
+\begin{DoxyCodeInclude}
+1 \textcolor{preprocessor}{#include <stdio.h>}
+2 \textcolor{preprocessor}{#include <math.h>}
+3 \textcolor{preprocessor}{#include <string.h>}
+4 \textcolor{preprocessor}{#include <stdlib.h>}
+5 \textcolor{preprocessor}{#include <values.h>}
+6 \textcolor{preprocessor}{#include <ctype.h>}
+7 
+11 \textcolor{preprocessor}{#define clear() printf("\(\backslash\)033[H\(\backslash\)033[J")}
+12 
+18 \textcolor{keywordtype}{char} *\hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(\textcolor{keywordtype}{char} message[]);
+24 \textcolor{keywordtype}{int} \hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\_every\_digit}(\textcolor{keywordtype}{char} *str);
+30 \textcolor{keywordtype}{int} \hyperlink{main_8c_a5d7849c249859dd438a37f1e6e5adf70}{is\_every\_digit\_double}(\textcolor{keywordtype}{char} *str);
+37 \textcolor{keywordtype}{void} \hyperlink{main_8c_a770281b98587f9f65ca4cc75b1d061db}{to\_repeat}(\textcolor{keywordtype}{void} (*func)(\textcolor{keywordtype}{void}), \textcolor{keywordtype}{char} message[]);
+43 \textcolor{keywordtype}{long} \hyperlink{main_8c_a50be0d9d5898cd1c9b3a07abb78faf4e}{pow\_10\_to}(\textcolor{keywordtype}{int} *power);
+51 \textcolor{keywordtype}{void} \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{keywordtype}{char} message[], \textcolor{keywordtype}{int} *number,\textcolor{keywordtype}{int} lwr\_border, \textcolor{keywordtype}{int} hir\_border);
+59 \textcolor{keywordtype}{void} \hyperlink{main_8c_ac835db5eadbfefce4a51eae30806a486}{input\_long\_double}(\textcolor{keywordtype}{char} message[], \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} *number,\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} lwr\_border, \textcolor{keywordtype}{long} \textcolor{keywordtype}{
+      double} hir\_border);
+66 \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \hyperlink{main_8c_a41a04980c21ff33f1bfb435f275011db}{round\_number} (\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} *num, \textcolor{keywordtype}{int} *precision);
+71 \textcolor{keywordtype}{void} \hyperlink{main_8c_a2f5dd4f3afe9bea7f6dd19ed24cd9d16}{print\_dividers}(\textcolor{keywordtype}{int} *entered\_number);
+78 \textcolor{keywordtype}{int} \hyperlink{main_8c_a39c41664490ca73a6f8b8224e1191711}{count\_length}(\textcolor{keywordtype}{char} phrase[],\textcolor{keywordtype}{int} i);
+82 \textcolor{keywordtype}{int} \hyperlink{main_8c_a48523aba9a802fbdca6e9670a036253c}{get\_length}(\textcolor{keywordtype}{char} phrase[]);
+86 \textcolor{keywordtype}{void} \hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\_1}();
+90 \textcolor{keywordtype}{void} \hyperlink{main_8c_a40968dfe24ede22947096429f30444a4}{task\_1\_1}();
+94 \textcolor{keywordtype}{void} \hyperlink{main_8c_a97a9145d16ec992fa06404b068bd4e18}{task\_1\_2}();
+98 \textcolor{keywordtype}{void} \hyperlink{main_8c_a08570886a32f0508e2a3f23c4ea06339}{task\_2}();
+99 \textcolor{keywordtype}{int} main() \{
+100     \hyperlink{main_8c_aff606fb64ff89d5982673319bab86b19}{clear}();
+101 
+102     \textcolor{keywordtype}{int} choice;
+103     \textcolor{keywordflow}{do} \{
+104         \hyperlink{main_8c_aff606fb64ff89d5982673319bab86b19}{clear}();
+105         \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Виберіть номер завдання (1, 2):\(\backslash\)n"},
+106                   &choice,
+107                   1,
+108                   2);
+109         \textcolor{keywordflow}{switch} (choice) \{
+110             \textcolor{keywordflow}{case} 1:
+111                 \hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\_1}();
+112                 \textcolor{keywordflow}{break};
+113             \textcolor{keywordflow}{case} 2:
+114                 \hyperlink{main_8c_a770281b98587f9f65ca4cc75b1d061db}{to\_repeat}(\hyperlink{main_8c_a08570886a32f0508e2a3f23c4ea06339}{task\_2}, \textcolor{stringliteral}{"Бажаєте продовжити виконання завдання 2?"});
+115                 \textcolor{keywordflow}{break};
+116         \}
+117         \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Бажаєте повторно виконати лабораторну?:\(\backslash\)n"}, &choice, 0, 1);
+118     \}\textcolor{keywordflow}{while} (choice);
+119     \textcolor{keywordflow}{return} 0;
+120 \}
+121 \textcolor{keywordtype}{void} \hyperlink{main_8c_ac835db5eadbfefce4a51eae30806a486}{input\_long\_double}(\textcolor{keywordtype}{char} message[], \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} *number,\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} lwr\_border, \textcolor{keywordtype}{long} \textcolor{keywordtype}{
+      double} hir\_border)\{
+125     \textcolor{keywordflow}{if} (lwr\_border == hir\_border)\{
+126         lwr\_border = LDBL\_MIN;
+127         hir\_border = LDBL\_MAX;
+128     \}
+129     \textcolor{keywordtype}{char} *usr\_input = \hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(message);
+130     \textcolor{keywordtype}{int} is\_suits = sscanf(usr\_input,\textcolor{stringliteral}{"%Lf"},number);
+131     \textcolor{keywordflow}{while} (!is\_suits || (!\hyperlink{main_8c_a5d7849c249859dd438a37f1e6e5adf70}{is\_every\_digit\_double}(usr\_input) && !
+      \hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\_every\_digit}(usr\_input)) || *number < lwr\_border || *number > hir\_border)\{
+132         printf(\textcolor{stringliteral}{"ERROR INPUT\(\backslash\)n"});
+133         usr\_input = \hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(message);
+134         is\_suits = sscanf(usr\_input,\textcolor{stringliteral}{"%Lf"},number);
+135     \}
+136 \}
+137 \textcolor{keywordtype}{void} \hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\_1}()\{
+138     \textcolor{keywordtype}{int} choice;
+139     \textcolor{keywordflow}{do} \{
+140         \hyperlink{main_8c_aff606fb64ff89d5982673319bab86b19}{clear}();
+141         \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Виберіть номер підзавдання (1, 2):\(\backslash\)n"},
+142                   &choice,
+143                   1,
+144                   2);
+145         \textcolor{keywordflow}{switch} (choice) \{
+146             \textcolor{keywordflow}{case} 1:
+147                 \hyperlink{main_8c_a770281b98587f9f65ca4cc75b1d061db}{to\_repeat}(\hyperlink{main_8c_a40968dfe24ede22947096429f30444a4}{task\_1\_1},\textcolor{stringliteral}{"Бажаєте продовжити виконання підзавдання 1?"});
+148                 \textcolor{keywordflow}{break};
+149             \textcolor{keywordflow}{case} 2:
+150                 \hyperlink{main_8c_a770281b98587f9f65ca4cc75b1d061db}{to\_repeat}(\hyperlink{main_8c_a97a9145d16ec992fa06404b068bd4e18}{task\_1\_2}, \textcolor{stringliteral}{"Бажаєте продовжити виконання підзавдання 2?"});
+151                 \textcolor{keywordflow}{break};
+152         \}
+153         \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Бажаєте повторно виконати вибір підзавдання завдання 1?:\(\backslash\)n"}, &choice, 0, 1);
+154     \}\textcolor{keywordflow}{while} (choice);
+155 \}
+156 \textcolor{keywordtype}{void} \hyperlink{main_8c_a40968dfe24ede22947096429f30444a4}{task\_1\_1}()\{
+163     printf(\textcolor{stringliteral}{"Завдання 1.1\(\backslash\)n"});
+164     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} entered\_number;
+165     \textcolor{keywordtype}{int} precision;
+166     \hyperlink{main_8c_ac835db5eadbfefce4a51eae30806a486}{input\_long\_double}(\textcolor{stringliteral}{"Введіть дійсне число\(\backslash\)n"}, &entered\_number, 0.0, 0.0);
+167     \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Введіть бажану точність\(\backslash\)n"}, &precision, 0, INT\_MAX);
+168     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} num = \hyperlink{main_8c_a41a04980c21ff33f1bfb435f275011db}{round\_number}(&entered\_number, &precision);
+169     printf(\textcolor{stringliteral}{"%.*Lf\(\backslash\)n"}, precision, num);
+170 \}
+171 \textcolor{keywordtype}{void} \hyperlink{main_8c_a97a9145d16ec992fa06404b068bd4e18}{task\_1\_2}()\{
+177     printf(\textcolor{stringliteral}{"Завдання 1.2\(\backslash\)n"});
+178     \textcolor{keywordtype}{int} entered\_number;
+179     \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Уведіть ціле додатнє число\(\backslash\)n"},&entered\_number,1,INT\_MAX);
+180     \hyperlink{main_8c_a2f5dd4f3afe9bea7f6dd19ed24cd9d16}{print\_dividers}(&entered\_number);
+181 \}
+182 
+183 \textcolor{keywordtype}{void} \hyperlink{main_8c_a08570886a32f0508e2a3f23c4ea06339}{task\_2}()\{
+188     printf(\textcolor{stringliteral}{"Завдання 2\(\backslash\)n"});
+189     \textcolor{keywordtype}{char} phrase[254];
+190     printf(\textcolor{stringliteral}{"Введіть фразу (тільки латиниця (ASCII), інакше - невірний результат)\(\backslash\)n"});
+191     fgets(phrase, 253, stdin);
+192     printf(\textcolor{stringliteral}{"Її довжина = %d\(\backslash\)n"}, \hyperlink{main_8c_a48523aba9a802fbdca6e9670a036253c}{get\_length}(phrase)-1);
+193 \}
+194 
+195 \textcolor{keywordtype}{char} *\hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(\textcolor{keywordtype}{char} message[])\{
+196     \textcolor{keywordtype}{char} *usr\_input = (\textcolor{keywordtype}{char}*) malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})*254);
+197     printf(\textcolor{stringliteral}{"%s"}, message); \textcolor{comment}{// Виводимо повідомлення користувачу}
+198     fgets(usr\_input, 254, stdin);
+199     \textcolor{keywordflow}{return} usr\_input;
+200 \}
+201 
+202 \textcolor{keywordtype}{int} \hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\_every\_digit}(\textcolor{keywordtype}{char} *str)\{
+207     \textcolor{keywordtype}{int} len = strlen(str);
+208     \textcolor{keywordtype}{int} i = 0;
+209     \textcolor{keywordflow}{if} (atoi(str)<0) i++;\textcolor{comment}{// якщо менше нуля - мінус пропускаєм}
+210     \textcolor{keywordflow}{for} (i; i < len-1; ++i) \{
+211         \textcolor{keywordflow}{if} (!isdigit(str[i]))\{
+212             \textcolor{keywordflow}{return} 0;\textcolor{comment}{//будь-який знак - не цифра}
+213         \}
+214     \}
+215     \textcolor{keywordflow}{return} 1;
+216 \}
+217 
+218 \textcolor{keywordtype}{int} \hyperlink{main_8c_a5d7849c249859dd438a37f1e6e5adf70}{is\_every\_digit\_double}(\textcolor{keywordtype}{char} *str)\{
+223     \textcolor{keywordtype}{int} len = strlen(str);
+224     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} number;
+225     sscanf(str,\textcolor{stringliteral}{"%Lf"},&number);
+226     \textcolor{keywordtype}{int} i = 0, dot\_counter = 0;
+227     \textcolor{keywordflow}{if} (number<0.0) i++;\textcolor{comment}{// якщо менше нуля - мінус пропускаєм}
+228     \textcolor{keywordflow}{for} (i; i < len-1; ++i) \{
+229         \textcolor{keywordflow}{if} (!isdigit(str[i]))\{
+230             \textcolor{keywordflow}{if} (str[i]==\textcolor{charliteral}{'.'}) \{
+231                 dot\_counter++;
+232             \}\textcolor{keywordflow}{else}\{
+233                 \textcolor{keywordflow}{return} 0;\textcolor{comment}{//будь-який знак - не цифра або крапка (максимум 1)}
+234             \}
+235         \}
+236     \}
+237     \textcolor{keywordflow}{if} (dot\_counter-1) \textcolor{keywordflow}{return} 0;
+238     \textcolor{keywordflow}{return} 1;
+239 \}
+240 
+241 \textcolor{keywordtype}{void} \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{keywordtype}{char} message[], \textcolor{keywordtype}{int} *number,\textcolor{keywordtype}{int} lwr\_border, \textcolor{keywordtype}{int} hir\_border)\{
+245     \textcolor{keywordflow}{if} (lwr\_border == hir\_border)\{
+246         lwr\_border = INT\_MIN;
+247         hir\_border = INT\_MAX;
+248     \}
+249     \textcolor{keywordtype}{char} *usr\_input = \hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(message);
+250     \textcolor{keywordtype}{int} is\_suits = sscanf(usr\_input,\textcolor{stringliteral}{"%d"},number);
+251     \textcolor{keywordflow}{while} (!is\_suits || !\hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\_every\_digit}(usr\_input) || *number < lwr\_border || *number > 
+      hir\_border)\{
+252         printf(\textcolor{stringliteral}{"ERROR INPUT\(\backslash\)n"});
+253         usr\_input = \hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(message);
+254         is\_suits = sscanf(usr\_input,\textcolor{stringliteral}{"%d"},number);
+255     \}
+256 \}
+257 \textcolor{keywordtype}{void} \hyperlink{main_8c_a770281b98587f9f65ca4cc75b1d061db}{to\_repeat}(\textcolor{keywordtype}{void} (*func)(\textcolor{keywordtype}{void}), \textcolor{keywordtype}{char} message[])\{
+262     \textcolor{keywordtype}{int} choice;
+263     \textcolor{keywordflow}{do}\{
+264         (*func)();
+265         \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(message,&choice,0,1);
+266     \}\textcolor{keywordflow}{while} (choice);
+267 \}
+268 \textcolor{keywordtype}{int} \hyperlink{main_8c_a48523aba9a802fbdca6e9670a036253c}{get\_length}(\textcolor{keywordtype}{char} phrase[])\{
+274     \textcolor{keywordflow}{return} \hyperlink{main_8c_a39c41664490ca73a6f8b8224e1191711}{count\_length}(phrase,0);
+275 \}
+276 
+277 \textcolor{keywordtype}{long} \hyperlink{main_8c_a50be0d9d5898cd1c9b3a07abb78faf4e}{pow\_10\_to}(\textcolor{keywordtype}{int} *power)\{
+278 
+279     \textcolor{keywordtype}{long} ten = 1;
+280     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < *power; ++i) \{
+281         ten *= 10;
+282     \}
+283     \textcolor{keywordflow}{return} ten;
+284 \}
+285 \textcolor{keywordtype}{int} \hyperlink{main_8c_a39c41664490ca73a6f8b8224e1191711}{count\_length}(\textcolor{keywordtype}{char} phrase[],\textcolor{keywordtype}{int} i)\{
+289     \textcolor{keywordflow}{if} (!phrase[i])\{
+290         \textcolor{keywordflow}{return} 0;
+291     \}
+292     \textcolor{keywordtype}{int} sum = 1 + \hyperlink{main_8c_a39c41664490ca73a6f8b8224e1191711}{count\_length}(phrase,i+1);
+293     \textcolor{keywordflow}{return} sum;
+294 \}
+295 
+296 \textcolor{keywordtype}{void} \hyperlink{main_8c_a2f5dd4f3afe9bea7f6dd19ed24cd9d16}{print\_dividers}(\textcolor{keywordtype}{int} *entered\_number)\{
+301     printf(\textcolor{stringliteral}{"Дільники числа:\(\backslash\)n1\(\backslash\)n"});
+302     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 2; i < *entered\_number/2; ++i) \{
+303         \textcolor{keywordflow}{if} (!(*entered\_number%i))\{
+304             printf(\textcolor{stringliteral}{"%d\(\backslash\)n"}, i);
+305         \}
+306     \}
+307     \textcolor{keywordflow}{if} (*entered\_number>1) printf(\textcolor{stringliteral}{"%d\(\backslash\)n"},*entered\_number);
+308 \}
+309 
+310 \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \hyperlink{main_8c_a41a04980c21ff33f1bfb435f275011db}{round\_number} (\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} *num, \textcolor{keywordtype}{int} *precision)\{
+317     \textcolor{comment}{// створено додаткові змінні для пояснення суті та полегшення відладки}
+318     \textcolor{keywordtype}{long} accuracy = \hyperlink{main_8c_a50be0d9d5898cd1c9b3a07abb78faf4e}{pow\_10\_to}(precision); \textcolor{comment}{// значення точності перетворене в десятки}
+319     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} math\_round\_addition = 0.5*(1/(\textcolor{keywordtype}{long} double)accuracy);\textcolor{comment}{// використовуєтся заокруглення за
+       математичними правилами (= [x+0.5])}
+320     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} answer = (long)(((*num)+math\_round\_addition)*accuracy);\textcolor{comment}{// відкидаються решта "нулів"}
+321     answer /= (\textcolor{keywordtype}{long} double)accuracy ;\textcolor{comment}{// власне поділ на цілу і дробову частини}
+322     \textcolor{keywordflow}{return} answer;
+323 \}
+\end{DoxyCodeInclude}
+ 

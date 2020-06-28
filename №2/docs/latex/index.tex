@@ -1,0 +1,343 @@
+\begin{center} \subsection*{Варіант №4}\end{center} 
+
+\begin{center} \end{center}  Виконав студент групи КМ-\/82\+: {\bfseries Бубела Дмитро}~\newline
+ На початку виконяння програми виводиться інформація пов\textquotesingle{}язана з завданням(и) та автором.~\newline
+Викликається функція main() \subsubsection*{Завдання 1. Визначити добуток найбільшого елемента в масиві A й найменшого елемента в масиві B.}
+
+\subsubsection*{Впорядкувати масив методом обмінного сортування по спадаючій}
+
+\paragraph*{Виконується функцією \hyperlink{main_8c_afde07648040c326129670547738a0c86}{task1()}}
+
+Виконується введення розміру масиву. Вибирається спосіб його заповнення функцією \hyperlink{main_8c_a59de3507f445b58bf9f31f121f1dd53e}{rand\+\_\+fill\+\_\+1d()} або \hyperlink{main_8c_a754c278f22020e77d09cda28d2e18f4e}{usr\+\_\+fill\+\_\+1d()}. Вибір здійснюється оператором {\ttfamily switch} ~\newline
+ Здійснюється вивід масиву \hyperlink{main_8c_a954f537fd937eb56b052549a1e3b4be4}{print\+\_\+arr\+\_\+minmax()}~\newline
+Виконується сортування \hyperlink{main_8c_a6d948aa7c7e64009c7446e8010368f74}{swaping\+\_\+sort()}~\newline
+Здійснюється вивід відсортованого масиву \hyperlink{main_8c_afa0f71f47bb3b8336377d2c3972613ff}{print\+\_\+arr\+\_\+1d()}~\newline
+Звільняється оперативна пам\textquotesingle{}ять від масиву {\ttfamily arr} \subsubsection*{Завдання 2. Дано матрицю з цілих чисел. Зібрати всі нульові елементи вище за головну діагональ (заповнення здійснювати паралельно головній діагоналі).}
+
+\paragraph*{Виконується функцією \hyperlink{main_8c_afb35a54f26606b4808ac0a8d9ad55433}{task2()}}
+
+Виконується введення розміру масиву, виділення пам\textquotesingle{}яті. Вибирається спосіб його заповнення функцією \hyperlink{main_8c_a3dd7ddf4e8efd6ad27441f244b6ac232}{rand\+\_\+fill\+\_\+2d()} або \hyperlink{main_8c_abfbfcf6cfc51d4db85271a06ec30e7d3}{usr\+\_\+fill\+\_\+2d()}. Вибір здійснюється оператором {\ttfamily switch} ~\newline
+ Здійснюється вивід масиву \hyperlink{main_8c_a48d1fca4591b9e83a3cbc3bce60598ee}{print\+\_\+arr\+\_\+2d\+\_\+redzero()}~\newline
+Здійснюється переміщення нулів паралельно головній діагоналі \hyperlink{main_8c_ad9267778aed4908cc85b34675cb83a50}{zeros\+\_\+to\+\_\+begin\+\_\+2d()}~\newline
+Здійснюється вивід масиву \hyperlink{main_8c_a48d1fca4591b9e83a3cbc3bce60598ee}{print\+\_\+arr\+\_\+2d\+\_\+redzero()}. Звільняється пам\textquotesingle{}ять. \paragraph*{Нижче наведений сирцевий код прорами}
+
+
+\begin{DoxyCodeInclude}
+1 \textcolor{preprocessor}{#include <stdio.h>}
+2 \textcolor{preprocessor}{#include <stdlib.h>}
+3 \textcolor{preprocessor}{#include <time.h>}
+4 \textcolor{preprocessor}{#include <string.h>}
+5 \textcolor{preprocessor}{#include <ctype.h>}
+9 \textcolor{preprocessor}{#define clear() printf("\(\backslash\)033[H\(\backslash\)033[J")}
+10 \textcolor{preprocessor}{#define INT\_MIN -2147483648}
+11 \textcolor{preprocessor}{#define INT\_MAX 2147483647}
+12 
+13 \textcolor{keyword}{struct }\hyperlink{structPair__arr}{Pair\_arr}\{
+14     \textcolor{keywordtype}{int} first;
+15     \textcolor{keywordtype}{int} second;
+16 \};
+17 
+23 \textcolor{keywordtype}{char} *\hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(\textcolor{keywordtype}{char} message[]);
+29 \textcolor{keywordtype}{int} \hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\_every\_digit}(\textcolor{keywordtype}{char} *str);
+33 \textcolor{keywordtype}{void} \hyperlink{main_8c_afde07648040c326129670547738a0c86}{task1}();
+37 \textcolor{keywordtype}{void} \hyperlink{main_8c_afb35a54f26606b4808ac0a8d9ad55433}{task2}();
+43 \textcolor{keywordtype}{void} \hyperlink{main_8c_ad126fa7239be97373c96861adc70b1d3}{swap}(\textcolor{keywordtype}{int} *first, \textcolor{keywordtype}{int} *second);
+49 \textcolor{keywordtype}{void} \hyperlink{main_8c_a59de3507f445b58bf9f31f121f1dd53e}{rand\_fill\_1d}(\textcolor{keywordtype}{int} *arr,\textcolor{keywordtype}{int} N);
+55 \textcolor{keywordtype}{void} \hyperlink{main_8c_a3dd7ddf4e8efd6ad27441f244b6ac232}{rand\_fill\_2d}(\textcolor{keywordtype}{int} **arr,\textcolor{keywordtype}{int} N);
+61 \textcolor{keywordtype}{void} \hyperlink{main_8c_afa0f71f47bb3b8336377d2c3972613ff}{print\_arr\_1d}(\textcolor{keywordtype}{int} *arr, \textcolor{keywordtype}{int} N);
+67 \textcolor{keywordtype}{void} \hyperlink{main_8c_a48d1fca4591b9e83a3cbc3bce60598ee}{print\_arr\_2d\_redzero}(\textcolor{keywordtype}{int} **arr, \textcolor{keywordtype}{int} N);
+75 \textcolor{keywordtype}{void} \hyperlink{main_8c_a954f537fd937eb56b052549a1e3b4be4}{print\_arr\_minmax}(\textcolor{keywordtype}{int} *arr, \textcolor{keywordtype}{int} N, \textcolor{keyword}{struct} \hyperlink{structPair__arr}{Pair\_arr} *minmax);
+81 \textcolor{keywordtype}{void} \hyperlink{main_8c_a6d948aa7c7e64009c7446e8010368f74}{swaping\_sort}(\textcolor{keywordtype}{int} *arr, \textcolor{keywordtype}{int} N);
+87 \textcolor{keywordtype}{void} \hyperlink{main_8c_a754c278f22020e77d09cda28d2e18f4e}{usr\_fill\_1d}(\textcolor{keywordtype}{int} *arr, \textcolor{keywordtype}{int} N);
+93 \textcolor{keywordtype}{void} \hyperlink{main_8c_abfbfcf6cfc51d4db85271a06ec30e7d3}{usr\_fill\_2d}(\textcolor{keywordtype}{int} **arr, \textcolor{keywordtype}{int} N);
+101 \textcolor{keywordtype}{void} \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{keywordtype}{char} message[], \textcolor{keywordtype}{int} *number,\textcolor{keywordtype}{int} lwr\_border, \textcolor{keywordtype}{int} hir\_border);
+106 \textcolor{keywordtype}{void} \hyperlink{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}{to\_repeat}(\textcolor{keywordtype}{void} (*func)(\textcolor{keywordtype}{void}));
+114 \textcolor{keywordtype}{int} *\hyperlink{main_8c_a136eda0783a1b3202fbf6330967acec0}{go\_zigzag}(\textcolor{keywordtype}{int} **arr, \textcolor{keywordtype}{int} N, \textcolor{keywordtype}{int} pos);
+120 \textcolor{keywordtype}{void} \hyperlink{main_8c_ad9267778aed4908cc85b34675cb83a50}{zeros\_to\_begin\_2d}(\textcolor{keywordtype}{int} **arr, \textcolor{keywordtype}{int} N);
+121 
+122 \textcolor{keywordtype}{int} main() \{
+123     \textcolor{keywordtype}{int} choice;
+124     \textcolor{keywordflow}{do} \{
+125         clear();
+126         \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Виберіть номер завдання (1, 2):\(\backslash\)n"},
+127                   &choice,
+128                   1,
+129                   2);
+130         \textcolor{keywordflow}{switch} (choice) \{
+131             \textcolor{keywordflow}{case} 1:
+132                 \hyperlink{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}{to\_repeat}(\hyperlink{main_8c_afde07648040c326129670547738a0c86}{task1});
+133                 \textcolor{keywordflow}{break};
+134             \textcolor{keywordflow}{case} 2:
+135                 \hyperlink{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}{to\_repeat}(\hyperlink{main_8c_afb35a54f26606b4808ac0a8d9ad55433}{task2});
+136                 \textcolor{keywordflow}{break};
+137         \}
+138         \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Бажаєте повторно виконати завдання?:\(\backslash\)n"}, &choice, 0, 1);
+139     \}\textcolor{keywordflow}{while} (choice);
+140 
+141     \textcolor{keywordflow}{return} 0;
+142 \}
+143 
+144 \textcolor{keywordtype}{int} \hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\_every\_digit}(\textcolor{keywordtype}{char} *str)\{\textcolor{comment}{//uhh some potentially buggy function}
+150 \textcolor{comment}{}    \textcolor{keywordtype}{int} len = strlen(str);
+151     \textcolor{keywordflow}{if} (len>2 && (str[0] != \textcolor{charliteral}{'-'}) && ((!isdigit(str[0]))||len>11))\{
+152         \textcolor{keywordflow}{return} 0;\textcolor{comment}{//додатнє число більше 11 знаків або не з знаком - на початку}
+153     \}
+154     \textcolor{keywordflow}{if} ((str[0] == \textcolor{charliteral}{'-'}) && (len>12))\{
+155         \textcolor{keywordflow}{return} 0;\textcolor{comment}{//від'ємне число більше 11 знаків}
+156     \}
+157     \textcolor{keywordflow}{if} (len == 2 && !isdigit(str[0]))\{
+158         \textcolor{keywordflow}{return} 0;\textcolor{comment}{//не одна цифра}
+159     \}
+160     \textcolor{keywordflow}{if} (len==1)\{
+161         \textcolor{keywordflow}{return} 0;\textcolor{comment}{// читаєм \(\backslash\)n}
+162     \}
+163     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < len-1; ++i) \{
+164         \textcolor{keywordflow}{if} (!isdigit(str[i]))\{
+165             \textcolor{keywordflow}{return} 0;\textcolor{comment}{//будь-який знак - не цифра}
+166         \}
+167     \}
+168     \textcolor{keywordflow}{return} 1;
+169 \}
+170 
+171 \textcolor{keywordtype}{char} *\hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(\textcolor{keywordtype}{char} message[])\{
+172     \textcolor{keywordtype}{char} *usr\_input = (\textcolor{keywordtype}{char}*) malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})*254);
+173     printf(\textcolor{stringliteral}{"%s"}, message); \textcolor{comment}{// Виводимо повідомлення користувачу}
+174     fgets(usr\_input, 254, stdin);
+175     \textcolor{keywordflow}{return} usr\_input;
+176 \}
+177 
+178 \textcolor{keywordtype}{void} \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{keywordtype}{char} message[], \textcolor{keywordtype}{int} *number,\textcolor{keywordtype}{int} lwr\_border, \textcolor{keywordtype}{int} hir\_border)\{
+186     \textcolor{keywordflow}{if} (lwr\_border == hir\_border)\{
+187         lwr\_border = INT\_MIN;
+188         hir\_border = INT\_MAX;
+189     \}
+190     \textcolor{keywordtype}{char} *usr\_input = \hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(message);
+191     \textcolor{keywordflow}{while} (!\hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\_every\_digit}(usr\_input) || atoi(usr\_input) < lwr\_border || atoi(usr\_input) > 
+      hir\_border)\{
+192         printf(\textcolor{stringliteral}{"ERROR INPUT\(\backslash\)n"});
+193         usr\_input = \hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(message);
+194     \}
+195     *number = atoi(usr\_input);
+196 \}
+197 
+198 \textcolor{keywordtype}{void} \hyperlink{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}{to\_repeat}(\textcolor{keywordtype}{void} (*func)(\textcolor{keywordtype}{void}))\{
+199     \textcolor{keywordtype}{int} choice;
+200     \textcolor{keywordflow}{do}\{
+201         (*func)();
+202         \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Бажаєте продовжити виконання цього завдання?:\(\backslash\)n"},&choice,0,1);
+203     \}\textcolor{keywordflow}{while} (choice);
+204 \}
+205 
+206 \textcolor{keywordtype}{void} \hyperlink{main_8c_afa0f71f47bb3b8336377d2c3972613ff}{print\_arr\_1d}(\textcolor{keywordtype}{int} *arr, \textcolor{keywordtype}{int} N)\{
+207     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+208         printf(\textcolor{stringliteral}{"%d "},arr[i]);
+209     \}
+210     putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+211 \}
+212 
+213 \textcolor{keywordtype}{void} \hyperlink{main_8c_a48d1fca4591b9e83a3cbc3bce60598ee}{print\_arr\_2d\_redzero}(\textcolor{keywordtype}{int} **arr, \textcolor{keywordtype}{int} N)\{
+214     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+215         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < N; ++j) \{
+216             printf(\textcolor{stringliteral}{"\(\backslash\)t \(\backslash\)t"});
+217             \textcolor{keywordflow}{if} (arr[i][j]>=0) \{
+218                 printf(\textcolor{stringliteral}{" "});
+219             \}
+220             \textcolor{keywordflow}{if} (arr[i][j]==0)\{
+221                 printf(\textcolor{stringliteral}{"\(\backslash\)x1b[6;30;41m"});
+222                 printf(\textcolor{stringliteral}{"%d"},arr[i][j]);
+223                 printf(\textcolor{stringliteral}{"\(\backslash\)x1b[0m "});
+224             \} \textcolor{keywordflow}{else}\{
+225                 printf(\textcolor{stringliteral}{"%d"},arr[i][j]);
+226             \}
+227         \}
+228         putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+229     \}
+230 \}
+231 
+232 \textcolor{keywordtype}{void} \hyperlink{main_8c_a59de3507f445b58bf9f31f121f1dd53e}{rand\_fill\_1d}(\textcolor{keywordtype}{int} *arr,\textcolor{keywordtype}{int} N)\{
+237     srand(time(NULL));
+238     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i)\{
+239         arr[i] = rand()%20001-10000;
+240     \}
+241 \}
+242 
+243 \textcolor{keywordtype}{void} \hyperlink{main_8c_a3dd7ddf4e8efd6ad27441f244b6ac232}{rand\_fill\_2d}(\textcolor{keywordtype}{int} **arr,\textcolor{keywordtype}{int} N)\{
+248     srand(time(NULL));
+249     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i)\{
+250         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < N; ++j) \{
+251             arr[i][j] = rand()%21-10;
+252         \}
+253     \}
+254 \}
+255 
+256 \textcolor{keywordtype}{void} \hyperlink{main_8c_a754c278f22020e77d09cda28d2e18f4e}{usr\_fill\_1d}(\textcolor{keywordtype}{int} *arr, \textcolor{keywordtype}{int} N)\{
+260     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+261         printf(\textcolor{stringliteral}{"%i"},i);
+262         \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{": "}, &arr[i], 0, 0);
+263     \}
+264 \}
+265 
+266 \textcolor{keywordtype}{void} \hyperlink{main_8c_abfbfcf6cfc51d4db85271a06ec30e7d3}{usr\_fill\_2d}(\textcolor{keywordtype}{int} **arr, \textcolor{keywordtype}{int} N)\{
+270     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+271         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < N; ++j) \{
+272             printf(\textcolor{stringliteral}{"[%i,%i]"},i,j);
+273             \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{": "}, &arr[i][j], 0, 0);
+274         \}
+275     \}
+276 \}
+277 
+278 \textcolor{keyword}{struct }\hyperlink{structPair__arr}{Pair\_arr} *find\_minmax(\textcolor{keywordtype}{int} *arr, \textcolor{keywordtype}{int} N)\{
+279     \textcolor{keyword}{struct }\hyperlink{structPair__arr}{Pair\_arr} *minmax = (\textcolor{keyword}{struct }\hyperlink{structPair__arr}{Pair\_arr}*)malloc(2*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*2);
+280     minmax->first = INT\_MAX;
+281     minmax->second = INT\_MIN;
+282     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+283         \textcolor{keywordflow}{if} (arr[i] > minmax->second) \{
+284             minmax->second = arr[i];
+285         \}
+286         \textcolor{keywordflow}{if} (arr[i] < minmax->first)\{
+287             minmax->first = arr[i];
+288         \}
+289     \}
+290     \textcolor{keywordflow}{return} minmax;
+291 \}
+292 
+293 \textcolor{keywordtype}{void} \hyperlink{main_8c_a954f537fd937eb56b052549a1e3b4be4}{print\_arr\_minmax}(\textcolor{keywordtype}{int} *arr, \textcolor{keywordtype}{int} N, \textcolor{keyword}{struct} \hyperlink{structPair__arr}{Pair\_arr} *minmax)\{
+299     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+300         \textcolor{keywordflow}{if} (arr[i]==minmax->first)\{
+301             printf(\textcolor{stringliteral}{"\(\backslash\)x1b[6;30;41m"});
+302             printf(\textcolor{stringliteral}{"%d"},arr[i]);
+303             printf(\textcolor{stringliteral}{"\(\backslash\)x1b[0m "});
+304         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (arr[i]==minmax->second)\{
+305             printf(\textcolor{stringliteral}{"\(\backslash\)x1b[6;30;42m"});
+306             printf(\textcolor{stringliteral}{"%d"},arr[i]);
+307             printf(\textcolor{stringliteral}{"\(\backslash\)x1b[0m "});
+308         \} \textcolor{keywordflow}{else} \{
+309             printf(\textcolor{stringliteral}{"%d "},arr[i]);
+310         \}
+311     \}
+312     putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+313     printf(\textcolor{stringliteral}{"Мінімальний елемент %d\(\backslash\)n"}
+314            \textcolor{stringliteral}{"Максимальний елемент %d\(\backslash\)n"},
+315            minmax->first,
+316            minmax->second);
+317     printf(\textcolor{stringliteral}{"Їх добуток = %d\(\backslash\)n"}, minmax->first*minmax->second);
+318 \}
+319 
+320 \textcolor{keywordtype}{void} \hyperlink{main_8c_ad126fa7239be97373c96861adc70b1d3}{swap}(\textcolor{keywordtype}{int} *first, \textcolor{keywordtype}{int} *second)\{
+324     \textcolor{keywordtype}{int} temp = *first;
+325     *first = *second;
+326     *second = temp;
+327 \}
+328 
+329 \textcolor{keywordtype}{void} \hyperlink{main_8c_a6d948aa7c7e64009c7446e8010368f74}{swaping\_sort}(\textcolor{keywordtype}{int} *arr, \textcolor{keywordtype}{int} N)\{
+336     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N-1; ++i) \{
+337         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 1; j+i < N; ++j) \{
+338             \textcolor{keywordflow}{if} (arr[i]<arr[j+i])\{
+339                 \hyperlink{main_8c_ad126fa7239be97373c96861adc70b1d3}{swap}(&arr[i],&arr[j+i]);
+340             \}
+341         \}
+342     \}
+343 \}
+344 
+345 \textcolor{keywordtype}{int} *\hyperlink{main_8c_a136eda0783a1b3202fbf6330967acec0}{go\_zigzag}(\textcolor{keywordtype}{int} **arr, \textcolor{keywordtype}{int} N, \textcolor{keywordtype}{int} pos)\{
+346     \textcolor{comment}{// pos [0;N^2]}
+347     \textcolor{keywordtype}{int} i,j,inner\_i,inner\_j,k = 0;
+348     i = 0;
+349     \textcolor{keywordflow}{while} (i < 2*N-1)\{
+350         \textcolor{keywordflow}{if} (i-N < 0)\{\textcolor{comment}{//зміна індексу і відносно головної діагоналі}
+351             inner\_i = 0;
+352         \} \textcolor{keywordflow}{else}\{
+353             inner\_i = i-(N-1);
+354         \}
+355         j = (N-1)-i+inner\_i;
+356         inner\_j = 0;
+357         \textcolor{keywordflow}{while} (j<N-inner\_i)\{
+358             \textcolor{keywordflow}{if} (k == pos)\{
+359                 \textcolor{keywordflow}{return} &arr[inner\_i+inner\_j][j];
+360             \}
+361             inner\_j++;
+362             j++;
+363             k++;
+364         \}
+365         i++;
+366     \}
+367 \}
+368 
+369 \textcolor{keywordtype}{void} \hyperlink{main_8c_ad9267778aed4908cc85b34675cb83a50}{zeros\_to\_begin\_2d}(\textcolor{keywordtype}{int} **arr, \textcolor{keywordtype}{int} N)\{
+373     \textcolor{keywordtype}{int} pos\_0;
+374     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N*N; ++i) \{
+375         \textcolor{keywordflow}{if} (*\hyperlink{main_8c_a136eda0783a1b3202fbf6330967acec0}{go\_zigzag}(arr,N,i) != 0)\{
+376             pos\_0 = i+1;
+377             \textcolor{keywordflow}{while} (pos\_0<N*N && *\hyperlink{main_8c_a136eda0783a1b3202fbf6330967acec0}{go\_zigzag}(arr,N,pos\_0)!=0)\{
+378                 pos\_0++;
+379             \}
+380             \textcolor{keywordflow}{if} (pos\_0==N*N)\{
+381                 \textcolor{keywordflow}{return};
+382             \}
+383             \hyperlink{main_8c_ad126fa7239be97373c96861adc70b1d3}{swap}(\hyperlink{main_8c_a136eda0783a1b3202fbf6330967acec0}{go\_zigzag}(arr,N,pos\_0),\hyperlink{main_8c_a136eda0783a1b3202fbf6330967acec0}{go\_zigzag}(arr,N,i));
+384         \}
+385     \}
+386 \}
+387 
+388 \textcolor{keywordtype}{void} \hyperlink{main_8c_afde07648040c326129670547738a0c86}{task1}()\{
+389     \textcolor{keywordtype}{int} N; \textcolor{comment}{// array size}
+390     \textcolor{keywordtype}{int} choice;
+391     clear();
+392     \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Введіть розмір масива (1-348389376)\(\backslash\)n"}, &N, 1, 348389376);
+393     \textcolor{keywordtype}{int} *arr = (\textcolor{keywordtype}{int}*)malloc(N* \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+394     \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Виберіть спосіб заповнення масиву:\(\backslash\)n"}
+395               \textcolor{stringliteral}{"1 - автоматично випадковими числами\(\backslash\)n"}
+396               \textcolor{stringliteral}{"2 - власноруч\(\backslash\)n"},
+397               &choice,
+398               1,
+399               2);
+400     \textcolor{keywordflow}{switch} (choice)\{
+401         \textcolor{keywordflow}{case} 1: \hyperlink{main_8c_a59de3507f445b58bf9f31f121f1dd53e}{rand\_fill\_1d}(arr,N);
+402             \textcolor{keywordflow}{break};
+403         \textcolor{keywordflow}{case} 2: \hyperlink{main_8c_a754c278f22020e77d09cda28d2e18f4e}{usr\_fill\_1d}(arr,N);
+404             \textcolor{keywordflow}{break};
+405     \}
+406     \hyperlink{main_8c_a954f537fd937eb56b052549a1e3b4be4}{print\_arr\_minmax}(arr,N,find\_minmax(arr,N));
+407     printf(\textcolor{stringliteral}{"\(\backslash\)nВиконується сортування...\(\backslash\)n"});
+408     \hyperlink{main_8c_a6d948aa7c7e64009c7446e8010368f74}{swaping\_sort}(arr,N);
+409     printf(\textcolor{stringliteral}{"Відсортований масив має вигляд:\(\backslash\)n"});
+410     \hyperlink{main_8c_afa0f71f47bb3b8336377d2c3972613ff}{print\_arr\_1d}(arr,N);
+411     free(arr);
+412 \}
+413 
+414 \textcolor{keywordtype}{void} \hyperlink{main_8c_afb35a54f26606b4808ac0a8d9ad55433}{task2}()\{
+415     \textcolor{keywordtype}{int} N;\textcolor{comment}{// array dimensions}
+416     \textcolor{keywordtype}{int} choice;
+417     clear();
+418     \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Введіть розмірність масива NxN (1-18665)\(\backslash\)n"}, &N, 1, 18665);
+419     \textcolor{keywordtype}{int} **arr = (\textcolor{keywordtype}{int}**)malloc(N*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int} *));
+420     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+421         arr[i] = (\textcolor{keywordtype}{int} *)malloc(N * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+422     \}
+423     \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Виберіть спосіб заповнення масиву:\(\backslash\)n"}
+424               \textcolor{stringliteral}{"1 - автоматично випадковими числами\(\backslash\)n"}
+425               \textcolor{stringliteral}{"2 - власноруч\(\backslash\)n"},
+426               &choice,
+427               1,
+428               2);
+429     \textcolor{keywordflow}{switch} (choice)\{
+430         \textcolor{keywordflow}{case} 1: \hyperlink{main_8c_a3dd7ddf4e8efd6ad27441f244b6ac232}{rand\_fill\_2d}(arr,N);
+431             \textcolor{keywordflow}{break};
+432         \textcolor{keywordflow}{case} 2: \hyperlink{main_8c_abfbfcf6cfc51d4db85271a06ec30e7d3}{usr\_fill\_2d}(arr,N);
+433             \textcolor{keywordflow}{break};
+434     \}
+435     printf(\textcolor{stringliteral}{"Масив має вигляд:\(\backslash\)n"});
+436     \hyperlink{main_8c_a48d1fca4591b9e83a3cbc3bce60598ee}{print\_arr\_2d\_redzero}(arr,N);
+437     printf(\textcolor{stringliteral}{"Переміщуємо нулі паралельно головній діагоналі...\(\backslash\)n"});
+438     \hyperlink{main_8c_ad9267778aed4908cc85b34675cb83a50}{zeros\_to\_begin\_2d}(arr, N);
+439     printf(\textcolor{stringliteral}{"Масив тепер має вигляд:\(\backslash\)n"});
+440     \hyperlink{main_8c_a48d1fca4591b9e83a3cbc3bce60598ee}{print\_arr\_2d\_redzero}(arr,N);
+441     \textcolor{comment}{//free memory}
+442     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+443         free(arr[i]);
+444     \}
+445     free(arr);
+446     \textcolor{comment}{//}
+447 \}
+\end{DoxyCodeInclude}
+ 

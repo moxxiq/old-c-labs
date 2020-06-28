@@ -1,0 +1,3 @@
+/home/mox/KPI/C/Labs/№8/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/mox/KPI/C/Labs/№8/cmake-build-debug/CMakeFiles/8.dir
+/home/mox/KPI/C/Labs/№8/cmake-build-debug/CMakeFiles/edit_cache.dir

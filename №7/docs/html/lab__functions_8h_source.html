@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ЛАБОРАТОРНА РОБОТА №7: Текст програми lab_functions.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ЛАБОРАТОРНА РОБОТА №7
+   </div>
+   <div id="projectbrief">ОДНОЗВ’ЯЗНІ СПИСКИ</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Створено системою Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Пошук');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Пошук');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">lab_functions.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="lab__functions_8h.html">Див. документацію.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by mox on 22.03.19.</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef INC_5_LAB_FUNCTIONS_H</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define INC_5_LAB_FUNCTIONS_H</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define clear() printf(&quot;\033[H\033[J&quot;)</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="lab__functions_8h.html#a53c0a255092a68903d4627229c37d7d0">message_input</a>(<span class="keywordtype">char</span> message[]);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">int</span> <a class="code" href="lab__functions_8h.html#a9594b83ee908d195f5ff508da5c23c58">is_every_digit</a>(<span class="keywordtype">char</span> *str);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">int</span> <a class="code" href="lab__functions_8h.html#a5d7849c249859dd438a37f1e6e5adf70">is_every_digit_double</a>(<span class="keywordtype">char</span> *str);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> <a class="code" href="lab__functions_8h.html#a6a19346eb87fb7efb3d83fff17c12a74">to_repeat</a>(<span class="keywordtype">void</span> (*func)(), <span class="keywordtype">char</span> message[]);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="lab__functions_8h.html#a6f453bc035d85e967bd5032eca31a155">input_int</a>(<span class="keywordtype">char</span> message[], <span class="keywordtype">int</span> *number,<span class="keywordtype">int</span> lwr_border, <span class="keywordtype">int</span> hir_border);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">int</span> <a class="code" href="lab__functions_8h.html#a45e2d75e7b00ac6711c815431d42bcfd">get_int</a>(<span class="keywordtype">char</span> message[], <span class="keywordtype">int</span> lwr_border, <span class="keywordtype">int</span> hir_border);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">void</span> <a class="code" href="lab__functions_8h.html#ac835db5eadbfefce4a51eae30806a486">input_long_double</a>(<span class="keywordtype">char</span> message[], <span class="keywordtype">long</span> <span class="keywordtype">double</span> *number,<span class="keywordtype">long</span> <span class="keywordtype">double</span> lwr_border, <span class="keywordtype">long</span> <span class="keywordtype">double</span> hir_border);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> <a class="code" href="lab__functions_8h.html#abaf5273c5f1e513178421be829426a4f">swap_int</a>(<span class="keywordtype">int</span> *first, <span class="keywordtype">int</span> *second);</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">void</span> <a class="code" href="lab__functions_8h.html#a1c51fdb7c84e94c1f88f8e6838f67499">toupper_chrs</a>(<span class="keywordtype">char</span> str[]);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif //INC_5_LAB_FUNCTIONS_H</span></div><div class="ttc" id="lab__functions_8h_html_a45e2d75e7b00ac6711c815431d42bcfd"><div class="ttname"><a href="lab__functions_8h.html#a45e2d75e7b00ac6711c815431d42bcfd">get_int</a></div><div class="ttdeci">int get_int(char message[], int lwr_border, int hir_border)</div><div class="ttdoc">Фікс input_int для забезпечення &quot;чистої&quot; функції </div><div class="ttdef"><b>Definition:</b> lab_functions.c:85</div></div>
+<div class="ttc" id="lab__functions_8h_html_ac835db5eadbfefce4a51eae30806a486"><div class="ttname"><a href="lab__functions_8h.html#ac835db5eadbfefce4a51eae30806a486">input_long_double</a></div><div class="ttdeci">void input_long_double(char message[], long double *number, long double lwr_border, long double hir_border)</div><div class="ttdoc">Реалізація корректного введення десяткових дійсних чисел користувачем </div></div>
+<div class="ttc" id="lab__functions_8h_html_a6a19346eb87fb7efb3d83fff17c12a74"><div class="ttname"><a href="lab__functions_8h.html#a6a19346eb87fb7efb3d83fff17c12a74">to_repeat</a></div><div class="ttdeci">void to_repeat(void(*func)(), char message[])</div><div class="ttdoc">Функція, що повторює задану їй функцію за бажанням користувача. </div><div class="ttdef"><b>Definition:</b> lab_functions.c:93</div></div>
+<div class="ttc" id="lab__functions_8h_html_a6f453bc035d85e967bd5032eca31a155"><div class="ttname"><a href="lab__functions_8h.html#a6f453bc035d85e967bd5032eca31a155">input_int</a></div><div class="ttdeci">void input_int(char message[], int *number, int lwr_border, int hir_border)</div><div class="ttdoc">Реалізація корректного введення цілих десяткових чисел користувачем </div><div class="ttdef"><b>Definition:</b> lab_functions.c:69</div></div>
+<div class="ttc" id="lab__functions_8h_html_a5d7849c249859dd438a37f1e6e5adf70"><div class="ttname"><a href="lab__functions_8h.html#a5d7849c249859dd438a37f1e6e5adf70">is_every_digit_double</a></div><div class="ttdeci">int is_every_digit_double(char *str)</div><div class="ttdoc">Перевірка чи кожне введене число є дробовим (від&amp;#39;ємним також) </div><div class="ttdef"><b>Definition:</b> lab_functions.c:47</div></div>
+<div class="ttc" id="lab__functions_8h_html_a9594b83ee908d195f5ff508da5c23c58"><div class="ttname"><a href="lab__functions_8h.html#a9594b83ee908d195f5ff508da5c23c58">is_every_digit</a></div><div class="ttdeci">int is_every_digit(char *str)</div><div class="ttdoc">Перевірка чи кожне введене число є десятковим (від&amp;#39;ємним також) </div><div class="ttdef"><b>Definition:</b> lab_functions.c:31</div></div>
+<div class="ttc" id="lab__functions_8h_html_abaf5273c5f1e513178421be829426a4f"><div class="ttname"><a href="lab__functions_8h.html#abaf5273c5f1e513178421be829426a4f">swap_int</a></div><div class="ttdeci">void swap_int(int *first, int *second)</div><div class="ttdoc">Обмін двох аргументів </div><div class="ttdef"><b>Definition:</b> lab_functions.c:104</div></div>
+<div class="ttc" id="lab__functions_8h_html_a53c0a255092a68903d4627229c37d7d0"><div class="ttname"><a href="lab__functions_8h.html#a53c0a255092a68903d4627229c37d7d0">message_input</a></div><div class="ttdeci">char * message_input(char message[])</div><div class="ttdoc">Отримує від користувача ввід, перед яким виводить повідомлення </div><div class="ttdef"><b>Definition:</b> lab_functions.c:17</div></div>
+<div class="ttc" id="lab__functions_8h_html_a1c51fdb7c84e94c1f88f8e6838f67499"><div class="ttname"><a href="lab__functions_8h.html#a1c51fdb7c84e94c1f88f8e6838f67499">toupper_chrs</a></div><div class="ttdeci">void toupper_chrs(char str[])</div><div class="ttdoc">toupper to every char in str </div><div class="ttdef"><b>Definition:</b> lab_functions.c:112</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Створено системою &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,612 @@
+\begin{center} \subsection*{Варіант №4}\end{center} 
+
+\begin{center} \end{center}  Виконав студент групи КМ-\/82\+: {\bfseries Бубела Дмитро}~\newline
+ \subsubsection*{Завдання\+:}
+
+Завдання складається з двох частин\+:~\newline
+програмування роботи з текстовим доступом до файлу; програмування роботи з бінарним доступом до файлу. Для обох програм повинно бути підготовлено вихідні файли\+: для текстового файлу — не менше за 10 рядків; для бінарного файлу — не менше за 10 структур, що відповідають конкретному варіанту.~\newline
+Для роботи з файлами повинно бути розроблено меню, пункти якого реалізовано тільки за допомогою функцій. Пункти меню повинні бути такі\+:~\newline
+створення нового файлу;~\newline
+відкриття файлу;~\newline
+перегляд файлу (перегортання вперед, назад, у кінець файлу, у початок файлу);~\newline
+корекція файлу — дозапис, виправлення, видалення даних;~\newline
+збереження файлу;~\newline
+\paragraph*{Основні функції знаходяться в файлі \hyperlink{main_8c}{main.\+c}.}
+
+Для реалізації дій з файлами використовується проміжний фай-\/кеш. Дані знаходяться у ньому допоки користувач не збереже їх деінде.~\newline
+Також для зручної роботи з функціями створене меню та функція для створення меню \hyperlink{lab__functions_8h_a5f3f744789213f961f3c8ec1cc482af7}{menu()} \paragraph*{Нижче наведений сирцевий код прорами}
+
+
+\begin{DoxyCodeInclude}
+1 \textcolor{preprocessor}{#include <stdio.h>}
+3 \textcolor{preprocessor}{#include <stdlib.h>}
+4 \textcolor{preprocessor}{#include <string.h>}
+5 \textcolor{preprocessor}{#include <values.h>}
+6 \textcolor{preprocessor}{#include <stdbool.h>}
+7 \textcolor{preprocessor}{#include "\hyperlink{lab__functions_8h}{lab\_functions.h}"}
+8 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\hyperlink{structpatient__struct}{patient\_struct}\{
+9     \textcolor{keywordtype}{char} \hyperlink{structpatient__struct_a1748953b20361f0e24b467da0ef4a41c}{SNF}[63];
+10     \textcolor{keywordtype}{char} \hyperlink{structpatient__struct_a74e029a3ea6a1d9896abb9477f53dcf8}{addres}[63];
+11     \textcolor{keywordtype}{int} \hyperlink{structpatient__struct_a06e0e04046e9434904f4e53bb8583332}{card\_numer};
+12     \_Bool \hyperlink{structpatient__struct_ad2475b69abfa9243c2700d63b63aa79b}{is\_removed};
+13 \}\hyperlink{structpatient__struct}{patient};
+14 \textcolor{comment}{// global vars}
+15 \textcolor{keywordtype}{char} TEMP\_FILENAME[] = \textcolor{stringliteral}{".temp\_cache.txt"};
+16 \textcolor{keywordtype}{bool} is\_opened\_text = \textcolor{keyword}{false};
+17 \textcolor{keywordtype}{bool} is\_opened\_bin = \textcolor{keyword}{false};
+18 \textcolor{keywordtype}{char} *current\_file\_name = NULL;
+19 
+25 \textcolor{keywordtype}{void} \hyperlink{main_8c_abbf86d13b1ad7b2b758cea501fa0261a}{print\_patient}(\hyperlink{structpatient__struct}{patient} card, \_Bool is\_not\_visible)\{
+26     \textcolor{keywordflow}{if} (is\_not\_visible)\{
+27         \textcolor{keywordflow}{return};
+28     \}
+29     printf(\textcolor{stringliteral}{" \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\(\backslash\)n"});
+30     printf(\textcolor{stringliteral}{"|        ПІБ: %-62s\(\backslash\)n"},card.\hyperlink{structpatient__struct_a1748953b20361f0e24b467da0ef4a41c}{SNF});
+31     printf(\textcolor{stringliteral}{"|     Адреса: %-62s\(\backslash\)n"},card.\hyperlink{structpatient__struct_a74e029a3ea6a1d9896abb9477f53dcf8}{addres});
+32     printf(\textcolor{stringliteral}{"|Номер карти: %-62d\(\backslash\)n"},card.\hyperlink{structpatient__struct_a06e0e04046e9434904f4e53bb8583332}{card\_numer});
+33     printf(\textcolor{stringliteral}{" ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\(\backslash\)n"});
+34 \}
+40 \textcolor{keywordtype}{int} \hyperlink{main_8c_a3d170322fbad052da4a3999178a2f5ea}{remove\_by\_num}()\{
+41     FILE *input = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"rb"});
+42     \textcolor{keywordtype}{int} N;
+43     \textcolor{keywordflow}{if} (!fread(&N, \textcolor{keyword}{sizeof}(N), 1, input))\{
+44         printf(\textcolor{stringliteral}{"Помилка читання файлу\(\backslash\)n"});
+45         \textcolor{keywordflow}{return} 0;
+46     \}
+47     \hyperlink{structpatient__struct}{patient} *cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*N);
+48     fread(cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, input);
+49     fclose(input);
+50     \textcolor{keywordtype}{int} remove\_number;
+51     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Введіть номер карти, яку потрібно видалити\(\backslash\)n"}, &remove\_number, 0, INT\_MAX);
+52 
+53     FILE *output = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"wb"});
+54     \textcolor{keywordflow}{if} (!output)\{
+55         printf(\textcolor{stringliteral}{"ERROR opening destination file (can be .temp\_cache.txt)\(\backslash\)n"});
+56         \textcolor{keywordflow}{return} 0;
+57     \}
+58     fwrite(&N, \textcolor{keyword}{sizeof}(N),1,output);
+59     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+60         \textcolor{keywordflow}{if} (cards[i].\hyperlink{structpatient__struct_a06e0e04046e9434904f4e53bb8583332}{card\_numer} == remove\_number)\{
+61             cards[i].\hyperlink{structpatient__struct_ad2475b69abfa9243c2700d63b63aa79b}{is\_removed} = (\_Bool)1;
+62             printf(\textcolor{stringliteral}{"Карта \(\backslash\)"%s\(\backslash\)" видалена\(\backslash\)n"}, cards[i].\hyperlink{structpatient__struct_a1748953b20361f0e24b467da0ef4a41c}{SNF});
+63         \}
+64     \}
+65     fwrite(cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, output);
+66     free(cards);
+67     fclose(output);
+68     \textcolor{keywordflow}{return} 0;
+69 \}
+74 \hyperlink{structpatient__struct}{patient} \hyperlink{main_8c_a582ffa97511f52032c2d36314db2a774}{patient\_usr\_fill}()\{
+75     \hyperlink{structpatient__struct}{patient} card;
+76     printf(\textcolor{stringliteral}{"|        ПІБ: "});
+77     fgets(card.\hyperlink{structpatient__struct_a1748953b20361f0e24b467da0ef4a41c}{SNF}, 62, stdin);
+78     card.\hyperlink{structpatient__struct_a1748953b20361f0e24b467da0ef4a41c}{SNF}[strlen(card.\hyperlink{structpatient__struct_a1748953b20361f0e24b467da0ef4a41c}{SNF})-1] = \textcolor{charliteral}{'\(\backslash\)0'};
+79     printf(\textcolor{stringliteral}{"|     Адреса: "});
+80     fgets(card.\hyperlink{structpatient__struct_a74e029a3ea6a1d9896abb9477f53dcf8}{addres}, 62, stdin);
+81     card.\hyperlink{structpatient__struct_a74e029a3ea6a1d9896abb9477f53dcf8}{addres}[strlen(card.\hyperlink{structpatient__struct_a74e029a3ea6a1d9896abb9477f53dcf8}{addres})-1] = \textcolor{charliteral}{'\(\backslash\)0'};
+82     card.\hyperlink{structpatient__struct_a06e0e04046e9434904f4e53bb8583332}{card\_numer} = \hyperlink{lab__functions_8h_a45e2d75e7b00ac6711c815431d42bcfd}{get\_int}(\textcolor{stringliteral}{"|Номер карти: "},0, INT\_MAX);
+83     card.\hyperlink{structpatient__struct_ad2475b69abfa9243c2700d63b63aa79b}{is\_removed} = (\_Bool)0;
+84     \textcolor{keywordflow}{return} card;
+85 \}
+91 \textcolor{keywordtype}{char} *\hyperlink{main_8c_a7b977e9bdffd23deea96ed66e437ba5e}{symbol\_ending}(\textcolor{keywordtype}{int} i)\{
+92     \textcolor{keywordtype}{char} *symb;
+93     \textcolor{keywordflow}{if} (i%100>10 && i%100<21)\{
+94         symb = \textcolor{stringliteral}{"символів"};
+95     \} \textcolor{keywordflow}{else}\{
+96         \textcolor{keywordflow}{switch} (i%10)\{
+97             \textcolor{keywordflow}{case} 1:
+98                 symb = \textcolor{stringliteral}{"символ"};
+99                 \textcolor{keywordflow}{break};
+100             \textcolor{keywordflow}{case} 2:
+101             \textcolor{keywordflow}{case} 3:
+102             \textcolor{keywordflow}{case} 4:
+103                 symb = \textcolor{stringliteral}{"символа"};
+104                 \textcolor{keywordflow}{break};
+105             \textcolor{keywordflow}{default}:
+106                 symb = \textcolor{stringliteral}{"символів"};
+107 
+108         \}
+109     \}
+110     \textcolor{keywordflow}{return} symb;
+111 \}
+118 \textcolor{keywordtype}{int} \hyperlink{main_8c_a547313220292d7be671b208b68ab1d94}{char\_number}()\{
+119     \textcolor{keywordflow}{if} (is\_opened\_text)\{
+120         FILE *F2;
+121         \textcolor{keywordflow}{if} (!(F2 = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"r"})))\{
+122             printf(\textcolor{stringliteral}{"Помилка відкриття!\(\backslash\)n"});
+123             \textcolor{keywordflow}{return} 0;
+124         \}
+125         \textcolor{keywordtype}{int} i = 0; \textcolor{comment}{//chars to the end}
+126         \textcolor{keywordtype}{int} seek\_spaces = 0;
+127         \textcolor{keywordtype}{char} tmp\_c;
+128         \textcolor{keywordflow}{while} (!fseek(F2,-seek\_spaces-1, SEEK\_END))\{
+129             tmp\_c = fgetc(F2);
+130             \textcolor{keywordflow}{if} (tmp\_c == \textcolor{charliteral}{' '} || tmp\_c == \textcolor{charliteral}{'\(\backslash\)n'}) \{
+131                 ++seek\_spaces;
+132             \} \textcolor{keywordflow}{else}\{
+133                 \textcolor{keywordflow}{break};
+134             \}
+135         \}
+136         \textcolor{keywordflow}{while} (!fseek(F2,-i-1-seek\_spaces, SEEK\_END))\{
+137             tmp\_c = fgetc(F2);
+138             \textcolor{keywordflow}{if} (tmp\_c != \textcolor{charliteral}{' '} && tmp\_c != \textcolor{charliteral}{'\(\backslash\)n'})\{
+139                 ++i;
+140             \} \textcolor{keywordflow}{else}\{
+141                 \textcolor{keywordflow}{break};
+142             \}
+143         \}
+144         \textcolor{comment}{//sybm}
+145         printf(\textcolor{stringliteral}{"Останнє слово містить %i %s\(\backslash\)n"}, i, \hyperlink{main_8c_a7b977e9bdffd23deea96ed66e437ba5e}{symbol\_ending}(i));
+146         \textcolor{comment}{//TODO:check in empty file}
+147     \} \textcolor{keywordflow}{else}\{
+148         printf(\textcolor{stringliteral}{"Жодного файла не відкрито\(\backslash\)n"});
+149     \}
+150     \textcolor{keywordflow}{return} 0;
+151 \}
+158 \textcolor{keywordtype}{int} \hyperlink{main_8c_af6a0006d3441dec89abb39e7c0070a82}{lines\_taks}()\{
+159     \textcolor{keywordflow}{if} (is\_opened\_text)\{
+160         FILE *F1, *F2;
+161         \textcolor{keywordtype}{char} tmp\_c;
+162         \textcolor{keywordtype}{int} line = 0,N;\textcolor{comment}{// user input N}
+163         \textcolor{keywordflow}{while} (!(F1 = fopen(\hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть шлях файлу з якого копіювати\(\backslash\)n"}), \textcolor{stringliteral}{"r"})))\{
+164             printf(\textcolor{stringliteral}{"Помилка відкриття, повторіть введення!\(\backslash\)n"});
+165         \}
+166         \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Починаючи з якого рядка слід копіювати текст?\(\backslash\)n"}, &N, 1, INT\_MAX);
+167         N--; \textcolor{comment}{// start counting from 0}
+168         \textcolor{keywordflow}{while} ((tmp\_c = fgetc(F1)) != EOF && line<N)\{
+169             \textcolor{keywordflow}{if} (tmp\_c == \textcolor{charliteral}{'\(\backslash\)n'})\{
+170                 line++;
+171             \}
+172         \}
+173         \textcolor{keywordflow}{if} (tmp\_c == EOF)\{
+174             fclose(F1);
+175             \textcolor{keywordflow}{return} 0;
+176         \}
+177         \textcolor{keywordflow}{if} (!(F2 = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"a"})))\{
+178             printf(\textcolor{stringliteral}{"Помилка запису!\(\backslash\)n"});
+179             fclose(F1);
+180             \textcolor{keywordflow}{return} 0;
+181         \}
+182         \textcolor{keywordflow}{while} (tmp\_c != EOF)\{
+183             fputc(tmp\_c,F2);
+184             tmp\_c = fgetc(F1);
+185         \}
+186         fclose(F1);
+187         fclose(F2);
+188     \} \textcolor{keywordflow}{else}\{
+189         printf(\textcolor{stringliteral}{"Жодного файла не відкрито\(\backslash\)n"});
+190     \}
+191     \textcolor{keywordflow}{return} 0;
+192 \}
+198 \textcolor{keywordtype}{void} \hyperlink{main_8c_a2d8c16830ee01715bd19345746ffb070}{tranfer\_all\_text}(\textcolor{keywordtype}{char} *src, \textcolor{keywordtype}{char} *dest)\{
+199     \textcolor{comment}{// HAVE NO INPUT CHECKUPS}
+200     FILE *input = fopen(src, \textcolor{stringliteral}{"r"});
+201     FILE *output = fopen(dest, \textcolor{stringliteral}{"w"});
+202     \textcolor{keywordtype}{char} c;
+203     \textcolor{keywordflow}{if} (!output)\{
+204         printf(\textcolor{stringliteral}{"ERROR opening destination file (can be .temp\_cache.txt)\(\backslash\)n"});
+205         fclose(input);
+206         \textcolor{keywordflow}{return};
+207     \}
+208     \textcolor{keywordflow}{while} ((c = fgetc(input))!= EOF)\{
+209         fputc(c, output);
+210     \}
+211     fclose(input);
+212     fclose(output);
+213 \}
+219 \textcolor{keywordtype}{void} \hyperlink{main_8c_a0225750ccc073d7680cae540419b124a}{tranfer\_all\_bin}(\textcolor{keywordtype}{char} *dest, \textcolor{keywordtype}{char} *src)\{
+220     \textcolor{comment}{// HAVE NO INPUT CHECKUPS}
+221     FILE *input = fopen(src, \textcolor{stringliteral}{"rb"});
+222     FILE *output = fopen(dest, \textcolor{stringliteral}{"wb"});
+223     \textcolor{keywordtype}{int} N;
+224     \textcolor{keywordflow}{if} (!output)\{
+225         printf(\textcolor{stringliteral}{"ERROR opening destination file (can be .temp\_cache.txt)\(\backslash\)n"});
+226         fclose(input);
+227         \textcolor{keywordflow}{return};
+228     \}
+229     \textcolor{keywordflow}{if} (!fread(&N, \textcolor{keyword}{sizeof}(N), 1, input))\{
+230         printf(\textcolor{stringliteral}{"Помилка читання файлу\(\backslash\)n"});
+231         \textcolor{keywordflow}{return};
+232     \}
+233     \hyperlink{structpatient__struct}{patient} *new\_cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*N);
+234     fread(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, input);
+235     fclose(input);
+236     fwrite(&N, \textcolor{keyword}{sizeof}(N),1,output);
+237     fwrite(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, output);
+238     free(new\_cards);
+239     fclose(output);
+240 \}
+245 \textcolor{keywordtype}{int} \hyperlink{main_8c_add4eb0f3cf9c3c78e967cc9f6ff4fd39}{close\_text}()\{
+246     is\_opened\_text = \textcolor{keyword}{false};
+247     \textcolor{keywordflow}{return} 0;
+248 \}
+253 \textcolor{keywordtype}{int} \hyperlink{main_8c_ab1a09599960a374bdce391f8c424b83f}{close\_bin}()\{
+254     is\_opened\_bin = \textcolor{keyword}{false};
+255     \textcolor{keywordflow}{return} 0;
+256 \}
+262 \textcolor{keywordtype}{void} \hyperlink{main_8c_a56f7f6edbc88169ca7785ff69d03396e}{zip\_bin}()\{
+263     FILE *input = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"rb"});
+264     \textcolor{keywordtype}{int} N, M=0;
+265     \textcolor{keywordflow}{if} (!fread(&N, \textcolor{keyword}{sizeof}(N), 1, input))\{
+266         printf(\textcolor{stringliteral}{"Помилка читання файлу\(\backslash\)n"});
+267         \textcolor{keywordflow}{return};
+268     \}
+269     \hyperlink{structpatient__struct}{patient} *cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*N);
+270     fread(cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, input);
+271     fclose(input);
+272     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+273         \textcolor{keywordflow}{if} (!cards[i].\hyperlink{structpatient__struct_ad2475b69abfa9243c2700d63b63aa79b}{is\_removed})\{
+274             ++M;
+275         \}
+276     \}
+277     \hyperlink{structpatient__struct}{patient} *new\_cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*M);
+278     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0, j = 0; i < N; ++i) \{
+279         \textcolor{keywordflow}{if} (!cards[i].\hyperlink{structpatient__struct_ad2475b69abfa9243c2700d63b63aa79b}{is\_removed})\{
+280             new\_cards[j++] = cards[i];
+281         \}
+282     \}
+283     FILE *output = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"wb"});
+284     \textcolor{keywordflow}{if} (!output)\{
+285         printf(\textcolor{stringliteral}{"ERROR opening destination file (can be .temp\_cache.txt)\(\backslash\)n"});
+286         fclose(input);
+287         \textcolor{keywordflow}{return};
+288     \}
+289     fwrite(&M, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),1,output);
+290     fwrite(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), M, output);
+291     free(cards);
+292     free(new\_cards);
+293     fclose(output);
+294 \}
+301 \textcolor{keywordtype}{int} \hyperlink{main_8c_aa933ed08d69becf14df3affc9194e344}{saveas\_text}()\{
+302     \textcolor{keywordflow}{if} (is\_opened\_text)\{
+303         current\_file\_name = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть назву/шлях файла\(\backslash\)n"});
+304         \hyperlink{main_8c_a2d8c16830ee01715bd19345746ffb070}{tranfer\_all\_text}(TEMP\_FILENAME, current\_file\_name);
+305     \} \textcolor{keywordflow}{else}\{
+306         printf(\textcolor{stringliteral}{"Жодного файла не відкрито\(\backslash\)n"});
+307     \}
+308     \textcolor{keywordflow}{return} 0;
+309 \}
+316 \textcolor{keywordtype}{int} \hyperlink{main_8c_af14b38f404742efadc398c51b9830f6c}{saveas\_bin}()\{
+317     \textcolor{keywordtype}{int} is\_zip;
+318     \textcolor{keywordflow}{if} (is\_opened\_bin)\{
+319         current\_file\_name = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть назву/шлях файла\(\backslash\)n"});
+320         \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Зберегти з ущільненням? (0/1)\(\backslash\)n"}, &is\_zip, 0, 1);
+321         \textcolor{keywordflow}{if} (is\_zip)\{
+322             \hyperlink{main_8c_a56f7f6edbc88169ca7785ff69d03396e}{zip\_bin}();
+323         \}
+324         \hyperlink{main_8c_a0225750ccc073d7680cae540419b124a}{tranfer\_all\_bin}(current\_file\_name, TEMP\_FILENAME);
+325     \} \textcolor{keywordflow}{else}\{
+326         printf(\textcolor{stringliteral}{"Жодного файла не відкрито\(\backslash\)n"});
+327     \}
+328     \textcolor{keywordflow}{return} 0;
+329 \}
+336 \textcolor{keywordtype}{int} \hyperlink{main_8c_adcaf3a4fe6a5d1223e9d28382d74c8fe}{save\_text}()\{
+337     \textcolor{keywordflow}{if} (is\_opened\_text)\{
+338         \textcolor{keywordflow}{if} (!(current\_file\_name))\{
+339             current\_file\_name = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть назву/шлях файла\(\backslash\)n"});
+340         \}
+341         \hyperlink{main_8c_a2d8c16830ee01715bd19345746ffb070}{tranfer\_all\_text}(TEMP\_FILENAME, current\_file\_name);
+342     \} \textcolor{keywordflow}{else}\{
+343         printf(\textcolor{stringliteral}{"Жодного файла не відкрито\(\backslash\)n"});
+344     \}
+345     \textcolor{keywordflow}{return} 0;
+346 \}
+353 \textcolor{keywordtype}{int} \hyperlink{main_8c_ade34d6c87a837a130af82aa7b13db885}{save\_bin}()\{
+354     \textcolor{keywordtype}{int} is\_zip;
+355     \textcolor{keywordflow}{if} (is\_opened\_bin)\{
+356         \textcolor{keywordflow}{if} (!(current\_file\_name))\{
+357             current\_file\_name = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть назву/шлях файла\(\backslash\)n"});
+358         \}
+359         \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Зберегти з ущільненням? (0/1)\(\backslash\)n"}, &is\_zip, 0, 1);
+360         \textcolor{keywordflow}{if} (is\_zip)\{
+361             \hyperlink{main_8c_a56f7f6edbc88169ca7785ff69d03396e}{zip\_bin}();
+362         \}
+363         \hyperlink{main_8c_a0225750ccc073d7680cae540419b124a}{tranfer\_all\_bin}(current\_file\_name, TEMP\_FILENAME);
+364     \} \textcolor{keywordflow}{else}\{
+365         printf(\textcolor{stringliteral}{"Жодного файла не відкрито\(\backslash\)n"});
+366     \}
+367     \textcolor{keywordflow}{return} 0;
+368 \}
+373 \textcolor{keywordtype}{int} \hyperlink{main_8c_a69f822b267f0ba6c163047774f960aa8}{clear\_text}()\{
+374     FILE *ofstream = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"w"});
+375     fclose(ofstream);
+376     \textcolor{keywordflow}{return} 0;
+377 \}
+382 \textcolor{keywordtype}{int} \hyperlink{main_8c_ae4a97e0e6277901e41f56dd2cb52aeaa}{clear\_bin}()\{
+383     FILE *ofstream = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"wb"});
+384     fclose(ofstream);
+385     \textcolor{keywordflow}{return} 0;
+386 \}
+392 \textcolor{keywordtype}{int} \hyperlink{main_8c_af649673615b84141d61a31bf103e436a}{clear\_edit\_text}()\{
+393     FILE *ofstream = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"w"});
+394     \textcolor{keywordtype}{char} bufer[255];
+395     fgets(bufer, 254, stdin);
+396     fputs(bufer, ofstream);
+397     fclose(ofstream);
+398     \textcolor{keywordflow}{return} 0;
+399 \}
+405 \textcolor{keywordtype}{int} \hyperlink{main_8c_aca18af51c5eba9da8b5ffabbaf06c01f}{clear\_edit\_bin}()\{
+406     \textcolor{keywordtype}{int} M;
+407     FILE *output = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"wb"});
+408     \textcolor{keywordflow}{if} (!output)\{
+409         printf(\textcolor{stringliteral}{"ERROR opening destination file (can be .temp\_cache.txt)\(\backslash\)n"});
+410         \textcolor{keywordflow}{return} 0;
+411     \}
+412     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Скільки структур буде введено?\(\backslash\)n"}, &M, 0, 255);
+413     fwrite(&M, \textcolor{keyword}{sizeof}(M),1,output);
+414     \hyperlink{structpatient__struct}{patient} *new\_cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*M);
+415     printf(\textcolor{stringliteral}{"Вводьте структури\(\backslash\)n"});
+416     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < M; ++i) \{
+417         new\_cards[i] = \hyperlink{main_8c_a582ffa97511f52032c2d36314db2a774}{patient\_usr\_fill}();
+418         putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+419     \}
+420     fwrite(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), M, output);
+421     free(new\_cards);
+422     fclose(output);
+423     \textcolor{keywordflow}{return} 0;
+424 \}
+430 \textcolor{keywordtype}{int} \hyperlink{main_8c_ab15bf3ab548bb875cba6b67d6d7a4cc4}{add\_front\_bin}()\{
+431     FILE *input = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"rb"});
+432     \textcolor{keywordtype}{int} N,M, temp\_n;
+433     \textcolor{keywordflow}{if} (!fread(&N, \textcolor{keyword}{sizeof}(N), 1, input))\{
+434         printf(\textcolor{stringliteral}{"Помилка читання файлу\(\backslash\)n"});
+435         fclose(input);
+436         \textcolor{keywordflow}{return} 0;
+437     \}
+438     \hyperlink{structpatient__struct}{patient} *cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*N);
+439     fread(cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, input);
+440     fclose(input);
+441     FILE *output = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"wb"});
+442     \textcolor{keywordflow}{if} (!output)\{
+443         printf(\textcolor{stringliteral}{"ERROR opening destination file (can be .temp\_cache.txt)\(\backslash\)n"});
+444         \textcolor{keywordflow}{return} 0;
+445     \}
+446     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Скільки структур буде введено?\(\backslash\)n"}, &M, 0, 255);
+447     temp\_n = N + M;
+448     fwrite(&temp\_n, \textcolor{keyword}{sizeof}(temp\_n),1,output);
+449     \hyperlink{structpatient__struct}{patient} *new\_cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*M);
+450     printf(\textcolor{stringliteral}{"Вводьте структури\(\backslash\)n"});
+451     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < M; ++i) \{
+452         new\_cards[i] = \hyperlink{main_8c_a582ffa97511f52032c2d36314db2a774}{patient\_usr\_fill}();
+453         putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+454     \}
+455     fwrite(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), M, output);
+456     fwrite(cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, output);
+457     free(cards);
+458     free(new\_cards);
+459     fclose(output);
+460     \textcolor{keywordflow}{return} 0;
+461 \}
+467 \textcolor{keywordtype}{int} \hyperlink{main_8c_ad69ac85cc5d44de29b1448bd72937203}{append\_text}()\{
+468     FILE *astream = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"a+"});
+469     fseek(astream, 0, SEEK\_SET);
+470     \textcolor{keywordtype}{char} c, bufer[255];
+471     \textcolor{keywordflow}{while} ((c = fgetc(astream)) != EOF)\{
+472         putchar(c);
+473     \}
+474     fgets(bufer, 254, stdin);
+475     fputs(bufer, astream);
+476     fclose(astream);
+477     \textcolor{keywordflow}{return} 0;
+478 \}
+484 \textcolor{keywordtype}{int} \hyperlink{main_8c_a5e87855f218fa953fdc1649bf832bb9c}{append\_bin}()\{
+485     FILE *input = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"rb"});
+486     \textcolor{keywordtype}{int} N,M, temp\_n;
+487     \textcolor{keywordflow}{if}(!fread(&N, \textcolor{keyword}{sizeof}(N), 1, input))\{
+488         printf(\textcolor{stringliteral}{"Помилка читання файлу\(\backslash\)n"});
+489         fclose(input);
+490         \textcolor{keywordflow}{return} 0;
+491     \}
+492     \hyperlink{structpatient__struct}{patient} *cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*N);
+493     fread(cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, input);
+494     fclose(input);
+495     FILE *output = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"wb"});
+496     \textcolor{keywordflow}{if} (!output)\{
+497         printf(\textcolor{stringliteral}{"ERROR opening destination file (can be .temp\_cache.txt)\(\backslash\)n"});
+498         free(cards);
+499         \textcolor{keywordflow}{return} 0;
+500     \}
+501     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Скільки структур буде введено?\(\backslash\)n"}, &M, 0, 255);
+502     temp\_n = N + M;
+503     fwrite(&temp\_n, \textcolor{keyword}{sizeof}(temp\_n),1,output);
+504     \hyperlink{structpatient__struct}{patient} *new\_cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*M);
+505     printf(\textcolor{stringliteral}{"Вводьте структури\(\backslash\)n"});
+506     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < M; ++i) \{
+507         new\_cards[i] = \hyperlink{main_8c_a582ffa97511f52032c2d36314db2a774}{patient\_usr\_fill}();
+508         putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+509     \}
+510     fwrite(cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, output);
+511     fwrite(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), M, output);
+512     free(cards);
+513     free(new\_cards);
+514     fclose(output);
+515     \textcolor{keywordflow}{return} 0;
+516 \}
+523 \textcolor{keywordtype}{int} \hyperlink{main_8c_ab359f03309c64d2e7fb3eac80e34160f}{edit\_text}()\{
+524     \textcolor{keywordflow}{if} (is\_opened\_text)\{
+525         \textcolor{keywordflow}{while} (\hyperlink{lab__functions_8h_a5f3f744789213f961f3c8ec1cc482af7}{menu}(3,
+526                 \textcolor{stringliteral}{"Дозапис в кінець файлу"}, \hyperlink{main_8c_ad69ac85cc5d44de29b1448bd72937203}{append\_text},
+527                 \textcolor{stringliteral}{"Виправлення (дані стираються)"}, \hyperlink{main_8c_af649673615b84141d61a31bf103e436a}{clear\_edit\_text},
+528                 \textcolor{stringliteral}{"Очистити файл"}, \hyperlink{main_8c_a69f822b267f0ba6c163047774f960aa8}{clear\_text}))
+529             \textcolor{keywordflow}{continue};
+530     \} \textcolor{keywordflow}{else}\{
+531         printf(\textcolor{stringliteral}{"Немає відкритих файлів\(\backslash\)n"});
+532     \}
+533     \textcolor{keywordflow}{return} 0;
+534 \}
+541 \textcolor{keywordtype}{int} \hyperlink{main_8c_af33bf0e042c671b0a02da4460055fca1}{edit\_bin}()\{
+542     \textcolor{keywordflow}{if} (is\_opened\_bin)\{
+543         \textcolor{keywordflow}{while} (\hyperlink{lab__functions_8h_a5f3f744789213f961f3c8ec1cc482af7}{menu}(4,
+544                     \textcolor{stringliteral}{"Дозапис в кінець файлу"}, \hyperlink{main_8c_a5e87855f218fa953fdc1649bf832bb9c}{append\_bin},
+545                     \textcolor{stringliteral}{"Дозапис в початок файлу"}, \hyperlink{main_8c_ab15bf3ab548bb875cba6b67d6d7a4cc4}{add\_front\_bin},
+546                     \textcolor{stringliteral}{"Виправлення (дані стираються)"}, \hyperlink{main_8c_aca18af51c5eba9da8b5ffabbaf06c01f}{clear\_edit\_bin},
+547                     \textcolor{stringliteral}{"Очистити файл"}, \hyperlink{main_8c_ae4a97e0e6277901e41f56dd2cb52aeaa}{clear\_bin}))
+548             \textcolor{keywordflow}{continue};
+549     \} \textcolor{keywordflow}{else}\{
+550         printf(\textcolor{stringliteral}{"Немає відкритих файлів\(\backslash\)n"});
+551     \}
+552     \textcolor{keywordflow}{return} 0;
+553 \}
+560 \textcolor{keywordtype}{int} \hyperlink{main_8c_a15e3f231d0bcb54bf66a3ffb3ca18e76}{lookup\_text}()\{
+561     \textcolor{keywordtype}{char} c;
+562     \textcolor{keywordflow}{if} (is\_opened\_text)\{
+563         FILE *temp\_file = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"r"});
+564         \textcolor{keywordflow}{while} ((c = fgetc(temp\_file)) != EOF)\{
+565             putchar(c);
+566         \}
+567         putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+568         fclose(temp\_file);
+569     \} \textcolor{keywordflow}{else}\{
+570         printf(\textcolor{stringliteral}{"Немає відкритих файлів\(\backslash\)n"});
+571     \}
+572     \textcolor{keywordflow}{return} 0;
+573 \}
+580 \textcolor{keywordtype}{int} \hyperlink{main_8c_a9b8453d075485a7eb875466bc438ef40}{lookup\_bin}()\{
+581     \textcolor{keywordflow}{if} (is\_opened\_bin)\{
+582         FILE *input = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"rb"});
+583         \textcolor{keywordtype}{int} N;
+584         \textcolor{keywordflow}{if} (!(fread(&N, \textcolor{keyword}{sizeof}(N), 1, input)))\{
+585             printf(\textcolor{stringliteral}{"Помилка читання файлу\(\backslash\)n"});
+586             \textcolor{keywordflow}{return} 0;
+587         \}
+588         \hyperlink{structpatient__struct}{patient} *new\_cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*N);
+589         fread(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, input);
+590         fclose(input);
+591         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < N; ++j) \{
+592             \hyperlink{main_8c_abbf86d13b1ad7b2b758cea501fa0261a}{print\_patient}(new\_cards[j], new\_cards[j].\hyperlink{structpatient__struct_ad2475b69abfa9243c2700d63b63aa79b}{is\_removed});
+593         \}
+594         free(new\_cards);
+595     \} \textcolor{keywordflow}{else}\{
+596         printf(\textcolor{stringliteral}{"Немає відкритих файлів\(\backslash\)n"});
+597     \}
+598     \textcolor{keywordflow}{return} 0;
+599 \}
+606 \textcolor{keywordtype}{int} \hyperlink{main_8c_a176e42778dac5da0664205b3c0e2edf4}{lookup\_deleted\_bin}()\{
+607     \textcolor{keywordflow}{if} (is\_opened\_bin)\{
+608         FILE *input = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"rb"});
+609         \textcolor{keywordtype}{int} N;
+610         \textcolor{keywordflow}{if}(!fread(&N, \textcolor{keyword}{sizeof}(N), 1, input))\{
+611             printf(\textcolor{stringliteral}{"Помилка читання файлу\(\backslash\)n"});
+612             fclose(input);
+613             \textcolor{keywordflow}{return} 0;
+614         \}
+615         \hyperlink{structpatient__struct}{patient} *new\_cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*N);
+616         fread(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, input);
+617         fclose(input);
+618         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < N; ++j) \{
+619             \hyperlink{main_8c_abbf86d13b1ad7b2b758cea501fa0261a}{print\_patient}(new\_cards[j], !new\_cards[j].\hyperlink{structpatient__struct_ad2475b69abfa9243c2700d63b63aa79b}{is\_removed});
+620         \}
+621         free(new\_cards);
+622     \} \textcolor{keywordflow}{else}\{
+623         printf(\textcolor{stringliteral}{"Немає відкритих файлів\(\backslash\)n"});
+624     \}
+625     \textcolor{keywordflow}{return} 0;
+626 \}
+634 \textcolor{keywordtype}{int} \hyperlink{main_8c_a32a9d4e3cad93887f3e4a6e3a3f37828}{open\_text}()\{
+635     \textcolor{keywordflow}{if} (is\_opened\_text)\{
+636         printf(\textcolor{stringliteral}{"Файл уже відкрито, закрийте попередній!\(\backslash\)n"});
+637     \} \textcolor{keywordflow}{else} \{
+638         is\_opened\_text = \textcolor{keyword}{true};
+639         FILE *existing\_check;
+640         current\_file\_name = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть ім'я/шлях файлу\(\backslash\)n"});
+641         \textcolor{keywordflow}{if} (!(existing\_check = fopen(current\_file\_name, \textcolor{stringliteral}{"r"})))\{
+642             printf(\textcolor{stringliteral}{"Файлу не існує!\(\backslash\)n"});
+643             \textcolor{keywordtype}{int} create;
+644             \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Створити новий з такою назвою? (1/0)\(\backslash\)n"},&create,0,1);
+645             \textcolor{keywordflow}{if} (create)\{
+646                 \hyperlink{main_8c_adcaf3a4fe6a5d1223e9d28382d74c8fe}{save\_text}();
+647             \} \textcolor{keywordflow}{else}\{
+648                 current\_file\_name = NULL;
+649                 is\_opened\_text = \textcolor{keyword}{false};
+650             \}
+651         \}\textcolor{keywordflow}{else}\{
+652             \hyperlink{main_8c_a2d8c16830ee01715bd19345746ffb070}{tranfer\_all\_text}(current\_file\_name, TEMP\_FILENAME);
+653             fclose(existing\_check);
+654         \}
+655     \}
+656     \textcolor{keywordflow}{return} 0;
+657 \}
+665 \textcolor{keywordtype}{int} \hyperlink{main_8c_a285aac9c388f14bbb9cfc7e2e6714169}{open\_bin}()\{
+666     \textcolor{keywordflow}{if} (is\_opened\_bin)\{
+667         printf(\textcolor{stringliteral}{"Файл уже відкрито, закрийте попередній!\(\backslash\)n"});
+668     \} \textcolor{keywordflow}{else} \{
+669         is\_opened\_bin = \textcolor{keyword}{true};
+670         FILE *existing\_check;
+671         current\_file\_name = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть ім'я/шлях файлу\(\backslash\)n"});
+672         \textcolor{keywordflow}{if} (!(existing\_check = fopen(current\_file\_name, \textcolor{stringliteral}{"r"})))\{
+673             printf(\textcolor{stringliteral}{"Помилка відкриття, файлу не існує!\(\backslash\)n"});
+674             \textcolor{keywordtype}{int} create;
+675             \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Створити новий з такою назвою? (1/0)\(\backslash\)n"},&create,0,1);
+676             \textcolor{keywordflow}{if} (create)\{
+677                 \hyperlink{main_8c_ade34d6c87a837a130af82aa7b13db885}{save\_bin}();
+678             \} \textcolor{keywordflow}{else}\{
+679                 current\_file\_name = NULL;
+680                 is\_opened\_bin = \textcolor{keyword}{false};
+681             \}
+682         \}\textcolor{keywordflow}{else}\{
+683             \hyperlink{main_8c_a0225750ccc073d7680cae540419b124a}{tranfer\_all\_bin}(TEMP\_FILENAME, current\_file\_name);
+684             fclose(existing\_check);
+685         \}
+686     \}
+687     \textcolor{keywordflow}{return} 0;
+688 \}
+696 \textcolor{keywordtype}{int} \hyperlink{main_8c_a5b7250e7b7fba439d74ee3ad2b50006f}{create\_text}()\{
+697     \textcolor{keywordflow}{if} (is\_opened\_text)\{
+698         printf(\textcolor{stringliteral}{"Файл уже відкрито, закрийте попередній!\(\backslash\)n"});
+699     \} \textcolor{keywordflow}{else}\{
+700         FILE *text\_fstream = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"w"});
+701         fclose(text\_fstream);
+702         is\_opened\_text = \textcolor{keyword}{true};
+703     \}
+704     \textcolor{keywordflow}{return} 0;
+705 \}
+713 \textcolor{keywordtype}{int} \hyperlink{main_8c_a57ee874fe25c7cad429eb70840ddbeb5}{create\_bin}()\{
+714     \textcolor{keywordflow}{if} (is\_opened\_bin)\{
+715         printf(\textcolor{stringliteral}{"Файл уже відкрито, закрийте попередній!\(\backslash\)n"});
+716     \} \textcolor{keywordflow}{else}\{
+717         FILE *bin\_fstream = fopen(TEMP\_FILENAME, \textcolor{stringliteral}{"wb"});
+718         \textcolor{keywordtype}{int} N = 0;
+719         fwrite(&N, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}), 1, bin\_fstream);
+720         fclose(bin\_fstream);
+721         is\_opened\_bin = \textcolor{keyword}{true};
+722     \}
+723     \textcolor{keywordflow}{return} 0;
+724 \}
+731 \textcolor{keywordtype}{int} \hyperlink{main_8c_a564dfae4d147feeb20b129f28548a6c9}{menu\_text}()\{
+732     \textcolor{keywordflow}{return} \hyperlink{lab__functions_8h_a5f3f744789213f961f3c8ec1cc482af7}{menu}(9, \textcolor{stringliteral}{"Створити новий файл"}, \hyperlink{main_8c_a5b7250e7b7fba439d74ee3ad2b50006f}{create\_text},
+733             \textcolor{stringliteral}{"Відкрити файл"}, \hyperlink{main_8c_a32a9d4e3cad93887f3e4a6e3a3f37828}{open\_text},
+734             \textcolor{stringliteral}{"Перегляд файлу"}, \hyperlink{main_8c_a15e3f231d0bcb54bf66a3ffb3ca18e76}{lookup\_text},
+735             \textcolor{stringliteral}{"Редагувати файл"}, \hyperlink{main_8c_ab359f03309c64d2e7fb3eac80e34160f}{edit\_text},
+736             \textcolor{stringliteral}{"Зберегти файл"}, \hyperlink{main_8c_adcaf3a4fe6a5d1223e9d28382d74c8fe}{save\_text},
+737             \textcolor{stringliteral}{"Зберегти файл як ..."}, \hyperlink{main_8c_aa933ed08d69becf14df3affc9194e344}{saveas\_text},
+738             \textcolor{stringliteral}{"Закрити файл"}, \hyperlink{main_8c_add4eb0f3cf9c3c78e967cc9f6ff4fd39}{close\_text},
+739             \textcolor{stringliteral}{"Скопіювати рядки з файла, починаючи з n-го"}, \hyperlink{main_8c_af6a0006d3441dec89abb39e7c0070a82}{lines\_taks},
+740             \textcolor{stringliteral}{"Підрахувати кількість символів в останньому слові файлу"}, 
+      \hyperlink{main_8c_a547313220292d7be671b208b68ab1d94}{char\_number});
+741 \}
+748 \textcolor{keywordtype}{int} \hyperlink{main_8c_ab0cf75269a5c3ee16c5bacac2afe2bf7}{menu\_bin}()\{
+749     \textcolor{keywordflow}{return} \hyperlink{lab__functions_8h_a5f3f744789213f961f3c8ec1cc482af7}{menu}(9, \textcolor{stringliteral}{"Створити новий файл"}, \hyperlink{main_8c_a57ee874fe25c7cad429eb70840ddbeb5}{create\_bin},
+750                 \textcolor{stringliteral}{"Відкрити файл"}, \hyperlink{main_8c_a285aac9c388f14bbb9cfc7e2e6714169}{open\_bin},
+751                 \textcolor{stringliteral}{"Перегляд файлу"}, \hyperlink{main_8c_a9b8453d075485a7eb875466bc438ef40}{lookup\_bin},
+752                 \textcolor{stringliteral}{"Перегляд видалених карток"}, \hyperlink{main_8c_a176e42778dac5da0664205b3c0e2edf4}{lookup\_deleted\_bin},
+753                 \textcolor{stringliteral}{"Редагувати файл"}, \hyperlink{main_8c_af33bf0e042c671b0a02da4460055fca1}{edit\_bin},
+754                 \textcolor{stringliteral}{"Видалити за номером карти"}, \hyperlink{main_8c_a3d170322fbad052da4a3999178a2f5ea}{remove\_by\_num},
+755                 \textcolor{stringliteral}{"Зберегти файл"}, \hyperlink{main_8c_ade34d6c87a837a130af82aa7b13db885}{save\_bin},
+756                 \textcolor{stringliteral}{"Зберегти файл як ..."}, \hyperlink{main_8c_af14b38f404742efadc398c51b9830f6c}{saveas\_bin},
+757                 \textcolor{stringliteral}{"Закрити файл"}, \hyperlink{main_8c_ab1a09599960a374bdce391f8c424b83f}{close\_bin});
+758 \}
+765 \textcolor{keywordtype}{int} \hyperlink{main_8c_a651d7c0d4fb2cfed2689ffa46f673f6f}{menu\_begin}()\{
+766     \textcolor{keywordflow}{while} (\hyperlink{lab__functions_8h_a5f3f744789213f961f3c8ec1cc482af7}{menu}(2, \textcolor{stringliteral}{"Робота з текстом"}, \hyperlink{main_8c_a564dfae4d147feeb20b129f28548a6c9}{menu\_text}, \textcolor{stringliteral}{"Робота з бінарним файлом"}, 
+      \hyperlink{main_8c_ab0cf75269a5c3ee16c5bacac2afe2bf7}{menu\_bin}))\{
+767         current\_file\_name = NULL;
+768         \textcolor{keywordflow}{continue};
+769     \}
+770     \textcolor{keywordflow}{return} 0;
+771 \}
+775 \textcolor{keywordtype}{int} \hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}() \{
+776     clear();
+777     \hyperlink{main_8c_a651d7c0d4fb2cfed2689ffa46f673f6f}{menu\_begin}();
+778     \textcolor{keywordflow}{return} 0;
+779 \}
+\end{DoxyCodeInclude}
+ 

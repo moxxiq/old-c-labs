@@ -1,0 +1,783 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ЛАБОРАТОРНА РОБОТА №2: Файл main.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ЛАБОРАТОРНА РОБОТА №2
+   </div>
+   <div id="projectbrief">ОДНОВИМІРНІ Й ДВОВИМІРНІ МАСИВИ</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Створено системою Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Пошук');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Пошук');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Структури даних</a> &#124;
+<a href="#define-members">Макровизначення</a> &#124;
+<a href="#func-members">Функції</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл main.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Діаграма включених заголовочних файлів для main.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c__incl.png" border="0" usemap="#main_8c" alt=""/></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Структури даних</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPair__arr.html">Pair_arr</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Макровизначення</h2></td></tr>
+<tr class="memitem:aff606fb64ff89d5982673319bab86b19"><td class="memItemLeft" align="right" valign="top"><a id="aff606fb64ff89d5982673319bab86b19"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b>()&#160;&#160;&#160;printf(&quot;\033[H\033[J&quot;)</td></tr>
+<tr class="separator:aff606fb64ff89d5982673319bab86b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21658776274b3d146c674318b635a334"><td class="memItemLeft" align="right" valign="top"><a id="a21658776274b3d146c674318b635a334"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>INT_MIN</b>&#160;&#160;&#160;-2147483648</td></tr>
+<tr class="separator:a21658776274b3d146c674318b635a334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ec306f36d50c7375e74f0d1c55a3a67"><td class="memItemLeft" align="right" valign="top"><a id="a9ec306f36d50c7375e74f0d1c55a3a67"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>INT_MAX</b>&#160;&#160;&#160;2147483647</td></tr>
+<tr class="separator:a9ec306f36d50c7375e74f0d1c55a3a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функції</h2></td></tr>
+<tr class="memitem:a638293d509eded9d6ef7552ae1b17f2b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a638293d509eded9d6ef7552ae1b17f2b">message_input</a> (char message[])</td></tr>
+<tr class="memdesc:a638293d509eded9d6ef7552ae1b17f2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отримує від користувача ввід, перед яким виводить повідомлення  <a href="#a638293d509eded9d6ef7552ae1b17f2b">Детальніше...</a><br /></td></tr>
+<tr class="separator:a638293d509eded9d6ef7552ae1b17f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9594b83ee908d195f5ff508da5c23c58"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a9594b83ee908d195f5ff508da5c23c58">is_every_digit</a> (char *str)</td></tr>
+<tr class="separator:a9594b83ee908d195f5ff508da5c23c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afde07648040c326129670547738a0c86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#afde07648040c326129670547738a0c86">task1</a> ()</td></tr>
+<tr class="memdesc:afde07648040c326129670547738a0c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виконання завдання №1.  <a href="#afde07648040c326129670547738a0c86">Детальніше...</a><br /></td></tr>
+<tr class="separator:afde07648040c326129670547738a0c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb35a54f26606b4808ac0a8d9ad55433"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#afb35a54f26606b4808ac0a8d9ad55433">task2</a> ()</td></tr>
+<tr class="memdesc:afb35a54f26606b4808ac0a8d9ad55433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виконання завдання №2.  <a href="#afb35a54f26606b4808ac0a8d9ad55433">Детальніше...</a><br /></td></tr>
+<tr class="separator:afb35a54f26606b4808ac0a8d9ad55433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad126fa7239be97373c96861adc70b1d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ad126fa7239be97373c96861adc70b1d3">swap</a> (int *first, int *second)</td></tr>
+<tr class="memdesc:ad126fa7239be97373c96861adc70b1d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обмін двох аргументів  <a href="#ad126fa7239be97373c96861adc70b1d3">Детальніше...</a><br /></td></tr>
+<tr class="separator:ad126fa7239be97373c96861adc70b1d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59de3507f445b58bf9f31f121f1dd53e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a59de3507f445b58bf9f31f121f1dd53e">rand_fill_1d</a> (int *arr, int N)</td></tr>
+<tr class="memdesc:a59de3507f445b58bf9f31f121f1dd53e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заповнює одновимірний масив довільними числами  <a href="#a59de3507f445b58bf9f31f121f1dd53e">Детальніше...</a><br /></td></tr>
+<tr class="separator:a59de3507f445b58bf9f31f121f1dd53e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dd7ddf4e8efd6ad27441f244b6ac232"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a3dd7ddf4e8efd6ad27441f244b6ac232">rand_fill_2d</a> (int **arr, int N)</td></tr>
+<tr class="separator:a3dd7ddf4e8efd6ad27441f244b6ac232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa0f71f47bb3b8336377d2c3972613ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#afa0f71f47bb3b8336377d2c3972613ff">print_arr_1d</a> (int *arr, int N)</td></tr>
+<tr class="memdesc:afa0f71f47bb3b8336377d2c3972613ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виводить одновимірний масив  <a href="#afa0f71f47bb3b8336377d2c3972613ff">Детальніше...</a><br /></td></tr>
+<tr class="separator:afa0f71f47bb3b8336377d2c3972613ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48d1fca4591b9e83a3cbc3bce60598ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a48d1fca4591b9e83a3cbc3bce60598ee">print_arr_2d_redzero</a> (int **arr, int N)</td></tr>
+<tr class="memdesc:a48d1fca4591b9e83a3cbc3bce60598ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виводить двовимірний масив з виділенням кольором нулів  <a href="#a48d1fca4591b9e83a3cbc3bce60598ee">Детальніше...</a><br /></td></tr>
+<tr class="separator:a48d1fca4591b9e83a3cbc3bce60598ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a954f537fd937eb56b052549a1e3b4be4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a954f537fd937eb56b052549a1e3b4be4">print_arr_minmax</a> (int *arr, int N, struct <a class="el" href="structPair__arr.html">Pair_arr</a> *minmax)</td></tr>
+<tr class="memdesc:a954f537fd937eb56b052549a1e3b4be4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виводить одновимірний масив виділяючи кольорами його min max елементи.<br />
+Виводить їх добуток.  <a href="#a954f537fd937eb56b052549a1e3b4be4">Детальніше...</a><br /></td></tr>
+<tr class="separator:a954f537fd937eb56b052549a1e3b4be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d948aa7c7e64009c7446e8010368f74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a6d948aa7c7e64009c7446e8010368f74">swaping_sort</a> (int *arr, int N)</td></tr>
+<tr class="separator:a6d948aa7c7e64009c7446e8010368f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754c278f22020e77d09cda28d2e18f4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a754c278f22020e77d09cda28d2e18f4e">usr_fill_1d</a> (int *arr, int N)</td></tr>
+<tr class="memdesc:a754c278f22020e77d09cda28d2e18f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заповнення масива вводом користувача  <a href="#a754c278f22020e77d09cda28d2e18f4e">Детальніше...</a><br /></td></tr>
+<tr class="separator:a754c278f22020e77d09cda28d2e18f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfbfcf6cfc51d4db85271a06ec30e7d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#abfbfcf6cfc51d4db85271a06ec30e7d3">usr_fill_2d</a> (int **arr, int N)</td></tr>
+<tr class="separator:abfbfcf6cfc51d4db85271a06ec30e7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f453bc035d85e967bd5032eca31a155"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a6f453bc035d85e967bd5032eca31a155">input_int</a> (char message[], int *number, int lwr_border, int hir_border)</td></tr>
+<tr class="memdesc:a6f453bc035d85e967bd5032eca31a155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Реалізація корректного введення  <a href="#a6f453bc035d85e967bd5032eca31a155">Детальніше...</a><br /></td></tr>
+<tr class="separator:a6f453bc035d85e967bd5032eca31a155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a590198f8fc1086cc47278ee8ddfa08d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a590198f8fc1086cc47278ee8ddfa08d2">to_repeat</a> (void(*func)(void))</td></tr>
+<tr class="memdesc:a590198f8fc1086cc47278ee8ddfa08d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функція, що повторює задану їй функцію за бажанням користувача.  <a href="#a590198f8fc1086cc47278ee8ddfa08d2">Детальніше...</a><br /></td></tr>
+<tr class="separator:a590198f8fc1086cc47278ee8ddfa08d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a136eda0783a1b3202fbf6330967acec0"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a136eda0783a1b3202fbf6330967acec0">go_zigzag</a> (int **arr, int N, int pos)</td></tr>
+<tr class="separator:a136eda0783a1b3202fbf6330967acec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9267778aed4908cc85b34675cb83a50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ad9267778aed4908cc85b34675cb83a50">zeros_to_begin_2d</a> (int **arr, int N)</td></tr>
+<tr class="memdesc:ad9267778aed4908cc85b34675cb83a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переміщує всі нулі за правилом функції <a class="el" href="main_8c.html#a590198f8fc1086cc47278ee8ddfa08d2" title="Функція, що повторює задану їй функцію за бажанням користувача. ">to_repeat()</a>.  <a href="#ad9267778aed4908cc85b34675cb83a50">Детальніше...</a><br /></td></tr>
+<tr class="separator:ad9267778aed4908cc85b34675cb83a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top"><a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ce46862c96ea0cdf4723577c40d485f"><td class="memItemLeft" align="right" valign="top"><a id="a8ce46862c96ea0cdf4723577c40d485f"></a>
+struct <a class="el" href="structPair__arr.html">Pair_arr</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>find_minmax</b> (int *arr, int N)</td></tr>
+<tr class="separator:a8ce46862c96ea0cdf4723577c40d485f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Опис функцій</h2>
+<a id="a136eda0783a1b3202fbf6330967acec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a136eda0783a1b3202fbf6330967acec0">&#9670;&nbsp;</a></span>go_zigzag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int * go_zigzag </td>
+          <td>(</td>
+          <td class="paramtype">int **&#160;</td>
+          <td class="paramname"><em>arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Здійснює прохід масиву паралельно головній діагоналі, починаючи з верхнього правого кута. </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>Масив, по якому функція буде іти </td></tr>
+    <tr><td class="paramname">N</td><td>Розмірність масива </td></tr>
+    <tr><td class="paramname">pos</td><td>Позиція за нашим проходом </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>Значення певної комірки масиву за її номером при лічбі паралельно головній діагоналі, починаючи з верхнього правого кута. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                                         {</div><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="comment">// pos [0;N^2]</span></div><div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordtype">int</span> i,j,inner_i,inner_j,k = 0;</div><div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    i = 0;</div><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keywordflow">while</span> (i &lt; 2*N-1){</div><div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="keywordflow">if</span> (i-N &lt; 0){<span class="comment">//зміна індексу і відносно головної діагоналі</span></div><div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            inner_i = 0;</div><div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        } <span class="keywordflow">else</span>{</div><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            inner_i = i-(N-1);</div><div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        }</div><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        j = (N-1)-i+inner_i;</div><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        inner_j = 0;</div><div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keywordflow">while</span> (j&lt;N-inner_i){</div><div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            <span class="keywordflow">if</span> (k == pos){</div><div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                <span class="keywordflow">return</span> &amp;arr[inner_i+inner_j][j];</div><div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            }</div><div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            inner_j++;</div><div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            j++;</div><div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            k++;</div><div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        }</div><div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        i++;</div><div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    }</div><div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a6f453bc035d85e967bd5032eca31a155"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f453bc035d85e967bd5032eca31a155">&#9670;&nbsp;</a></span>input_int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void input_int </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>message</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>number</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lwr_border</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hir_border</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Реалізація корректного введення </p>
+<dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Повідомлення до користувача </td></tr>
+    <tr><td class="paramname">number</td><td>Змінна в яку буде записуватися правильний ввід </td></tr>
+    <tr><td class="paramname">lwr_border</td><td>Нижня межа </td></tr>
+    <tr><td class="paramname">hir_border</td><td>Верхня межа </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Якщо межі однакові, то вони стають мінімальними/максимальними.<br />
+Виконується введеня користувачем, умова циклу while превіряє чи кожне введене число є десятковим за допомогою <a class="el" href="main_8c.html#a9594b83ee908d195f5ff508da5c23c58">is_every_digit()</a>.<br />
+Також виконується перевірка чи належить число відрізку lwr_border hir_border<br />
+Наприкінці у змінну *number записується правильне число.</p>
+<div class="fragment"><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                                                                          {</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">if</span> (lwr_border == hir_border){</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        lwr_border = INT_MIN;</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        hir_border = INT_MAX;</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">char</span> *usr_input = <a class="code" href="main_8c.html#a638293d509eded9d6ef7552ae1b17f2b">message_input</a>(message);</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">while</span> (!<a class="code" href="main_8c.html#a9594b83ee908d195f5ff508da5c23c58">is_every_digit</a>(usr_input) || atoi(usr_input) &lt; lwr_border || atoi(usr_input) &gt; hir_border){</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        printf(<span class="stringliteral">&quot;ERROR INPUT\n&quot;</span>);</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        usr_input = <a class="code" href="main_8c.html#a638293d509eded9d6ef7552ae1b17f2b">message_input</a>(message);</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    *number = atoi(usr_input);</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div><div class="ttc" id="main_8c_html_a9594b83ee908d195f5ff508da5c23c58"><div class="ttname"><a href="main_8c.html#a9594b83ee908d195f5ff508da5c23c58">is_every_digit</a></div><div class="ttdeci">int is_every_digit(char *str)</div><div class="ttdef"><b>Definition:</b> main.c:144</div></div>
+<div class="ttc" id="main_8c_html_a638293d509eded9d6ef7552ae1b17f2b"><div class="ttname"><a href="main_8c.html#a638293d509eded9d6ef7552ae1b17f2b">message_input</a></div><div class="ttdeci">char * message_input(char message[])</div><div class="ttdoc">Отримує від користувача ввід, перед яким виводить повідомлення </div><div class="ttdef"><b>Definition:</b> main.c:171</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9594b83ee908d195f5ff508da5c23c58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9594b83ee908d195f5ff508da5c23c58">&#9670;&nbsp;</a></span>is_every_digit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_every_digit </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Перевірка чи кожне введене число є десятковим (від'ємним також) </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>число у вигляді увеного масиву char </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>1, якщо число десяткове, 0 якщо ні </dd></dl>
+<p>Знаходить довжину числа, враховуючи знак переходу<br />
+З урахуванням '-' обмежує максимальну довжину числа згідно лімітів int. В коментарях можна побачити нюанси. Наприкінці перевіряєм чи всі символи є десятковими.</p>
+<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                             {<span class="comment">//uhh some potentially buggy function</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> len = strlen(str);</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">if</span> (len&gt;2 &amp;&amp; (str[0] != <span class="charliteral">&#39;-&#39;</span>) &amp;&amp; ((!isdigit(str[0]))||len&gt;11)){</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">return</span> 0;<span class="comment">//додатнє число більше 11 знаків або не з знаком - на початку</span></div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">if</span> ((str[0] == <span class="charliteral">&#39;-&#39;</span>) &amp;&amp; (len&gt;12)){</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">return</span> 0;<span class="comment">//від&#39;ємне число більше 11 знаків</span></div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">if</span> (len == 2 &amp;&amp; !isdigit(str[0])){</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span> 0;<span class="comment">//не одна цифра</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span> (len==1){</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">return</span> 0;<span class="comment">// читаєм \n</span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; len-1; ++i) {</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">if</span> (!isdigit(str[i])){</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">return</span> 0;<span class="comment">//будь-який знак - не цифра</span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">return</span> 1;</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a638293d509eded9d6ef7552ae1b17f2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a638293d509eded9d6ef7552ae1b17f2b">&#9670;&nbsp;</a></span>message_input()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * message_input </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>message</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отримує від користувача ввід, перед яким виводить повідомлення </p>
+<dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Повідомлення, яке буде показане користувачу </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>Ввід користувача в форматі <code>char</code> </dd></dl>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                                   {</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">char</span> *usr_input = (<span class="keywordtype">char</span>*) malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>)*254);</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    printf(<span class="stringliteral">&quot;%s&quot;</span>, message); <span class="comment">// Виводимо повідомлення користувачу</span></div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    fgets(usr_input, 254, stdin);</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">return</span> usr_input;</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="afa0f71f47bb3b8336377d2c3972613ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa0f71f47bb3b8336377d2c3972613ff">&#9670;&nbsp;</a></span>print_arr_1d()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_arr_1d </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Виводить одновимірний масив </p>
+<dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>Масив, який буде виводитись </td></tr>
+    <tr><td class="paramname">N</td><td>Розмір масива </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                                  {</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; ++i) {</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        printf(<span class="stringliteral">&quot;%d &quot;</span>,arr[i]);</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    putchar(<span class="charliteral">&#39;\n&#39;</span>);</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a48d1fca4591b9e83a3cbc3bce60598ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48d1fca4591b9e83a3cbc3bce60598ee">&#9670;&nbsp;</a></span>print_arr_2d_redzero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_arr_2d_redzero </td>
+          <td>(</td>
+          <td class="paramtype">int **&#160;</td>
+          <td class="paramname"><em>arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Виводить двовимірний масив з виділенням кольором нулів </p>
+<dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>Масив, який буде виводитись </td></tr>
+    <tr><td class="paramname">N</td><td>Одна з його розмірностей </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                                           {</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; ++i) {</div><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; N; ++j) {</div><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            printf(<span class="stringliteral">&quot;\t \t&quot;</span>);</div><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            <span class="keywordflow">if</span> (arr[i][j]&gt;=0) {</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                printf(<span class="stringliteral">&quot; &quot;</span>);</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            }</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keywordflow">if</span> (arr[i][j]==0){</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                printf(<span class="stringliteral">&quot;\x1b[6;30;41m&quot;</span>);</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                printf(<span class="stringliteral">&quot;%d&quot;</span>,arr[i][j]);</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                printf(<span class="stringliteral">&quot;\x1b[0m &quot;</span>);</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            } <span class="keywordflow">else</span>{</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                printf(<span class="stringliteral">&quot;%d&quot;</span>,arr[i][j]);</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            }</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        }</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        putchar(<span class="charliteral">&#39;\n&#39;</span>);</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    }</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a954f537fd937eb56b052549a1e3b4be4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a954f537fd937eb56b052549a1e3b4be4">&#9670;&nbsp;</a></span>print_arr_minmax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_arr_minmax </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structPair__arr.html">Pair_arr</a> *&#160;</td>
+          <td class="paramname"><em>minmax</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Виводить одновимірний масив виділяючи кольорами його min max елементи.<br />
+Виводить їх добуток. </p>
+<dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>Власне масив </td></tr>
+    <tr><td class="paramname">N</td><td>Розмірність масива </td></tr>
+    <tr><td class="paramname">minmax</td><td>мінімальний та максимальний елементи </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Виконується перебір комірок масива. Виводиться сам елемент, якщо він не мінімальний і не максимальний.<br />
+Виділяється кольором мінімальний та максимальні елементи, для перевірки використовується struct <a class="el" href="structPair__arr.html">Pair_arr</a> у якій зберігаються мінімальні та максимальні елементи.</p>
+<div class="fragment"><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                                                               {</div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; ++i) {</div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordflow">if</span> (arr[i]==minmax-&gt;first){</div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            printf(<span class="stringliteral">&quot;\x1b[6;30;41m&quot;</span>);</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            printf(<span class="stringliteral">&quot;%d&quot;</span>,arr[i]);</div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            printf(<span class="stringliteral">&quot;\x1b[0m &quot;</span>);</div><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (arr[i]==minmax-&gt;second){</div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            printf(<span class="stringliteral">&quot;\x1b[6;30;42m&quot;</span>);</div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            printf(<span class="stringliteral">&quot;%d&quot;</span>,arr[i]);</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            printf(<span class="stringliteral">&quot;\x1b[0m &quot;</span>);</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            printf(<span class="stringliteral">&quot;%d &quot;</span>,arr[i]);</div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        }</div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    putchar(<span class="charliteral">&#39;\n&#39;</span>);</div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    printf(<span class="stringliteral">&quot;Мінімальний елемент %d\n&quot;</span></div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;           <span class="stringliteral">&quot;Максимальний елемент %d\n&quot;</span>,</div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;           minmax-&gt;first,</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;           minmax-&gt;second);</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    printf(<span class="stringliteral">&quot;Їх добуток = %d\n&quot;</span>, minmax-&gt;first*minmax-&gt;second);</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a59de3507f445b58bf9f31f121f1dd53e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59de3507f445b58bf9f31f121f1dd53e">&#9670;&nbsp;</a></span>rand_fill_1d()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rand_fill_1d </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Заповнює одновимірний масив довільними числами </p>
+<dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>Вказівник на масив, який буде заповнювати функція </td></tr>
+    <tr><td class="paramname">N</td><td>Розмір масива </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Для виведення різних результатів при повторних запусках програми використовується функція srand(time(NULL))<br />
+Діапазон визначається цим виразом <code>%20001-10000</code> </p>
+<div class="fragment"><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                 {</div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    srand(time(NULL));</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; ++i){</div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        arr[i] = rand()%20001-10000;</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a3dd7ddf4e8efd6ad27441f244b6ac232"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dd7ddf4e8efd6ad27441f244b6ac232">&#9670;&nbsp;</a></span>rand_fill_2d()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rand_fill_2d </td>
+          <td>(</td>
+          <td class="paramtype">int **&#160;</td>
+          <td class="paramname"><em>arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Заповнюється двовимірний масив довільними числами </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>Сам масив </td></tr>
+    <tr><td class="paramname">N</td><td>Одна з його розмірностей </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Для виведення різних результатів при повторних запусках програми використовується функція srand(time(NULL))<br />
+Діапазон визначається цим виразом <code>%21-10</code> </p>
+<div class="fragment"><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                                  {</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    srand(time(NULL));</div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; ++i){</div><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; N; ++j) {</div><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            arr[i][j] = rand()%21-10;</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        }</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    }</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="ad126fa7239be97373c96861adc70b1d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad126fa7239be97373c96861adc70b1d3">&#9670;&nbsp;</a></span>swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void swap </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>second</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обмін двох аргументів </p>
+<dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>Адреса першого аргументу </td></tr>
+    <tr><td class="paramname">second</td><td>Адреса другого аргумент </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Заміна здійснюється за вказівниками</p>
+<div class="fragment"><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                                  {</div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordtype">int</span> temp = *first;</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    *first = *second;</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    *second = temp;</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a6d948aa7c7e64009c7446e8010368f74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d948aa7c7e64009c7446e8010368f74">&#9670;&nbsp;</a></span>swaping_sort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void swaping_sort </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Сортування обміном масива </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>Власне масив </td></tr>
+    <tr><td class="paramname">N</td><td>РОзмірність масива </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Сортування обміном. Послідовно порівнюється елемент a_0 із кожним наступним a_i . Якщо a_i&lt;a_0 , то ці два елементи міняють місцями. Таким чином найменший елемент виявляється на своєму місці на початку масиву. Потім цей метод застосовують до елемента a 1 і т.д.</p>
+<div class="fragment"><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                                  {</div><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N-1; ++i) {</div><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 1; j+i &lt; N; ++j) {</div><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <span class="keywordflow">if</span> (arr[i]&lt;arr[j+i]){</div><div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <a class="code" href="main_8c.html#ad126fa7239be97373c96861adc70b1d3">swap</a>(&amp;arr[i],&amp;arr[j+i]);</div><div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            }</div><div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        }</div><div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    }</div><div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;}</div><div class="ttc" id="main_8c_html_ad126fa7239be97373c96861adc70b1d3"><div class="ttname"><a href="main_8c.html#ad126fa7239be97373c96861adc70b1d3">swap</a></div><div class="ttdeci">void swap(int *first, int *second)</div><div class="ttdoc">Обмін двох аргументів </div><div class="ttdef"><b>Definition:</b> main.c:320</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afde07648040c326129670547738a0c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afde07648040c326129670547738a0c86">&#9670;&nbsp;</a></span>task1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void task1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Виконання завдання №1. </p>
+<p>Дивіться нижче </p>
+<div class="fragment"><div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            {</div><div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keywordtype">int</span> N; <span class="comment">// array size</span></div><div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="keywordtype">int</span> choice;</div><div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    clear();</div><div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <a class="code" href="main_8c.html#a6f453bc035d85e967bd5032eca31a155">input_int</a>(<span class="stringliteral">&quot;Введіть розмір масива (1-348389376)\n&quot;</span>, &amp;N, 1, 348389376);</div><div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keywordtype">int</span> *arr = (<span class="keywordtype">int</span>*)malloc(N* <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div><div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <a class="code" href="main_8c.html#a6f453bc035d85e967bd5032eca31a155">input_int</a>(<span class="stringliteral">&quot;Виберіть спосіб заповнення масиву:\n&quot;</span></div><div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;              <span class="stringliteral">&quot;1 - автоматично випадковими числами\n&quot;</span></div><div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;              <span class="stringliteral">&quot;2 - власноруч\n&quot;</span>,</div><div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;              &amp;choice,</div><div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;              1,</div><div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;              2);</div><div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordflow">switch</span> (choice){</div><div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">case</span> 1: <a class="code" href="main_8c.html#a59de3507f445b58bf9f31f121f1dd53e">rand_fill_1d</a>(arr,N);</div><div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <span class="keywordflow">case</span> 2: <a class="code" href="main_8c.html#a754c278f22020e77d09cda28d2e18f4e">usr_fill_1d</a>(arr,N);</div><div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    }</div><div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <a class="code" href="main_8c.html#a954f537fd937eb56b052549a1e3b4be4">print_arr_minmax</a>(arr,N,find_minmax(arr,N));</div><div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    printf(<span class="stringliteral">&quot;\nВиконується сортування...\n&quot;</span>);</div><div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <a class="code" href="main_8c.html#a6d948aa7c7e64009c7446e8010368f74">swaping_sort</a>(arr,N);</div><div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    printf(<span class="stringliteral">&quot;Відсортований масив має вигляд:\n&quot;</span>);</div><div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <a class="code" href="main_8c.html#afa0f71f47bb3b8336377d2c3972613ff">print_arr_1d</a>(arr,N);</div><div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    free(arr);</div><div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;}</div><div class="ttc" id="main_8c_html_afa0f71f47bb3b8336377d2c3972613ff"><div class="ttname"><a href="main_8c.html#afa0f71f47bb3b8336377d2c3972613ff">print_arr_1d</a></div><div class="ttdeci">void print_arr_1d(int *arr, int N)</div><div class="ttdoc">Виводить одновимірний масив </div><div class="ttdef"><b>Definition:</b> main.c:206</div></div>
+<div class="ttc" id="main_8c_html_a6d948aa7c7e64009c7446e8010368f74"><div class="ttname"><a href="main_8c.html#a6d948aa7c7e64009c7446e8010368f74">swaping_sort</a></div><div class="ttdeci">void swaping_sort(int *arr, int N)</div><div class="ttdef"><b>Definition:</b> main.c:329</div></div>
+<div class="ttc" id="main_8c_html_a6f453bc035d85e967bd5032eca31a155"><div class="ttname"><a href="main_8c.html#a6f453bc035d85e967bd5032eca31a155">input_int</a></div><div class="ttdeci">void input_int(char message[], int *number, int lwr_border, int hir_border)</div><div class="ttdoc">Реалізація корректного введення </div><div class="ttdef"><b>Definition:</b> main.c:178</div></div>
+<div class="ttc" id="main_8c_html_a59de3507f445b58bf9f31f121f1dd53e"><div class="ttname"><a href="main_8c.html#a59de3507f445b58bf9f31f121f1dd53e">rand_fill_1d</a></div><div class="ttdeci">void rand_fill_1d(int *arr, int N)</div><div class="ttdoc">Заповнює одновимірний масив довільними числами </div><div class="ttdef"><b>Definition:</b> main.c:232</div></div>
+<div class="ttc" id="main_8c_html_a954f537fd937eb56b052549a1e3b4be4"><div class="ttname"><a href="main_8c.html#a954f537fd937eb56b052549a1e3b4be4">print_arr_minmax</a></div><div class="ttdeci">void print_arr_minmax(int *arr, int N, struct Pair_arr *minmax)</div><div class="ttdoc">Виводить одновимірний масив виділяючи кольорами його min max елементи. Виводить їх добуток...</div><div class="ttdef"><b>Definition:</b> main.c:293</div></div>
+<div class="ttc" id="main_8c_html_a754c278f22020e77d09cda28d2e18f4e"><div class="ttname"><a href="main_8c.html#a754c278f22020e77d09cda28d2e18f4e">usr_fill_1d</a></div><div class="ttdeci">void usr_fill_1d(int *arr, int N)</div><div class="ttdoc">Заповнення масива вводом користувача </div><div class="ttdef"><b>Definition:</b> main.c:256</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afb35a54f26606b4808ac0a8d9ad55433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb35a54f26606b4808ac0a8d9ad55433">&#9670;&nbsp;</a></span>task2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void task2 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Виконання завдання №2. </p>
+<p>Дивіться нижче </p>
+<div class="fragment"><div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            {</div><div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keywordtype">int</span> N;<span class="comment">// array dimensions</span></div><div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keywordtype">int</span> choice;</div><div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    clear();</div><div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <a class="code" href="main_8c.html#a6f453bc035d85e967bd5032eca31a155">input_int</a>(<span class="stringliteral">&quot;Введіть розмірність масива NxN (1-18665)\n&quot;</span>, &amp;N, 1, 18665);</div><div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="keywordtype">int</span> **arr = (<span class="keywordtype">int</span>**)malloc(N*<span class="keyword">sizeof</span>(<span class="keywordtype">int</span> *));</div><div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; ++i) {</div><div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        arr[i] = (<span class="keywordtype">int</span> *)malloc(N * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div><div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    }</div><div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <a class="code" href="main_8c.html#a6f453bc035d85e967bd5032eca31a155">input_int</a>(<span class="stringliteral">&quot;Виберіть спосіб заповнення масиву:\n&quot;</span></div><div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;              <span class="stringliteral">&quot;1 - автоматично випадковими числами\n&quot;</span></div><div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;              <span class="stringliteral">&quot;2 - власноруч\n&quot;</span>,</div><div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;              &amp;choice,</div><div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;              1,</div><div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;              2);</div><div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keywordflow">switch</span> (choice){</div><div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordflow">case</span> 1: <a class="code" href="main_8c.html#a3dd7ddf4e8efd6ad27441f244b6ac232">rand_fill_2d</a>(arr,N);</div><div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        <span class="keywordflow">case</span> 2: <a class="code" href="main_8c.html#abfbfcf6cfc51d4db85271a06ec30e7d3">usr_fill_2d</a>(arr,N);</div><div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    }</div><div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    printf(<span class="stringliteral">&quot;Масив має вигляд:\n&quot;</span>);</div><div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <a class="code" href="main_8c.html#a48d1fca4591b9e83a3cbc3bce60598ee">print_arr_2d_redzero</a>(arr,N);</div><div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    printf(<span class="stringliteral">&quot;Переміщуємо нулі паралельно головній діагоналі...\n&quot;</span>);</div><div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <a class="code" href="main_8c.html#ad9267778aed4908cc85b34675cb83a50">zeros_to_begin_2d</a>(arr, N);</div><div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    printf(<span class="stringliteral">&quot;Масив тепер має вигляд:\n&quot;</span>);</div><div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <a class="code" href="main_8c.html#a48d1fca4591b9e83a3cbc3bce60598ee">print_arr_2d_redzero</a>(arr,N);</div><div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <span class="comment">//free memory</span></div><div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; ++i) {</div><div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        free(arr[i]);</div><div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    }</div><div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    free(arr);</div><div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <span class="comment">//</span></div><div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;}</div><div class="ttc" id="main_8c_html_a48d1fca4591b9e83a3cbc3bce60598ee"><div class="ttname"><a href="main_8c.html#a48d1fca4591b9e83a3cbc3bce60598ee">print_arr_2d_redzero</a></div><div class="ttdeci">void print_arr_2d_redzero(int **arr, int N)</div><div class="ttdoc">Виводить двовимірний масив з виділенням кольором нулів </div><div class="ttdef"><b>Definition:</b> main.c:213</div></div>
+<div class="ttc" id="main_8c_html_a6f453bc035d85e967bd5032eca31a155"><div class="ttname"><a href="main_8c.html#a6f453bc035d85e967bd5032eca31a155">input_int</a></div><div class="ttdeci">void input_int(char message[], int *number, int lwr_border, int hir_border)</div><div class="ttdoc">Реалізація корректного введення </div><div class="ttdef"><b>Definition:</b> main.c:178</div></div>
+<div class="ttc" id="main_8c_html_abfbfcf6cfc51d4db85271a06ec30e7d3"><div class="ttname"><a href="main_8c.html#abfbfcf6cfc51d4db85271a06ec30e7d3">usr_fill_2d</a></div><div class="ttdeci">void usr_fill_2d(int **arr, int N)</div><div class="ttdef"><b>Definition:</b> main.c:266</div></div>
+<div class="ttc" id="main_8c_html_ad9267778aed4908cc85b34675cb83a50"><div class="ttname"><a href="main_8c.html#ad9267778aed4908cc85b34675cb83a50">zeros_to_begin_2d</a></div><div class="ttdeci">void zeros_to_begin_2d(int **arr, int N)</div><div class="ttdoc">Переміщує всі нулі за правилом функції to_repeat(). </div><div class="ttdef"><b>Definition:</b> main.c:369</div></div>
+<div class="ttc" id="main_8c_html_a3dd7ddf4e8efd6ad27441f244b6ac232"><div class="ttname"><a href="main_8c.html#a3dd7ddf4e8efd6ad27441f244b6ac232">rand_fill_2d</a></div><div class="ttdeci">void rand_fill_2d(int **arr, int N)</div><div class="ttdef"><b>Definition:</b> main.c:243</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a590198f8fc1086cc47278ee8ddfa08d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a590198f8fc1086cc47278ee8ddfa08d2">&#9670;&nbsp;</a></span>to_repeat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void to_repeat </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(void)&#160;</td>
+          <td class="paramname"><em>func</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функція, що повторює задану їй функцію за бажанням користувача. </p>
+<dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func</td><td>Функція, яка буде повторюватись </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                  {</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordtype">int</span> choice;</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">do</span>{</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        (*func)();</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <a class="code" href="main_8c.html#a6f453bc035d85e967bd5032eca31a155">input_int</a>(<span class="stringliteral">&quot;Бажаєте продовжити виконання цього завдання?:\n&quot;</span>,&amp;choice,0,1);</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }<span class="keywordflow">while</span> (choice);</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div><div class="ttc" id="main_8c_html_a6f453bc035d85e967bd5032eca31a155"><div class="ttname"><a href="main_8c.html#a6f453bc035d85e967bd5032eca31a155">input_int</a></div><div class="ttdeci">void input_int(char message[], int *number, int lwr_border, int hir_border)</div><div class="ttdoc">Реалізація корректного введення </div><div class="ttdef"><b>Definition:</b> main.c:178</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a754c278f22020e77d09cda28d2e18f4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a754c278f22020e77d09cda28d2e18f4e">&#9670;&nbsp;</a></span>usr_fill_1d()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void usr_fill_1d </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Заповнення масива вводом користувача </p>
+<dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>Власне масив </td></tr>
+    <tr><td class="paramname">N</td><td>Розмірність масива </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Виконується перевірка при введенні за допомогою функції <a class="el" href="main_8c.html#a6f453bc035d85e967bd5032eca31a155" title="Реалізація корректного введення ">input_int()</a></p>
+<div class="fragment"><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                                 {</div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; ++i) {</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        printf(<span class="stringliteral">&quot;%i&quot;</span>,i);</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <a class="code" href="main_8c.html#a6f453bc035d85e967bd5032eca31a155">input_int</a>(<span class="stringliteral">&quot;: &quot;</span>, &amp;arr[i], 0, 0);</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    }</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div><div class="ttc" id="main_8c_html_a6f453bc035d85e967bd5032eca31a155"><div class="ttname"><a href="main_8c.html#a6f453bc035d85e967bd5032eca31a155">input_int</a></div><div class="ttdeci">void input_int(char message[], int *number, int lwr_border, int hir_border)</div><div class="ttdoc">Реалізація корректного введення </div><div class="ttdef"><b>Definition:</b> main.c:178</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abfbfcf6cfc51d4db85271a06ec30e7d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfbfcf6cfc51d4db85271a06ec30e7d3">&#9670;&nbsp;</a></span>usr_fill_2d()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void usr_fill_2d </td>
+          <td>(</td>
+          <td class="paramtype">int **&#160;</td>
+          <td class="paramname"><em>arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Заповнення 2d масива вводом користувача </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>Власне масив </td></tr>
+    <tr><td class="paramname">N</td><td>Одна з його розмірностей </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Виконується перевірка при введенні за допомогою функції <a class="el" href="main_8c.html#a6f453bc035d85e967bd5032eca31a155" title="Реалізація корректного введення ">input_int()</a></p>
+<div class="fragment"><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                                  {</div><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; ++i) {</div><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; N; ++j) {</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            printf(<span class="stringliteral">&quot;[%i,%i]&quot;</span>,i,j);</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <a class="code" href="main_8c.html#a6f453bc035d85e967bd5032eca31a155">input_int</a>(<span class="stringliteral">&quot;: &quot;</span>, &amp;arr[i][j], 0, 0);</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        }</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    }</div><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;}</div><div class="ttc" id="main_8c_html_a6f453bc035d85e967bd5032eca31a155"><div class="ttname"><a href="main_8c.html#a6f453bc035d85e967bd5032eca31a155">input_int</a></div><div class="ttdeci">void input_int(char message[], int *number, int lwr_border, int hir_border)</div><div class="ttdoc">Реалізація корректного введення </div><div class="ttdef"><b>Definition:</b> main.c:178</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad9267778aed4908cc85b34675cb83a50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9267778aed4908cc85b34675cb83a50">&#9670;&nbsp;</a></span>zeros_to_begin_2d()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zeros_to_begin_2d </td>
+          <td>(</td>
+          <td class="paramtype">int **&#160;</td>
+          <td class="paramname"><em>arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Переміщує всі нулі за правилом функції <a class="el" href="main_8c.html#a590198f8fc1086cc47278ee8ddfa08d2" title="Функція, що повторює задану їй функцію за бажанням користувача. ">to_repeat()</a>. </p>
+<dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>Масив, у якому здійснюватиметься заміна. </td></tr>
+    <tr><td class="paramname">N</td><td>Розмір масиву. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Виконується прохід за допомогою функції <a class="el" href="main_8c.html#a136eda0783a1b3202fbf6330967acec0">go_zigzag()</a> та заміна функцією <a class="el" href="main_8c.html#ad126fa7239be97373c96861adc70b1d3" title="Обмін двох аргументів ">swap()</a></p>
+<div class="fragment"><div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                                        {</div><div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordtype">int</span> pos_0;</div><div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N*N; ++i) {</div><div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keywordflow">if</span> (*<a class="code" href="main_8c.html#a136eda0783a1b3202fbf6330967acec0">go_zigzag</a>(arr,N,i) != 0){</div><div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            pos_0 = i+1;</div><div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            <span class="keywordflow">while</span> (pos_0&lt;N*N &amp;&amp; *<a class="code" href="main_8c.html#a136eda0783a1b3202fbf6330967acec0">go_zigzag</a>(arr,N,pos_0)!=0){</div><div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                pos_0++;</div><div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            }</div><div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            <span class="keywordflow">if</span> (pos_0==N*N){</div><div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                <span class="keywordflow">return</span>;</div><div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            }</div><div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            <a class="code" href="main_8c.html#ad126fa7239be97373c96861adc70b1d3">swap</a>(<a class="code" href="main_8c.html#a136eda0783a1b3202fbf6330967acec0">go_zigzag</a>(arr,N,pos_0),<a class="code" href="main_8c.html#a136eda0783a1b3202fbf6330967acec0">go_zigzag</a>(arr,N,i));</div><div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        }</div><div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    }</div><div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;}</div><div class="ttc" id="main_8c_html_a136eda0783a1b3202fbf6330967acec0"><div class="ttname"><a href="main_8c.html#a136eda0783a1b3202fbf6330967acec0">go_zigzag</a></div><div class="ttdeci">int * go_zigzag(int **arr, int N, int pos)</div><div class="ttdef"><b>Definition:</b> main.c:345</div></div>
+<div class="ttc" id="main_8c_html_ad126fa7239be97373c96861adc70b1d3"><div class="ttname"><a href="main_8c.html#ad126fa7239be97373c96861adc70b1d3">swap</a></div><div class="ttdeci">void swap(int *first, int *second)</div><div class="ttdoc">Обмін двох аргументів </div><div class="ttdef"><b>Definition:</b> main.c:320</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Створено системою &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

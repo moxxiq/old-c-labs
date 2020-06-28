@@ -1,0 +1,271 @@
+\hypertarget{main_8c}{}\section{Файл main.\+c}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$values.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lab\+\_\+functions.\+h\char`\"{}}\newline
+Діаграма включених заголовочних файлів для main.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Структури даних}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structAEROFLOT__STRUCT}{A\+E\+R\+O\+F\+L\+O\+T\+\_\+\+S\+T\+R\+U\+CT}
+\end{DoxyCompactItemize}
+\subsection*{Визначення типів}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a8dea8427b013a498b2bc21c6a70b6623}\label{main_8c_a8dea8427b013a498b2bc21c6a70b6623}} 
+typedef struct \hyperlink{structAEROFLOT__STRUCT}{A\+E\+R\+O\+F\+L\+O\+T\+\_\+\+S\+T\+R\+U\+CT} {\bfseries A\+E\+R\+O\+F\+L\+OT}
+\end{DoxyCompactItemize}
+\subsection*{Переліки}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900}{type\+\_\+of\+\_\+aeroplane} \{ \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426}{E\+L\+SE}, 
+\hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877}{C\+I\+V\+IL}, 
+\hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5}{M\+I\+L\+I\+T\+A\+RY}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Функції}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8c_a86c3d2cb6728b6e961242f105a4c2579}{swap\+\_\+aeroflot} (\hyperlink{structAEROFLOT__STRUCT}{A\+E\+R\+O\+F\+L\+OT} $\ast$first, \hyperlink{structAEROFLOT__STRUCT}{A\+E\+R\+O\+F\+L\+OT} $\ast$second)
+\begin{DoxyCompactList}\small\item\em Заміна структур {\ttfamily A\+E\+R\+O\+F\+L\+OT} між собою \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_ada53f29a40add605d28459936c17d8df}{swaping\+\_\+sort\+\_\+struct} (\hyperlink{structAEROFLOT__STRUCT}{A\+E\+R\+O\+F\+L\+OT} $\ast$arr, int N)
+\begin{DoxyCompactList}\small\item\em Сортування обміном масива \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a0e67aa1728da412b6d456dcd67400c28}{aeroflot\+\_\+user\+\_\+fill} (\hyperlink{structAEROFLOT__STRUCT}{A\+E\+R\+O\+F\+L\+OT} $\ast$aeroplane)
+\begin{DoxyCompactList}\small\item\em Вказуєм місце призначення, номер рейсу, тип літака. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a21680c209db21fa1a784acdcfb0783be}{print\+\_\+aeroflot} (\hyperlink{structAEROFLOT__STRUCT}{A\+E\+R\+O\+F\+L\+OT} aeroplanes\mbox{[}$\,$\mbox{]}, int N)
+\begin{DoxyCompactList}\small\item\em Виводим масив структур типу A\+E\+R\+O\+F\+L\+OT в частково відформатованому вигляді \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_aba85c797baee5c4f44cfb1bdf805889d}{print\+\_\+aeroflot\+\_\+filter\+\_\+destination} (\hyperlink{structAEROFLOT__STRUCT}{A\+E\+R\+O\+F\+L\+OT} aeroplanes\mbox{[}$\,$\mbox{]}, int N, char filter\+\_\+destination\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Виводить рейси що співпадають з {\ttfamily filter\+\_\+destination}. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em Завдання лабораторної рботи \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Опис переліків}
+\mbox{\Hypertarget{main_8c_a85e61e12a1348f292d1732e066b2a900}\label{main_8c_a85e61e12a1348f292d1732e066b2a900}} 
+\index{main.\+c@{main.\+c}!type\+\_\+of\+\_\+aeroplane@{type\+\_\+of\+\_\+aeroplane}}
+\index{type\+\_\+of\+\_\+aeroplane@{type\+\_\+of\+\_\+aeroplane}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{type\+\_\+of\+\_\+aeroplane}{type\_of\_aeroplane}}
+{\footnotesize\ttfamily enum \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900}{type\+\_\+of\+\_\+aeroplane}}
+
+\begin{DoxyEnumFields}{Елементи переліків}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+L\+SE@{E\+L\+SE}!main.\+c@{main.\+c}}\index{main.\+c@{main.\+c}!E\+L\+SE@{E\+L\+SE}}}\mbox{\Hypertarget{main_8c_a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426}\label{main_8c_a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426}} 
+E\+L\+SE&Тип, що не належить переліченим \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+I\+V\+IL@{C\+I\+V\+IL}!main.\+c@{main.\+c}}\index{main.\+c@{main.\+c}!C\+I\+V\+IL@{C\+I\+V\+IL}}}\mbox{\Hypertarget{main_8c_a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877}\label{main_8c_a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877}} 
+C\+I\+V\+IL&Цивільні літаки \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+I\+L\+I\+T\+A\+RY@{M\+I\+L\+I\+T\+A\+RY}!main.\+c@{main.\+c}}\index{main.\+c@{main.\+c}!M\+I\+L\+I\+T\+A\+RY@{M\+I\+L\+I\+T\+A\+RY}}}\mbox{\Hypertarget{main_8c_a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5}\label{main_8c_a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5}} 
+M\+I\+L\+I\+T\+A\+RY&Військові \\
+\hline
+
+\end{DoxyEnumFields}
+
+\begin{DoxyCode}
+13                       \{
+14         \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426}{ELSE},
+15         \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877}{CIVIL},
+16         \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5}{MILITARY}
+17 \};
+\end{DoxyCode}
+
+
+\subsection{Опис функцій}
+\mbox{\Hypertarget{main_8c_a0e67aa1728da412b6d456dcd67400c28}\label{main_8c_a0e67aa1728da412b6d456dcd67400c28}} 
+\index{main.\+c@{main.\+c}!aeroflot\+\_\+user\+\_\+fill@{aeroflot\+\_\+user\+\_\+fill}}
+\index{aeroflot\+\_\+user\+\_\+fill@{aeroflot\+\_\+user\+\_\+fill}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{aeroflot\+\_\+user\+\_\+fill()}{aeroflot\_user\_fill()}}
+{\footnotesize\ttfamily void aeroflot\+\_\+user\+\_\+fill (\begin{DoxyParamCaption}\item[{\hyperlink{structAEROFLOT__STRUCT}{A\+E\+R\+O\+F\+L\+OT} $\ast$}]{aeroplane }\end{DoxyParamCaption})}
+
+
+
+Вказуєм місце призначення, номер рейсу, тип літака. 
+
+Серед нюансів звернання до полів структури за допомогою {\ttfamily -\/$>$} 
+\begin{DoxyParams}{Аргументи}
+{\em aeroplane} & Структура рейсу \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+52                                             \{
+53     aeroplane->\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination} = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Місце призначення: "});
+54     \hyperlink{lab__functions_8h_a1c51fdb7c84e94c1f88f8e6838f67499}{toupper\_chrs}(aeroplane->\hyperlink{structAEROFLOT__STRUCT_a4a959b0e5f73bb401dccc9c248cf801c}{destination});
+55     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Номер рейсу: "}, &aeroplane->\hyperlink{structAEROFLOT__STRUCT_a7f89c90169893ea6426d49cbfe252b6b}{flight\_number}, 0, INT\_MAX);
+56 
+57     \textcolor{keywordtype}{char} *type = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Тип літака: "});
+58     \hyperlink{lab__functions_8h_a1c51fdb7c84e94c1f88f8e6838f67499}{toupper\_chrs}(type);
+59     \textcolor{keywordflow}{if} (!strcmp(type, \textcolor{stringliteral}{"CIVIL"}))\{
+60         aeroplane->\hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type} = \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877}{CIVIL};
+61     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!strcmp(type, \textcolor{stringliteral}{"MILITARY"}))\{
+62         aeroplane->\hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type} = \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5}{MILITARY};
+63     \} \textcolor{keywordflow}{else}\{
+64         aeroplane->\hyperlink{structAEROFLOT__STRUCT_a913aeac90752fd046f3ca7410093bb36}{type} = \hyperlink{main_8c_a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426}{ELSE};
+65     \}
+66 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a21680c209db21fa1a784acdcfb0783be}\label{main_8c_a21680c209db21fa1a784acdcfb0783be}} 
+\index{main.\+c@{main.\+c}!print\+\_\+aeroflot@{print\+\_\+aeroflot}}
+\index{print\+\_\+aeroflot@{print\+\_\+aeroflot}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+aeroflot()}{print\_aeroflot()}}
+{\footnotesize\ttfamily void print\+\_\+aeroflot (\begin{DoxyParamCaption}\item[{\hyperlink{structAEROFLOT__STRUCT}{A\+E\+R\+O\+F\+L\+OT}}]{aeroplanes\mbox{[}$\,$\mbox{]},  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+
+
+Виводим масив структур типу A\+E\+R\+O\+F\+L\+OT в частково відформатованому вигляді 
+
+Форматований вихід здійснюється за допомогою пробілів та \textbackslash{}t 
+\begin{DoxyParams}{Аргументи}
+{\em aeroplanes} & \\
+\hline
+{\em N} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+73                                                  \{
+74     printf(\textcolor{stringliteral}{"Місце призначення \(\backslash\)tНомер рейсу \(\backslash\)tНомер типу\(\backslash\)n"});
+75     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+76         printf(\textcolor{stringliteral}{"\(\backslash\)t%s \(\backslash\)t  \(\backslash\)t  \(\backslash\)t%d \(\backslash\)t  \(\backslash\)t  \(\backslash\)t  \(\backslash\)t%d\(\backslash\)n"},
+77                aeroplanes[i].destination,
+78                aeroplanes[i].flight\_number,
+79                aeroplanes[i].type);
+80     \}
+81 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_aba85c797baee5c4f44cfb1bdf805889d}\label{main_8c_aba85c797baee5c4f44cfb1bdf805889d}} 
+\index{main.\+c@{main.\+c}!print\+\_\+aeroflot\+\_\+filter\+\_\+destination@{print\+\_\+aeroflot\+\_\+filter\+\_\+destination}}
+\index{print\+\_\+aeroflot\+\_\+filter\+\_\+destination@{print\+\_\+aeroflot\+\_\+filter\+\_\+destination}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+aeroflot\+\_\+filter\+\_\+destination()}{print\_aeroflot\_filter\_destination()}}
+{\footnotesize\ttfamily void print\+\_\+aeroflot\+\_\+filter\+\_\+destination (\begin{DoxyParamCaption}\item[{\hyperlink{structAEROFLOT__STRUCT}{A\+E\+R\+O\+F\+L\+OT}}]{aeroplanes\mbox{[}$\,$\mbox{]},  }\item[{int}]{N,  }\item[{char}]{filter\+\_\+destination\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Виводить рейси що співпадають з {\ttfamily filter\+\_\+destination}. 
+
+Перед порівнянням переводим все в верхній регістр 
+\begin{DoxyParams}{Аргументи}
+{\em aeroplanes} & Масив структур з рейсами \\
+\hline
+{\em N} & Кількість рейсів \\
+\hline
+{\em filter\+\_\+destination} & Місце призначення \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+89                                                                                                \{
+90     \hyperlink{lab__functions_8h_a1c51fdb7c84e94c1f88f8e6838f67499}{toupper\_chrs}(filter\_destination);
+91     \textcolor{keywordtype}{int} is\_match  = 0;
+92     printf(\textcolor{stringliteral}{"Місце призначення \(\backslash\)tНомер рейсу \(\backslash\)tНомер типу\(\backslash\)n"});
+93     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+94         \textcolor{keywordflow}{if} (!strcmp(filter\_destination,aeroplanes[i].destination))\{
+95             printf(\textcolor{stringliteral}{"\(\backslash\)t%s \(\backslash\)t  \(\backslash\)t  \(\backslash\)t%d \(\backslash\)t  \(\backslash\)t  \(\backslash\)t  \(\backslash\)t%d\(\backslash\)n"},
+96                    aeroplanes[i].destination,
+97                    aeroplanes[i].flight\_number,
+98                    aeroplanes[i].type);
+99             is\_match = 1;
+100         \}
+101     \}
+102     \textcolor{keywordflow}{if} (!is\_match)\{
+103         printf(\textcolor{stringliteral}{"Рейсів по цьому напрямку немає!\(\backslash\)n"});
+104     \}
+105 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a86c3d2cb6728b6e961242f105a4c2579}\label{main_8c_a86c3d2cb6728b6e961242f105a4c2579}} 
+\index{main.\+c@{main.\+c}!swap\+\_\+aeroflot@{swap\+\_\+aeroflot}}
+\index{swap\+\_\+aeroflot@{swap\+\_\+aeroflot}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{swap\+\_\+aeroflot()}{swap\_aeroflot()}}
+{\footnotesize\ttfamily void swap\+\_\+aeroflot (\begin{DoxyParamCaption}\item[{\hyperlink{structAEROFLOT__STRUCT}{A\+E\+R\+O\+F\+L\+OT} $\ast$}]{first,  }\item[{\hyperlink{structAEROFLOT__STRUCT}{A\+E\+R\+O\+F\+L\+OT} $\ast$}]{second }\end{DoxyParamCaption})}
+
+
+
+Заміна структур {\ttfamily A\+E\+R\+O\+F\+L\+OT} між собою 
+
+Заміна здійснюється за вказівниками 
+\begin{DoxyParams}{Аргументи}
+{\em first} & \\
+\hline
+{\em second} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+24                                                      \{
+25     \hyperlink{structAEROFLOT__STRUCT}{AEROFLOT} temp = *first;
+26     *first = *second;
+27     *second = temp;
+28 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_ada53f29a40add605d28459936c17d8df}\label{main_8c_ada53f29a40add605d28459936c17d8df}} 
+\index{main.\+c@{main.\+c}!swaping\+\_\+sort\+\_\+struct@{swaping\+\_\+sort\+\_\+struct}}
+\index{swaping\+\_\+sort\+\_\+struct@{swaping\+\_\+sort\+\_\+struct}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{swaping\+\_\+sort\+\_\+struct()}{swaping\_sort\_struct()}}
+{\footnotesize\ttfamily void swaping\+\_\+sort\+\_\+struct (\begin{DoxyParamCaption}\item[{\hyperlink{structAEROFLOT__STRUCT}{A\+E\+R\+O\+F\+L\+OT} $\ast$}]{arr,  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+
+
+Сортування обміном масива 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em arr} & Власне масив \\
+\hline
+{\em N} & Розмірність масива\\
+\hline
+\end{DoxyParams}
+Сортування обміном. Послідовно порівнюється {\ttfamily flight\+\_\+number} елемента a\+\_\+0 із кожним наступним a\+\_\+i . Якщо a\+\_\+i$<$a\+\_\+0 , то ці два елементи міняють місцями. Таким чином елемент з найменшим {\ttfamily flight\+\_\+number} виявляється на своєму місці на початку масиву. Потім цей метод застосовують до елемента a\+\_\+1 і т.\+д. 
+\begin{DoxyCode}
+38                                               \{
+39     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N-1; ++i) \{
+40         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 1; j+i < N; ++j) \{
+41             \textcolor{keywordflow}{if} (arr[i].flight\_number>arr[j+i].flight\_number)\{
+42                 \hyperlink{main_8c_a86c3d2cb6728b6e961242f105a4c2579}{swap\_aeroflot}(&arr[i],&arr[j+i]);
+43             \}
+44         \}
+45     \}
+46 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a2e10594dc040249a898e2880b4c64322}\label{main_8c_a2e10594dc040249a898e2880b4c64322}} 
+\index{main.\+c@{main.\+c}!task\+\_\+1@{task\+\_\+1}}
+\index{task\+\_\+1@{task\+\_\+1}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{task\+\_\+1()}{task\_1()}}
+{\footnotesize\ttfamily void task\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Завдання лабораторної рботи 
+
+Створюємо {\ttfamily N} об\textquotesingle{}єктів типу {\ttfamily A\+E\+R\+O\+F\+L\+OT} , користувач заповнює дані кожного рейсу \hyperlink{main_8c_a0e67aa1728da412b6d456dcd67400c28}{aeroflot\+\_\+user\+\_\+fill()} .~\newline
+Упорядкуєм рейси за зростанням номером рейсу модифікованою функцією сортування з попередньої лабораторної \hyperlink{main_8c_ada53f29a40add605d28459936c17d8df}{swaping\+\_\+sort\+\_\+struct()}~\newline
+ Виводимо відсортований список.~\newline
+Виконується пошук рейсів за місцем призначення заданим користувачем \hyperlink{main_8c_aba85c797baee5c4f44cfb1bdf805889d}{print\+\_\+aeroflot\+\_\+filter\+\_\+destination()} 
+\begin{DoxyCode}
+115              \{
+116     \textcolor{keyword}{const} \textcolor{keywordtype}{int} N = 5;
+117     \textcolor{keywordtype}{char} destination[254];
+118     \hyperlink{structAEROFLOT__STRUCT}{AEROFLOT} kpi\_aeroplanes[N];
+119     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+120         printf(\textcolor{stringliteral}{"Рейс №%d\(\backslash\)n"}, i+1);
+121         \hyperlink{main_8c_a0e67aa1728da412b6d456dcd67400c28}{aeroflot\_user\_fill}(&kpi\_aeroplanes[i]);
+122     \}
+123     printf(\textcolor{stringliteral}{"Упорядкуєм рейси за зростанням номером рейсу\(\backslash\)n"});
+124     \hyperlink{main_8c_ada53f29a40add605d28459936c17d8df}{swaping\_sort\_struct}(kpi\_aeroplanes, N);
+125     \hyperlink{main_8c_a21680c209db21fa1a784acdcfb0783be}{print\_aeroflot}(kpi\_aeroplanes, N);
+126     printf(\textcolor{stringliteral}{"Пошук рейсів за місцем призначення\(\backslash\)n"});
+127     strcpy(destination,\hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Місце призначення: "}));
+128     \hyperlink{main_8c_aba85c797baee5c4f44cfb1bdf805889d}{print\_aeroflot\_filter\_destination}(kpi\_aeroplanes, N, destination);
+129 \}
+\end{DoxyCode}

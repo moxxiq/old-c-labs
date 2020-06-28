@@ -1,0 +1,99 @@
+\begin{center} \subsection*{Варіант №4}\end{center} 
+
+\begin{center} \end{center}  Виконав студент групи КМ-\/82\+: {\bfseries Бубела Дмитро}~\newline
+ \subsubsection*{Завдання\+:}
+
+\subsubsection*{Дано матрицю A розмірності m$\ast$n. Обчислити суми елементів кожного стовпця.}
+
+\subsubsection*{Визначити найбільше значення цих сум і номер відповідного стовпця.}
+
+\paragraph*{Виконується функцією \hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\+\_\+1()}}
+
+Для повтору виконання використовується функція \hyperlink{lab__functions_8h_a770281b98587f9f65ca4cc75b1d061db}{to\+\_\+repeat()}~\newline
+Користувач вводить розмірність майбутнього двумірного масива. Він створюється та заразом масив сум стовбчиків, після чого зануляється. Виконується заповнення випадковими числами та підрахунок сум стовбців.~\newline
+Визначається колонка з максимальною сумою елементів.~\newline
+Виконується вивід масиву з виділенням стовбця з максимальною сумою.~\newline
+Виконується вивід масиву сум, вивід стовбця з найбільшою сумою елементів~\newline
+Виконується вивільнення пам\textquotesingle{}яті.~\newline
+\paragraph*{Нижче наведений сирцевий код прорами}
+
+
+\begin{DoxyCodeInclude}
+1 \textcolor{preprocessor}{#include <stdio.h>}
+2 \textcolor{preprocessor}{#include <stdlib.h>}
+3 \textcolor{preprocessor}{#include <time.h>}
+4 \textcolor{preprocessor}{#include "\hyperlink{lab__functions_8h}{lab\_functions.h}"}
+6 
+17 \textcolor{keywordtype}{void} \hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\_1}()\{
+18     \textcolor{keywordtype}{int} cols, rows, max\_col = 0;
+19     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Введіть кількість рядків масива (1-18665)\(\backslash\)n"}, &rows, 1, 18665);
+20     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Введіть кількість стовбців масива (1-18665)\(\backslash\)n"}, &cols, 1, 18665);
+21     \textcolor{comment}{// Основний масив}
+22     \textcolor{keywordtype}{int} **arr = (\textcolor{keywordtype}{int} **) malloc(rows*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int} *));
+23     \textcolor{comment}{// Суми стовбців}
+24     \textcolor{keywordtype}{int} *sum\_of\_cols = (\textcolor{keywordtype}{int} *) malloc(cols*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+25     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < rows; ++i) \{
+26         arr[i] = (\textcolor{keywordtype}{int} *)malloc(cols* \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+27     \}
+28     \textcolor{comment}{// Занулення масиву сумм колонок}
+29     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < cols; ++i) \{
+30         sum\_of\_cols[i] = 0;
+31     \}
+32     \textcolor{comment}{// Заповнення випадковими числами, підрахунок суми колонок}
+33     srand(time(NULL));
+34     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < rows; ++i) \{
+35         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < cols; ++j) \{
+36             arr[i][j] = rand()%201-100;
+37             sum\_of\_cols[j]+=arr[i][j];
+38         \}
+39     \}
+40     \textcolor{comment}{// Знаходження максимальної суми елементів}
+41     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < cols; ++i) \{
+42         \textcolor{keywordflow}{if} (sum\_of\_cols[max\_col]<sum\_of\_cols[i])\{
+43             max\_col = i;
+44         \}
+45     \}
+46     \textcolor{comment}{// Вивід масиву з виділеною колонкою з максимальною сумою}
+47     printf(\textcolor{stringliteral}{"Масив має вигляд\(\backslash\)n"});
+48     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < rows; ++i) \{
+49         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < cols; ++j) \{
+50             printf(\textcolor{stringliteral}{"  \(\backslash\)t"});
+51             \textcolor{keywordflow}{if} (j == max\_col)\{
+52                 printf(\textcolor{stringliteral}{"\(\backslash\)x1b[6;30;41m"});
+53                 printf(\textcolor{stringliteral}{"%d"},arr[i][j]);
+54                 printf(\textcolor{stringliteral}{"\(\backslash\)x1b[0m "});
+55             \}\textcolor{keywordflow}{else}\{
+56                 printf(\textcolor{stringliteral}{"%d "},arr[i][j]);
+57             \}
+58         \}
+59         putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+60     \}
+61     \textcolor{comment}{// Вивід масиву сум}
+62     printf(\textcolor{stringliteral}{"Суми колонок\(\backslash\)n"});
+63     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < cols; ++i) \{
+64         printf(\textcolor{stringliteral}{"  \(\backslash\)t"});
+65         \textcolor{keywordflow}{if} (i == max\_col)\{
+66             printf(\textcolor{stringliteral}{"\(\backslash\)x1b[6;30;41m"});
+67             printf(\textcolor{stringliteral}{"%d"},sum\_of\_cols[i]);
+68             printf(\textcolor{stringliteral}{"\(\backslash\)x1b[0m "});
+69         \}\textcolor{keywordflow}{else}\{
+70             printf(\textcolor{stringliteral}{"%d"}, sum\_of\_cols[i]);
+71         \}
+72     \}
+73     putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+74     \textcolor{comment}{// Вивід стовбця з найбільшою сумою елементів}
+75     printf(\textcolor{stringliteral}{"№%d - стовбець з найбільшою сумою елементів\(\backslash\)n"}, max\_col+1);
+76     \textcolor{comment}{//Вивільнення пам'яті}
+77     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < rows; ++i) \{
+78         free(arr[i]);
+79     \}
+80     free(arr);
+81     free(sum\_of\_cols);
+82 \}
+83 
+84 \textcolor{keywordtype}{int} main() \{
+85     \hyperlink{lab__functions_8h_a770281b98587f9f65ca4cc75b1d061db}{to\_repeat}(\hyperlink{main_8c_a2e10594dc040249a898e2880b4c64322}{task\_1}, \textcolor{stringliteral}{"Бажаєте повторити виконання завдання?\(\backslash\)n"});
+86     \textcolor{keywordflow}{return} 0;
+87 \}
+\end{DoxyCodeInclude}
+ 

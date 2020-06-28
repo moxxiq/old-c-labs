@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mox/KPI/C/Labs/№8/lab_functions.h
+
+/home/mox/KPI/C/Labs/№8/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+values.h
+-
+stdbool.h
+-
+lab_functions.h
+/home/mox/KPI/C/Labs/№8/lab_functions.h
+

@@ -1,0 +1,1233 @@
+\hypertarget{main_8c}{}\section{Файл main.\+c}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$values.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lab\+\_\+functions.\+h\char`\"{}}\newline
+Діаграма включених заголовочних файлів для main.\+c\+:
+% FIG 0
+\subsection*{Структури даних}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpatient__struct}{patient\+\_\+struct}
+\end{DoxyCompactItemize}
+\subsection*{Визначення типів}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a5c039b08da40fdae94ca39aa5189a4d1}\label{main_8c_a5c039b08da40fdae94ca39aa5189a4d1}} 
+typedef struct \hyperlink{structpatient__struct}{patient\+\_\+struct} {\bfseries patient}
+\end{DoxyCompactItemize}
+\subsection*{Функції}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8c_abbf86d13b1ad7b2b758cea501fa0261a}{print\+\_\+patient} (\hyperlink{structpatient__struct}{patient} card, \+\_\+\+Bool is\+\_\+not\+\_\+visible)
+\begin{DoxyCompactList}\small\item\em Вивід карти пацієнта на екран \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a3d170322fbad052da4a3999178a2f5ea}{remove\+\_\+by\+\_\+num} ()
+\begin{DoxyCompactList}\small\item\em Позначення елементів файлу як видалених \end{DoxyCompactList}\item 
+\hyperlink{structpatient__struct}{patient} \hyperlink{main_8c_a582ffa97511f52032c2d36314db2a774}{patient\+\_\+usr\+\_\+fill} ()
+\item 
+char $\ast$ \hyperlink{main_8c_a7b977e9bdffd23deea96ed66e437ba5e}{symbol\+\_\+ending} (int i)
+\item 
+int \hyperlink{main_8c_a547313220292d7be671b208b68ab1d94}{char\+\_\+number} ()
+\begin{DoxyCompactList}\small\item\em Кількість символів в останньому слові файла \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_af6a0006d3441dec89abb39e7c0070a82}{lines\+\_\+taks} ()
+\begin{DoxyCompactList}\small\item\em Копіювання тексту з певного рядка \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a2d8c16830ee01715bd19345746ffb070}{tranfer\+\_\+all\+\_\+text} (char $\ast$src, char $\ast$dest)
+\item 
+void \hyperlink{main_8c_a0225750ccc073d7680cae540419b124a}{tranfer\+\_\+all\+\_\+bin} (char $\ast$dest, char $\ast$src)
+\item 
+int \hyperlink{main_8c_add4eb0f3cf9c3c78e967cc9f6ff4fd39}{close\+\_\+text} ()
+\item 
+int \hyperlink{main_8c_ab1a09599960a374bdce391f8c424b83f}{close\+\_\+bin} ()
+\item 
+void \hyperlink{main_8c_a56f7f6edbc88169ca7785ff69d03396e}{zip\+\_\+bin} ()
+\begin{DoxyCompactList}\small\item\em Стискання бінарного файлу \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_aa933ed08d69becf14df3affc9194e344}{saveas\+\_\+text} ()
+\begin{DoxyCompactList}\small\item\em Зберегти як... текстовий файл \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_af14b38f404742efadc398c51b9830f6c}{saveas\+\_\+bin} ()
+\begin{DoxyCompactList}\small\item\em Зберегти як... бінарний файл \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_adcaf3a4fe6a5d1223e9d28382d74c8fe}{save\+\_\+text} ()
+\begin{DoxyCompactList}\small\item\em Зберегти текстовий файл \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_ade34d6c87a837a130af82aa7b13db885}{save\+\_\+bin} ()
+\begin{DoxyCompactList}\small\item\em Зберегти бінарний файл \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a69f822b267f0ba6c163047774f960aa8}{clear\+\_\+text} ()
+\begin{DoxyCompactList}\small\item\em Очистити текстовий файл \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_ae4a97e0e6277901e41f56dd2cb52aeaa}{clear\+\_\+bin} ()
+\begin{DoxyCompactList}\small\item\em Очистити бінарний файл \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_af649673615b84141d61a31bf103e436a}{clear\+\_\+edit\+\_\+text} ()
+\begin{DoxyCompactList}\small\item\em Редагувати текстовий файл з попереднім очищенням вмісту \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_aca18af51c5eba9da8b5ffabbaf06c01f}{clear\+\_\+edit\+\_\+bin} ()
+\begin{DoxyCompactList}\small\item\em Редагувати бінарний файл з попереднім очищенням вмісту \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_ab15bf3ab548bb875cba6b67d6d7a4cc4}{add\+\_\+front\+\_\+bin} ()
+\begin{DoxyCompactList}\small\item\em Додати картки в початок файлу \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_ad69ac85cc5d44de29b1448bd72937203}{append\+\_\+text} ()
+\begin{DoxyCompactList}\small\item\em Додати рядки в кінець файлу \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a5e87855f218fa953fdc1649bf832bb9c}{append\+\_\+bin} ()
+\begin{DoxyCompactList}\small\item\em Додати картки в кінець файлу \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_ab359f03309c64d2e7fb3eac80e34160f}{edit\+\_\+text} ()
+\begin{DoxyCompactList}\small\item\em Меню редагування текстового файлу \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_af33bf0e042c671b0a02da4460055fca1}{edit\+\_\+bin} ()
+\begin{DoxyCompactList}\small\item\em Меню редагування бінарного файлу \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a15e3f231d0bcb54bf66a3ffb3ca18e76}{lookup\+\_\+text} ()
+\begin{DoxyCompactList}\small\item\em Перегляд файлу \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a9b8453d075485a7eb875466bc438ef40}{lookup\+\_\+bin} ()
+\begin{DoxyCompactList}\small\item\em Перегляд файлу \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a176e42778dac5da0664205b3c0e2edf4}{lookup\+\_\+deleted\+\_\+bin} ()
+\begin{DoxyCompactList}\small\item\em Перегляд файлу \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a32a9d4e3cad93887f3e4a6e3a3f37828}{open\+\_\+text} ()
+\begin{DoxyCompactList}\small\item\em Створення нового бінарного файлу \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a285aac9c388f14bbb9cfc7e2e6714169}{open\+\_\+bin} ()
+\begin{DoxyCompactList}\small\item\em Створення нового текстового файлу \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a5b7250e7b7fba439d74ee3ad2b50006f}{create\+\_\+text} ()
+\begin{DoxyCompactList}\small\item\em Створення нового текстового файлу \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a57ee874fe25c7cad429eb70840ddbeb5}{create\+\_\+bin} ()
+\begin{DoxyCompactList}\small\item\em Створення нового бінарного файлу \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a564dfae4d147feeb20b129f28548a6c9}{menu\+\_\+text} ()
+\begin{DoxyCompactList}\small\item\em Меню для роботи з файлом у текстовому форматі \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_ab0cf75269a5c3ee16c5bacac2afe2bf7}{menu\+\_\+bin} ()
+\begin{DoxyCompactList}\small\item\em Меню для роботи з файлом у бінарному форматі \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a651d7c0d4fb2cfed2689ffa46f673f6f}{menu\+\_\+begin} ()
+\begin{DoxyCompactList}\small\item\em Меню для вибору режиму роботи з файлом \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Змінні}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a135720127f99cb05d92b53898c13f5cb}\label{main_8c_a135720127f99cb05d92b53898c13f5cb}} 
+char \hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{T\+E\+M\+P\+\_\+\+F\+I\+L\+E\+N\+A\+ME} \mbox{[}$\,$\mbox{]} = \char`\"{}.temp\+\_\+cache.\+txt\char`\"{}
+\begin{DoxyCompactList}\small\item\em Ім\textquotesingle{}я тимчасового файлу-\/кешу \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_a21c302c9c5be41c19da332369c271efe}\label{main_8c_a21c302c9c5be41c19da332369c271efe}} 
+bool \hyperlink{main_8c_a21c302c9c5be41c19da332369c271efe}{is\+\_\+opened\+\_\+text} = false
+\begin{DoxyCompactList}\small\item\em Чи є в даний момент часу відкритий текстовий файл \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_adf79f311e2646d88ed99108eebdece10}\label{main_8c_adf79f311e2646d88ed99108eebdece10}} 
+bool \hyperlink{main_8c_adf79f311e2646d88ed99108eebdece10}{is\+\_\+opened\+\_\+bin} = false
+\begin{DoxyCompactList}\small\item\em Чи є в даний момент часу відкритий бінарний файл \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}\label{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}} 
+char $\ast$ \hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\+\_\+file\+\_\+name} = N\+U\+LL
+\begin{DoxyCompactList}\small\item\em Ім\textquotesingle{}я поточного відкритого файлу \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Опис функцій}
+\mbox{\Hypertarget{main_8c_ab15bf3ab548bb875cba6b67d6d7a4cc4}\label{main_8c_ab15bf3ab548bb875cba6b67d6d7a4cc4}} 
+\index{main.\+c@{main.\+c}!add\+\_\+front\+\_\+bin@{add\+\_\+front\+\_\+bin}}
+\index{add\+\_\+front\+\_\+bin@{add\+\_\+front\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{add\+\_\+front\+\_\+bin()}{add\_front\_bin()}}
+{\footnotesize\ttfamily int add\+\_\+front\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Додати картки в початок файлу 
+
+Запис користувацького масиву карт пацієнтів в файл перед попередніми \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+430                    \{
+431     FILE *input = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"rb"});
+432     \textcolor{keywordtype}{int} N,M, temp\_n;
+433     \textcolor{keywordflow}{if} (!fread(&N, \textcolor{keyword}{sizeof}(N), 1, input))\{
+434         printf(\textcolor{stringliteral}{"Помилка читання файлу\(\backslash\)n"});
+435         fclose(input);
+436         \textcolor{keywordflow}{return} 0;
+437     \}
+438     \hyperlink{structpatient__struct}{patient} *cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*N);
+439     fread(cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, input);
+440     fclose(input);
+441     FILE *output = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"wb"});
+442     \textcolor{keywordflow}{if} (!output)\{
+443         printf(\textcolor{stringliteral}{"ERROR opening destination file (can be .temp\_cache.txt)\(\backslash\)n"});
+444         \textcolor{keywordflow}{return} 0;
+445     \}
+446     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Скільки структур буде введено?\(\backslash\)n"}, &M, 0, 255);
+447     temp\_n = N + M;
+448     fwrite(&temp\_n, \textcolor{keyword}{sizeof}(temp\_n),1,output);
+449     \hyperlink{structpatient__struct}{patient} *new\_cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*M);
+450     printf(\textcolor{stringliteral}{"Вводьте структури\(\backslash\)n"});
+451     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < M; ++i) \{
+452         new\_cards[i] = \hyperlink{main_8c_a582ffa97511f52032c2d36314db2a774}{patient\_usr\_fill}();
+453         putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+454     \}
+455     fwrite(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), M, output);
+456     fwrite(cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, output);
+457     free(cards);
+458     free(new\_cards);
+459     fclose(output);
+460     \textcolor{keywordflow}{return} 0;
+461 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a5e87855f218fa953fdc1649bf832bb9c}\label{main_8c_a5e87855f218fa953fdc1649bf832bb9c}} 
+\index{main.\+c@{main.\+c}!append\+\_\+bin@{append\+\_\+bin}}
+\index{append\+\_\+bin@{append\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{append\+\_\+bin()}{append\_bin()}}
+{\footnotesize\ttfamily int append\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Додати картки в кінець файлу 
+
+Запис користувацького масиву карт пацієнтів в файл після попередніх \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+484                 \{
+485     FILE *input = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"rb"});
+486     \textcolor{keywordtype}{int} N,M, temp\_n;
+487     \textcolor{keywordflow}{if}(!fread(&N, \textcolor{keyword}{sizeof}(N), 1, input))\{
+488         printf(\textcolor{stringliteral}{"Помилка читання файлу\(\backslash\)n"});
+489         fclose(input);
+490         \textcolor{keywordflow}{return} 0;
+491     \}
+492     \hyperlink{structpatient__struct}{patient} *cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*N);
+493     fread(cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, input);
+494     fclose(input);
+495     FILE *output = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"wb"});
+496     \textcolor{keywordflow}{if} (!output)\{
+497         printf(\textcolor{stringliteral}{"ERROR opening destination file (can be .temp\_cache.txt)\(\backslash\)n"});
+498         free(cards);
+499         \textcolor{keywordflow}{return} 0;
+500     \}
+501     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Скільки структур буде введено?\(\backslash\)n"}, &M, 0, 255);
+502     temp\_n = N + M;
+503     fwrite(&temp\_n, \textcolor{keyword}{sizeof}(temp\_n),1,output);
+504     \hyperlink{structpatient__struct}{patient} *new\_cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*M);
+505     printf(\textcolor{stringliteral}{"Вводьте структури\(\backslash\)n"});
+506     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < M; ++i) \{
+507         new\_cards[i] = \hyperlink{main_8c_a582ffa97511f52032c2d36314db2a774}{patient\_usr\_fill}();
+508         putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+509     \}
+510     fwrite(cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, output);
+511     fwrite(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), M, output);
+512     free(cards);
+513     free(new\_cards);
+514     fclose(output);
+515     \textcolor{keywordflow}{return} 0;
+516 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_ad69ac85cc5d44de29b1448bd72937203}\label{main_8c_ad69ac85cc5d44de29b1448bd72937203}} 
+\index{main.\+c@{main.\+c}!append\+\_\+text@{append\+\_\+text}}
+\index{append\+\_\+text@{append\+\_\+text}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{append\+\_\+text()}{append\_text()}}
+{\footnotesize\ttfamily int append\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Додати рядки в кінець файлу 
+
+Запис користувацького рядка в кінець файлу \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+467                  \{
+468     FILE *astream = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"a+"});
+469     fseek(astream, 0, SEEK\_SET);
+470     \textcolor{keywordtype}{char} c, bufer[255];
+471     \textcolor{keywordflow}{while} ((c = fgetc(astream)) != EOF)\{
+472         putchar(c);
+473     \}
+474     fgets(bufer, 254, stdin);
+475     fputs(bufer, astream);
+476     fclose(astream);
+477     \textcolor{keywordflow}{return} 0;
+478 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a547313220292d7be671b208b68ab1d94}\label{main_8c_a547313220292d7be671b208b68ab1d94}} 
+\index{main.\+c@{main.\+c}!char\+\_\+number@{char\+\_\+number}}
+\index{char\+\_\+number@{char\+\_\+number}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{char\+\_\+number()}{char\_number()}}
+{\footnotesize\ttfamily int char\+\_\+number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Кількість символів в останньому слові файла 
+
+Відбувається перевірка існування вже відкритого файла. Суть полягає у відраховуванні певної кількості символів з кінця файлу \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+118                  \{
+119     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a21c302c9c5be41c19da332369c271efe}{is\_opened\_text})\{
+120         FILE *F2;
+121         \textcolor{keywordflow}{if} (!(F2 = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"r"})))\{
+122             printf(\textcolor{stringliteral}{"Помилка відкриття!\(\backslash\)n"});
+123             \textcolor{keywordflow}{return} 0;
+124         \}
+125         \textcolor{keywordtype}{int} i = 0; \textcolor{comment}{//chars to the end}
+126         \textcolor{keywordtype}{int} seek\_spaces = 0;
+127         \textcolor{keywordtype}{char} tmp\_c;
+128         \textcolor{keywordflow}{while} (!fseek(F2,-seek\_spaces-1, SEEK\_END))\{
+129             tmp\_c = fgetc(F2);
+130             \textcolor{keywordflow}{if} (tmp\_c == \textcolor{charliteral}{' '} || tmp\_c == \textcolor{charliteral}{'\(\backslash\)n'}) \{
+131                 ++seek\_spaces;
+132             \} \textcolor{keywordflow}{else}\{
+133                 \textcolor{keywordflow}{break};
+134             \}
+135         \}
+136         \textcolor{keywordflow}{while} (!fseek(F2,-i-1-seek\_spaces, SEEK\_END))\{
+137             tmp\_c = fgetc(F2);
+138             \textcolor{keywordflow}{if} (tmp\_c != \textcolor{charliteral}{' '} && tmp\_c != \textcolor{charliteral}{'\(\backslash\)n'})\{
+139                 ++i;
+140             \} \textcolor{keywordflow}{else}\{
+141                 \textcolor{keywordflow}{break};
+142             \}
+143         \}
+144         \textcolor{comment}{//sybm}
+145         printf(\textcolor{stringliteral}{"Останнє слово містить %i %s\(\backslash\)n"}, i, \hyperlink{main_8c_a7b977e9bdffd23deea96ed66e437ba5e}{symbol\_ending}(i));
+146         \textcolor{comment}{//TODO:check in empty file}
+147     \} \textcolor{keywordflow}{else}\{
+148         printf(\textcolor{stringliteral}{"Жодного файла не відкрито\(\backslash\)n"});
+149     \}
+150     \textcolor{keywordflow}{return} 0;
+151 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_ae4a97e0e6277901e41f56dd2cb52aeaa}\label{main_8c_ae4a97e0e6277901e41f56dd2cb52aeaa}} 
+\index{main.\+c@{main.\+c}!clear\+\_\+bin@{clear\+\_\+bin}}
+\index{clear\+\_\+bin@{clear\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{clear\+\_\+bin()}{clear\_bin()}}
+{\footnotesize\ttfamily int clear\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Очистити бінарний файл 
+
+\begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+382                \{
+383     FILE *ofstream = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"wb"});
+384     fclose(ofstream);
+385     \textcolor{keywordflow}{return} 0;
+386 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_aca18af51c5eba9da8b5ffabbaf06c01f}\label{main_8c_aca18af51c5eba9da8b5ffabbaf06c01f}} 
+\index{main.\+c@{main.\+c}!clear\+\_\+edit\+\_\+bin@{clear\+\_\+edit\+\_\+bin}}
+\index{clear\+\_\+edit\+\_\+bin@{clear\+\_\+edit\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{clear\+\_\+edit\+\_\+bin()}{clear\_edit\_bin()}}
+{\footnotesize\ttfamily int clear\+\_\+edit\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Редагувати бінарний файл з попереднім очищенням вмісту 
+
+Запис користувацького масиву карт пацієнтів в файл \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+405                     \{
+406     \textcolor{keywordtype}{int} M;
+407     FILE *output = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"wb"});
+408     \textcolor{keywordflow}{if} (!output)\{
+409         printf(\textcolor{stringliteral}{"ERROR opening destination file (can be .temp\_cache.txt)\(\backslash\)n"});
+410         \textcolor{keywordflow}{return} 0;
+411     \}
+412     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Скільки структур буде введено?\(\backslash\)n"}, &M, 0, 255);
+413     fwrite(&M, \textcolor{keyword}{sizeof}(M),1,output);
+414     \hyperlink{structpatient__struct}{patient} *new\_cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*M);
+415     printf(\textcolor{stringliteral}{"Вводьте структури\(\backslash\)n"});
+416     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < M; ++i) \{
+417         new\_cards[i] = \hyperlink{main_8c_a582ffa97511f52032c2d36314db2a774}{patient\_usr\_fill}();
+418         putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+419     \}
+420     fwrite(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), M, output);
+421     free(new\_cards);
+422     fclose(output);
+423     \textcolor{keywordflow}{return} 0;
+424 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_af649673615b84141d61a31bf103e436a}\label{main_8c_af649673615b84141d61a31bf103e436a}} 
+\index{main.\+c@{main.\+c}!clear\+\_\+edit\+\_\+text@{clear\+\_\+edit\+\_\+text}}
+\index{clear\+\_\+edit\+\_\+text@{clear\+\_\+edit\+\_\+text}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{clear\+\_\+edit\+\_\+text()}{clear\_edit\_text()}}
+{\footnotesize\ttfamily int clear\+\_\+edit\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Редагувати текстовий файл з попереднім очищенням вмісту 
+
+Запис користувацького рядка в файл \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+392                      \{
+393     FILE *ofstream = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"w"});
+394     \textcolor{keywordtype}{char} bufer[255];
+395     fgets(bufer, 254, stdin);
+396     fputs(bufer, ofstream);
+397     fclose(ofstream);
+398     \textcolor{keywordflow}{return} 0;
+399 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a69f822b267f0ba6c163047774f960aa8}\label{main_8c_a69f822b267f0ba6c163047774f960aa8}} 
+\index{main.\+c@{main.\+c}!clear\+\_\+text@{clear\+\_\+text}}
+\index{clear\+\_\+text@{clear\+\_\+text}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{clear\+\_\+text()}{clear\_text()}}
+{\footnotesize\ttfamily int clear\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Очистити текстовий файл 
+
+\begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+373                 \{
+374     FILE *ofstream = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"w"});
+375     fclose(ofstream);
+376     \textcolor{keywordflow}{return} 0;
+377 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_ab1a09599960a374bdce391f8c424b83f}\label{main_8c_ab1a09599960a374bdce391f8c424b83f}} 
+\index{main.\+c@{main.\+c}!close\+\_\+bin@{close\+\_\+bin}}
+\index{close\+\_\+bin@{close\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{close\+\_\+bin()}{close\_bin()}}
+{\footnotesize\ttfamily int close\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Закриття бінарного файлу \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+253                \{
+254     \hyperlink{main_8c_adf79f311e2646d88ed99108eebdece10}{is\_opened\_bin} = \textcolor{keyword}{false};
+255     \textcolor{keywordflow}{return} 0;
+256 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_add4eb0f3cf9c3c78e967cc9f6ff4fd39}\label{main_8c_add4eb0f3cf9c3c78e967cc9f6ff4fd39}} 
+\index{main.\+c@{main.\+c}!close\+\_\+text@{close\+\_\+text}}
+\index{close\+\_\+text@{close\+\_\+text}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{close\+\_\+text()}{close\_text()}}
+{\footnotesize\ttfamily int close\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Закриття текстового файлу \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+245                 \{
+246     \hyperlink{main_8c_a21c302c9c5be41c19da332369c271efe}{is\_opened\_text} = \textcolor{keyword}{false};
+247     \textcolor{keywordflow}{return} 0;
+248 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a57ee874fe25c7cad429eb70840ddbeb5}\label{main_8c_a57ee874fe25c7cad429eb70840ddbeb5}} 
+\index{main.\+c@{main.\+c}!create\+\_\+bin@{create\+\_\+bin}}
+\index{create\+\_\+bin@{create\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{create\+\_\+bin()}{create\_bin()}}
+{\footnotesize\ttfamily int create\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Створення нового бінарного файлу 
+
+Відбувається перевірка існування вже відкритого файла. Через особливість роботи програми -\/ тимчасовий робочий файл -\/ зануляється, туди записується кількість активних структур, тобто 0. Стан активного файла встановлюється відкритим. \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+713                 \{
+714     \textcolor{keywordflow}{if} (\hyperlink{main_8c_adf79f311e2646d88ed99108eebdece10}{is\_opened\_bin})\{
+715         printf(\textcolor{stringliteral}{"Файл уже відкрито, закрийте попередній!\(\backslash\)n"});
+716     \} \textcolor{keywordflow}{else}\{
+717         FILE *bin\_fstream = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"wb"});
+718         \textcolor{keywordtype}{int} N = 0;
+719         fwrite(&N, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}), 1, bin\_fstream);
+720         fclose(bin\_fstream);
+721         \hyperlink{main_8c_adf79f311e2646d88ed99108eebdece10}{is\_opened\_bin} = \textcolor{keyword}{true};
+722     \}
+723     \textcolor{keywordflow}{return} 0;
+724 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a5b7250e7b7fba439d74ee3ad2b50006f}\label{main_8c_a5b7250e7b7fba439d74ee3ad2b50006f}} 
+\index{main.\+c@{main.\+c}!create\+\_\+text@{create\+\_\+text}}
+\index{create\+\_\+text@{create\+\_\+text}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{create\+\_\+text()}{create\_text()}}
+{\footnotesize\ttfamily int create\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Створення нового текстового файлу 
+
+Відбувається перевірка існування вже відкритого файла. Через особливість роботи програми -\/ тимчасовий робочий файл -\/ зануляється. Стан активного файла встановлюється відкритим. \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+696                  \{
+697     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a21c302c9c5be41c19da332369c271efe}{is\_opened\_text})\{
+698         printf(\textcolor{stringliteral}{"Файл уже відкрито, закрийте попередній!\(\backslash\)n"});
+699     \} \textcolor{keywordflow}{else}\{
+700         FILE *text\_fstream = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"w"});
+701         fclose(text\_fstream);
+702         \hyperlink{main_8c_a21c302c9c5be41c19da332369c271efe}{is\_opened\_text} = \textcolor{keyword}{true};
+703     \}
+704     \textcolor{keywordflow}{return} 0;
+705 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_af33bf0e042c671b0a02da4460055fca1}\label{main_8c_af33bf0e042c671b0a02da4460055fca1}} 
+\index{main.\+c@{main.\+c}!edit\+\_\+bin@{edit\+\_\+bin}}
+\index{edit\+\_\+bin@{edit\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{edit\+\_\+bin()}{edit\_bin()}}
+{\footnotesize\ttfamily int edit\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Меню редагування бінарного файлу 
+
+Відбувається перевірка існування вже відкритого файла. Поки користувач не вибере вихід -\/ не вийде з підменю \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+541               \{
+542     \textcolor{keywordflow}{if} (\hyperlink{main_8c_adf79f311e2646d88ed99108eebdece10}{is\_opened\_bin})\{
+543         \textcolor{keywordflow}{while} (\hyperlink{lab__functions_8h_a5f3f744789213f961f3c8ec1cc482af7}{menu}(4,
+544                     \textcolor{stringliteral}{"Дозапис в кінець файлу"}, \hyperlink{main_8c_a5e87855f218fa953fdc1649bf832bb9c}{append\_bin},
+545                     \textcolor{stringliteral}{"Дозапис в початок файлу"}, \hyperlink{main_8c_ab15bf3ab548bb875cba6b67d6d7a4cc4}{add\_front\_bin},
+546                     \textcolor{stringliteral}{"Виправлення (дані стираються)"}, \hyperlink{main_8c_aca18af51c5eba9da8b5ffabbaf06c01f}{clear\_edit\_bin},
+547                     \textcolor{stringliteral}{"Очистити файл"}, \hyperlink{main_8c_ae4a97e0e6277901e41f56dd2cb52aeaa}{clear\_bin}))
+548             \textcolor{keywordflow}{continue};
+549     \} \textcolor{keywordflow}{else}\{
+550         printf(\textcolor{stringliteral}{"Немає відкритих файлів\(\backslash\)n"});
+551     \}
+552     \textcolor{keywordflow}{return} 0;
+553 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_ab359f03309c64d2e7fb3eac80e34160f}\label{main_8c_ab359f03309c64d2e7fb3eac80e34160f}} 
+\index{main.\+c@{main.\+c}!edit\+\_\+text@{edit\+\_\+text}}
+\index{edit\+\_\+text@{edit\+\_\+text}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{edit\+\_\+text()}{edit\_text()}}
+{\footnotesize\ttfamily int edit\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Меню редагування текстового файлу 
+
+Відбувається перевірка існування вже відкритого файла. Поки користувач не вибере вихід -\/ не вийде з підменю \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+523                \{
+524     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a21c302c9c5be41c19da332369c271efe}{is\_opened\_text})\{
+525         \textcolor{keywordflow}{while} (\hyperlink{lab__functions_8h_a5f3f744789213f961f3c8ec1cc482af7}{menu}(3,
+526                 \textcolor{stringliteral}{"Дозапис в кінець файлу"}, \hyperlink{main_8c_ad69ac85cc5d44de29b1448bd72937203}{append\_text},
+527                 \textcolor{stringliteral}{"Виправлення (дані стираються)"}, \hyperlink{main_8c_af649673615b84141d61a31bf103e436a}{clear\_edit\_text},
+528                 \textcolor{stringliteral}{"Очистити файл"}, \hyperlink{main_8c_a69f822b267f0ba6c163047774f960aa8}{clear\_text}))
+529             \textcolor{keywordflow}{continue};
+530     \} \textcolor{keywordflow}{else}\{
+531         printf(\textcolor{stringliteral}{"Немає відкритих файлів\(\backslash\)n"});
+532     \}
+533     \textcolor{keywordflow}{return} 0;
+534 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_af6a0006d3441dec89abb39e7c0070a82}\label{main_8c_af6a0006d3441dec89abb39e7c0070a82}} 
+\index{main.\+c@{main.\+c}!lines\+\_\+taks@{lines\+\_\+taks}}
+\index{lines\+\_\+taks@{lines\+\_\+taks}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{lines\+\_\+taks()}{lines\_taks()}}
+{\footnotesize\ttfamily int lines\+\_\+taks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Копіювання тексту з певного рядка 
+
+Відбувається перевірка існування вже відкритого файла. Копіювання з файлу визначеного користувачем \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+158                 \{
+159     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a21c302c9c5be41c19da332369c271efe}{is\_opened\_text})\{
+160         FILE *F1, *F2;
+161         \textcolor{keywordtype}{char} tmp\_c;
+162         \textcolor{keywordtype}{int} line = 0,N;\textcolor{comment}{// user input N}
+163         \textcolor{keywordflow}{while} (!(F1 = fopen(\hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть шлях файлу з якого копіювати\(\backslash\)n"}), \textcolor{stringliteral}{"r"})))\{
+164             printf(\textcolor{stringliteral}{"Помилка відкриття, повторіть введення!\(\backslash\)n"});
+165         \}
+166         \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Починаючи з якого рядка слід копіювати текст?\(\backslash\)n"}, &N, 1, INT\_MAX);
+167         N--; \textcolor{comment}{// start counting from 0}
+168         \textcolor{keywordflow}{while} ((tmp\_c = fgetc(F1)) != EOF && line<N)\{
+169             \textcolor{keywordflow}{if} (tmp\_c == \textcolor{charliteral}{'\(\backslash\)n'})\{
+170                 line++;
+171             \}
+172         \}
+173         \textcolor{keywordflow}{if} (tmp\_c == EOF)\{
+174             fclose(F1);
+175             \textcolor{keywordflow}{return} 0;
+176         \}
+177         \textcolor{keywordflow}{if} (!(F2 = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"a"})))\{
+178             printf(\textcolor{stringliteral}{"Помилка запису!\(\backslash\)n"});
+179             fclose(F1);
+180             \textcolor{keywordflow}{return} 0;
+181         \}
+182         \textcolor{keywordflow}{while} (tmp\_c != EOF)\{
+183             fputc(tmp\_c,F2);
+184             tmp\_c = fgetc(F1);
+185         \}
+186         fclose(F1);
+187         fclose(F2);
+188     \} \textcolor{keywordflow}{else}\{
+189         printf(\textcolor{stringliteral}{"Жодного файла не відкрито\(\backslash\)n"});
+190     \}
+191     \textcolor{keywordflow}{return} 0;
+192 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a9b8453d075485a7eb875466bc438ef40}\label{main_8c_a9b8453d075485a7eb875466bc438ef40}} 
+\index{main.\+c@{main.\+c}!lookup\+\_\+bin@{lookup\+\_\+bin}}
+\index{lookup\+\_\+bin@{lookup\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{lookup\+\_\+bin()}{lookup\_bin()}}
+{\footnotesize\ttfamily int lookup\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Перегляд файлу 
+
+Відбувається перевірка існування вже відкритого файла. Вивід вмісту файла на екран \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+580                 \{
+581     \textcolor{keywordflow}{if} (\hyperlink{main_8c_adf79f311e2646d88ed99108eebdece10}{is\_opened\_bin})\{
+582         FILE *input = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"rb"});
+583         \textcolor{keywordtype}{int} N;
+584         \textcolor{keywordflow}{if} (!(fread(&N, \textcolor{keyword}{sizeof}(N), 1, input)))\{
+585             printf(\textcolor{stringliteral}{"Помилка читання файлу\(\backslash\)n"});
+586             \textcolor{keywordflow}{return} 0;
+587         \}
+588         \hyperlink{structpatient__struct}{patient} *new\_cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*N);
+589         fread(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, input);
+590         fclose(input);
+591         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < N; ++j) \{
+592             \hyperlink{main_8c_abbf86d13b1ad7b2b758cea501fa0261a}{print\_patient}(new\_cards[j], new\_cards[j].is\_removed);
+593         \}
+594         free(new\_cards);
+595     \} \textcolor{keywordflow}{else}\{
+596         printf(\textcolor{stringliteral}{"Немає відкритих файлів\(\backslash\)n"});
+597     \}
+598     \textcolor{keywordflow}{return} 0;
+599 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a176e42778dac5da0664205b3c0e2edf4}\label{main_8c_a176e42778dac5da0664205b3c0e2edf4}} 
+\index{main.\+c@{main.\+c}!lookup\+\_\+deleted\+\_\+bin@{lookup\+\_\+deleted\+\_\+bin}}
+\index{lookup\+\_\+deleted\+\_\+bin@{lookup\+\_\+deleted\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{lookup\+\_\+deleted\+\_\+bin()}{lookup\_deleted\_bin()}}
+{\footnotesize\ttfamily int lookup\+\_\+deleted\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Перегляд файлу 
+
+Відбувається перевірка існування вже відкритого файла. Вивід видалених карт на екран \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+606                         \{
+607     \textcolor{keywordflow}{if} (\hyperlink{main_8c_adf79f311e2646d88ed99108eebdece10}{is\_opened\_bin})\{
+608         FILE *input = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"rb"});
+609         \textcolor{keywordtype}{int} N;
+610         \textcolor{keywordflow}{if}(!fread(&N, \textcolor{keyword}{sizeof}(N), 1, input))\{
+611             printf(\textcolor{stringliteral}{"Помилка читання файлу\(\backslash\)n"});
+612             fclose(input);
+613             \textcolor{keywordflow}{return} 0;
+614         \}
+615         \hyperlink{structpatient__struct}{patient} *new\_cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*N);
+616         fread(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, input);
+617         fclose(input);
+618         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < N; ++j) \{
+619             \hyperlink{main_8c_abbf86d13b1ad7b2b758cea501fa0261a}{print\_patient}(new\_cards[j], !new\_cards[j].is\_removed);
+620         \}
+621         free(new\_cards);
+622     \} \textcolor{keywordflow}{else}\{
+623         printf(\textcolor{stringliteral}{"Немає відкритих файлів\(\backslash\)n"});
+624     \}
+625     \textcolor{keywordflow}{return} 0;
+626 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a15e3f231d0bcb54bf66a3ffb3ca18e76}\label{main_8c_a15e3f231d0bcb54bf66a3ffb3ca18e76}} 
+\index{main.\+c@{main.\+c}!lookup\+\_\+text@{lookup\+\_\+text}}
+\index{lookup\+\_\+text@{lookup\+\_\+text}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{lookup\+\_\+text()}{lookup\_text()}}
+{\footnotesize\ttfamily int lookup\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Перегляд файлу 
+
+Відбувається перевірка існування вже відкритого файла. Вивід вмісту файла на екран \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+560                  \{
+561     \textcolor{keywordtype}{char} c;
+562     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a21c302c9c5be41c19da332369c271efe}{is\_opened\_text})\{
+563         FILE *temp\_file = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"r"});
+564         \textcolor{keywordflow}{while} ((c = fgetc(temp\_file)) != EOF)\{
+565             putchar(c);
+566         \}
+567         putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+568         fclose(temp\_file);
+569     \} \textcolor{keywordflow}{else}\{
+570         printf(\textcolor{stringliteral}{"Немає відкритих файлів\(\backslash\)n"});
+571     \}
+572     \textcolor{keywordflow}{return} 0;
+573 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Виклик головного меню 
+\begin{DoxyCode}
+775            \{
+776     clear();
+777     \hyperlink{main_8c_a651d7c0d4fb2cfed2689ffa46f673f6f}{menu\_begin}();
+778     \textcolor{keywordflow}{return} 0;
+779 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a651d7c0d4fb2cfed2689ffa46f673f6f}\label{main_8c_a651d7c0d4fb2cfed2689ffa46f673f6f}} 
+\index{main.\+c@{main.\+c}!menu\+\_\+begin@{menu\+\_\+begin}}
+\index{menu\+\_\+begin@{menu\+\_\+begin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{menu\+\_\+begin()}{menu\_begin()}}
+{\footnotesize\ttfamily int menu\+\_\+begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Меню для вибору режиму роботи з файлом 
+
+Викликається меню 2 двома пунктами. Зануляється поточне ім\textquotesingle{}я файлу \begin{DoxyReturn}{Повертає}
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+765                 \{
+766     \textcolor{keywordflow}{while} (\hyperlink{lab__functions_8h_a5f3f744789213f961f3c8ec1cc482af7}{menu}(2, \textcolor{stringliteral}{"Робота з текстом"}, \hyperlink{main_8c_a564dfae4d147feeb20b129f28548a6c9}{menu\_text}, \textcolor{stringliteral}{"Робота з бінарним файлом"}, 
+      \hyperlink{main_8c_ab0cf75269a5c3ee16c5bacac2afe2bf7}{menu\_bin}))\{
+767         \hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name} = NULL;
+768         \textcolor{keywordflow}{continue};
+769     \}
+770     \textcolor{keywordflow}{return} 0;
+771 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_ab0cf75269a5c3ee16c5bacac2afe2bf7}\label{main_8c_ab0cf75269a5c3ee16c5bacac2afe2bf7}} 
+\index{main.\+c@{main.\+c}!menu\+\_\+bin@{menu\+\_\+bin}}
+\index{menu\+\_\+bin@{menu\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{menu\+\_\+bin()}{menu\_bin()}}
+{\footnotesize\ttfamily int menu\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Меню для роботи з файлом у бінарному форматі 
+
+Викликає меню для вибору роботи з файлом. На кожен пункт окрема визначена функція, що також може бути і підменю \begin{DoxyReturn}{Повертає}
+Номер вибраного пункту 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+748               \{
+749     \textcolor{keywordflow}{return} \hyperlink{lab__functions_8h_a5f3f744789213f961f3c8ec1cc482af7}{menu}(9, \textcolor{stringliteral}{"Створити новий файл"}, \hyperlink{main_8c_a57ee874fe25c7cad429eb70840ddbeb5}{create\_bin},
+750                 \textcolor{stringliteral}{"Відкрити файл"}, \hyperlink{main_8c_a285aac9c388f14bbb9cfc7e2e6714169}{open\_bin},
+751                 \textcolor{stringliteral}{"Перегляд файлу"}, \hyperlink{main_8c_a9b8453d075485a7eb875466bc438ef40}{lookup\_bin},
+752                 \textcolor{stringliteral}{"Перегляд видалених карток"}, \hyperlink{main_8c_a176e42778dac5da0664205b3c0e2edf4}{lookup\_deleted\_bin},
+753                 \textcolor{stringliteral}{"Редагувати файл"}, \hyperlink{main_8c_af33bf0e042c671b0a02da4460055fca1}{edit\_bin},
+754                 \textcolor{stringliteral}{"Видалити за номером карти"}, \hyperlink{main_8c_a3d170322fbad052da4a3999178a2f5ea}{remove\_by\_num},
+755                 \textcolor{stringliteral}{"Зберегти файл"}, \hyperlink{main_8c_ade34d6c87a837a130af82aa7b13db885}{save\_bin},
+756                 \textcolor{stringliteral}{"Зберегти файл як ..."}, \hyperlink{main_8c_af14b38f404742efadc398c51b9830f6c}{saveas\_bin},
+757                 \textcolor{stringliteral}{"Закрити файл"}, \hyperlink{main_8c_ab1a09599960a374bdce391f8c424b83f}{close\_bin});
+758 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a564dfae4d147feeb20b129f28548a6c9}\label{main_8c_a564dfae4d147feeb20b129f28548a6c9}} 
+\index{main.\+c@{main.\+c}!menu\+\_\+text@{menu\+\_\+text}}
+\index{menu\+\_\+text@{menu\+\_\+text}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{menu\+\_\+text()}{menu\_text()}}
+{\footnotesize\ttfamily int menu\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Меню для роботи з файлом у текстовому форматі 
+
+Викликає меню для вибору роботи з файлом. На кожен пункт окрема визначена функція, що також може бути і підменю \begin{DoxyReturn}{Повертає}
+Номер вибраного пункту 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+731                \{
+732     \textcolor{keywordflow}{return} \hyperlink{lab__functions_8h_a5f3f744789213f961f3c8ec1cc482af7}{menu}(9, \textcolor{stringliteral}{"Створити новий файл"}, \hyperlink{main_8c_a5b7250e7b7fba439d74ee3ad2b50006f}{create\_text},
+733             \textcolor{stringliteral}{"Відкрити файл"}, \hyperlink{main_8c_a32a9d4e3cad93887f3e4a6e3a3f37828}{open\_text},
+734             \textcolor{stringliteral}{"Перегляд файлу"}, \hyperlink{main_8c_a15e3f231d0bcb54bf66a3ffb3ca18e76}{lookup\_text},
+735             \textcolor{stringliteral}{"Редагувати файл"}, \hyperlink{main_8c_ab359f03309c64d2e7fb3eac80e34160f}{edit\_text},
+736             \textcolor{stringliteral}{"Зберегти файл"}, \hyperlink{main_8c_adcaf3a4fe6a5d1223e9d28382d74c8fe}{save\_text},
+737             \textcolor{stringliteral}{"Зберегти файл як ..."}, \hyperlink{main_8c_aa933ed08d69becf14df3affc9194e344}{saveas\_text},
+738             \textcolor{stringliteral}{"Закрити файл"}, \hyperlink{main_8c_add4eb0f3cf9c3c78e967cc9f6ff4fd39}{close\_text},
+739             \textcolor{stringliteral}{"Скопіювати рядки з файла, починаючи з n-го"}, \hyperlink{main_8c_af6a0006d3441dec89abb39e7c0070a82}{lines\_taks},
+740             \textcolor{stringliteral}{"Підрахувати кількість символів в останньому слові файлу"}, 
+      \hyperlink{main_8c_a547313220292d7be671b208b68ab1d94}{char\_number});
+741 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a285aac9c388f14bbb9cfc7e2e6714169}\label{main_8c_a285aac9c388f14bbb9cfc7e2e6714169}} 
+\index{main.\+c@{main.\+c}!open\+\_\+bin@{open\+\_\+bin}}
+\index{open\+\_\+bin@{open\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{open\+\_\+bin()}{open\_bin()}}
+{\footnotesize\ttfamily int open\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Створення нового текстового файлу 
+
+Відбувається перевірка існування вже відкритого файла. Запит користувача на ввід шляху файла, якщо такого не існує -\/ пропозиція на створення. Оновлюється статус відкритого активного файлу. \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+665               \{
+666     \textcolor{keywordflow}{if} (\hyperlink{main_8c_adf79f311e2646d88ed99108eebdece10}{is\_opened\_bin})\{
+667         printf(\textcolor{stringliteral}{"Файл уже відкрито, закрийте попередній!\(\backslash\)n"});
+668     \} \textcolor{keywordflow}{else} \{
+669         \hyperlink{main_8c_adf79f311e2646d88ed99108eebdece10}{is\_opened\_bin} = \textcolor{keyword}{true};
+670         FILE *existing\_check;
+671         \hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name} = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть ім'я/шлях файлу\(\backslash\)n"});
+672         \textcolor{keywordflow}{if} (!(existing\_check = fopen(\hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name}, \textcolor{stringliteral}{"r"})))\{
+673             printf(\textcolor{stringliteral}{"Помилка відкриття, файлу не існує!\(\backslash\)n"});
+674             \textcolor{keywordtype}{int} create;
+675             \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Створити новий з такою назвою? (1/0)\(\backslash\)n"},&create,0,1);
+676             \textcolor{keywordflow}{if} (create)\{
+677                 \hyperlink{main_8c_ade34d6c87a837a130af82aa7b13db885}{save\_bin}();
+678             \} \textcolor{keywordflow}{else}\{
+679                 \hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name} = NULL;
+680                 \hyperlink{main_8c_adf79f311e2646d88ed99108eebdece10}{is\_opened\_bin} = \textcolor{keyword}{false};
+681             \}
+682         \}\textcolor{keywordflow}{else}\{
+683             \hyperlink{main_8c_a0225750ccc073d7680cae540419b124a}{tranfer\_all\_bin}(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, 
+      \hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name});
+684             fclose(existing\_check);
+685         \}
+686     \}
+687     \textcolor{keywordflow}{return} 0;
+688 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a32a9d4e3cad93887f3e4a6e3a3f37828}\label{main_8c_a32a9d4e3cad93887f3e4a6e3a3f37828}} 
+\index{main.\+c@{main.\+c}!open\+\_\+text@{open\+\_\+text}}
+\index{open\+\_\+text@{open\+\_\+text}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{open\+\_\+text()}{open\_text()}}
+{\footnotesize\ttfamily int open\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Створення нового бінарного файлу 
+
+Відбувається перевірка існування вже відкритого файла. Запит користувача на ввід шляху файла, якщо такого не існує -\/ пропозиція на створення. Оновлюється статус відкритого активного файлу. \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+634                \{
+635     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a21c302c9c5be41c19da332369c271efe}{is\_opened\_text})\{
+636         printf(\textcolor{stringliteral}{"Файл уже відкрито, закрийте попередній!\(\backslash\)n"});
+637     \} \textcolor{keywordflow}{else} \{
+638         \hyperlink{main_8c_a21c302c9c5be41c19da332369c271efe}{is\_opened\_text} = \textcolor{keyword}{true};
+639         FILE *existing\_check;
+640         \hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name} = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть ім'я/шлях файлу\(\backslash\)n"});
+641         \textcolor{keywordflow}{if} (!(existing\_check = fopen(\hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name}, \textcolor{stringliteral}{"r"})))\{
+642             printf(\textcolor{stringliteral}{"Файлу не існує!\(\backslash\)n"});
+643             \textcolor{keywordtype}{int} create;
+644             \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Створити новий з такою назвою? (1/0)\(\backslash\)n"},&create,0,1);
+645             \textcolor{keywordflow}{if} (create)\{
+646                 \hyperlink{main_8c_adcaf3a4fe6a5d1223e9d28382d74c8fe}{save\_text}();
+647             \} \textcolor{keywordflow}{else}\{
+648                 \hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name} = NULL;
+649                 \hyperlink{main_8c_a21c302c9c5be41c19da332369c271efe}{is\_opened\_text} = \textcolor{keyword}{false};
+650             \}
+651         \}\textcolor{keywordflow}{else}\{
+652             \hyperlink{main_8c_a2d8c16830ee01715bd19345746ffb070}{tranfer\_all\_text}(\hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name}, 
+      \hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME});
+653             fclose(existing\_check);
+654         \}
+655     \}
+656     \textcolor{keywordflow}{return} 0;
+657 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a582ffa97511f52032c2d36314db2a774}\label{main_8c_a582ffa97511f52032c2d36314db2a774}} 
+\index{main.\+c@{main.\+c}!patient\+\_\+usr\+\_\+fill@{patient\+\_\+usr\+\_\+fill}}
+\index{patient\+\_\+usr\+\_\+fill@{patient\+\_\+usr\+\_\+fill}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{patient\+\_\+usr\+\_\+fill()}{patient\_usr\_fill()}}
+{\footnotesize\ttfamily \hyperlink{structpatient__struct}{patient} patient\+\_\+usr\+\_\+fill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Створення та заповнення користувачем карти хворого \begin{DoxyReturn}{Повертає}
+Екземпляр карти пацієнта 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+74                           \{
+75     \hyperlink{structpatient__struct}{patient} card;
+76     printf(\textcolor{stringliteral}{"|        ПІБ: "});
+77     fgets(card.\hyperlink{structpatient__struct_a1748953b20361f0e24b467da0ef4a41c}{SNF}, 62, stdin);
+78     card.\hyperlink{structpatient__struct_a1748953b20361f0e24b467da0ef4a41c}{SNF}[strlen(card.\hyperlink{structpatient__struct_a1748953b20361f0e24b467da0ef4a41c}{SNF})-1] = \textcolor{charliteral}{'\(\backslash\)0'};
+79     printf(\textcolor{stringliteral}{"|     Адреса: "});
+80     fgets(card.\hyperlink{structpatient__struct_a74e029a3ea6a1d9896abb9477f53dcf8}{addres}, 62, stdin);
+81     card.\hyperlink{structpatient__struct_a74e029a3ea6a1d9896abb9477f53dcf8}{addres}[strlen(card.\hyperlink{structpatient__struct_a74e029a3ea6a1d9896abb9477f53dcf8}{addres})-1] = \textcolor{charliteral}{'\(\backslash\)0'};
+82     card.\hyperlink{structpatient__struct_a06e0e04046e9434904f4e53bb8583332}{card\_numer} = \hyperlink{lab__functions_8h_a45e2d75e7b00ac6711c815431d42bcfd}{get\_int}(\textcolor{stringliteral}{"|Номер карти: "},0, INT\_MAX);
+83     card.\hyperlink{structpatient__struct_ad2475b69abfa9243c2700d63b63aa79b}{is\_removed} = (\_Bool)0;
+84     \textcolor{keywordflow}{return} card;
+85 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_abbf86d13b1ad7b2b758cea501fa0261a}\label{main_8c_abbf86d13b1ad7b2b758cea501fa0261a}} 
+\index{main.\+c@{main.\+c}!print\+\_\+patient@{print\+\_\+patient}}
+\index{print\+\_\+patient@{print\+\_\+patient}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+patient()}{print\_patient()}}
+{\footnotesize\ttfamily void print\+\_\+patient (\begin{DoxyParamCaption}\item[{\hyperlink{structpatient__struct}{patient}}]{card,  }\item[{\+\_\+\+Bool}]{is\+\_\+not\+\_\+visible }\end{DoxyParamCaption})}
+
+
+
+Вивід карти пацієнта на екран 
+
+Вивід даних в форматованому вигляді 
+\begin{DoxyParams}{Аргументи}
+{\em card} & Власне карта пацієнта \\
+\hline
+{\em is\+\_\+not\+\_\+visible} & параметр, що потрібен для показу видалених (або ні) файлів \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+25                                                       \{
+26     \textcolor{keywordflow}{if} (is\_not\_visible)\{
+27         \textcolor{keywordflow}{return};
+28     \}
+29     printf(\textcolor{stringliteral}{" \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\(\backslash\)n"});
+30     printf(\textcolor{stringliteral}{"|        ПІБ: %-62s\(\backslash\)n"},card.\hyperlink{structpatient__struct_a1748953b20361f0e24b467da0ef4a41c}{SNF});
+31     printf(\textcolor{stringliteral}{"|     Адреса: %-62s\(\backslash\)n"},card.\hyperlink{structpatient__struct_a74e029a3ea6a1d9896abb9477f53dcf8}{addres});
+32     printf(\textcolor{stringliteral}{"|Номер карти: %-62d\(\backslash\)n"},card.\hyperlink{structpatient__struct_a06e0e04046e9434904f4e53bb8583332}{card\_numer});
+33     printf(\textcolor{stringliteral}{" ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\(\backslash\)n"});
+34 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a3d170322fbad052da4a3999178a2f5ea}\label{main_8c_a3d170322fbad052da4a3999178a2f5ea}} 
+\index{main.\+c@{main.\+c}!remove\+\_\+by\+\_\+num@{remove\+\_\+by\+\_\+num}}
+\index{remove\+\_\+by\+\_\+num@{remove\+\_\+by\+\_\+num}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{remove\+\_\+by\+\_\+num()}{remove\_by\_num()}}
+{\footnotesize\ttfamily int remove\+\_\+by\+\_\+num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Позначення елементів файлу як видалених 
+
+Зчитування поточного файлу, позначення карти як видаленої, запис назад у файл \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+40                    \{
+41     FILE *input = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"rb"});
+42     \textcolor{keywordtype}{int} N;
+43     \textcolor{keywordflow}{if} (!fread(&N, \textcolor{keyword}{sizeof}(N), 1, input))\{
+44         printf(\textcolor{stringliteral}{"Помилка читання файлу\(\backslash\)n"});
+45         \textcolor{keywordflow}{return} 0;
+46     \}
+47     \hyperlink{structpatient__struct}{patient} *cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*N);
+48     fread(cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, input);
+49     fclose(input);
+50     \textcolor{keywordtype}{int} remove\_number;
+51     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Введіть номер карти, яку потрібно видалити\(\backslash\)n"}, &remove\_number, 0, INT\_MAX);
+52 
+53     FILE *output = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"wb"});
+54     \textcolor{keywordflow}{if} (!output)\{
+55         printf(\textcolor{stringliteral}{"ERROR opening destination file (can be .temp\_cache.txt)\(\backslash\)n"});
+56         \textcolor{keywordflow}{return} 0;
+57     \}
+58     fwrite(&N, \textcolor{keyword}{sizeof}(N),1,output);
+59     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+60         \textcolor{keywordflow}{if} (cards[i].card\_numer == remove\_number)\{
+61             cards[i].\hyperlink{structpatient__struct_ad2475b69abfa9243c2700d63b63aa79b}{is\_removed} = (\_Bool)1;
+62             printf(\textcolor{stringliteral}{"Карта \(\backslash\)"%s\(\backslash\)" видалена\(\backslash\)n"}, cards[i].SNF);
+63         \}
+64     \}
+65     fwrite(cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, output);
+66     free(cards);
+67     fclose(output);
+68     \textcolor{keywordflow}{return} 0;
+69 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_ade34d6c87a837a130af82aa7b13db885}\label{main_8c_ade34d6c87a837a130af82aa7b13db885}} 
+\index{main.\+c@{main.\+c}!save\+\_\+bin@{save\+\_\+bin}}
+\index{save\+\_\+bin@{save\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{save\+\_\+bin()}{save\_bin()}}
+{\footnotesize\ttfamily int save\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Зберегти бінарний файл 
+
+Відбувається перевірка існування вже відкритого файла. Запис у файл з потрібною навою або у поточний відкритий файл \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+353               \{
+354     \textcolor{keywordtype}{int} is\_zip;
+355     \textcolor{keywordflow}{if} (\hyperlink{main_8c_adf79f311e2646d88ed99108eebdece10}{is\_opened\_bin})\{
+356         \textcolor{keywordflow}{if} (!(\hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name}))\{
+357             \hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name} = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть назву/шлях файла\(\backslash\)n"});
+358         \}
+359         \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Зберегти з ущільненням? (0/1)\(\backslash\)n"}, &is\_zip, 0, 1);
+360         \textcolor{keywordflow}{if} (is\_zip)\{
+361             \hyperlink{main_8c_a56f7f6edbc88169ca7785ff69d03396e}{zip\_bin}();
+362         \}
+363         \hyperlink{main_8c_a0225750ccc073d7680cae540419b124a}{tranfer\_all\_bin}(\hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name}, 
+      \hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME});
+364     \} \textcolor{keywordflow}{else}\{
+365         printf(\textcolor{stringliteral}{"Жодного файла не відкрито\(\backslash\)n"});
+366     \}
+367     \textcolor{keywordflow}{return} 0;
+368 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_adcaf3a4fe6a5d1223e9d28382d74c8fe}\label{main_8c_adcaf3a4fe6a5d1223e9d28382d74c8fe}} 
+\index{main.\+c@{main.\+c}!save\+\_\+text@{save\+\_\+text}}
+\index{save\+\_\+text@{save\+\_\+text}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{save\+\_\+text()}{save\_text()}}
+{\footnotesize\ttfamily int save\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Зберегти текстовий файл 
+
+Відбувається перевірка існування вже відкритого файла. Запис у файл з потрібною навою або у поточний відкритий файл \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+336                \{
+337     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a21c302c9c5be41c19da332369c271efe}{is\_opened\_text})\{
+338         \textcolor{keywordflow}{if} (!(\hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name}))\{
+339             \hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name} = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть назву/шлях файла\(\backslash\)n"});
+340         \}
+341         \hyperlink{main_8c_a2d8c16830ee01715bd19345746ffb070}{tranfer\_all\_text}(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, 
+      \hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name});
+342     \} \textcolor{keywordflow}{else}\{
+343         printf(\textcolor{stringliteral}{"Жодного файла не відкрито\(\backslash\)n"});
+344     \}
+345     \textcolor{keywordflow}{return} 0;
+346 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_af14b38f404742efadc398c51b9830f6c}\label{main_8c_af14b38f404742efadc398c51b9830f6c}} 
+\index{main.\+c@{main.\+c}!saveas\+\_\+bin@{saveas\+\_\+bin}}
+\index{saveas\+\_\+bin@{saveas\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{saveas\+\_\+bin()}{saveas\_bin()}}
+{\footnotesize\ttfamily int saveas\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Зберегти як... бінарний файл 
+
+Відбувається перевірка існування вже відкритого файла. Запис у файл з потрібною навою \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+316                 \{
+317     \textcolor{keywordtype}{int} is\_zip;
+318     \textcolor{keywordflow}{if} (\hyperlink{main_8c_adf79f311e2646d88ed99108eebdece10}{is\_opened\_bin})\{
+319         \hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name} = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть назву/шлях файла\(\backslash\)n"});
+320         \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Зберегти з ущільненням? (0/1)\(\backslash\)n"}, &is\_zip, 0, 1);
+321         \textcolor{keywordflow}{if} (is\_zip)\{
+322             \hyperlink{main_8c_a56f7f6edbc88169ca7785ff69d03396e}{zip\_bin}();
+323         \}
+324         \hyperlink{main_8c_a0225750ccc073d7680cae540419b124a}{tranfer\_all\_bin}(\hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name}, 
+      \hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME});
+325     \} \textcolor{keywordflow}{else}\{
+326         printf(\textcolor{stringliteral}{"Жодного файла не відкрито\(\backslash\)n"});
+327     \}
+328     \textcolor{keywordflow}{return} 0;
+329 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_aa933ed08d69becf14df3affc9194e344}\label{main_8c_aa933ed08d69becf14df3affc9194e344}} 
+\index{main.\+c@{main.\+c}!saveas\+\_\+text@{saveas\+\_\+text}}
+\index{saveas\+\_\+text@{saveas\+\_\+text}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{saveas\+\_\+text()}{saveas\_text()}}
+{\footnotesize\ttfamily int saveas\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Зберегти як... текстовий файл 
+
+Відбувається перевірка існування вже відкритого файла. Запис у файл з потрібною навою \begin{DoxyReturn}{Повертає}
+0 в разі успішного виконання 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+301                  \{
+302     \textcolor{keywordflow}{if} (\hyperlink{main_8c_a21c302c9c5be41c19da332369c271efe}{is\_opened\_text})\{
+303         \hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name} = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(\textcolor{stringliteral}{"Введіть назву/шлях файла\(\backslash\)n"});
+304         \hyperlink{main_8c_a2d8c16830ee01715bd19345746ffb070}{tranfer\_all\_text}(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, 
+      \hyperlink{main_8c_ab6030f76aa8ed06ae18d58076c1a29db}{current\_file\_name});
+305     \} \textcolor{keywordflow}{else}\{
+306         printf(\textcolor{stringliteral}{"Жодного файла не відкрито\(\backslash\)n"});
+307     \}
+308     \textcolor{keywordflow}{return} 0;
+309 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a7b977e9bdffd23deea96ed66e437ba5e}\label{main_8c_a7b977e9bdffd23deea96ed66e437ba5e}} 
+\index{main.\+c@{main.\+c}!symbol\+\_\+ending@{symbol\+\_\+ending}}
+\index{symbol\+\_\+ending@{symbol\+\_\+ending}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{symbol\+\_\+ending()}{symbol\_ending()}}
+{\footnotesize\ttfamily char$\ast$ symbol\+\_\+ending (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+Відмінювання слова \char`\"{}символ\char`\"{} для різних чисельників 
+\begin{DoxyParams}{Аргументи}
+{\em i} & Чисельник \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Повертає}
+Слово з правильним закінченням 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+91                           \{
+92     \textcolor{keywordtype}{char} *symb;
+93     \textcolor{keywordflow}{if} (i%100>10 && i%100<21)\{
+94         symb = \textcolor{stringliteral}{"символів"};
+95     \} \textcolor{keywordflow}{else}\{
+96         \textcolor{keywordflow}{switch} (i%10)\{
+97             \textcolor{keywordflow}{case} 1:
+98                 symb = \textcolor{stringliteral}{"символ"};
+99                 \textcolor{keywordflow}{break};
+100             \textcolor{keywordflow}{case} 2:
+101             \textcolor{keywordflow}{case} 3:
+102             \textcolor{keywordflow}{case} 4:
+103                 symb = \textcolor{stringliteral}{"символа"};
+104                 \textcolor{keywordflow}{break};
+105             \textcolor{keywordflow}{default}:
+106                 symb = \textcolor{stringliteral}{"символів"};
+107 
+108         \}
+109     \}
+110     \textcolor{keywordflow}{return} symb;
+111 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a0225750ccc073d7680cae540419b124a}\label{main_8c_a0225750ccc073d7680cae540419b124a}} 
+\index{main.\+c@{main.\+c}!tranfer\+\_\+all\+\_\+bin@{tranfer\+\_\+all\+\_\+bin}}
+\index{tranfer\+\_\+all\+\_\+bin@{tranfer\+\_\+all\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{tranfer\+\_\+all\+\_\+bin()}{tranfer\_all\_bin()}}
+{\footnotesize\ttfamily void tranfer\+\_\+all\+\_\+bin (\begin{DoxyParamCaption}\item[{char $\ast$}]{dest,  }\item[{char $\ast$}]{src }\end{DoxyParamCaption})}
+
+Копіювання даних з одного бінарного файлу в інший 
+\begin{DoxyParams}{Аргументи}
+{\em src} & Джерело \\
+\hline
+{\em dest} & Призначення \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+219                                            \{
+220     \textcolor{comment}{// HAVE NO INPUT CHECKUPS}
+221     FILE *input = fopen(src, \textcolor{stringliteral}{"rb"});
+222     FILE *output = fopen(dest, \textcolor{stringliteral}{"wb"});
+223     \textcolor{keywordtype}{int} N;
+224     \textcolor{keywordflow}{if} (!output)\{
+225         printf(\textcolor{stringliteral}{"ERROR opening destination file (can be .temp\_cache.txt)\(\backslash\)n"});
+226         fclose(input);
+227         \textcolor{keywordflow}{return};
+228     \}
+229     \textcolor{keywordflow}{if} (!fread(&N, \textcolor{keyword}{sizeof}(N), 1, input))\{
+230         printf(\textcolor{stringliteral}{"Помилка читання файлу\(\backslash\)n"});
+231         \textcolor{keywordflow}{return};
+232     \}
+233     \hyperlink{structpatient__struct}{patient} *new\_cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*N);
+234     fread(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, input);
+235     fclose(input);
+236     fwrite(&N, \textcolor{keyword}{sizeof}(N),1,output);
+237     fwrite(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, output);
+238     free(new\_cards);
+239     fclose(output);
+240 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a2d8c16830ee01715bd19345746ffb070}\label{main_8c_a2d8c16830ee01715bd19345746ffb070}} 
+\index{main.\+c@{main.\+c}!tranfer\+\_\+all\+\_\+text@{tranfer\+\_\+all\+\_\+text}}
+\index{tranfer\+\_\+all\+\_\+text@{tranfer\+\_\+all\+\_\+text}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{tranfer\+\_\+all\+\_\+text()}{tranfer\_all\_text()}}
+{\footnotesize\ttfamily void tranfer\+\_\+all\+\_\+text (\begin{DoxyParamCaption}\item[{char $\ast$}]{src,  }\item[{char $\ast$}]{dest }\end{DoxyParamCaption})}
+
+Копіювання даних з одного текстового файлу в інший 
+\begin{DoxyParams}{Аргументи}
+{\em src} & Джерело \\
+\hline
+{\em dest} & Призначення \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+198                                             \{
+199     \textcolor{comment}{// HAVE NO INPUT CHECKUPS}
+200     FILE *input = fopen(src, \textcolor{stringliteral}{"r"});
+201     FILE *output = fopen(dest, \textcolor{stringliteral}{"w"});
+202     \textcolor{keywordtype}{char} c;
+203     \textcolor{keywordflow}{if} (!output)\{
+204         printf(\textcolor{stringliteral}{"ERROR opening destination file (can be .temp\_cache.txt)\(\backslash\)n"});
+205         fclose(input);
+206         \textcolor{keywordflow}{return};
+207     \}
+208     \textcolor{keywordflow}{while} ((c = fgetc(input))!= EOF)\{
+209         fputc(c, output);
+210     \}
+211     fclose(input);
+212     fclose(output);
+213 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a56f7f6edbc88169ca7785ff69d03396e}\label{main_8c_a56f7f6edbc88169ca7785ff69d03396e}} 
+\index{main.\+c@{main.\+c}!zip\+\_\+bin@{zip\+\_\+bin}}
+\index{zip\+\_\+bin@{zip\+\_\+bin}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{zip\+\_\+bin()}{zip\_bin()}}
+{\footnotesize\ttfamily void zip\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Стискання бінарного файлу 
+
+Зчитується файл, кількість видимих карток, записуються видимі картки в динамічний масив 
+\begin{DoxyCode}
+262               \{
+263     FILE *input = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"rb"});
+264     \textcolor{keywordtype}{int} N, M=0;
+265     \textcolor{keywordflow}{if} (!fread(&N, \textcolor{keyword}{sizeof}(N), 1, input))\{
+266         printf(\textcolor{stringliteral}{"Помилка читання файлу\(\backslash\)n"});
+267         \textcolor{keywordflow}{return};
+268     \}
+269     \hyperlink{structpatient__struct}{patient} *cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*N);
+270     fread(cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), N, input);
+271     fclose(input);
+272     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+273         \textcolor{keywordflow}{if} (!cards[i].is\_removed)\{
+274             ++M;
+275         \}
+276     \}
+277     \hyperlink{structpatient__struct}{patient} *new\_cards = (\hyperlink{structpatient__struct}{patient} *)malloc(\textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient})*M);
+278     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0, j = 0; i < N; ++i) \{
+279         \textcolor{keywordflow}{if} (!cards[i].is\_removed)\{
+280             new\_cards[j++] = cards[i];
+281         \}
+282     \}
+283     FILE *output = fopen(\hyperlink{main_8c_a135720127f99cb05d92b53898c13f5cb}{TEMP\_FILENAME}, \textcolor{stringliteral}{"wb"});
+284     \textcolor{keywordflow}{if} (!output)\{
+285         printf(\textcolor{stringliteral}{"ERROR opening destination file (can be .temp\_cache.txt)\(\backslash\)n"});
+286         fclose(input);
+287         \textcolor{keywordflow}{return};
+288     \}
+289     fwrite(&M, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),1,output);
+290     fwrite(new\_cards, \textcolor{keyword}{sizeof}(\hyperlink{structpatient__struct}{patient}), M, output);
+291     free(cards);
+292     free(new\_cards);
+293     fclose(output);
+294 \}
+\end{DoxyCode}

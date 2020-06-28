@@ -1,0 +1,1351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ЛАБОРАТОРНА РОБОТА №7: Файл main.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ЛАБОРАТОРНА РОБОТА №7
+   </div>
+   <div id="projectbrief">ОДНОЗВ’ЯЗНІ СПИСКИ</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Створено системою Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Пошук');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Пошук');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Структури даних</a> &#124;
+<a href="#typedef-members">Визначення типів</a> &#124;
+<a href="#enum-members">Переліки</a> &#124;
+<a href="#func-members">Функції</a> &#124;
+<a href="#var-members">Змінні</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл main.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;values.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="lab__functions_8h_source.html">lab_functions.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Діаграма включених заголовочних файлів для main.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c__incl.png" border="0" usemap="#main_8c" alt=""/></div>
+<map name="main_8c" id="main_8c">
+<area shape="rect" id="node8" href="lab__functions_8h.html" title="lab_functions.h" alt="" coords="554,80,665,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Структури даних</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAEROFLOT__STRUCT.html">AEROFLOT_STRUCT</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Визначення типів</h2></td></tr>
+<tr class="memitem:a74d502c75564c2a33d89295957d6a448"><td class="memItemLeft" align="right" valign="top"><a id="a74d502c75564c2a33d89295957d6a448"></a>
+typedef struct <a class="el" href="structAEROFLOT__STRUCT.html">AEROFLOT_STRUCT</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Aeroflot</b></td></tr>
+<tr class="separator:a74d502c75564c2a33d89295957d6a448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea5828d534b19884e9d22751e524cbf4"><td class="memItemLeft" align="right" valign="top"><a id="aea5828d534b19884e9d22751e524cbf4"></a>
+typedef struct <a class="el" href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a>&#160;</td><td class="memItemRight" valign="bottom"><b>List_aeroflot</b></td></tr>
+<tr class="separator:aea5828d534b19884e9d22751e524cbf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Переліки</h2></td></tr>
+<tr class="memitem:a85e61e12a1348f292d1732e066b2a900"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a85e61e12a1348f292d1732e066b2a900">type_of_aeroplane</a> { <a class="el" href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426">ELSE</a>, 
+<a class="el" href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877">CIVIL</a>, 
+<a class="el" href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5">MILITARY</a>
+ }</td></tr>
+<tr class="separator:a85e61e12a1348f292d1732e066b2a900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5b035af54b12fffc80b6aa76ab4029f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029f">menu_enum</a> { <br />
+&#160;&#160;<a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa0cb1b2c6a7db1f1084886c98909a3f36">INIT</a> = 1, 
+<a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fac19da14a6129e83c76c7ac5d1b48bdf6">PUSH_TOP</a>, 
+<a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029facead49106e50d919b5e6b2c78170c761">PUSH_BACK</a>, 
+<a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fab6a95ededfc57bc938450bda1066efca">PUSH_N</a>, 
+<br />
+&#160;&#160;<a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa5b5c3f5e5115e360c49d379f52ded058">PUSH_KEY</a>, 
+<a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa061dcf4785583d8653942f2d252174fa">POP</a>, 
+<a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa6091654b8b9aedd5fd86976f5a1e96cf">REMOVE_BACK</a>, 
+<a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa42637601e6022d5e586cbe28071a9b48">REMOVE_N</a>, 
+<br />
+&#160;&#160;<a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa72b88f8d3c8ad24bf832cafa6e086217">REMOVE_KEY</a>, 
+<a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029faf6b54e2f964c3204c88d0d82a509f65a">SHOW</a>, 
+<a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa136486a15d68351e470b6b449ae7a246">SORT</a>, 
+<a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fae8221012d15767e99099fc09b63b77dc">GET_BY_CITY</a>, 
+<br />
+&#160;&#160;<a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa7a10b5d68d31711288e1fe0fa17dbf4f">EXIT</a>
+<br />
+ }</td></tr>
+<tr class="separator:ad5b035af54b12fffc80b6aa76ab4029f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функції</h2></td></tr>
+<tr class="memitem:a36302364b495f5e99251b65c3c5993d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a36302364b495f5e99251b65c3c5993d2">aeroflot_user_fill</a> ()</td></tr>
+<tr class="memdesc:a36302364b495f5e99251b65c3c5993d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Користувач вказує місце призначення, номер рейсу, тип літака.  <a href="#a36302364b495f5e99251b65c3c5993d2">Детальніше...</a><br /></td></tr>
+<tr class="separator:a36302364b495f5e99251b65c3c5993d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268a550e94036d245188ea5dc9f89155"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a268a550e94036d245188ea5dc9f89155">aeroflot_cmp</a> (<a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *first, <a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *second)</td></tr>
+<tr class="memdesc:a268a550e94036d245188ea5dc9f89155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Порівняння двох змінних типів <code>Aeroflot</code>.  <a href="#a268a550e94036d245188ea5dc9f89155">Детальніше...</a><br /></td></tr>
+<tr class="separator:a268a550e94036d245188ea5dc9f89155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2f3cf7027536425c3cc1aae1c07bc41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ab2f3cf7027536425c3cc1aae1c07bc41">print_single_aeroflot</a> (<a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> aeroplanes)</td></tr>
+<tr class="memdesc:ab2f3cf7027536425c3cc1aae1c07bc41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виводим структуру типу Aeroflot в частково відформатованому вигляді  <a href="#ab2f3cf7027536425c3cc1aae1c07bc41">Детальніше...</a><br /></td></tr>
+<tr class="separator:ab2f3cf7027536425c3cc1aae1c07bc41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39c2c82dccda45fa272ba55c57a3dbf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a39c2c82dccda45fa272ba55c57a3dbf9">get_by_city</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **head)</td></tr>
+<tr class="memdesc:a39c2c82dccda45fa272ba55c57a3dbf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вивід рейсів з заданою назвою  <a href="#a39c2c82dccda45fa272ba55c57a3dbf9">Детальніше...</a><br /></td></tr>
+<tr class="separator:a39c2c82dccda45fa272ba55c57a3dbf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d48471ab7b12b187d04943f4d808488"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a4d48471ab7b12b187d04943f4d808488">is_empty</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **head)</td></tr>
+<tr class="memdesc:a4d48471ab7b12b187d04943f4d808488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чи пустий список  <a href="#a4d48471ab7b12b187d04943f4d808488">Детальніше...</a><br /></td></tr>
+<tr class="separator:a4d48471ab7b12b187d04943f4d808488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7fee251ddf586df049ee9559353e06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aad7fee251ddf586df049ee9559353e06">push_top</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **old_head, <a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> new_race)</td></tr>
+<tr class="memdesc:aad7fee251ddf586df049ee9559353e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Додавання в початок  <a href="#aad7fee251ddf586df049ee9559353e06">Детальніше...</a><br /></td></tr>
+<tr class="separator:aad7fee251ddf586df049ee9559353e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f24f6c5839a268adcd9948fbdd9b0f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a9f24f6c5839a268adcd9948fbdd9b0f9">push_back</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **head, <a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> new_race)</td></tr>
+<tr class="memdesc:a9f24f6c5839a268adcd9948fbdd9b0f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Додавання в кінець  <a href="#a9f24f6c5839a268adcd9948fbdd9b0f9">Детальніше...</a><br /></td></tr>
+<tr class="separator:a9f24f6c5839a268adcd9948fbdd9b0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b5cd8a8b5ea867830b1a7d69ad578e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a88b5cd8a8b5ea867830b1a7d69ad578e">push_after_n</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **head, <a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> new_race, int N)</td></tr>
+<tr class="memdesc:a88b5cd8a8b5ea867830b1a7d69ad578e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Додавання рейсу після певного номера у списку  <a href="#a88b5cd8a8b5ea867830b1a7d69ad578e">Детальніше...</a><br /></td></tr>
+<tr class="separator:a88b5cd8a8b5ea867830b1a7d69ad578e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c414ba7f65a93bf7e5a38f34ad43a93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a8c414ba7f65a93bf7e5a38f34ad43a93">push_after_key</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **head, <a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> new_race, <a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> key_race)</td></tr>
+<tr class="memdesc:a8c414ba7f65a93bf7e5a38f34ad43a93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Додавання рейсу після певного ключа у списку  <a href="#a8c414ba7f65a93bf7e5a38f34ad43a93">Детальніше...</a><br /></td></tr>
+<tr class="separator:a8c414ba7f65a93bf7e5a38f34ad43a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b22e06ebb21b94865712c93f535f12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a81b22e06ebb21b94865712c93f535f12">remove_aeroflot_ptr</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **head, <a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *node)</td></tr>
+<tr class="memdesc:a81b22e06ebb21b94865712c93f535f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Службова функція видалення  <a href="#a81b22e06ebb21b94865712c93f535f12">Детальніше...</a><br /></td></tr>
+<tr class="separator:a81b22e06ebb21b94865712c93f535f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e397112c557e808e91ddfdb85d3323c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a7e397112c557e808e91ddfdb85d3323c">pop</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **head)</td></tr>
+<tr class="memdesc:a7e397112c557e808e91ddfdb85d3323c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Видалення першого елемента списку  <a href="#a7e397112c557e808e91ddfdb85d3323c">Детальніше...</a><br /></td></tr>
+<tr class="separator:a7e397112c557e808e91ddfdb85d3323c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57b202125772bddb3ec4c84c4d68e664"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a57b202125772bddb3ec4c84c4d68e664">remove_aeroflot_n</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **head, int N)</td></tr>
+<tr class="memdesc:a57b202125772bddb3ec4c84c4d68e664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Видалення певного елемента списку (за номером)  <a href="#a57b202125772bddb3ec4c84c4d68e664">Детальніше...</a><br /></td></tr>
+<tr class="separator:a57b202125772bddb3ec4c84c4d68e664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a500943d070deae91216d10f37982c3f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a500943d070deae91216d10f37982c3f7">remove_aeroflot_key</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **head, <a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> key)</td></tr>
+<tr class="memdesc:a500943d070deae91216d10f37982c3f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Видалення певного елемента списку (за ключем)  <a href="#a500943d070deae91216d10f37982c3f7">Детальніше...</a><br /></td></tr>
+<tr class="separator:a500943d070deae91216d10f37982c3f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85d439fd81dd1e929276ba46d86eb80d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a85d439fd81dd1e929276ba46d86eb80d">remove_back</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **head)</td></tr>
+<tr class="memdesc:a85d439fd81dd1e929276ba46d86eb80d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Видалення останнього елементу зі списку  <a href="#a85d439fd81dd1e929276ba46d86eb80d">Детальніше...</a><br /></td></tr>
+<tr class="separator:a85d439fd81dd1e929276ba46d86eb80d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46177683269c93d16370b166da7b9b17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a46177683269c93d16370b166da7b9b17">remove_list</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **head)</td></tr>
+<tr class="memdesc:a46177683269c93d16370b166da7b9b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Видалення всього списку  <a href="#a46177683269c93d16370b166da7b9b17">Детальніше...</a><br /></td></tr>
+<tr class="separator:a46177683269c93d16370b166da7b9b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f6128fb431c14b0ec5e1b28f7d86f55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a5f6128fb431c14b0ec5e1b28f7d86f55">print_aeroflot_list</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **head)</td></tr>
+<tr class="memdesc:a5f6128fb431c14b0ec5e1b28f7d86f55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вивід усього списку на екран  <a href="#a5f6128fb431c14b0ec5e1b28f7d86f55">Детальніше...</a><br /></td></tr>
+<tr class="separator:a5f6128fb431c14b0ec5e1b28f7d86f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb0a5da00ce0333f62523ac630e42196"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aeb0a5da00ce0333f62523ac630e42196">get_list_length</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *head)</td></tr>
+<tr class="memdesc:aeb0a5da00ce0333f62523ac630e42196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Службова функція для підрахунку довжини списку  <a href="#aeb0a5da00ce0333f62523ac630e42196">Детальніше...</a><br /></td></tr>
+<tr class="separator:aeb0a5da00ce0333f62523ac630e42196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6798a994749b47157e5391e31a110867"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a6798a994749b47157e5391e31a110867">less_eq_flight_number</a> (<a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *first, <a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *second)</td></tr>
+<tr class="memdesc:a6798a994749b47157e5391e31a110867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Порівняння елементів по номеру рейсу  <a href="#a6798a994749b47157e5391e31a110867">Детальніше...</a><br /></td></tr>
+<tr class="separator:a6798a994749b47157e5391e31a110867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af923d128a7526a5e663112c9c69d98b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#af923d128a7526a5e663112c9c69d98b5">less_eq_type</a> (<a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *first, <a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *second)</td></tr>
+<tr class="memdesc:af923d128a7526a5e663112c9c69d98b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Порівняння елементів по типу літака  <a href="#af923d128a7526a5e663112c9c69d98b5">Детальніше...</a><br /></td></tr>
+<tr class="separator:af923d128a7526a5e663112c9c69d98b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12f6a31fbcceae739f671b79d49b9f56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a12f6a31fbcceae739f671b79d49b9f56">less_eq_race_destination</a> (<a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *first, <a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *second)</td></tr>
+<tr class="memdesc:a12f6a31fbcceae739f671b79d49b9f56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Порівняння елементів по місцю призначення  <a href="#a12f6a31fbcceae739f671b79d49b9f56">Детальніше...</a><br /></td></tr>
+<tr class="separator:a12f6a31fbcceae739f671b79d49b9f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79f4fb841d47c4dd1d7ccf275f49e31e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a79f4fb841d47c4dd1d7ccf275f49e31e">less_eq_list</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *first, <a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *second, bool(*less_equal)())</td></tr>
+<tr class="separator:a79f4fb841d47c4dd1d7ccf275f49e31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8373e4434f856813f4b7ef071545084e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a8373e4434f856813f4b7ef071545084e">merge_list</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *first, <a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *second, bool(*less_equal)())</td></tr>
+<tr class="memdesc:a8373e4434f856813f4b7ef071545084e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Злиття  <a href="#a8373e4434f856813f4b7ef071545084e">Детальніше...</a><br /></td></tr>
+<tr class="separator:a8373e4434f856813f4b7ef071545084e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaba90c3e4069dc783a06dd0ad1314a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aeaba90c3e4069dc783a06dd0ad1314a9">sort_aeroflot_list</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *head, int length, bool(*less_equal)())</td></tr>
+<tr class="memdesc:aeaba90c3e4069dc783a06dd0ad1314a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Алгоритм сортування злиттям  <a href="#aeaba90c3e4069dc783a06dd0ad1314a9">Детальніше...</a><br /></td></tr>
+<tr class="separator:aeaba90c3e4069dc783a06dd0ad1314a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3896f900491d60fc8e9442b3e5ade4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae3896f900491d60fc8e9442b3e5ade4c">re_init_list</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **old_head)</td></tr>
+<tr class="memdesc:ae3896f900491d60fc8e9442b3e5ade4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Створення нового списку (затирання старого)  <a href="#ae3896f900491d60fc8e9442b3e5ade4c">Детальніше...</a><br /></td></tr>
+<tr class="separator:ae3896f900491d60fc8e9442b3e5ade4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a802394bf54d1c43e588b2258e4b14653"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a802394bf54d1c43e588b2258e4b14653">sort_list</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **head)</td></tr>
+<tr class="memdesc:a802394bf54d1c43e588b2258e4b14653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сортування списку за вибором користувача  <a href="#a802394bf54d1c43e588b2258e4b14653">Детальніше...</a><br /></td></tr>
+<tr class="separator:a802394bf54d1c43e588b2258e4b14653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd62a5de84ed382e0c4b2ff7f788e6d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#afd62a5de84ed382e0c4b2ff7f788e6d9">menu</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **head)</td></tr>
+<tr class="memdesc:afd62a5de84ed382e0c4b2ff7f788e6d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Меню  <a href="#afd62a5de84ed382e0c4b2ff7f788e6d9">Детальніше...</a><br /></td></tr>
+<tr class="separator:afd62a5de84ed382e0c4b2ff7f788e6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a581b30e0dc7f2e359199f4981fcffbab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a581b30e0dc7f2e359199f4981fcffbab">task_1</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **task1_list_head)</td></tr>
+<tr class="memdesc:a581b30e0dc7f2e359199f4981fcffbab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Завдання Лабораторної роботи номер 5.  <a href="#a581b30e0dc7f2e359199f4981fcffbab">Детальніше...</a><br /></td></tr>
+<tr class="separator:a581b30e0dc7f2e359199f4981fcffbab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af06a9f0e060c21d8adec2d33546e07c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#af06a9f0e060c21d8adec2d33546e07c2">calling_menu</a> (<a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **list)</td></tr>
+<tr class="separator:af06a9f0e060c21d8adec2d33546e07c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top"><a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Змінні</h2></td></tr>
+<tr class="memitem:adec82d7f852e63255b85b99b2d1d7f0d"><td class="memItemLeft" align="right" valign="top"><a id="adec82d7f852e63255b85b99b2d1d7f0d"></a>
+char *&#160;</td><td class="memItemRight" valign="bottom"><b>name_of_type</b> [] = {&quot;ELSE&quot;, &quot;<a class="el" href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877">CIVIL</a>&quot;, &quot;<a class="el" href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5">MILITARY</a>&quot;}</td></tr>
+<tr class="separator:adec82d7f852e63255b85b99b2d1d7f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Опис переліків</h2>
+<a id="ad5b035af54b12fffc80b6aa76ab4029f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b035af54b12fffc80b6aa76ab4029f">&#9670;&nbsp;</a></span>menu_enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029f">menu_enum</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Елементи переліків</th></tr><tr><td class="fieldname"><a id="ad5b035af54b12fffc80b6aa76ab4029fa0cb1b2c6a7db1f1084886c98909a3f36"></a>INIT&#160;</td><td class="fielddoc"><p>Створення нового списку </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad5b035af54b12fffc80b6aa76ab4029fac19da14a6129e83c76c7ac5d1b48bdf6"></a>PUSH_TOP&#160;</td><td class="fielddoc"><p>Додавання в початок </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad5b035af54b12fffc80b6aa76ab4029facead49106e50d919b5e6b2c78170c761"></a>PUSH_BACK&#160;</td><td class="fielddoc"><p>Додавання в кінець </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad5b035af54b12fffc80b6aa76ab4029fab6a95ededfc57bc938450bda1066efca"></a>PUSH_N&#160;</td><td class="fielddoc"><p>Додавання після елемента з номером n. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad5b035af54b12fffc80b6aa76ab4029fa5b5c3f5e5115e360c49d379f52ded058"></a>PUSH_KEY&#160;</td><td class="fielddoc"><p>Додавання після елемента з заданим ключем </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad5b035af54b12fffc80b6aa76ab4029fa061dcf4785583d8653942f2d252174fa"></a>POP&#160;</td><td class="fielddoc"><p>Видалення елемента з початку списку </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad5b035af54b12fffc80b6aa76ab4029fa6091654b8b9aedd5fd86976f5a1e96cf"></a>REMOVE_BACK&#160;</td><td class="fielddoc"><p>Видалення елемента з кінця списку </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad5b035af54b12fffc80b6aa76ab4029fa42637601e6022d5e586cbe28071a9b48"></a>REMOVE_N&#160;</td><td class="fielddoc"><p>Видалення елемента з заданим номером в списку </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad5b035af54b12fffc80b6aa76ab4029fa72b88f8d3c8ad24bf832cafa6e086217"></a>REMOVE_KEY&#160;</td><td class="fielddoc"><p>Видалення елемента з заданим ключем </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad5b035af54b12fffc80b6aa76ab4029faf6b54e2f964c3204c88d0d82a509f65a"></a>SHOW&#160;</td><td class="fielddoc"><p>Виведення вмісту списку на екран </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad5b035af54b12fffc80b6aa76ab4029fa136486a15d68351e470b6b449ae7a246"></a>SORT&#160;</td><td class="fielddoc"><p>Упорядкування елементів </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad5b035af54b12fffc80b6aa76ab4029fae8221012d15767e99099fc09b63b77dc"></a>GET_BY_CITY&#160;</td><td class="fielddoc"><p>Виведення рейсів в задане місто </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad5b035af54b12fffc80b6aa76ab4029fa7a10b5d68d31711288e1fe0fa17dbf4f"></a>EXIT&#160;</td><td class="fielddoc"><p>Вихід </p>
+</td></tr>
+</table>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;              {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa0cb1b2c6a7db1f1084886c98909a3f36">INIT</a> = 1,</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fac19da14a6129e83c76c7ac5d1b48bdf6">PUSH_TOP</a>,</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029facead49106e50d919b5e6b2c78170c761">PUSH_BACK</a>,</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fab6a95ededfc57bc938450bda1066efca">PUSH_N</a>,</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa5b5c3f5e5115e360c49d379f52ded058">PUSH_KEY</a>,</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa061dcf4785583d8653942f2d252174fa">POP</a>,</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa6091654b8b9aedd5fd86976f5a1e96cf">REMOVE_BACK</a>,</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa42637601e6022d5e586cbe28071a9b48">REMOVE_N</a>,</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa72b88f8d3c8ad24bf832cafa6e086217">REMOVE_KEY</a>,</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029faf6b54e2f964c3204c88d0d82a509f65a">SHOW</a>,</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa136486a15d68351e470b6b449ae7a246">SORT</a>,</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fae8221012d15767e99099fc09b63b77dc">GET_BY_CITY</a>,</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa7a10b5d68d31711288e1fe0fa17dbf4f">EXIT</a></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div><div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa42637601e6022d5e586cbe28071a9b48"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa42637601e6022d5e586cbe28071a9b48">REMOVE_N</a></div><div class="ttdoc">Видалення елемента з заданим номером в списку </div><div class="ttdef"><b>Definition:</b> main.c:34</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa72b88f8d3c8ad24bf832cafa6e086217"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa72b88f8d3c8ad24bf832cafa6e086217">REMOVE_KEY</a></div><div class="ttdoc">Видалення елемента з заданим ключем </div><div class="ttdef"><b>Definition:</b> main.c:35</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa136486a15d68351e470b6b449ae7a246"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa136486a15d68351e470b6b449ae7a246">SORT</a></div><div class="ttdoc">Упорядкування елементів </div><div class="ttdef"><b>Definition:</b> main.c:37</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029faf6b54e2f964c3204c88d0d82a509f65a"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029faf6b54e2f964c3204c88d0d82a509f65a">SHOW</a></div><div class="ttdoc">Виведення вмісту списку на екран </div><div class="ttdef"><b>Definition:</b> main.c:36</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fac19da14a6129e83c76c7ac5d1b48bdf6"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fac19da14a6129e83c76c7ac5d1b48bdf6">PUSH_TOP</a></div><div class="ttdoc">Додавання в початок </div><div class="ttdef"><b>Definition:</b> main.c:28</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa5b5c3f5e5115e360c49d379f52ded058"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa5b5c3f5e5115e360c49d379f52ded058">PUSH_KEY</a></div><div class="ttdoc">Додавання після елемента з заданим ключем </div><div class="ttdef"><b>Definition:</b> main.c:31</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa0cb1b2c6a7db1f1084886c98909a3f36"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa0cb1b2c6a7db1f1084886c98909a3f36">INIT</a></div><div class="ttdoc">Створення нового списку </div><div class="ttdef"><b>Definition:</b> main.c:27</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029facead49106e50d919b5e6b2c78170c761"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029facead49106e50d919b5e6b2c78170c761">PUSH_BACK</a></div><div class="ttdoc">Додавання в кінець </div><div class="ttdef"><b>Definition:</b> main.c:29</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa061dcf4785583d8653942f2d252174fa"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa061dcf4785583d8653942f2d252174fa">POP</a></div><div class="ttdoc">Видалення елемента з початку списку </div><div class="ttdef"><b>Definition:</b> main.c:32</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa7a10b5d68d31711288e1fe0fa17dbf4f"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa7a10b5d68d31711288e1fe0fa17dbf4f">EXIT</a></div><div class="ttdoc">Вихід </div><div class="ttdef"><b>Definition:</b> main.c:39</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fab6a95ededfc57bc938450bda1066efca"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fab6a95ededfc57bc938450bda1066efca">PUSH_N</a></div><div class="ttdoc">Додавання після елемента з номером n. </div><div class="ttdef"><b>Definition:</b> main.c:30</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fae8221012d15767e99099fc09b63b77dc"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fae8221012d15767e99099fc09b63b77dc">GET_BY_CITY</a></div><div class="ttdoc">Виведення рейсів в задане місто </div><div class="ttdef"><b>Definition:</b> main.c:38</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa6091654b8b9aedd5fd86976f5a1e96cf"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa6091654b8b9aedd5fd86976f5a1e96cf">REMOVE_BACK</a></div><div class="ttdoc">Видалення елемента з кінця списку </div><div class="ttdef"><b>Definition:</b> main.c:33</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a85e61e12a1348f292d1732e066b2a900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85e61e12a1348f292d1732e066b2a900">&#9670;&nbsp;</a></span>type_of_aeroplane</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="main_8c.html#a85e61e12a1348f292d1732e066b2a900">type_of_aeroplane</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Елементи переліків</th></tr><tr><td class="fieldname"><a id="a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426"></a>ELSE&#160;</td><td class="fielddoc"><p>Тип, що не належить переліченим </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877"></a>CIVIL&#160;</td><td class="fielddoc"><p>Цивільні літаки </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5"></a>MILITARY&#160;</td><td class="fielddoc"><p>Військові </p>
+</td></tr>
+</table>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                      {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426">ELSE</a>,</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877">CIVIL</a>,</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5">MILITARY</a></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div><div class="ttc" id="main_8c_html_a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5"><div class="ttname"><a href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5">MILITARY</a></div><div class="ttdoc">Військові </div><div class="ttdef"><b>Definition:</b> main.c:24</div></div>
+<div class="ttc" id="main_8c_html_a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877"><div class="ttname"><a href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877">CIVIL</a></div><div class="ttdoc">Цивільні літаки </div><div class="ttdef"><b>Definition:</b> main.c:23</div></div>
+<div class="ttc" id="main_8c_html_a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426"><div class="ttname"><a href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426">ELSE</a></div><div class="ttdoc">Тип, що не належить переліченим </div><div class="ttdef"><b>Definition:</b> main.c:22</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Опис функцій</h2>
+<a id="a268a550e94036d245188ea5dc9f89155"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a268a550e94036d245188ea5dc9f89155">&#9670;&nbsp;</a></span>aeroflot_cmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int aeroflot_cmp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>second</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Порівняння двох змінних типів <code>Aeroflot</code>. </p>
+<p>Виконується почергове порівняння полів структури </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>Вказівник на першу структуру </td></tr>
+    <tr><td class="paramname">second</td><td>Вказівник на другу структуру </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>0 якщо структури однакові <br />
+1 якщо структури відрізняються місцем призначення<br />
+2 якщо структури відрізняються номером відправлення<br />
+3 якщо структури відрізняються типом літака </dd></dl>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                   {</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (first-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a7f89c90169893ea6426d49cbfe252b6b">flight_number</a> != second-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a7f89c90169893ea6426d49cbfe252b6b">flight_number</a>)<span class="keywordflow">return</span> 2;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (first-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a913aeac90752fd046f3ca7410093bb36">type</a> != second-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a913aeac90752fd046f3ca7410093bb36">type</a>) <span class="keywordflow">return</span> 3;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (strcmp(first-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>, second-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>)) <span class="keywordflow">return</span> 1;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">//else</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div><div class="ttc" id="structAEROFLOT__STRUCT_html_a4a959b0e5f73bb401dccc9c248cf801c"><div class="ttname"><a href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">AEROFLOT_STRUCT::destination</a></div><div class="ttdeci">char * destination</div><div class="ttdoc">Місце призначення </div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
+<div class="ttc" id="structAEROFLOT__STRUCT_html_a7f89c90169893ea6426d49cbfe252b6b"><div class="ttname"><a href="structAEROFLOT__STRUCT.html#a7f89c90169893ea6426d49cbfe252b6b">AEROFLOT_STRUCT::flight_number</a></div><div class="ttdeci">int flight_number</div><div class="ttdoc">Номер рейсу </div><div class="ttdef"><b>Definition:</b> main.c:17</div></div>
+<div class="ttc" id="structAEROFLOT__STRUCT_html_a913aeac90752fd046f3ca7410093bb36"><div class="ttname"><a href="structAEROFLOT__STRUCT.html#a913aeac90752fd046f3ca7410093bb36">AEROFLOT_STRUCT::type</a></div><div class="ttdeci">int type</div><div class="ttdoc">Тип літака </div><div class="ttdef"><b>Definition:</b> main.c:18</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a36302364b495f5e99251b65c3c5993d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36302364b495f5e99251b65c3c5993d2">&#9670;&nbsp;</a></span>aeroflot_user_fill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> aeroflot_user_fill </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Користувач вказує місце призначення, номер рейсу, тип літака. </p>
+<p>Серед нюансів: звернання до полів структури за допомогою <code>-&gt;</code> функція для введення тексту <a class="el" href="lab__functions_8h.html#a53c0a255092a68903d4627229c37d7d0" title="Отримує від користувача ввід, перед яким виводить повідомлення ">message_input()</a><br />
+функція для введення чисел <a class="el" href="lab__functions_8h.html#a6f453bc035d85e967bd5032eca31a155" title="Реалізація корректного введення цілих десяткових чисел користувачем ">input_int()</a><br />
+</p><dl class="section return"><dt>Повертає</dt><dd>Заповнена користувачем структура <code>Aeroflot</code> </dd></dl>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                             {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="structAEROFLOT__STRUCT.html">Aeroflot</a> aeroplane;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    aeroplane.<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a> = <a class="code" href="lab__functions_8h.html#a53c0a255092a68903d4627229c37d7d0">message_input</a>(<span class="stringliteral">&quot;Місце призначення: &quot;</span>);</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="lab__functions_8h.html#a1c51fdb7c84e94c1f88f8e6838f67499">toupper_chrs</a>(aeroplane.<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>);</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="lab__functions_8h.html#a6f453bc035d85e967bd5032eca31a155">input_int</a>(<span class="stringliteral">&quot;Номер рейсу: &quot;</span>, &amp;aeroplane.<a class="code" href="structAEROFLOT__STRUCT.html#a7f89c90169893ea6426d49cbfe252b6b">flight_number</a>, 0, INT_MAX);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">char</span> *type = <a class="code" href="lab__functions_8h.html#a53c0a255092a68903d4627229c37d7d0">message_input</a>(<span class="stringliteral">&quot;Тип літака (military/civil/else): &quot;</span>);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    putchar(<span class="charliteral">&#39;\n&#39;</span>);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="lab__functions_8h.html#a1c51fdb7c84e94c1f88f8e6838f67499">toupper_chrs</a>(type);</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (!strcmp(type, <span class="stringliteral">&quot;CIVIL&quot;</span>)){</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        aeroplane.<a class="code" href="structAEROFLOT__STRUCT.html#a913aeac90752fd046f3ca7410093bb36">type</a> = <a class="code" href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877">CIVIL</a>;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(type, <span class="stringliteral">&quot;MILITARY&quot;</span>)){</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        aeroplane.<a class="code" href="structAEROFLOT__STRUCT.html#a913aeac90752fd046f3ca7410093bb36">type</a> = <a class="code" href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5">MILITARY</a>;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    } <span class="keywordflow">else</span>{</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        aeroplane.<a class="code" href="structAEROFLOT__STRUCT.html#a913aeac90752fd046f3ca7410093bb36">type</a> = <a class="code" href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426">ELSE</a>;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> aeroplane;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div><div class="ttc" id="lab__functions_8h_html_a6f453bc035d85e967bd5032eca31a155"><div class="ttname"><a href="lab__functions_8h.html#a6f453bc035d85e967bd5032eca31a155">input_int</a></div><div class="ttdeci">void input_int(char message[], int *number, int lwr_border, int hir_border)</div><div class="ttdoc">Реалізація корректного введення цілих десяткових чисел користувачем </div><div class="ttdef"><b>Definition:</b> lab_functions.c:69</div></div>
+<div class="ttc" id="main_8c_html_a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5"><div class="ttname"><a href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a9247d8d48a4a34f7d92a9910c7c5c2f5">MILITARY</a></div><div class="ttdoc">Військові </div><div class="ttdef"><b>Definition:</b> main.c:24</div></div>
+<div class="ttc" id="structAEROFLOT__STRUCT_html_a4a959b0e5f73bb401dccc9c248cf801c"><div class="ttname"><a href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">AEROFLOT_STRUCT::destination</a></div><div class="ttdeci">char * destination</div><div class="ttdoc">Місце призначення </div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
+<div class="ttc" id="structAEROFLOT__STRUCT_html_a7f89c90169893ea6426d49cbfe252b6b"><div class="ttname"><a href="structAEROFLOT__STRUCT.html#a7f89c90169893ea6426d49cbfe252b6b">AEROFLOT_STRUCT::flight_number</a></div><div class="ttdeci">int flight_number</div><div class="ttdoc">Номер рейсу </div><div class="ttdef"><b>Definition:</b> main.c:17</div></div>
+<div class="ttc" id="main_8c_html_a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877"><div class="ttname"><a href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a3e60759ca7436e59d1ae9b759fc69877">CIVIL</a></div><div class="ttdoc">Цивільні літаки </div><div class="ttdef"><b>Definition:</b> main.c:23</div></div>
+<div class="ttc" id="structAEROFLOT__STRUCT_html_a913aeac90752fd046f3ca7410093bb36"><div class="ttname"><a href="structAEROFLOT__STRUCT.html#a913aeac90752fd046f3ca7410093bb36">AEROFLOT_STRUCT::type</a></div><div class="ttdeci">int type</div><div class="ttdoc">Тип літака </div><div class="ttdef"><b>Definition:</b> main.c:18</div></div>
+<div class="ttc" id="lab__functions_8h_html_a53c0a255092a68903d4627229c37d7d0"><div class="ttname"><a href="lab__functions_8h.html#a53c0a255092a68903d4627229c37d7d0">message_input</a></div><div class="ttdeci">char * message_input(char message[])</div><div class="ttdoc">Отримує від користувача ввід, перед яким виводить повідомлення </div><div class="ttdef"><b>Definition:</b> lab_functions.c:17</div></div>
+<div class="ttc" id="structAEROFLOT__STRUCT_html"><div class="ttname"><a href="structAEROFLOT__STRUCT.html">AEROFLOT_STRUCT</a></div><div class="ttdef"><b>Definition:</b> main.c:15</div></div>
+<div class="ttc" id="main_8c_html_a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426"><div class="ttname"><a href="main_8c.html#a85e61e12a1348f292d1732e066b2a900a90d649d830ea440c8b8a56c7ef23c426">ELSE</a></div><div class="ttdoc">Тип, що не належить переліченим </div><div class="ttdef"><b>Definition:</b> main.c:22</div></div>
+<div class="ttc" id="lab__functions_8h_html_a1c51fdb7c84e94c1f88f8e6838f67499"><div class="ttname"><a href="lab__functions_8h.html#a1c51fdb7c84e94c1f88f8e6838f67499">toupper_chrs</a></div><div class="ttdeci">void toupper_chrs(char str[])</div><div class="ttdoc">toupper to every char in str </div><div class="ttdef"><b>Definition:</b> lab_functions.c:112</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af06a9f0e060c21d8adec2d33546e07c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af06a9f0e060c21d8adec2d33546e07c2">&#9670;&nbsp;</a></span>calling_menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calling_menu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Функція для виклику меню </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>Голова списку над яким виконуватимуться маніпуляції </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                                       {</div><div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <span class="keywordtype">bool</span> to_continue;</div><div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <span class="keywordflow">do</span>{</div><div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        to_continue = <a class="code" href="main_8c.html#afd62a5de84ed382e0c4b2ff7f788e6d9">menu</a>(list);</div><div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    }<span class="keywordflow">while</span> (to_continue);</div><div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;}</div><div class="ttc" id="main_8c_html_afd62a5de84ed382e0c4b2ff7f788e6d9"><div class="ttname"><a href="main_8c.html#afd62a5de84ed382e0c4b2ff7f788e6d9">menu</a></div><div class="ttdeci">bool menu(List_aeroflot **head)</div><div class="ttdoc">Меню </div><div class="ttdef"><b>Definition:</b> main.c:529</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a39c2c82dccda45fa272ba55c57a3dbf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39c2c82dccda45fa272ba55c57a3dbf9">&#9670;&nbsp;</a></span>get_by_city()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void get_by_city </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вивід рейсів з заданою назвою </p>
+<p>Користувач вводить місто, за яким буде здійснюватись пошук </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Голова списку в якому здійснюватиметься пошук </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                      {</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">char</span> *city = <a class="code" href="lab__functions_8h.html#a53c0a255092a68903d4627229c37d7d0">message_input</a>(<span class="stringliteral">&quot;Введіть місто за яким здійснюється пошук рейсу\n&quot;</span>);</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="lab__functions_8h.html#a1c51fdb7c84e94c1f88f8e6838f67499">toupper_chrs</a>(city);</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">bool</span> is = <span class="keyword">false</span>;</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *iter = *head;</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    printf(<span class="stringliteral">&quot;Місце призначення        Номер рейсу      Тип літака\n&quot;</span>);</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">while</span> (iter){</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span> (!strcmp(iter-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">race</a>.<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>, city)){</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="main_8c.html#ab2f3cf7027536425c3cc1aae1c07bc41">print_single_aeroflot</a>(iter-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">race</a>);</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            is = <span class="keyword">true</span>;</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        iter = iter-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> (!is){</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        printf(<span class="stringliteral">&quot;Відповідних рейсів не знайдено\n&quot;</span>);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></div><div class="ttdef"><b>Definition:</b> main.c:44</div></div>
+<div class="ttc" id="structAEROFLOT__STRUCT_html_a4a959b0e5f73bb401dccc9c248cf801c"><div class="ttname"><a href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">AEROFLOT_STRUCT::destination</a></div><div class="ttdeci">char * destination</div><div class="ttdoc">Місце призначення </div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
+<div class="ttc" id="lab__functions_8h_html_a53c0a255092a68903d4627229c37d7d0"><div class="ttname"><a href="lab__functions_8h.html#a53c0a255092a68903d4627229c37d7d0">message_input</a></div><div class="ttdeci">char * message_input(char message[])</div><div class="ttdoc">Отримує від користувача ввід, перед яким виводить повідомлення </div><div class="ttdef"><b>Definition:</b> lab_functions.c:17</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_af1c1f161b03433dfe3a7f4028dd58b71"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">single_linked_list_aeroflot_struct::race</a></div><div class="ttdeci">Aeroflot race</div><div class="ttdoc">Поточний рейс </div><div class="ttdef"><b>Definition:</b> main.c:45</div></div>
+<div class="ttc" id="lab__functions_8h_html_a1c51fdb7c84e94c1f88f8e6838f67499"><div class="ttname"><a href="lab__functions_8h.html#a1c51fdb7c84e94c1f88f8e6838f67499">toupper_chrs</a></div><div class="ttdeci">void toupper_chrs(char str[])</div><div class="ttdoc">toupper to every char in str </div><div class="ttdef"><b>Definition:</b> lab_functions.c:112</div></div>
+<div class="ttc" id="main_8c_html_ab2f3cf7027536425c3cc1aae1c07bc41"><div class="ttname"><a href="main_8c.html#ab2f3cf7027536425c3cc1aae1c07bc41">print_single_aeroflot</a></div><div class="ttdeci">void print_single_aeroflot(Aeroflot aeroplanes)</div><div class="ttdoc">Виводим структуру типу Aeroflot в частково відформатованому вигляді </div><div class="ttdef"><b>Definition:</b> main.c:97</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_a8aed81380fcda3f4230250e126b28d5e"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">single_linked_list_aeroflot_struct::next</a></div><div class="ttdeci">struct single_linked_list_aeroflot_struct * next</div><div class="ttdoc">Посилання на наступний рейс </div><div class="ttdef"><b>Definition:</b> main.c:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aeb0a5da00ce0333f62523ac630e42196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb0a5da00ce0333f62523ac630e42196">&#9670;&nbsp;</a></span>get_list_length()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_list_length </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Службова функція для підрахунку довжини списку </p>
+<p>Використовується в інший функціях </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Голова списку, довжина якого буде обчислюватись </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>Число - довжина списку </dd></dl>
+<div class="fragment"><div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                                        {</div><div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keywordtype">int</span> i = 0;</div><div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *node = head;</div><div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">if</span> (node) {</div><div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        i++;</div><div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="keywordflow">while</span> (node = node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>)i++;</div><div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    }</div><div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordflow">return</span> i;</div><div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></div><div class="ttdef"><b>Definition:</b> main.c:44</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_a8aed81380fcda3f4230250e126b28d5e"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">single_linked_list_aeroflot_struct::next</a></div><div class="ttdeci">struct single_linked_list_aeroflot_struct * next</div><div class="ttdoc">Посилання на наступний рейс </div><div class="ttdef"><b>Definition:</b> main.c:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4d48471ab7b12b187d04943f4d808488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d48471ab7b12b187d04943f4d808488">&#9670;&nbsp;</a></span>is_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_empty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Чи пустий список </p>
+<p>Використовується бібліотека для типу <code>bool</code> </p><dl class="section warning"><dt>Застереження</dt><dd>**head не має бути NULL інакше пошкодження пам'яті </dd></dl>
+<dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Власне список, що буде перевірятись </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>1 якщо пустий, 0 якщо ні </dd></dl>
+<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                   {</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">if</span> (*head == NULL){</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a6798a994749b47157e5391e31a110867"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6798a994749b47157e5391e31a110867">&#9670;&nbsp;</a></span>less_eq_flight_number()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool less_eq_flight_number </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>second</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Порівняння елементів по номеру рейсу </p>
+<p>В якості аргументів взято вказівники </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>Перший елемент списку </td></tr>
+    <tr><td class="paramname">second</td><td>Другий елемент списку </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd><code>true</code> якщо &lt;= інакше - false </dd></dl>
+<div class="fragment"><div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                                                             {</div><div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keywordflow">return</span> (<span class="keywordtype">bool</span>)(first-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a7f89c90169893ea6426d49cbfe252b6b">flight_number</a> &lt;= second-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a7f89c90169893ea6426d49cbfe252b6b">flight_number</a>);</div><div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;}</div><div class="ttc" id="structAEROFLOT__STRUCT_html_a7f89c90169893ea6426d49cbfe252b6b"><div class="ttname"><a href="structAEROFLOT__STRUCT.html#a7f89c90169893ea6426d49cbfe252b6b">AEROFLOT_STRUCT::flight_number</a></div><div class="ttdeci">int flight_number</div><div class="ttdoc">Номер рейсу </div><div class="ttdef"><b>Definition:</b> main.c:17</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a79f4fb841d47c4dd1d7ccf275f49e31e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79f4fb841d47c4dd1d7ccf275f49e31e">&#9670;&nbsp;</a></span>less_eq_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool less_eq_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>second</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool(*)()&#160;</td>
+          <td class="paramname"><em>less_equal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Порівняння елементів відносно переданої функції порівняння </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>Перший елемент списку </td></tr>
+    <tr><td class="paramname">second</td><td>Другий елемент списку </td></tr>
+    <tr><td class="paramname">less_equal</td><td>Функція порівняння </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd><code>true</code> якщо &lt;= інакше - false </dd></dl>
+<div class="fragment"><div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                                                                                    {</div><div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordflow">if</span> (!first) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="keywordflow">if</span> (!second) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordflow">return</span> (*less_equal)(&amp;first-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">race</a>, &amp;second-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">race</a>);</div><div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_af1c1f161b03433dfe3a7f4028dd58b71"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">single_linked_list_aeroflot_struct::race</a></div><div class="ttdeci">Aeroflot race</div><div class="ttdoc">Поточний рейс </div><div class="ttdef"><b>Definition:</b> main.c:45</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a12f6a31fbcceae739f671b79d49b9f56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12f6a31fbcceae739f671b79d49b9f56">&#9670;&nbsp;</a></span>less_eq_race_destination()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool less_eq_race_destination </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>second</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Порівняння елементів по місцю призначення </p>
+<p>Порівняння відбувається в алфавітному порядку </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>Перший елемент списку </td></tr>
+    <tr><td class="paramname">second</td><td>Другий елемент списку </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd><code>true</code> якщо &lt;= інакше - false </dd></dl>
+<div class="fragment"><div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                                                                {</div><div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keywordtype">int</span> min = strlen(first-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>);</div><div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordflow">if</span> (strlen(first-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>) &gt; strlen(second-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>)) min  = strlen(second-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>);</div><div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; min; ++i) {</div><div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keywordflow">if</span> (tolower(first-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>[i]) == tolower(second-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>[i])) <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="keywordflow">if</span> (tolower(first-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>[i]) &lt; tolower(second-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>[i])) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    }</div><div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="keywordflow">if</span> (strlen(first-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>) &lt; strlen(second-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>)) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;}</div><div class="ttc" id="structAEROFLOT__STRUCT_html_a4a959b0e5f73bb401dccc9c248cf801c"><div class="ttname"><a href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">AEROFLOT_STRUCT::destination</a></div><div class="ttdeci">char * destination</div><div class="ttdoc">Місце призначення </div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af923d128a7526a5e663112c9c69d98b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af923d128a7526a5e663112c9c69d98b5">&#9670;&nbsp;</a></span>less_eq_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool less_eq_type </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>second</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Порівняння елементів по типу літака </p>
+<p>В якості аргументів взято вказівники </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>Перший елемент списку </td></tr>
+    <tr><td class="paramname">second</td><td>Другий елемент списку </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd><code>true</code> якщо &lt;= інакше - false </dd></dl>
+<div class="fragment"><div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                                                    {</div><div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keywordflow">return</span> (<span class="keywordtype">bool</span>)(first-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a913aeac90752fd046f3ca7410093bb36">type</a> &lt;= second-&gt;<a class="code" href="structAEROFLOT__STRUCT.html#a913aeac90752fd046f3ca7410093bb36">type</a>);</div><div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;}</div><div class="ttc" id="structAEROFLOT__STRUCT_html_a913aeac90752fd046f3ca7410093bb36"><div class="ttname"><a href="structAEROFLOT__STRUCT.html#a913aeac90752fd046f3ca7410093bb36">AEROFLOT_STRUCT::type</a></div><div class="ttdeci">int type</div><div class="ttdoc">Тип літака </div><div class="ttdef"><b>Definition:</b> main.c:18</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afd62a5de84ed382e0c4b2ff7f788e6d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd62a5de84ed382e0c4b2ff7f788e6d9">&#9670;&nbsp;</a></span>menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool menu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Меню </p>
+<p>Реалізація вибору виконання функції за допомогою оператора <code>switch</code> Нижче наведений код, для додаткової інформації натисніть по назві функції. </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Голова списку над яким виконуватимуться маніпуляції </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>Чи продовжувати виконання функції </dd></dl>
+<div class="fragment"><div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                               {</div><div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordtype">int</span> choice;</div><div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    printf(<span class="stringliteral">&quot; _________________________________________________\n&quot;</span></div><div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;           <span class="stringliteral">&quot;|                     Меню                        |\n&quot;</span>);</div><div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    printf(<span class="stringliteral">&quot;%-50s|\n&quot;</span>,<span class="stringliteral">&quot;|1.  Створення списку                             &quot;</span>);</div><div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    printf(<span class="stringliteral">&quot;%-50s|\n&quot;</span>,<span class="stringliteral">&quot;|2.  Додавання в початок                          &quot;</span>);</div><div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    printf(<span class="stringliteral">&quot;%-50s|\n&quot;</span>,<span class="stringliteral">&quot;|3.  Додавання в кінець                           &quot;</span>);</div><div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    printf(<span class="stringliteral">&quot;%-50s|\n&quot;</span>,<span class="stringliteral">&quot;|4.  Додавання після елемента з номером n         &quot;</span>);</div><div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    printf(<span class="stringliteral">&quot;%-50s|\n&quot;</span>,<span class="stringliteral">&quot;|5.  Додавання після елемента з заданим ключем    &quot;</span>);</div><div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    printf(<span class="stringliteral">&quot;%-50s|\n&quot;</span>,<span class="stringliteral">&quot;|6.  Видалення елемента з початку списку          &quot;</span>);</div><div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    printf(<span class="stringliteral">&quot;%-50s|\n&quot;</span>,<span class="stringliteral">&quot;|7.  Видалення елемента з кінця списку            &quot;</span>);</div><div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    printf(<span class="stringliteral">&quot;%-50s|\n&quot;</span>,<span class="stringliteral">&quot;|8.  Видалення елемента з заданим номером в списку&quot;</span>);</div><div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    printf(<span class="stringliteral">&quot;%-50s|\n&quot;</span>,<span class="stringliteral">&quot;|9.  Видалення елемента з заданим ключем          &quot;</span>);</div><div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    printf(<span class="stringliteral">&quot;%-50s|\n&quot;</span>,<span class="stringliteral">&quot;|10. Виведення вмісту списку на екран             &quot;</span>);</div><div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    printf(<span class="stringliteral">&quot;%-50s|\n&quot;</span>,<span class="stringliteral">&quot;|11. Упорядкування елементів                      &quot;</span>);</div><div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    printf(<span class="stringliteral">&quot;%-50s|\n&quot;</span>,<span class="stringliteral">&quot;|12. Виведення рейсів в задане місто              &quot;</span>);</div><div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    printf(<span class="stringliteral">&quot;%-50s|\n&quot;</span>,<span class="stringliteral">&quot;|13. Вихід                                        &quot;</span>);</div><div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    printf(<span class="stringliteral">&quot; ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n&quot;</span>);</div><div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <a class="code" href="lab__functions_8h.html#a6f453bc035d85e967bd5032eca31a155">input_int</a>(<span class="stringliteral">&quot;Виберіть пункт меню\n&quot;</span>, &amp;choice, 0, 13);</div><div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <span class="keywordflow">switch</span> (choice) {</div><div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;        <span class="keywordflow">case</span> 0: <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa0cb1b2c6a7db1f1084886c98909a3f36">INIT</a>:</div><div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;            <a class="code" href="main_8c.html#ae3896f900491d60fc8e9442b3e5ade4c">re_init_list</a>(head);</div><div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fac19da14a6129e83c76c7ac5d1b48bdf6">PUSH_TOP</a>:</div><div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;            <a class="code" href="main_8c.html#aad7fee251ddf586df049ee9559353e06">push_top</a>(head, <a class="code" href="main_8c.html#a36302364b495f5e99251b65c3c5993d2">aeroflot_user_fill</a>());</div><div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029facead49106e50d919b5e6b2c78170c761">PUSH_BACK</a>:</div><div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;            <a class="code" href="main_8c.html#a9f24f6c5839a268adcd9948fbdd9b0f9">push_back</a>(head, <a class="code" href="main_8c.html#a36302364b495f5e99251b65c3c5993d2">aeroflot_user_fill</a>());</div><div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fab6a95ededfc57bc938450bda1066efca">PUSH_N</a>:</div><div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            <a class="code" href="main_8c.html#a88b5cd8a8b5ea867830b1a7d69ad578e">push_after_n</a>(head, <a class="code" href="main_8c.html#a36302364b495f5e99251b65c3c5993d2">aeroflot_user_fill</a>(), <a class="code" href="lab__functions_8h.html#a45e2d75e7b00ac6711c815431d42bcfd">get_int</a>(<span class="stringliteral">&quot;Після якого номера додати число?\n&quot;</span>, 0, INT_MAX));</div><div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa5b5c3f5e5115e360c49d379f52ded058">PUSH_KEY</a>:</div><div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;            printf(<span class="stringliteral">&quot;Введіть новий ключ та ключ пошуку\n&quot;</span>);</div><div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            <a class="code" href="main_8c.html#a8c414ba7f65a93bf7e5a38f34ad43a93">push_after_key</a>(head, <a class="code" href="main_8c.html#a36302364b495f5e99251b65c3c5993d2">aeroflot_user_fill</a>(), <a class="code" href="main_8c.html#a36302364b495f5e99251b65c3c5993d2">aeroflot_user_fill</a>());</div><div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa061dcf4785583d8653942f2d252174fa">POP</a>:</div><div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;            <a class="code" href="main_8c.html#a7e397112c557e808e91ddfdb85d3323c">pop</a>(head);</div><div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa6091654b8b9aedd5fd86976f5a1e96cf">REMOVE_BACK</a>:</div><div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            <a class="code" href="main_8c.html#a85d439fd81dd1e929276ba46d86eb80d">remove_back</a>(head);</div><div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa42637601e6022d5e586cbe28071a9b48">REMOVE_N</a>:</div><div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            <a class="code" href="main_8c.html#a57b202125772bddb3ec4c84c4d68e664">remove_aeroflot_n</a>(head, <a class="code" href="lab__functions_8h.html#a45e2d75e7b00ac6711c815431d42bcfd">get_int</a>(<span class="stringliteral">&quot;Який номер видалити?\n&quot;</span>, 0, INT_MAX));</div><div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa72b88f8d3c8ad24bf832cafa6e086217">REMOVE_KEY</a>:</div><div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;            printf(<span class="stringliteral">&quot;Введіть ключ пошуку\n&quot;</span>);</div><div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;            <a class="code" href="main_8c.html#a500943d070deae91216d10f37982c3f7">remove_aeroflot_key</a>(head, <a class="code" href="main_8c.html#a36302364b495f5e99251b65c3c5993d2">aeroflot_user_fill</a>());</div><div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029faf6b54e2f964c3204c88d0d82a509f65a">SHOW</a>:</div><div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            <a class="code" href="main_8c.html#a5f6128fb431c14b0ec5e1b28f7d86f55">print_aeroflot_list</a>(head);</div><div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa136486a15d68351e470b6b449ae7a246">SORT</a>:</div><div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            <a class="code" href="main_8c.html#a802394bf54d1c43e588b2258e4b14653">sort_list</a>(head);</div><div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fae8221012d15767e99099fc09b63b77dc">GET_BY_CITY</a>:</div><div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;            <a class="code" href="main_8c.html#a39c2c82dccda45fa272ba55c57a3dbf9">get_by_city</a>(head);</div><div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa7a10b5d68d31711288e1fe0fa17dbf4f">EXIT</a>:</div><div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        <span class="keywordflow">default</span>:</div><div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;            printf(<span class="stringliteral">&quot;Something went wrong&quot;</span>);</div><div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    }</div><div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;}</div><div class="ttc" id="lab__functions_8h_html_a45e2d75e7b00ac6711c815431d42bcfd"><div class="ttname"><a href="lab__functions_8h.html#a45e2d75e7b00ac6711c815431d42bcfd">get_int</a></div><div class="ttdeci">int get_int(char message[], int lwr_border, int hir_border)</div><div class="ttdoc">Фікс input_int для забезпечення &quot;чистої&quot; функції </div><div class="ttdef"><b>Definition:</b> lab_functions.c:85</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa42637601e6022d5e586cbe28071a9b48"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa42637601e6022d5e586cbe28071a9b48">REMOVE_N</a></div><div class="ttdoc">Видалення елемента з заданим номером в списку </div><div class="ttdef"><b>Definition:</b> main.c:34</div></div>
+<div class="ttc" id="main_8c_html_ae3896f900491d60fc8e9442b3e5ade4c"><div class="ttname"><a href="main_8c.html#ae3896f900491d60fc8e9442b3e5ade4c">re_init_list</a></div><div class="ttdeci">List_aeroflot re_init_list(List_aeroflot **old_head)</div><div class="ttdoc">Створення нового списку (затирання старого) </div><div class="ttdef"><b>Definition:</b> main.c:491</div></div>
+<div class="ttc" id="main_8c_html_aad7fee251ddf586df049ee9559353e06"><div class="ttname"><a href="main_8c.html#aad7fee251ddf586df049ee9559353e06">push_top</a></div><div class="ttdeci">List_aeroflot * push_top(List_aeroflot **old_head, Aeroflot new_race)</div><div class="ttdoc">Додавання в початок </div><div class="ttdef"><b>Definition:</b> main.c:147</div></div>
+<div class="ttc" id="main_8c_html_a8c414ba7f65a93bf7e5a38f34ad43a93"><div class="ttname"><a href="main_8c.html#a8c414ba7f65a93bf7e5a38f34ad43a93">push_after_key</a></div><div class="ttdeci">List_aeroflot * push_after_key(List_aeroflot **head, Aeroflot new_race, Aeroflot key_race)</div><div class="ttdoc">Додавання рейсу після певного ключа у списку </div><div class="ttdef"><b>Definition:</b> main.c:219</div></div>
+<div class="ttc" id="lab__functions_8h_html_a6f453bc035d85e967bd5032eca31a155"><div class="ttname"><a href="lab__functions_8h.html#a6f453bc035d85e967bd5032eca31a155">input_int</a></div><div class="ttdeci">void input_int(char message[], int *number, int lwr_border, int hir_border)</div><div class="ttdoc">Реалізація корректного введення цілих десяткових чисел користувачем </div><div class="ttdef"><b>Definition:</b> lab_functions.c:69</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa72b88f8d3c8ad24bf832cafa6e086217"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa72b88f8d3c8ad24bf832cafa6e086217">REMOVE_KEY</a></div><div class="ttdoc">Видалення елемента з заданим ключем </div><div class="ttdef"><b>Definition:</b> main.c:35</div></div>
+<div class="ttc" id="main_8c_html_a88b5cd8a8b5ea867830b1a7d69ad578e"><div class="ttname"><a href="main_8c.html#a88b5cd8a8b5ea867830b1a7d69ad578e">push_after_n</a></div><div class="ttdeci">List_aeroflot * push_after_n(List_aeroflot **head, Aeroflot new_race, int N)</div><div class="ttdoc">Додавання рейсу після певного номера у списку </div><div class="ttdef"><b>Definition:</b> main.c:192</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa136486a15d68351e470b6b449ae7a246"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa136486a15d68351e470b6b449ae7a246">SORT</a></div><div class="ttdoc">Упорядкування елементів </div><div class="ttdef"><b>Definition:</b> main.c:37</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029faf6b54e2f964c3204c88d0d82a509f65a"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029faf6b54e2f964c3204c88d0d82a509f65a">SHOW</a></div><div class="ttdoc">Виведення вмісту списку на екран </div><div class="ttdef"><b>Definition:</b> main.c:36</div></div>
+<div class="ttc" id="main_8c_html_a36302364b495f5e99251b65c3c5993d2"><div class="ttname"><a href="main_8c.html#a36302364b495f5e99251b65c3c5993d2">aeroflot_user_fill</a></div><div class="ttdeci">Aeroflot aeroflot_user_fill()</div><div class="ttdoc">Користувач вказує місце призначення, номер рейсу, тип літака. </div><div class="ttdef"><b>Definition:</b> main.c:57</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fac19da14a6129e83c76c7ac5d1b48bdf6"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fac19da14a6129e83c76c7ac5d1b48bdf6">PUSH_TOP</a></div><div class="ttdoc">Додавання в початок </div><div class="ttdef"><b>Definition:</b> main.c:28</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa5b5c3f5e5115e360c49d379f52ded058"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa5b5c3f5e5115e360c49d379f52ded058">PUSH_KEY</a></div><div class="ttdoc">Додавання після елемента з заданим ключем </div><div class="ttdef"><b>Definition:</b> main.c:31</div></div>
+<div class="ttc" id="main_8c_html_a85d439fd81dd1e929276ba46d86eb80d"><div class="ttname"><a href="main_8c.html#a85d439fd81dd1e929276ba46d86eb80d">remove_back</a></div><div class="ttdeci">List_aeroflot * remove_back(List_aeroflot **head)</div><div class="ttdoc">Видалення останнього елементу зі списку </div><div class="ttdef"><b>Definition:</b> main.c:325</div></div>
+<div class="ttc" id="main_8c_html_a500943d070deae91216d10f37982c3f7"><div class="ttname"><a href="main_8c.html#a500943d070deae91216d10f37982c3f7">remove_aeroflot_key</a></div><div class="ttdeci">void remove_aeroflot_key(List_aeroflot **head, Aeroflot key)</div><div class="ttdoc">Видалення певного елемента списку (за ключем) </div><div class="ttdef"><b>Definition:</b> main.c:304</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa0cb1b2c6a7db1f1084886c98909a3f36"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa0cb1b2c6a7db1f1084886c98909a3f36">INIT</a></div><div class="ttdoc">Створення нового списку </div><div class="ttdef"><b>Definition:</b> main.c:27</div></div>
+<div class="ttc" id="main_8c_html_a7e397112c557e808e91ddfdb85d3323c"><div class="ttname"><a href="main_8c.html#a7e397112c557e808e91ddfdb85d3323c">pop</a></div><div class="ttdeci">List_aeroflot * pop(List_aeroflot **head)</div><div class="ttdoc">Видалення першого елемента списку </div><div class="ttdef"><b>Definition:</b> main.c:261</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029facead49106e50d919b5e6b2c78170c761"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029facead49106e50d919b5e6b2c78170c761">PUSH_BACK</a></div><div class="ttdoc">Додавання в кінець </div><div class="ttdef"><b>Definition:</b> main.c:29</div></div>
+<div class="ttc" id="main_8c_html_a39c2c82dccda45fa272ba55c57a3dbf9"><div class="ttname"><a href="main_8c.html#a39c2c82dccda45fa272ba55c57a3dbf9">get_by_city</a></div><div class="ttdeci">void get_by_city(List_aeroflot **head)</div><div class="ttdoc">Вивід рейсів з заданою назвою </div><div class="ttdef"><b>Definition:</b> main.c:108</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa061dcf4785583d8653942f2d252174fa"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa061dcf4785583d8653942f2d252174fa">POP</a></div><div class="ttdoc">Видалення елемента з початку списку </div><div class="ttdef"><b>Definition:</b> main.c:32</div></div>
+<div class="ttc" id="main_8c_html_a57b202125772bddb3ec4c84c4d68e664"><div class="ttname"><a href="main_8c.html#a57b202125772bddb3ec4c84c4d68e664">remove_aeroflot_n</a></div><div class="ttdeci">List_aeroflot * remove_aeroflot_n(List_aeroflot **head, int N)</div><div class="ttdoc">Видалення певного елемента списку (за номером) </div><div class="ttdef"><b>Definition:</b> main.c:278</div></div>
+<div class="ttc" id="main_8c_html_a802394bf54d1c43e588b2258e4b14653"><div class="ttname"><a href="main_8c.html#a802394bf54d1c43e588b2258e4b14653">sort_list</a></div><div class="ttdeci">void sort_list(List_aeroflot **head)</div><div class="ttdoc">Сортування списку за вибором користувача </div><div class="ttdef"><b>Definition:</b> main.c:501</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa7a10b5d68d31711288e1fe0fa17dbf4f"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa7a10b5d68d31711288e1fe0fa17dbf4f">EXIT</a></div><div class="ttdoc">Вихід </div><div class="ttdef"><b>Definition:</b> main.c:39</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fab6a95ededfc57bc938450bda1066efca"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fab6a95ededfc57bc938450bda1066efca">PUSH_N</a></div><div class="ttdoc">Додавання після елемента з номером n. </div><div class="ttdef"><b>Definition:</b> main.c:30</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fae8221012d15767e99099fc09b63b77dc"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fae8221012d15767e99099fc09b63b77dc">GET_BY_CITY</a></div><div class="ttdoc">Виведення рейсів в задане місто </div><div class="ttdef"><b>Definition:</b> main.c:38</div></div>
+<div class="ttc" id="main_8c_html_ad5b035af54b12fffc80b6aa76ab4029fa6091654b8b9aedd5fd86976f5a1e96cf"><div class="ttname"><a href="main_8c.html#ad5b035af54b12fffc80b6aa76ab4029fa6091654b8b9aedd5fd86976f5a1e96cf">REMOVE_BACK</a></div><div class="ttdoc">Видалення елемента з кінця списку </div><div class="ttdef"><b>Definition:</b> main.c:33</div></div>
+<div class="ttc" id="main_8c_html_a9f24f6c5839a268adcd9948fbdd9b0f9"><div class="ttname"><a href="main_8c.html#a9f24f6c5839a268adcd9948fbdd9b0f9">push_back</a></div><div class="ttdeci">List_aeroflot * push_back(List_aeroflot **head, Aeroflot new_race)</div><div class="ttdoc">Додавання в кінець </div><div class="ttdef"><b>Definition:</b> main.c:168</div></div>
+<div class="ttc" id="main_8c_html_a5f6128fb431c14b0ec5e1b28f7d86f55"><div class="ttname"><a href="main_8c.html#a5f6128fb431c14b0ec5e1b28f7d86f55">print_aeroflot_list</a></div><div class="ttdeci">void print_aeroflot_list(List_aeroflot **head)</div><div class="ttdoc">Вивід усього списку на екран </div><div class="ttdef"><b>Definition:</b> main.c:355</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8373e4434f856813f4b7ef071545084e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8373e4434f856813f4b7ef071545084e">&#9670;&nbsp;</a></span>merge_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>* merge_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>second</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool(*)()&#160;</td>
+          <td class="paramname"><em>less_equal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Злиття </p>
+<p>Пояснення алгоритму сортування не входить в лабораторну роботу </p>
+<div class="fragment"><div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                                                                                             {</div><div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *head_to_return, *iter_list;</div><div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keywordflow">if</span> (!first){</div><div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordflow">return</span> second;</div><div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    }</div><div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keywordflow">if</span> (!second){</div><div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <span class="keywordflow">return</span> first;</div><div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    }</div><div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="main_8c.html#a79f4fb841d47c4dd1d7ccf275f49e31e">less_eq_list</a>(first, second, less_equal)){</div><div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        head_to_return = first;</div><div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        first = first-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    } <span class="keywordflow">else</span>{</div><div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        head_to_return = second;</div><div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        second = second-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    }</div><div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    iter_list = head_to_return;</div><div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <span class="keywordflow">while</span> (first || second){</div><div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="main_8c.html#a79f4fb841d47c4dd1d7ccf275f49e31e">less_eq_list</a>(first, second, less_equal)){</div><div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;            iter_list-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> = first;</div><div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;            first = first-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        } <span class="keywordflow">else</span>{</div><div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;            iter_list-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> = second;</div><div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                second = second-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        }</div><div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        iter_list = iter_list-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    }</div><div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    iter_list-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> = NULL;</div><div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    <span class="keywordflow">return</span> head_to_return;</div><div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></div><div class="ttdef"><b>Definition:</b> main.c:44</div></div>
+<div class="ttc" id="main_8c_html_a79f4fb841d47c4dd1d7ccf275f49e31e"><div class="ttname"><a href="main_8c.html#a79f4fb841d47c4dd1d7ccf275f49e31e">less_eq_list</a></div><div class="ttdeci">bool less_eq_list(List_aeroflot *first, List_aeroflot *second, bool(*less_equal)())</div><div class="ttdef"><b>Definition:</b> main.c:429</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_a8aed81380fcda3f4230250e126b28d5e"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">single_linked_list_aeroflot_struct::next</a></div><div class="ttdeci">struct single_linked_list_aeroflot_struct * next</div><div class="ttdoc">Посилання на наступний рейс </div><div class="ttdef"><b>Definition:</b> main.c:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7e397112c557e808e91ddfdb85d3323c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e397112c557e808e91ddfdb85d3323c">&#9670;&nbsp;</a></span>pop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>* pop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Видалення першого елемента списку </p>
+<p>Функція, що видаляє голову списку, використовується допоміжна службова функція <a class="el" href="main_8c.html#a81b22e06ebb21b94865712c93f535f12" title="Службова функція видалення ">remove_aeroflot_ptr()</a> </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Голова списку з якого буде видалятись </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>Видалений елемент </dd></dl>
+<div class="fragment"><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                                        {</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="main_8c.html#a4d48471ab7b12b187d04943f4d808488">is_empty</a>(head)){</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        printf(<span class="stringliteral">&quot;Список порожній\n&quot;</span>);</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keywordflow">return</span> *head;</div><div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    }</div><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *head_to_return = malloc(<span class="keyword">sizeof</span>(<a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>*));</div><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    *head_to_return = **head;</div><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <a class="code" href="main_8c.html#a81b22e06ebb21b94865712c93f535f12">remove_aeroflot_ptr</a>(head,*head);</div><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">return</span> head_to_return;</div><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></div><div class="ttdef"><b>Definition:</b> main.c:44</div></div>
+<div class="ttc" id="main_8c_html_a81b22e06ebb21b94865712c93f535f12"><div class="ttname"><a href="main_8c.html#a81b22e06ebb21b94865712c93f535f12">remove_aeroflot_ptr</a></div><div class="ttdeci">void remove_aeroflot_ptr(List_aeroflot **head, List_aeroflot *node)</div><div class="ttdoc">Службова функція видалення </div><div class="ttdef"><b>Definition:</b> main.c:240</div></div>
+<div class="ttc" id="main_8c_html_a4d48471ab7b12b187d04943f4d808488"><div class="ttname"><a href="main_8c.html#a4d48471ab7b12b187d04943f4d808488">is_empty</a></div><div class="ttdeci">bool is_empty(List_aeroflot **head)</div><div class="ttdoc">Чи пустий список </div><div class="ttdef"><b>Definition:</b> main.c:132</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5f6128fb431c14b0ec5e1b28f7d86f55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f6128fb431c14b0ec5e1b28f7d86f55">&#9670;&nbsp;</a></span>print_aeroflot_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_aeroflot_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вивід усього списку на екран </p>
+<p>Виводиться "шапка" а потім почергово кожен елемент списку за допопмогою <a class="el" href="main_8c.html#ab2f3cf7027536425c3cc1aae1c07bc41" title="Виводим структуру типу Aeroflot в частково відформатованому вигляді ">print_single_aeroflot()</a> </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Голова списку, який буде виводитись </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                                              {</div><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div><div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">if</span> (head == NULL || *head == NULL){</div><div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        printf(<span class="stringliteral">&quot;Список порожній\n&quot;</span>);</div><div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    } <span class="keywordflow">else</span>{</div><div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        printf(<span class="stringliteral">&quot;Місце призначення        Номер рейсу      Тип літака\n&quot;</span>);</div><div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *node = *head;</div><div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordflow">while</span> (node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> != NULL){</div><div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            <a class="code" href="main_8c.html#ab2f3cf7027536425c3cc1aae1c07bc41">print_single_aeroflot</a>(node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">race</a>);</div><div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            node = node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        }</div><div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <a class="code" href="main_8c.html#ab2f3cf7027536425c3cc1aae1c07bc41">print_single_aeroflot</a>(node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">race</a>);</div><div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    }</div><div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></div><div class="ttdef"><b>Definition:</b> main.c:44</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_af1c1f161b03433dfe3a7f4028dd58b71"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">single_linked_list_aeroflot_struct::race</a></div><div class="ttdeci">Aeroflot race</div><div class="ttdoc">Поточний рейс </div><div class="ttdef"><b>Definition:</b> main.c:45</div></div>
+<div class="ttc" id="main_8c_html_ab2f3cf7027536425c3cc1aae1c07bc41"><div class="ttname"><a href="main_8c.html#ab2f3cf7027536425c3cc1aae1c07bc41">print_single_aeroflot</a></div><div class="ttdeci">void print_single_aeroflot(Aeroflot aeroplanes)</div><div class="ttdoc">Виводим структуру типу Aeroflot в частково відформатованому вигляді </div><div class="ttdef"><b>Definition:</b> main.c:97</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_a8aed81380fcda3f4230250e126b28d5e"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">single_linked_list_aeroflot_struct::next</a></div><div class="ttdeci">struct single_linked_list_aeroflot_struct * next</div><div class="ttdoc">Посилання на наступний рейс </div><div class="ttdef"><b>Definition:</b> main.c:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab2f3cf7027536425c3cc1aae1c07bc41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2f3cf7027536425c3cc1aae1c07bc41">&#9670;&nbsp;</a></span>print_single_aeroflot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_single_aeroflot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a>&#160;</td>
+          <td class="paramname"><em>aeroplanes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Виводим структуру типу Aeroflot в частково відформатованому вигляді </p>
+<p>Форматований вихід здійснюється за допомогою операцій лівостороннього вирівнювання </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aeroplanes</td><td>Структура для виводу </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                               {</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    printf(<span class="stringliteral">&quot;%-25s%-17d%-10s\n&quot;</span>,</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;               aeroplanes.<a class="code" href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">destination</a>,</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;               aeroplanes.<a class="code" href="structAEROFLOT__STRUCT.html#a7f89c90169893ea6426d49cbfe252b6b">flight_number</a>,</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;           name_of_type[aeroplanes.<a class="code" href="structAEROFLOT__STRUCT.html#a913aeac90752fd046f3ca7410093bb36">type</a>]);</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div><div class="ttc" id="structAEROFLOT__STRUCT_html_a4a959b0e5f73bb401dccc9c248cf801c"><div class="ttname"><a href="structAEROFLOT__STRUCT.html#a4a959b0e5f73bb401dccc9c248cf801c">AEROFLOT_STRUCT::destination</a></div><div class="ttdeci">char * destination</div><div class="ttdoc">Місце призначення </div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
+<div class="ttc" id="structAEROFLOT__STRUCT_html_a7f89c90169893ea6426d49cbfe252b6b"><div class="ttname"><a href="structAEROFLOT__STRUCT.html#a7f89c90169893ea6426d49cbfe252b6b">AEROFLOT_STRUCT::flight_number</a></div><div class="ttdeci">int flight_number</div><div class="ttdoc">Номер рейсу </div><div class="ttdef"><b>Definition:</b> main.c:17</div></div>
+<div class="ttc" id="structAEROFLOT__STRUCT_html_a913aeac90752fd046f3ca7410093bb36"><div class="ttname"><a href="structAEROFLOT__STRUCT.html#a913aeac90752fd046f3ca7410093bb36">AEROFLOT_STRUCT::type</a></div><div class="ttdeci">int type</div><div class="ttdoc">Тип літака </div><div class="ttdef"><b>Definition:</b> main.c:18</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8c414ba7f65a93bf7e5a38f34ad43a93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c414ba7f65a93bf7e5a38f34ad43a93">&#9670;&nbsp;</a></span>push_after_key()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>* push_after_key </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a>&#160;</td>
+          <td class="paramname"><em>new_race</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a>&#160;</td>
+          <td class="paramname"><em>key_race</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Додавання рейсу після певного ключа у списку </p>
+<p>Проходить по елементах списку і порінює їх <a class="el" href="main_8c.html#a268a550e94036d245188ea5dc9f89155" title="Порівняння двох змінних типів Aeroflot. ">aeroflot_cmp()</a>. При відсутності виводить помилку. Для додаткової функціональності створюється та повертається <code>new_head</code> </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Голова списку в який буде додаватись </td></tr>
+    <tr><td class="paramname">new_race</td><td>Сам рейс, який додається </td></tr>
+    <tr><td class="paramname">key_race</td><td>Рейс, за яким будемо вставляти елемент </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>Новий елемент списку, або голова, якщо не існує такого номера </dd></dl>
+<div class="fragment"><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                                                                                          {</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *node = *head;</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordflow">while</span> (node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> != NULL &amp;&amp; <a class="code" href="main_8c.html#a268a550e94036d245188ea5dc9f89155">aeroflot_cmp</a>(&amp;node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">race</a>,&amp;key_race)){</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        node = node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="main_8c.html#a268a550e94036d245188ea5dc9f89155">aeroflot_cmp</a>(&amp;node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">race</a>,&amp;key_race)){</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *new_node = malloc(<span class="keyword">sizeof</span>(<a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>));</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        new_node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">race</a> = new_race;</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        new_node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> = node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> = new_node;</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    } <span class="keywordflow">else</span>{</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        printf(<span class="stringliteral">&quot;\x1b[6;30;41mПомилка!\x1b[0m  Такого рейсу немає в списку\n&quot;</span>);</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">return</span> *head;</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></div><div class="ttdef"><b>Definition:</b> main.c:44</div></div>
+<div class="ttc" id="main_8c_html_a268a550e94036d245188ea5dc9f89155"><div class="ttname"><a href="main_8c.html#a268a550e94036d245188ea5dc9f89155">aeroflot_cmp</a></div><div class="ttdeci">int aeroflot_cmp(Aeroflot *first, Aeroflot *second)</div><div class="ttdoc">Порівняння двох змінних типів Aeroflot. </div><div class="ttdef"><b>Definition:</b> main.c:85</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_af1c1f161b03433dfe3a7f4028dd58b71"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">single_linked_list_aeroflot_struct::race</a></div><div class="ttdeci">Aeroflot race</div><div class="ttdoc">Поточний рейс </div><div class="ttdef"><b>Definition:</b> main.c:45</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_a8aed81380fcda3f4230250e126b28d5e"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">single_linked_list_aeroflot_struct::next</a></div><div class="ttdeci">struct single_linked_list_aeroflot_struct * next</div><div class="ttdoc">Посилання на наступний рейс </div><div class="ttdef"><b>Definition:</b> main.c:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a88b5cd8a8b5ea867830b1a7d69ad578e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b5cd8a8b5ea867830b1a7d69ad578e">&#9670;&nbsp;</a></span>push_after_n()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>* push_after_n </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a>&#160;</td>
+          <td class="paramname"><em>new_race</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Додавання рейсу після певного номера у списку </p>
+<p>Вводиться змінна - рахівник, за її допомогою доходим до потрібного елемента.<br />
+Для додаткової функціональності створюється та повертається <code>new_head</code> </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Голова списку в який буде додаватись </td></tr>
+    <tr><td class="paramname">new_race</td><td>Сам рейс, який додається </td></tr>
+    <tr><td class="paramname">N</td><td>Номер після якого буде доданий рейс </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>Новий елемент списку, або голова, якщо не існує такого номера </dd></dl>
+<div class="fragment"><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                                                                           {</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *node = *head;</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">int</span> i = 0;</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">while</span> (node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> != NULL &amp;&amp; i != N){</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        node = node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        i++;</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">if</span> (i == N){</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *new_node = malloc(<span class="keyword">sizeof</span>(<a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>));</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        new_node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">race</a> = new_race;</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        new_node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> = node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> = new_node;</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">return</span> new_node;</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    } <span class="keywordflow">else</span>{</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        printf(<span class="stringliteral">&quot;\x1b[6;30;41mПомилка!\x1b[0m  Такого номера немає в списку\n&quot;</span>);</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">return</span> *head;</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></div><div class="ttdef"><b>Definition:</b> main.c:44</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_af1c1f161b03433dfe3a7f4028dd58b71"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">single_linked_list_aeroflot_struct::race</a></div><div class="ttdeci">Aeroflot race</div><div class="ttdoc">Поточний рейс </div><div class="ttdef"><b>Definition:</b> main.c:45</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_a8aed81380fcda3f4230250e126b28d5e"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">single_linked_list_aeroflot_struct::next</a></div><div class="ttdeci">struct single_linked_list_aeroflot_struct * next</div><div class="ttdoc">Посилання на наступний рейс </div><div class="ttdef"><b>Definition:</b> main.c:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9f24f6c5839a268adcd9948fbdd9b0f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f24f6c5839a268adcd9948fbdd9b0f9">&#9670;&nbsp;</a></span>push_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>* push_back </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a>&#160;</td>
+          <td class="paramname"><em>new_race</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Додавання в кінець </p>
+<p>Для додаткової функціональності створюється та повертається <code>new_node</code> Далі проходимось по списку в кінець і додаєм </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Голова списку в який буде додаватись </td></tr>
+    <tr><td class="paramname">new_race</td><td>Сам рейс, який додається </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>Новий елемент списку </dd></dl>
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                                                 {</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *new_node = (<a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *)malloc(<span class="keyword">sizeof</span>(<a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>));</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    new_node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">race</a> = new_race;</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    new_node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> = NULL;</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">if</span> (!*head){</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        *head = new_node;</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">return</span> new_node;</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *node = *head;</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">while</span> (node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>){</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        node = node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> = new_node;</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">return</span> new_node;</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></div><div class="ttdef"><b>Definition:</b> main.c:44</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_af1c1f161b03433dfe3a7f4028dd58b71"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">single_linked_list_aeroflot_struct::race</a></div><div class="ttdeci">Aeroflot race</div><div class="ttdoc">Поточний рейс </div><div class="ttdef"><b>Definition:</b> main.c:45</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_a8aed81380fcda3f4230250e126b28d5e"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">single_linked_list_aeroflot_struct::next</a></div><div class="ttdeci">struct single_linked_list_aeroflot_struct * next</div><div class="ttdoc">Посилання на наступний рейс </div><div class="ttdef"><b>Definition:</b> main.c:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aad7fee251ddf586df049ee9559353e06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad7fee251ddf586df049ee9559353e06">&#9670;&nbsp;</a></span>push_top()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>* push_top </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>old_head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a>&#160;</td>
+          <td class="paramname"><em>new_race</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Додавання в початок </p>
+<p>Для додаткової функціональності створюється та повертається <code>new_head</code> На початку виконується перевірка на пустоту, а потім додається елемент в однозв'язний список </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">old_head</td><td>Стара голова списку в який буде додаватись </td></tr>
+    <tr><td class="paramname">new_race</td><td>Сам рейс, який додається </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>Новий елемент списку </dd></dl>
+<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                                                                    {</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *new_head = (<a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *)malloc(<span class="keyword">sizeof</span>(<a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>));</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    new_head-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">race</a> = new_race;</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">if</span> (*old_head == NULL){</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        *old_head = new_head;</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        new_head-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> = NULL;</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    } <span class="keywordflow">else</span>{</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *head = *old_head;</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        new_head-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> = head;</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        *old_head = new_head;</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> new_head;</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></div><div class="ttdef"><b>Definition:</b> main.c:44</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_af1c1f161b03433dfe3a7f4028dd58b71"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">single_linked_list_aeroflot_struct::race</a></div><div class="ttdeci">Aeroflot race</div><div class="ttdoc">Поточний рейс </div><div class="ttdef"><b>Definition:</b> main.c:45</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_a8aed81380fcda3f4230250e126b28d5e"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">single_linked_list_aeroflot_struct::next</a></div><div class="ttdeci">struct single_linked_list_aeroflot_struct * next</div><div class="ttdoc">Посилання на наступний рейс </div><div class="ttdef"><b>Definition:</b> main.c:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae3896f900491d60fc8e9442b3e5ade4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3896f900491d60fc8e9442b3e5ade4c">&#9670;&nbsp;</a></span>re_init_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> re_init_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>old_head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Створення нового списку (затирання старого) </p>
+<p>По факту старий список просто очищається (при створенні нового виникали б втрати пам'яті) </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">old_head</td><td>Голова старого списку </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>Голову нового списку </dd></dl>
+<div class="fragment"><div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                                                    {</div><div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    <a class="code" href="main_8c.html#a46177683269c93d16370b166da7b9b17">remove_list</a>(old_head);</div><div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <a class="code" href="main_8c.html#a9f24f6c5839a268adcd9948fbdd9b0f9">push_back</a>(old_head, <a class="code" href="main_8c.html#a36302364b495f5e99251b65c3c5993d2">aeroflot_user_fill</a>());</div><div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <span class="keywordflow">return</span> **old_head;</div><div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;}</div><div class="ttc" id="main_8c_html_a46177683269c93d16370b166da7b9b17"><div class="ttname"><a href="main_8c.html#a46177683269c93d16370b166da7b9b17">remove_list</a></div><div class="ttdeci">void remove_list(List_aeroflot **head)</div><div class="ttdoc">Видалення всього списку </div><div class="ttdef"><b>Definition:</b> main.c:345</div></div>
+<div class="ttc" id="main_8c_html_a36302364b495f5e99251b65c3c5993d2"><div class="ttname"><a href="main_8c.html#a36302364b495f5e99251b65c3c5993d2">aeroflot_user_fill</a></div><div class="ttdeci">Aeroflot aeroflot_user_fill()</div><div class="ttdoc">Користувач вказує місце призначення, номер рейсу, тип літака. </div><div class="ttdef"><b>Definition:</b> main.c:57</div></div>
+<div class="ttc" id="main_8c_html_a9f24f6c5839a268adcd9948fbdd9b0f9"><div class="ttname"><a href="main_8c.html#a9f24f6c5839a268adcd9948fbdd9b0f9">push_back</a></div><div class="ttdeci">List_aeroflot * push_back(List_aeroflot **head, Aeroflot new_race)</div><div class="ttdoc">Додавання в кінець </div><div class="ttdef"><b>Definition:</b> main.c:168</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a500943d070deae91216d10f37982c3f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a500943d070deae91216d10f37982c3f7">&#9670;&nbsp;</a></span>remove_aeroflot_key()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void remove_aeroflot_key </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structAEROFLOT__STRUCT.html">Aeroflot</a>&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Видалення певного елемента списку (за ключем) </p>
+<p>Видаляє елемент з заданим ключем </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Голова списку з якого буде видалятись </td></tr>
+    <tr><td class="paramname">key</td><td>Ключ, за яким видалиться елемент списку </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                                                            {</div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *node = *head;</div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="main_8c.html#a4d48471ab7b12b187d04943f4d808488">is_empty</a>(head)){</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        printf(<span class="stringliteral">&quot;Список порожній\n&quot;</span>);</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordflow">return</span>;</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">while</span> (node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> &amp;&amp; <a class="code" href="main_8c.html#a268a550e94036d245188ea5dc9f89155">aeroflot_cmp</a>(&amp;node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">race</a>, &amp;key)){</div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        node = node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    }</div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="main_8c.html#a268a550e94036d245188ea5dc9f89155">aeroflot_cmp</a>(&amp;node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">race</a>, &amp;key)){</div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <a class="code" href="main_8c.html#a81b22e06ebb21b94865712c93f535f12">remove_aeroflot_ptr</a>(head, node);</div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    } <span class="keywordflow">else</span>{</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        printf(<span class="stringliteral">&quot;\x1b[6;30;41mПомилка!\x1b[0m  Такого рейсу немає в списку\n&quot;</span>);</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    }</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></div><div class="ttdef"><b>Definition:</b> main.c:44</div></div>
+<div class="ttc" id="main_8c_html_a268a550e94036d245188ea5dc9f89155"><div class="ttname"><a href="main_8c.html#a268a550e94036d245188ea5dc9f89155">aeroflot_cmp</a></div><div class="ttdeci">int aeroflot_cmp(Aeroflot *first, Aeroflot *second)</div><div class="ttdoc">Порівняння двох змінних типів Aeroflot. </div><div class="ttdef"><b>Definition:</b> main.c:85</div></div>
+<div class="ttc" id="main_8c_html_a81b22e06ebb21b94865712c93f535f12"><div class="ttname"><a href="main_8c.html#a81b22e06ebb21b94865712c93f535f12">remove_aeroflot_ptr</a></div><div class="ttdeci">void remove_aeroflot_ptr(List_aeroflot **head, List_aeroflot *node)</div><div class="ttdoc">Службова функція видалення </div><div class="ttdef"><b>Definition:</b> main.c:240</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_af1c1f161b03433dfe3a7f4028dd58b71"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#af1c1f161b03433dfe3a7f4028dd58b71">single_linked_list_aeroflot_struct::race</a></div><div class="ttdeci">Aeroflot race</div><div class="ttdoc">Поточний рейс </div><div class="ttdef"><b>Definition:</b> main.c:45</div></div>
+<div class="ttc" id="main_8c_html_a4d48471ab7b12b187d04943f4d808488"><div class="ttname"><a href="main_8c.html#a4d48471ab7b12b187d04943f4d808488">is_empty</a></div><div class="ttdeci">bool is_empty(List_aeroflot **head)</div><div class="ttdoc">Чи пустий список </div><div class="ttdef"><b>Definition:</b> main.c:132</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_a8aed81380fcda3f4230250e126b28d5e"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">single_linked_list_aeroflot_struct::next</a></div><div class="ttdeci">struct single_linked_list_aeroflot_struct * next</div><div class="ttdoc">Посилання на наступний рейс </div><div class="ttdef"><b>Definition:</b> main.c:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a57b202125772bddb3ec4c84c4d68e664"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57b202125772bddb3ec4c84c4d68e664">&#9670;&nbsp;</a></span>remove_aeroflot_n()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>* remove_aeroflot_n </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Видалення певного елемента списку (за номером) </p>
+<p>Видаляє Нтий елемент за допомогою <a class="el" href="main_8c.html#a81b22e06ebb21b94865712c93f535f12" title="Службова функція видалення ">remove_aeroflot_ptr()</a> </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Голова списку з якого буде видалятись </td></tr>
+    <tr><td class="paramname">N</td><td>Номер, який буде видалятись </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>Видалений елемент </dd></dl>
+<div class="fragment"><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                                                              {</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *node = *head;</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *node_to_return = malloc(<span class="keyword">sizeof</span>(<a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *));</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordtype">int</span> i = 0;</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="main_8c.html#a4d48471ab7b12b187d04943f4d808488">is_empty</a>(head)) {</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        printf(<span class="stringliteral">&quot;Список порожній!\n&quot;</span>);</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    }</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">while</span> (node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> != NULL &amp;&amp; i != N){</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        node = node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        i++;</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    }</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">if</span> (i==N){</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        *node_to_return = *node;</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <a class="code" href="main_8c.html#a81b22e06ebb21b94865712c93f535f12">remove_aeroflot_ptr</a>(head, node);</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">return</span> node_to_return;</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    printf(<span class="stringliteral">&quot;\x1b[6;30;41mПомилка!\x1b[0m  Такого рейсу немає в списку\n&quot;</span>);</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></div><div class="ttdef"><b>Definition:</b> main.c:44</div></div>
+<div class="ttc" id="main_8c_html_a81b22e06ebb21b94865712c93f535f12"><div class="ttname"><a href="main_8c.html#a81b22e06ebb21b94865712c93f535f12">remove_aeroflot_ptr</a></div><div class="ttdeci">void remove_aeroflot_ptr(List_aeroflot **head, List_aeroflot *node)</div><div class="ttdoc">Службова функція видалення </div><div class="ttdef"><b>Definition:</b> main.c:240</div></div>
+<div class="ttc" id="main_8c_html_a4d48471ab7b12b187d04943f4d808488"><div class="ttname"><a href="main_8c.html#a4d48471ab7b12b187d04943f4d808488">is_empty</a></div><div class="ttdeci">bool is_empty(List_aeroflot **head)</div><div class="ttdoc">Чи пустий список </div><div class="ttdef"><b>Definition:</b> main.c:132</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_a8aed81380fcda3f4230250e126b28d5e"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">single_linked_list_aeroflot_struct::next</a></div><div class="ttdeci">struct single_linked_list_aeroflot_struct * next</div><div class="ttdoc">Посилання на наступний рейс </div><div class="ttdef"><b>Definition:</b> main.c:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a81b22e06ebb21b94865712c93f535f12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81b22e06ebb21b94865712c93f535f12">&#9670;&nbsp;</a></span>remove_aeroflot_ptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void remove_aeroflot_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Службова функція видалення </p>
+<p>Видаляє елемент списку по вказівнику </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Голова списку з якого буде видалятись </td></tr>
+    <tr><td class="paramname">node</td><td>Елемент, який буде видалятись </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                                                   {</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *cur_node = *head;</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (cur_node == node){</div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        *head = cur_node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        free(cur_node);</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">return</span>;</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *node_to_delete;</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">while</span> (cur_node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> != node) {</div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        cur_node = cur_node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    }</div><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    node_to_delete = cur_node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    cur_node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> = node_to_delete-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    free(node_to_delete);</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></div><div class="ttdef"><b>Definition:</b> main.c:44</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_a8aed81380fcda3f4230250e126b28d5e"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">single_linked_list_aeroflot_struct::next</a></div><div class="ttdeci">struct single_linked_list_aeroflot_struct * next</div><div class="ttdoc">Посилання на наступний рейс </div><div class="ttdef"><b>Definition:</b> main.c:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a85d439fd81dd1e929276ba46d86eb80d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85d439fd81dd1e929276ba46d86eb80d">&#9670;&nbsp;</a></span>remove_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>* remove_back </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Видалення останнього елементу зі списку </p>
+<p>Проходим в кінець списку і видаляєм елемент </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Голова списку з якого буде видалятись </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>Видалений елемент </dd></dl>
+<div class="fragment"><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                                                {</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="main_8c.html#a4d48471ab7b12b187d04943f4d808488">is_empty</a>(head)){</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        printf(<span class="stringliteral">&quot;Список порожній\n&quot;</span>);</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordflow">return</span> *head;</div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    }</div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *cur_node = *head;</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">while</span> (cur_node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>){</div><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        cur_node = cur_node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    }</div><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *node_to_return = malloc(<span class="keyword">sizeof</span>(<a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *));</div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    *node_to_return = *cur_node;</div><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <a class="code" href="main_8c.html#a81b22e06ebb21b94865712c93f535f12">remove_aeroflot_ptr</a>(head, cur_node);</div><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordflow">return</span> node_to_return;</div><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></div><div class="ttdef"><b>Definition:</b> main.c:44</div></div>
+<div class="ttc" id="main_8c_html_a81b22e06ebb21b94865712c93f535f12"><div class="ttname"><a href="main_8c.html#a81b22e06ebb21b94865712c93f535f12">remove_aeroflot_ptr</a></div><div class="ttdeci">void remove_aeroflot_ptr(List_aeroflot **head, List_aeroflot *node)</div><div class="ttdoc">Службова функція видалення </div><div class="ttdef"><b>Definition:</b> main.c:240</div></div>
+<div class="ttc" id="main_8c_html_a4d48471ab7b12b187d04943f4d808488"><div class="ttname"><a href="main_8c.html#a4d48471ab7b12b187d04943f4d808488">is_empty</a></div><div class="ttdeci">bool is_empty(List_aeroflot **head)</div><div class="ttdoc">Чи пустий список </div><div class="ttdef"><b>Definition:</b> main.c:132</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_a8aed81380fcda3f4230250e126b28d5e"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">single_linked_list_aeroflot_struct::next</a></div><div class="ttdeci">struct single_linked_list_aeroflot_struct * next</div><div class="ttdoc">Посилання на наступний рейс </div><div class="ttdef"><b>Definition:</b> main.c:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a46177683269c93d16370b166da7b9b17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46177683269c93d16370b166da7b9b17">&#9670;&nbsp;</a></span>remove_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void remove_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Видалення всього списку </p>
+<p>Видаляється голова допоки список не порожній </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Голова списку з якого буде видалятись </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                                      {</div><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">while</span> (*head){</div><div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <a class="code" href="main_8c.html#a7e397112c557e808e91ddfdb85d3323c">pop</a>(head);</div><div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    }</div><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;}</div><div class="ttc" id="main_8c_html_a7e397112c557e808e91ddfdb85d3323c"><div class="ttname"><a href="main_8c.html#a7e397112c557e808e91ddfdb85d3323c">pop</a></div><div class="ttdeci">List_aeroflot * pop(List_aeroflot **head)</div><div class="ttdoc">Видалення першого елемента списку </div><div class="ttdef"><b>Definition:</b> main.c:261</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aeaba90c3e4069dc783a06dd0ad1314a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaba90c3e4069dc783a06dd0ad1314a9">&#9670;&nbsp;</a></span>sort_aeroflot_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>* sort_aeroflot_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool(*)()&#160;</td>
+          <td class="paramname"><em>less_equal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Алгоритм сортування злиттям </p>
+<p>Пояснення алгоритму сортування не входить в лабораторну роботу </p>
+<div class="fragment"><div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                                                                                         {</div><div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="keywordflow">if</span> (length &lt; 2){</div><div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        <span class="keywordflow">return</span> head;</div><div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    }</div><div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <a class="code" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> *half_head, *node = head;</div><div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <span class="keywordtype">int</span> i = 0;</div><div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    <span class="keywordflow">while</span> (i&lt;length/2-1){</div><div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        node = node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        i++;</div><div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    }</div><div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    half_head = node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a>;</div><div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    node-&gt;<a class="code" href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">next</a> = NULL;</div><div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="main_8c.html#a8373e4434f856813f4b7ef071545084e">merge_list</a>(<a class="code" href="main_8c.html#aeaba90c3e4069dc783a06dd0ad1314a9">sort_aeroflot_list</a>(head, i+1, less_equal), <a class="code" href="main_8c.html#aeaba90c3e4069dc783a06dd0ad1314a9">sort_aeroflot_list</a>(half_head,length-i-1, less_equal), less_equal);</div><div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;}</div><div class="ttc" id="structsingle__linked__list__aeroflot__struct_html"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html">single_linked_list_aeroflot_struct</a></div><div class="ttdef"><b>Definition:</b> main.c:44</div></div>
+<div class="ttc" id="main_8c_html_a8373e4434f856813f4b7ef071545084e"><div class="ttname"><a href="main_8c.html#a8373e4434f856813f4b7ef071545084e">merge_list</a></div><div class="ttdeci">List_aeroflot * merge_list(List_aeroflot *first, List_aeroflot *second, bool(*less_equal)())</div><div class="ttdoc">Злиття </div><div class="ttdef"><b>Definition:</b> main.c:438</div></div>
+<div class="ttc" id="structsingle__linked__list__aeroflot__struct_html_a8aed81380fcda3f4230250e126b28d5e"><div class="ttname"><a href="structsingle__linked__list__aeroflot__struct.html#a8aed81380fcda3f4230250e126b28d5e">single_linked_list_aeroflot_struct::next</a></div><div class="ttdeci">struct single_linked_list_aeroflot_struct * next</div><div class="ttdoc">Посилання на наступний рейс </div><div class="ttdef"><b>Definition:</b> main.c:46</div></div>
+<div class="ttc" id="main_8c_html_aeaba90c3e4069dc783a06dd0ad1314a9"><div class="ttname"><a href="main_8c.html#aeaba90c3e4069dc783a06dd0ad1314a9">sort_aeroflot_list</a></div><div class="ttdeci">List_aeroflot * sort_aeroflot_list(List_aeroflot *head, int length, bool(*less_equal)())</div><div class="ttdoc">Алгоритм сортування злиттям </div><div class="ttdef"><b>Definition:</b> main.c:471</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a802394bf54d1c43e588b2258e4b14653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a802394bf54d1c43e588b2258e4b14653">&#9670;&nbsp;</a></span>sort_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sort_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сортування списку за вибором користувача </p>
+<p>Виконується сортування за зчитуваним варіантом користувача </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Голова списку, який сортується </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                                    {</div><div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    printf(<span class="stringliteral">&quot;За чим сортувати список?\n&quot;</span></div><div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;           <span class="stringliteral">&quot;1.  Місцем призначення\n&quot;</span></div><div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;           <span class="stringliteral">&quot;2.  Номером рейсу\n&quot;</span></div><div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;           <span class="stringliteral">&quot;3.  Типом літака\n&quot;</span></div><div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    );</div><div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    bool (*l_eq)();</div><div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <span class="keywordflow">switch</span> (<a class="code" href="lab__functions_8h.html#a45e2d75e7b00ac6711c815431d42bcfd">get_int</a>(<span class="stringliteral">&quot;&quot;</span>,1,3)){</div><div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        <span class="keywordflow">case</span> 1:</div><div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;            l_eq = <a class="code" href="main_8c.html#a12f6a31fbcceae739f671b79d49b9f56">less_eq_race_destination</a>;</div><div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        <span class="keywordflow">case</span> 2:</div><div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;            l_eq =  <a class="code" href="main_8c.html#a6798a994749b47157e5391e31a110867">less_eq_flight_number</a>;</div><div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        <span class="keywordflow">case</span> 3:</div><div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;            l_eq = <a class="code" href="main_8c.html#af923d128a7526a5e663112c9c69d98b5">less_eq_type</a>;</div><div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    }</div><div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    *head = <a class="code" href="main_8c.html#aeaba90c3e4069dc783a06dd0ad1314a9">sort_aeroflot_list</a>(*head, <a class="code" href="main_8c.html#aeb0a5da00ce0333f62523ac630e42196">get_list_length</a>(*head), l_eq);</div><div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;</div><div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;}</div><div class="ttc" id="lab__functions_8h_html_a45e2d75e7b00ac6711c815431d42bcfd"><div class="ttname"><a href="lab__functions_8h.html#a45e2d75e7b00ac6711c815431d42bcfd">get_int</a></div><div class="ttdeci">int get_int(char message[], int lwr_border, int hir_border)</div><div class="ttdoc">Фікс input_int для забезпечення &quot;чистої&quot; функції </div><div class="ttdef"><b>Definition:</b> lab_functions.c:85</div></div>
+<div class="ttc" id="main_8c_html_a6798a994749b47157e5391e31a110867"><div class="ttname"><a href="main_8c.html#a6798a994749b47157e5391e31a110867">less_eq_flight_number</a></div><div class="ttdeci">bool less_eq_flight_number(Aeroflot *first, Aeroflot *second)</div><div class="ttdoc">Порівняння елементів по номеру рейсу </div><div class="ttdef"><b>Definition:</b> main.c:391</div></div>
+<div class="ttc" id="main_8c_html_af923d128a7526a5e663112c9c69d98b5"><div class="ttname"><a href="main_8c.html#af923d128a7526a5e663112c9c69d98b5">less_eq_type</a></div><div class="ttdeci">bool less_eq_type(Aeroflot *first, Aeroflot *second)</div><div class="ttdoc">Порівняння елементів по типу літака </div><div class="ttdef"><b>Definition:</b> main.c:401</div></div>
+<div class="ttc" id="main_8c_html_aeb0a5da00ce0333f62523ac630e42196"><div class="ttname"><a href="main_8c.html#aeb0a5da00ce0333f62523ac630e42196">get_list_length</a></div><div class="ttdeci">int get_list_length(List_aeroflot *head)</div><div class="ttdoc">Службова функція для підрахунку довжини списку </div><div class="ttdef"><b>Definition:</b> main.c:375</div></div>
+<div class="ttc" id="main_8c_html_aeaba90c3e4069dc783a06dd0ad1314a9"><div class="ttname"><a href="main_8c.html#aeaba90c3e4069dc783a06dd0ad1314a9">sort_aeroflot_list</a></div><div class="ttdeci">List_aeroflot * sort_aeroflot_list(List_aeroflot *head, int length, bool(*less_equal)())</div><div class="ttdoc">Алгоритм сортування злиттям </div><div class="ttdef"><b>Definition:</b> main.c:471</div></div>
+<div class="ttc" id="main_8c_html_a12f6a31fbcceae739f671b79d49b9f56"><div class="ttname"><a href="main_8c.html#a12f6a31fbcceae739f671b79d49b9f56">less_eq_race_destination</a></div><div class="ttdeci">bool less_eq_race_destination(Aeroflot *first, Aeroflot *second)</div><div class="ttdoc">Порівняння елементів по місцю призначення </div><div class="ttdef"><b>Definition:</b> main.c:411</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a581b30e0dc7f2e359199f4981fcffbab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a581b30e0dc7f2e359199f4981fcffbab">&#9670;&nbsp;</a></span>task_1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a>** task_1 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsingle__linked__list__aeroflot__struct.html">List_aeroflot</a> **&#160;</td>
+          <td class="paramname"><em>task1_list_head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Завдання Лабораторної роботи номер 5. </p>
+<p>Адаптація під роботу з лінійними списками. Додавання здійснюється в кінець списку за допомогою <a class="el" href="main_8c.html#a9f24f6c5839a268adcd9948fbdd9b0f9" title="Додавання в кінець ">push_back()</a>. Для введення структури типу Aeroflot використовується <a class="el" href="main_8c.html#a36302364b495f5e99251b65c3c5993d2" title="Користувач вказує місце призначення, номер рейсу, тип літака. ">aeroflot_user_fill()</a>.<br />
+Виводиться щойно уведений список <a class="el" href="main_8c.html#a5f6128fb431c14b0ec5e1b28f7d86f55" title="Вивід усього списку на екран ">print_aeroflot_list()</a>. Сортується за номером рейсу <a class="el" href="main_8c.html#aeaba90c3e4069dc783a06dd0ad1314a9" title="Алгоритм сортування злиттям ">sort_aeroflot_list()</a> <a class="el" href="main_8c.html#a6798a994749b47157e5391e31a110867" title="Порівняння елементів по номеру рейсу ">less_eq_flight_number()</a>. Виводиться список </p><dl class="params"><dt>Аргументи</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task1_list_head</td><td>Голова списку над яким виконуватимуться маніпуляції </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Повертає</dt><dd>Голова списку </dd></dl>
+<div class="fragment"><div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;                                                        {</div><div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    printf(<span class="stringliteral">&quot;Виконується завдання з Лабораторної роботи номер 5\n&quot;</span>);</div><div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; ++i) {</div><div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        <a class="code" href="main_8c.html#a9f24f6c5839a268adcd9948fbdd9b0f9">push_back</a>(task1_list_head, <a class="code" href="main_8c.html#a36302364b495f5e99251b65c3c5993d2">aeroflot_user_fill</a>());</div><div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    }</div><div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    <a class="code" href="main_8c.html#a5f6128fb431c14b0ec5e1b28f7d86f55">print_aeroflot_list</a>(task1_list_head);</div><div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    printf(<span class="stringliteral">&quot;Виконується сортування за номером рейсу\n&quot;</span>);</div><div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    *task1_list_head = <a class="code" href="main_8c.html#aeaba90c3e4069dc783a06dd0ad1314a9">sort_aeroflot_list</a>(*task1_list_head, <a class="code" href="main_8c.html#aeb0a5da00ce0333f62523ac630e42196">get_list_length</a>(*task1_list_head), <a class="code" href="main_8c.html#a6798a994749b47157e5391e31a110867">less_eq_flight_number</a>);</div><div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <a class="code" href="main_8c.html#a5f6128fb431c14b0ec5e1b28f7d86f55">print_aeroflot_list</a>(task1_list_head);</div><div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <span class="keywordflow">return</span> task1_list_head;</div><div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;}</div><div class="ttc" id="main_8c_html_a36302364b495f5e99251b65c3c5993d2"><div class="ttname"><a href="main_8c.html#a36302364b495f5e99251b65c3c5993d2">aeroflot_user_fill</a></div><div class="ttdeci">Aeroflot aeroflot_user_fill()</div><div class="ttdoc">Користувач вказує місце призначення, номер рейсу, тип літака. </div><div class="ttdef"><b>Definition:</b> main.c:57</div></div>
+<div class="ttc" id="main_8c_html_a6798a994749b47157e5391e31a110867"><div class="ttname"><a href="main_8c.html#a6798a994749b47157e5391e31a110867">less_eq_flight_number</a></div><div class="ttdeci">bool less_eq_flight_number(Aeroflot *first, Aeroflot *second)</div><div class="ttdoc">Порівняння елементів по номеру рейсу </div><div class="ttdef"><b>Definition:</b> main.c:391</div></div>
+<div class="ttc" id="main_8c_html_aeb0a5da00ce0333f62523ac630e42196"><div class="ttname"><a href="main_8c.html#aeb0a5da00ce0333f62523ac630e42196">get_list_length</a></div><div class="ttdeci">int get_list_length(List_aeroflot *head)</div><div class="ttdoc">Службова функція для підрахунку довжини списку </div><div class="ttdef"><b>Definition:</b> main.c:375</div></div>
+<div class="ttc" id="main_8c_html_a9f24f6c5839a268adcd9948fbdd9b0f9"><div class="ttname"><a href="main_8c.html#a9f24f6c5839a268adcd9948fbdd9b0f9">push_back</a></div><div class="ttdeci">List_aeroflot * push_back(List_aeroflot **head, Aeroflot new_race)</div><div class="ttdoc">Додавання в кінець </div><div class="ttdef"><b>Definition:</b> main.c:168</div></div>
+<div class="ttc" id="main_8c_html_aeaba90c3e4069dc783a06dd0ad1314a9"><div class="ttname"><a href="main_8c.html#aeaba90c3e4069dc783a06dd0ad1314a9">sort_aeroflot_list</a></div><div class="ttdeci">List_aeroflot * sort_aeroflot_list(List_aeroflot *head, int length, bool(*less_equal)())</div><div class="ttdoc">Алгоритм сортування злиттям </div><div class="ttdef"><b>Definition:</b> main.c:471</div></div>
+<div class="ttc" id="main_8c_html_a5f6128fb431c14b0ec5e1b28f7d86f55"><div class="ttname"><a href="main_8c.html#a5f6128fb431c14b0ec5e1b28f7d86f55">print_aeroflot_list</a></div><div class="ttdeci">void print_aeroflot_list(List_aeroflot **head)</div><div class="ttdoc">Вивід усього списку на екран </div><div class="ttdef"><b>Definition:</b> main.c:355</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Створено системою &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,349 @@
+\hypertarget{lab__functions_8h}{}\section{Файл lab\+\_\+functions.\+h}
+\label{lab__functions_8h}\index{lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}}
+Граф файлів, які включають цей файл\+:
+% FIG 0
+\subsection*{Макровизначення}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{lab__functions_8h_aff606fb64ff89d5982673319bab86b19}\label{lab__functions_8h_aff606fb64ff89d5982673319bab86b19}} 
+\#define {\bfseries clear}()~printf(\char`\"{}\textbackslash{}033\mbox{[}H\textbackslash{}033\mbox{[}J\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Функції}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\+\_\+input} (char message\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Отримує від користувача ввід, перед яким виводить повідомлення \end{DoxyCompactList}\item 
+int \hyperlink{lab__functions_8h_a9594b83ee908d195f5ff508da5c23c58}{is\+\_\+every\+\_\+digit} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Перевірка чи кожне введене число є десятковим (від\textquotesingle{}ємним також) \end{DoxyCompactList}\item 
+int \hyperlink{lab__functions_8h_a5d7849c249859dd438a37f1e6e5adf70}{is\+\_\+every\+\_\+digit\+\_\+double} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Перевірка чи кожне введене число є дробовим (від\textquotesingle{}ємним також) \end{DoxyCompactList}\item 
+void \hyperlink{lab__functions_8h_a6a19346eb87fb7efb3d83fff17c12a74}{to\+\_\+repeat} (void($\ast$func)(), char message\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Функція, що повторює задану їй функцію за бажанням користувача. \end{DoxyCompactList}\item 
+void \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\+\_\+int} (char message\mbox{[}$\,$\mbox{]}, int $\ast$number, int lwr\+\_\+border, int hir\+\_\+border)
+\begin{DoxyCompactList}\small\item\em Реалізація корректного введення цілих десяткових чисел користувачем \end{DoxyCompactList}\item 
+int \hyperlink{lab__functions_8h_a45e2d75e7b00ac6711c815431d42bcfd}{get\+\_\+int} (char message\mbox{[}$\,$\mbox{]}, int lwr\+\_\+border, int hir\+\_\+border)
+\begin{DoxyCompactList}\small\item\em Фікс input\+\_\+int для забезпечення \char`\"{}чистої\char`\"{} функції \end{DoxyCompactList}\item 
+void \hyperlink{lab__functions_8h_ac835db5eadbfefce4a51eae30806a486}{input\+\_\+long\+\_\+double} (char message\mbox{[}$\,$\mbox{]}, long double $\ast$number, long double lwr\+\_\+border, long double hir\+\_\+border)
+\begin{DoxyCompactList}\small\item\em Реалізація корректного введення десяткових дійсних чисел користувачем \end{DoxyCompactList}\item 
+void \hyperlink{lab__functions_8h_abaf5273c5f1e513178421be829426a4f}{swap\+\_\+int} (int $\ast$first, int $\ast$second)
+\begin{DoxyCompactList}\small\item\em Обмін двох аргументів \end{DoxyCompactList}\item 
+void \hyperlink{lab__functions_8h_a1c51fdb7c84e94c1f88f8e6838f67499}{toupper\+\_\+chrs} (char str\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em toupper to every char in {\ttfamily str} \end{DoxyCompactList}\item 
+int \hyperlink{lab__functions_8h_a5f3f744789213f961f3c8ec1cc482af7}{menu} (int n,...)
+\begin{DoxyCompactList}\small\item\em Функція для створення меню \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Опис функцій}
+\mbox{\Hypertarget{lab__functions_8h_a45e2d75e7b00ac6711c815431d42bcfd}\label{lab__functions_8h_a45e2d75e7b00ac6711c815431d42bcfd}} 
+\index{lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}!get\+\_\+int@{get\+\_\+int}}
+\index{get\+\_\+int@{get\+\_\+int}!lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{get\+\_\+int()}{get\_int()}}
+{\footnotesize\ttfamily int get\+\_\+int (\begin{DoxyParamCaption}\item[{char}]{message\mbox{[}$\,$\mbox{]},  }\item[{int}]{lwr\+\_\+border,  }\item[{int}]{hir\+\_\+border }\end{DoxyParamCaption})}
+
+
+
+Фікс input\+\_\+int для забезпечення \char`\"{}чистої\char`\"{} функції 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em message} & Повідомлення до користувача \\
+\hline
+{\em lwr\+\_\+border} & Нижня межа \\
+\hline
+{\em hir\+\_\+border} & Верхня межа \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Повертає}
+правильний ввід користувача 
+\end{DoxyReturn}
+Викликаєм input\+\_\+int з локально створеною змінною
+\begin{DoxyCode}
+87                                                            \{
+91     \textcolor{keywordtype}{int} input;
+92     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(message, &input, lwr\_border, hir\_border);
+93     \textcolor{keywordflow}{return} input;
+94 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}\label{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}} 
+\index{lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}!input\+\_\+int@{input\+\_\+int}}
+\index{input\+\_\+int@{input\+\_\+int}!lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{input\+\_\+int()}{input\_int()}}
+{\footnotesize\ttfamily void input\+\_\+int (\begin{DoxyParamCaption}\item[{char}]{message\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{number,  }\item[{int}]{lwr\+\_\+border,  }\item[{int}]{hir\+\_\+border }\end{DoxyParamCaption})}
+
+
+
+Реалізація корректного введення цілих десяткових чисел користувачем 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em message} & Повідомлення до користувача \\
+\hline
+{\em number} & Змінна в яку буде записуватися правильний ввід \\
+\hline
+{\em lwr\+\_\+border} & Нижня межа \\
+\hline
+{\em hir\+\_\+border} & Верхня межа \\
+\hline
+\end{DoxyParams}
+Перевіряєм на належність типу та межам
+\begin{DoxyCode}
+71                                                                           \{
+75     \textcolor{keywordflow}{if} (lwr\_border == hir\_border)\{
+76         lwr\_border = INT\_MIN;
+77         hir\_border = INT\_MAX;
+78     \}
+79     \textcolor{keywordtype}{char} *usr\_input = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(message);
+80     \textcolor{keywordtype}{int} is\_suits = sscanf(usr\_input,\textcolor{stringliteral}{"%d"},number);
+81     \textcolor{keywordflow}{while} (!is\_suits || !\hyperlink{lab__functions_8h_a9594b83ee908d195f5ff508da5c23c58}{is\_every\_digit}(usr\_input) || !strlen(usr\_input) || *number <
+       lwr\_border || *number > hir\_border)\{
+82         printf(\textcolor{stringliteral}{"ERROR INPUT\(\backslash\)n"});
+83         usr\_input = \hyperlink{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}{message\_input}(message);
+84         is\_suits = sscanf(usr\_input,\textcolor{stringliteral}{"%d"},number);
+85     \}
+86 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{lab__functions_8h_ac835db5eadbfefce4a51eae30806a486}\label{lab__functions_8h_ac835db5eadbfefce4a51eae30806a486}} 
+\index{lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}!input\+\_\+long\+\_\+double@{input\+\_\+long\+\_\+double}}
+\index{input\+\_\+long\+\_\+double@{input\+\_\+long\+\_\+double}!lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{input\+\_\+long\+\_\+double()}{input\_long\_double()}}
+{\footnotesize\ttfamily void input\+\_\+long\+\_\+double (\begin{DoxyParamCaption}\item[{char}]{message\mbox{[}$\,$\mbox{]},  }\item[{long double $\ast$}]{number,  }\item[{long double}]{lwr\+\_\+border,  }\item[{long double}]{hir\+\_\+border }\end{DoxyParamCaption})}
+
+
+
+Реалізація корректного введення десяткових дійсних чисел користувачем 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em message} & Повідомлення до користувача \\
+\hline
+{\em number} & Змінна в яку буде записуватися правильний ввід \\
+\hline
+{\em lwr\+\_\+border} & Нижня межа \\
+\hline
+{\em hir\+\_\+border} & Верхня межа \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lab__functions_8h_a9594b83ee908d195f5ff508da5c23c58}\label{lab__functions_8h_a9594b83ee908d195f5ff508da5c23c58}} 
+\index{lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}!is\+\_\+every\+\_\+digit@{is\+\_\+every\+\_\+digit}}
+\index{is\+\_\+every\+\_\+digit@{is\+\_\+every\+\_\+digit}!lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{is\+\_\+every\+\_\+digit()}{is\_every\_digit()}}
+{\footnotesize\ttfamily int is\+\_\+every\+\_\+digit (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Перевірка чи кожне введене число є десятковим (від\textquotesingle{}ємним також) 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em str} & число у вигляді увеного масиву char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Повертає}
+1, якщо число десяткове, 0 якщо ні 
+\end{DoxyReturn}
+Преревіряєм кожен символ на те, чи є він числом. Дозволяються від\textquotesingle{}ємні числа.
+\begin{DoxyCode}
+33                              \{
+38     \textcolor{keywordtype}{int} len = strlen(str);
+39     \textcolor{keywordtype}{int} i = 0;
+40     \textcolor{keywordflow}{if} (atoi(str)<0) i++;\textcolor{comment}{// якщо менше нуля - мінус пропускаєм}
+41     \textcolor{keywordflow}{for} (i; i < len; ++i) \{
+42         \textcolor{keywordflow}{if} (!isdigit(str[i]))\{
+43             \textcolor{keywordflow}{return} 0;\textcolor{comment}{//будь-який знак - не цифра}
+44         \}
+45     \}
+46     \textcolor{keywordflow}{return} 1;
+47 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{lab__functions_8h_a5d7849c249859dd438a37f1e6e5adf70}\label{lab__functions_8h_a5d7849c249859dd438a37f1e6e5adf70}} 
+\index{lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}!is\+\_\+every\+\_\+digit\+\_\+double@{is\+\_\+every\+\_\+digit\+\_\+double}}
+\index{is\+\_\+every\+\_\+digit\+\_\+double@{is\+\_\+every\+\_\+digit\+\_\+double}!lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{is\+\_\+every\+\_\+digit\+\_\+double()}{is\_every\_digit\_double()}}
+{\footnotesize\ttfamily int is\+\_\+every\+\_\+digit\+\_\+double (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Перевірка чи кожне введене число є дробовим (від\textquotesingle{}ємним також) 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em str} & число у вигляді увеного масиву char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Повертає}
+1, якщо число дробове, 0 якщо ні 
+\end{DoxyReturn}
+Зчитуєм число та перевіряєм чи є воно дійсним та чи не є у нього нічого окрім цифр, знака мінус, однієї крапки
+\begin{DoxyCode}
+49                                     \{
+54     \textcolor{keywordtype}{int} len = strlen(str);
+55     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} number;
+56     sscanf(str,\textcolor{stringliteral}{"%Lf"},&number);
+57     \textcolor{keywordtype}{int} i = 0, dot\_counter = 0;
+58     \textcolor{keywordflow}{if} (number<0.0) i++;\textcolor{comment}{// якщо менше нуля - мінус пропускаєм}
+59     \textcolor{keywordflow}{for} (i; i < len; ++i) \{
+60         \textcolor{keywordflow}{if} (!isdigit(str[i]))\{
+61             \textcolor{keywordflow}{if} (str[i]==\textcolor{charliteral}{'.'}) \{
+62                 dot\_counter++;
+63             \}\textcolor{keywordflow}{else}\{
+64                 \textcolor{keywordflow}{return} 0;\textcolor{comment}{//будь-який знак - не цифра або крапка (максимум 1)}
+65             \}
+66         \}
+67     \}
+68     \textcolor{keywordflow}{if} (dot\_counter-1) \textcolor{keywordflow}{return} 0;
+69     \textcolor{keywordflow}{return} 1;
+70 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{lab__functions_8h_a5f3f744789213f961f3c8ec1cc482af7}\label{lab__functions_8h_a5f3f744789213f961f3c8ec1cc482af7}} 
+\index{lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}!menu@{menu}}
+\index{menu@{menu}!lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily int menu (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Функція для створення меню 
+
+Друкує меню та виконує певний пункт меню, поки той не 0 
+\begin{DoxyParams}{Аргументи}
+{\em n} & Кількість пунктів меню \\
+\hline
+{\em ...} & Почерговий перелік тексту пункту та функції, що їх виконують. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Застереження}
+Функції, що виконують відповідні пункти меню потинні повертати {\ttfamily int} , так як будуть виконуватись допоки їх результат буде ненульовий 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Повертає}
+Вибраний пункт меню 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+119                     \{
+120     va\_list args;
+121     \textcolor{keywordtype}{int} choice;
+122     printf(\textcolor{stringliteral}{"                     Меню                        \(\backslash\)n"});
+123     printf(\textcolor{stringliteral}{"0. Вийти\(\backslash\)n"});
+124     va\_start(args, n);
+125     functypeint *funcs = malloc(\textcolor{keyword}{sizeof}(functypeint)*n);
+126     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i<n; ++i)\{
+127         printf(\textcolor{stringliteral}{"%d. %s\(\backslash\)n"}, i+1, va\_arg(args, \textcolor{keywordtype}{char}*));
+128         funcs[i] = va\_arg(args, functypeint);
+129     \}
+130     \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Виберіть пункт меню\(\backslash\)n"}, &choice, 0, n);
+131     \textcolor{keywordflow}{if} (choice)\{
+132         \textcolor{keywordflow}{while} ((*funcs[choice-1])()) \textcolor{keywordflow}{continue};
+133     \}
+134     free(funcs);
+135     \textcolor{keywordflow}{return} choice;
+136 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}\label{lab__functions_8h_a53c0a255092a68903d4627229c37d7d0}} 
+\index{lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}!message\+\_\+input@{message\+\_\+input}}
+\index{message\+\_\+input@{message\+\_\+input}!lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{message\+\_\+input()}{message\_input()}}
+{\footnotesize\ttfamily char$\ast$ message\+\_\+input (\begin{DoxyParamCaption}\item[{char}]{message\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Отримує від користувача ввід, перед яким виводить повідомлення 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em message} & Повідомлення, яке буде показане користувачу \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Повертає}
+Ввід користувача в форматі {\ttfamily char}\mbox{[}\mbox{]} 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+19                                    \{
+20     \textcolor{keywordtype}{char} *usr\_input = (\textcolor{keywordtype}{char}*) malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})*254);
+21     printf(\textcolor{stringliteral}{"%s"}, message); \textcolor{comment}{// Виводимо повідомлення користувачу}
+22     fgets(usr\_input, 254, stdin);
+23     usr\_input[strlen(usr\_input)-1] = \textcolor{charliteral}{'\(\backslash\)0'};
+24     \textcolor{keywordflow}{while} (!strlen(usr\_input))\{
+25         printf(\textcolor{stringliteral}{"ERROR! NO TEXT\(\backslash\)n"});
+26         printf(\textcolor{stringliteral}{"%s"}, message); \textcolor{comment}{// Виводимо повідомлення користувачу}
+27         fgets(usr\_input, 254, stdin);
+28         usr\_input[strlen(usr\_input)-1] = \textcolor{charliteral}{'\(\backslash\)0'};
+29     \}
+30     \textcolor{keywordflow}{return} usr\_input;
+31 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{lab__functions_8h_abaf5273c5f1e513178421be829426a4f}\label{lab__functions_8h_abaf5273c5f1e513178421be829426a4f}} 
+\index{lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}!swap\+\_\+int@{swap\+\_\+int}}
+\index{swap\+\_\+int@{swap\+\_\+int}!lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{swap\+\_\+int()}{swap\_int()}}
+{\footnotesize\ttfamily void swap\+\_\+int (\begin{DoxyParamCaption}\item[{int $\ast$}]{first,  }\item[{int $\ast$}]{second }\end{DoxyParamCaption})}
+
+
+
+Обмін двох аргументів 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em first} & Адреса першого аргументу \\
+\hline
+{\em second} & Адреса другого аргумент \\
+\hline
+\end{DoxyParams}
+Заміна здійснюється за вказівниками
+\begin{DoxyCode}
+106                                       \{
+110     \textcolor{keywordtype}{int} temp = *first;
+111     *first = *second;
+112     *second = temp;
+113 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{lab__functions_8h_a6a19346eb87fb7efb3d83fff17c12a74}\label{lab__functions_8h_a6a19346eb87fb7efb3d83fff17c12a74}} 
+\index{lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}!to\+\_\+repeat@{to\+\_\+repeat}}
+\index{to\+\_\+repeat@{to\+\_\+repeat}!lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{to\+\_\+repeat()}{to\_repeat()}}
+{\footnotesize\ttfamily void to\+\_\+repeat (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{func,  }\item[{char}]{message\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Функція, що повторює задану їй функцію за бажанням користувача. 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em func} & Функція, яка буде повторюватись \\
+\hline
+{\em message} & Повідомлення до користувача \\
+\hline
+\end{DoxyParams}
+Викорисковуються вказівники на функцію, щоб забезпечити її повторне виконання.
+\begin{DoxyCode}
+95                                               \{
+100     \textcolor{keywordtype}{int} choice;
+101     \textcolor{keywordflow}{do}\{
+102         (*func)();
+103         \hyperlink{lab__functions_8h_a6f453bc035d85e967bd5032eca31a155}{input\_int}(message,&choice,0,1);
+104     \}\textcolor{keywordflow}{while} (choice);
+105 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{lab__functions_8h_a1c51fdb7c84e94c1f88f8e6838f67499}\label{lab__functions_8h_a1c51fdb7c84e94c1f88f8e6838f67499}} 
+\index{lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}!toupper\+\_\+chrs@{toupper\+\_\+chrs}}
+\index{toupper\+\_\+chrs@{toupper\+\_\+chrs}!lab\+\_\+functions.\+h@{lab\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{toupper\+\_\+chrs()}{toupper\_chrs()}}
+{\footnotesize\ttfamily void toupper\+\_\+chrs (\begin{DoxyParamCaption}\item[{char}]{str\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+toupper to every char in {\ttfamily str} 
+
+code goes here 
+\begin{DoxyParams}{Аргументи}
+{\em str} & input string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+114                              \{
+115     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < strlen(str); ++i) \{
+116         str[i] = (char)toupper(str[i]);
+117     \}
+118 \}
+\end{DoxyCode}

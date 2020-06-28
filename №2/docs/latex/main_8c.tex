@@ -1,0 +1,634 @@
+\hypertarget{main_8c}{}\section{Файл main.\+c}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+Діаграма включених заголовочних файлів для main.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Структури даних}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPair__arr}{Pair\+\_\+arr}
+\end{DoxyCompactItemize}
+\subsection*{Макровизначення}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_aff606fb64ff89d5982673319bab86b19}\label{main_8c_aff606fb64ff89d5982673319bab86b19}} 
+\#define {\bfseries clear}()~printf(\char`\"{}\textbackslash{}033\mbox{[}H\textbackslash{}033\mbox{[}J\char`\"{})
+\item 
+\mbox{\Hypertarget{main_8c_a21658776274b3d146c674318b635a334}\label{main_8c_a21658776274b3d146c674318b635a334}} 
+\#define {\bfseries I\+N\+T\+\_\+\+M\+IN}~-\/2147483648
+\item 
+\mbox{\Hypertarget{main_8c_a9ec306f36d50c7375e74f0d1c55a3a67}\label{main_8c_a9ec306f36d50c7375e74f0d1c55a3a67}} 
+\#define {\bfseries I\+N\+T\+\_\+\+M\+AX}~2147483647
+\end{DoxyCompactItemize}
+\subsection*{Функції}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\+\_\+input} (char message\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Отримує від користувача ввід, перед яким виводить повідомлення \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\+\_\+every\+\_\+digit} (char $\ast$str)
+\item 
+void \hyperlink{main_8c_afde07648040c326129670547738a0c86}{task1} ()
+\begin{DoxyCompactList}\small\item\em Виконання завдання №1. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_afb35a54f26606b4808ac0a8d9ad55433}{task2} ()
+\begin{DoxyCompactList}\small\item\em Виконання завдання №2. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_ad126fa7239be97373c96861adc70b1d3}{swap} (int $\ast$first, int $\ast$second)
+\begin{DoxyCompactList}\small\item\em Обмін двох аргументів \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a59de3507f445b58bf9f31f121f1dd53e}{rand\+\_\+fill\+\_\+1d} (int $\ast$arr, int N)
+\begin{DoxyCompactList}\small\item\em Заповнює одновимірний масив довільними числами \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a3dd7ddf4e8efd6ad27441f244b6ac232}{rand\+\_\+fill\+\_\+2d} (int $\ast$$\ast$arr, int N)
+\item 
+void \hyperlink{main_8c_afa0f71f47bb3b8336377d2c3972613ff}{print\+\_\+arr\+\_\+1d} (int $\ast$arr, int N)
+\begin{DoxyCompactList}\small\item\em Виводить одновимірний масив \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a48d1fca4591b9e83a3cbc3bce60598ee}{print\+\_\+arr\+\_\+2d\+\_\+redzero} (int $\ast$$\ast$arr, int N)
+\begin{DoxyCompactList}\small\item\em Виводить двовимірний масив з виділенням кольором нулів \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a954f537fd937eb56b052549a1e3b4be4}{print\+\_\+arr\+\_\+minmax} (int $\ast$arr, int N, struct \hyperlink{structPair__arr}{Pair\+\_\+arr} $\ast$minmax)
+\begin{DoxyCompactList}\small\item\em Виводить одновимірний масив виділяючи кольорами його min max елементи.~\newline
+Виводить їх добуток. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a6d948aa7c7e64009c7446e8010368f74}{swaping\+\_\+sort} (int $\ast$arr, int N)
+\item 
+void \hyperlink{main_8c_a754c278f22020e77d09cda28d2e18f4e}{usr\+\_\+fill\+\_\+1d} (int $\ast$arr, int N)
+\begin{DoxyCompactList}\small\item\em Заповнення масива вводом користувача \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_abfbfcf6cfc51d4db85271a06ec30e7d3}{usr\+\_\+fill\+\_\+2d} (int $\ast$$\ast$arr, int N)
+\item 
+void \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\+\_\+int} (char message\mbox{[}$\,$\mbox{]}, int $\ast$number, int lwr\+\_\+border, int hir\+\_\+border)
+\begin{DoxyCompactList}\small\item\em Реалізація корректного введення \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}{to\+\_\+repeat} (void($\ast$func)(void))
+\begin{DoxyCompactList}\small\item\em Функція, що повторює задану їй функцію за бажанням користувача. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{main_8c_a136eda0783a1b3202fbf6330967acec0}{go\+\_\+zigzag} (int $\ast$$\ast$arr, int N, int pos)
+\item 
+void \hyperlink{main_8c_ad9267778aed4908cc85b34675cb83a50}{zeros\+\_\+to\+\_\+begin\+\_\+2d} (int $\ast$$\ast$arr, int N)
+\begin{DoxyCompactList}\small\item\em Переміщує всі нулі за правилом функції \hyperlink{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}{to\+\_\+repeat()}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\item 
+\mbox{\Hypertarget{main_8c_a8ce46862c96ea0cdf4723577c40d485f}\label{main_8c_a8ce46862c96ea0cdf4723577c40d485f}} 
+struct \hyperlink{structPair__arr}{Pair\+\_\+arr} $\ast$ {\bfseries find\+\_\+minmax} (int $\ast$arr, int N)
+\end{DoxyCompactItemize}
+
+
+\subsection{Опис функцій}
+\mbox{\Hypertarget{main_8c_a136eda0783a1b3202fbf6330967acec0}\label{main_8c_a136eda0783a1b3202fbf6330967acec0}} 
+\index{main.\+c@{main.\+c}!go\+\_\+zigzag@{go\+\_\+zigzag}}
+\index{go\+\_\+zigzag@{go\+\_\+zigzag}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{go\+\_\+zigzag()}{go\_zigzag()}}
+{\footnotesize\ttfamily int $\ast$ go\+\_\+zigzag (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{arr,  }\item[{int}]{N,  }\item[{int}]{pos }\end{DoxyParamCaption})}
+
+Здійснює прохід масиву паралельно головній діагоналі, починаючи з верхнього правого кута. 
+\begin{DoxyParams}{Аргументи}
+{\em arr} & Масив, по якому функція буде іти \\
+\hline
+{\em N} & Розмірність масива \\
+\hline
+{\em pos} & Позиція за нашим проходом \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Повертає}
+Значення певної комірки масиву за її номером при лічбі паралельно головній діагоналі, починаючи з верхнього правого кута. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+345                                          \{
+346     \textcolor{comment}{// pos [0;N^2]}
+347     \textcolor{keywordtype}{int} i,j,inner\_i,inner\_j,k = 0;
+348     i = 0;
+349     \textcolor{keywordflow}{while} (i < 2*N-1)\{
+350         \textcolor{keywordflow}{if} (i-N < 0)\{\textcolor{comment}{//зміна індексу і відносно головної діагоналі}
+351             inner\_i = 0;
+352         \} \textcolor{keywordflow}{else}\{
+353             inner\_i = i-(N-1);
+354         \}
+355         j = (N-1)-i+inner\_i;
+356         inner\_j = 0;
+357         \textcolor{keywordflow}{while} (j<N-inner\_i)\{
+358             \textcolor{keywordflow}{if} (k == pos)\{
+359                 \textcolor{keywordflow}{return} &arr[inner\_i+inner\_j][j];
+360             \}
+361             inner\_j++;
+362             j++;
+363             k++;
+364         \}
+365         i++;
+366     \}
+367 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a6f453bc035d85e967bd5032eca31a155}\label{main_8c_a6f453bc035d85e967bd5032eca31a155}} 
+\index{main.\+c@{main.\+c}!input\+\_\+int@{input\+\_\+int}}
+\index{input\+\_\+int@{input\+\_\+int}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{input\+\_\+int()}{input\_int()}}
+{\footnotesize\ttfamily void input\+\_\+int (\begin{DoxyParamCaption}\item[{char}]{message\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{number,  }\item[{int}]{lwr\+\_\+border,  }\item[{int}]{hir\+\_\+border }\end{DoxyParamCaption})}
+
+
+
+Реалізація корректного введення 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em message} & Повідомлення до користувача \\
+\hline
+{\em number} & Змінна в яку буде записуватися правильний ввід \\
+\hline
+{\em lwr\+\_\+border} & Нижня межа \\
+\hline
+{\em hir\+\_\+border} & Верхня межа \\
+\hline
+\end{DoxyParams}
+Якщо межі однакові, то вони стають мінімальними/максимальними.~\newline
+Виконується введеня користувачем, умова циклу while превіряє чи кожне введене число є десятковим за допомогою \hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\+\_\+every\+\_\+digit()}.~\newline
+Також виконується перевірка чи належить число відрізку lwr\+\_\+border hir\+\_\+border~\newline
+Наприкінці у змінну $\ast$number записується правильне число.
+\begin{DoxyCode}
+178                                                                           \{
+186     \textcolor{keywordflow}{if} (lwr\_border == hir\_border)\{
+187         lwr\_border = INT\_MIN;
+188         hir\_border = INT\_MAX;
+189     \}
+190     \textcolor{keywordtype}{char} *usr\_input = \hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(message);
+191     \textcolor{keywordflow}{while} (!\hyperlink{main_8c_a9594b83ee908d195f5ff508da5c23c58}{is\_every\_digit}(usr\_input) || atoi(usr\_input) < lwr\_border || atoi(usr\_input) > 
+      hir\_border)\{
+192         printf(\textcolor{stringliteral}{"ERROR INPUT\(\backslash\)n"});
+193         usr\_input = \hyperlink{main_8c_a638293d509eded9d6ef7552ae1b17f2b}{message\_input}(message);
+194     \}
+195     *number = atoi(usr\_input);
+196 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a9594b83ee908d195f5ff508da5c23c58}\label{main_8c_a9594b83ee908d195f5ff508da5c23c58}} 
+\index{main.\+c@{main.\+c}!is\+\_\+every\+\_\+digit@{is\+\_\+every\+\_\+digit}}
+\index{is\+\_\+every\+\_\+digit@{is\+\_\+every\+\_\+digit}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{is\+\_\+every\+\_\+digit()}{is\_every\_digit()}}
+{\footnotesize\ttfamily int is\+\_\+every\+\_\+digit (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+Перевірка чи кожне введене число є десятковим (від\textquotesingle{}ємним також) 
+\begin{DoxyParams}{Аргументи}
+{\em str} & число у вигляді увеного масиву char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Повертає}
+1, якщо число десяткове, 0 якщо ні 
+\end{DoxyReturn}
+Знаходить довжину числа, враховуючи знак переходу~\newline
+З урахуванням \textquotesingle{}-\/\textquotesingle{} обмежує максимальну довжину числа згідно лімітів int. В коментарях можна побачити нюанси. Наприкінці перевіряєм чи всі символи є десятковими.
+\begin{DoxyCode}
+144                              \{\textcolor{comment}{//uhh some potentially buggy function}
+150 \textcolor{comment}{}    \textcolor{keywordtype}{int} len = strlen(str);
+151     \textcolor{keywordflow}{if} (len>2 && (str[0] != \textcolor{charliteral}{'-'}) && ((!isdigit(str[0]))||len>11))\{
+152         \textcolor{keywordflow}{return} 0;\textcolor{comment}{//додатнє число більше 11 знаків або не з знаком - на початку}
+153     \}
+154     \textcolor{keywordflow}{if} ((str[0] == \textcolor{charliteral}{'-'}) && (len>12))\{
+155         \textcolor{keywordflow}{return} 0;\textcolor{comment}{//від'ємне число більше 11 знаків}
+156     \}
+157     \textcolor{keywordflow}{if} (len == 2 && !isdigit(str[0]))\{
+158         \textcolor{keywordflow}{return} 0;\textcolor{comment}{//не одна цифра}
+159     \}
+160     \textcolor{keywordflow}{if} (len==1)\{
+161         \textcolor{keywordflow}{return} 0;\textcolor{comment}{// читаєм \(\backslash\)n}
+162     \}
+163     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < len-1; ++i) \{
+164         \textcolor{keywordflow}{if} (!isdigit(str[i]))\{
+165             \textcolor{keywordflow}{return} 0;\textcolor{comment}{//будь-який знак - не цифра}
+166         \}
+167     \}
+168     \textcolor{keywordflow}{return} 1;
+169 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a638293d509eded9d6ef7552ae1b17f2b}\label{main_8c_a638293d509eded9d6ef7552ae1b17f2b}} 
+\index{main.\+c@{main.\+c}!message\+\_\+input@{message\+\_\+input}}
+\index{message\+\_\+input@{message\+\_\+input}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{message\+\_\+input()}{message\_input()}}
+{\footnotesize\ttfamily char $\ast$ message\+\_\+input (\begin{DoxyParamCaption}\item[{char}]{message\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Отримує від користувача ввід, перед яким виводить повідомлення 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em message} & Повідомлення, яке буде показане користувачу \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Повертає}
+Ввід користувача в форматі {\ttfamily char} 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+171                                    \{
+172     \textcolor{keywordtype}{char} *usr\_input = (\textcolor{keywordtype}{char}*) malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})*254);
+173     printf(\textcolor{stringliteral}{"%s"}, message); \textcolor{comment}{// Виводимо повідомлення користувачу}
+174     fgets(usr\_input, 254, stdin);
+175     \textcolor{keywordflow}{return} usr\_input;
+176 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_afa0f71f47bb3b8336377d2c3972613ff}\label{main_8c_afa0f71f47bb3b8336377d2c3972613ff}} 
+\index{main.\+c@{main.\+c}!print\+\_\+arr\+\_\+1d@{print\+\_\+arr\+\_\+1d}}
+\index{print\+\_\+arr\+\_\+1d@{print\+\_\+arr\+\_\+1d}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+arr\+\_\+1d()}{print\_arr\_1d()}}
+{\footnotesize\ttfamily void print\+\_\+arr\+\_\+1d (\begin{DoxyParamCaption}\item[{int $\ast$}]{arr,  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+
+
+Виводить одновимірний масив 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em arr} & Масив, який буде виводитись \\
+\hline
+{\em N} & Розмір масива \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+206                                   \{
+207     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+208         printf(\textcolor{stringliteral}{"%d "},arr[i]);
+209     \}
+210     putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+211 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a48d1fca4591b9e83a3cbc3bce60598ee}\label{main_8c_a48d1fca4591b9e83a3cbc3bce60598ee}} 
+\index{main.\+c@{main.\+c}!print\+\_\+arr\+\_\+2d\+\_\+redzero@{print\+\_\+arr\+\_\+2d\+\_\+redzero}}
+\index{print\+\_\+arr\+\_\+2d\+\_\+redzero@{print\+\_\+arr\+\_\+2d\+\_\+redzero}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+arr\+\_\+2d\+\_\+redzero()}{print\_arr\_2d\_redzero()}}
+{\footnotesize\ttfamily void print\+\_\+arr\+\_\+2d\+\_\+redzero (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{arr,  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+
+
+Виводить двовимірний масив з виділенням кольором нулів 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em arr} & Масив, який буде виводитись \\
+\hline
+{\em N} & Одна з його розмірностей \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+213                                            \{
+214     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+215         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < N; ++j) \{
+216             printf(\textcolor{stringliteral}{"\(\backslash\)t \(\backslash\)t"});
+217             \textcolor{keywordflow}{if} (arr[i][j]>=0) \{
+218                 printf(\textcolor{stringliteral}{" "});
+219             \}
+220             \textcolor{keywordflow}{if} (arr[i][j]==0)\{
+221                 printf(\textcolor{stringliteral}{"\(\backslash\)x1b[6;30;41m"});
+222                 printf(\textcolor{stringliteral}{"%d"},arr[i][j]);
+223                 printf(\textcolor{stringliteral}{"\(\backslash\)x1b[0m "});
+224             \} \textcolor{keywordflow}{else}\{
+225                 printf(\textcolor{stringliteral}{"%d"},arr[i][j]);
+226             \}
+227         \}
+228         putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+229     \}
+230 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a954f537fd937eb56b052549a1e3b4be4}\label{main_8c_a954f537fd937eb56b052549a1e3b4be4}} 
+\index{main.\+c@{main.\+c}!print\+\_\+arr\+\_\+minmax@{print\+\_\+arr\+\_\+minmax}}
+\index{print\+\_\+arr\+\_\+minmax@{print\+\_\+arr\+\_\+minmax}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+arr\+\_\+minmax()}{print\_arr\_minmax()}}
+{\footnotesize\ttfamily void print\+\_\+arr\+\_\+minmax (\begin{DoxyParamCaption}\item[{int $\ast$}]{arr,  }\item[{int}]{N,  }\item[{struct \hyperlink{structPair__arr}{Pair\+\_\+arr} $\ast$}]{minmax }\end{DoxyParamCaption})}
+
+
+
+Виводить одновимірний масив виділяючи кольорами його min max елементи.~\newline
+Виводить їх добуток. 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em arr} & Власне масив \\
+\hline
+{\em N} & Розмірність масива \\
+\hline
+{\em minmax} & мінімальний та максимальний елементи \\
+\hline
+\end{DoxyParams}
+Виконується перебір комірок масива. Виводиться сам елемент, якщо він не мінімальний і не максимальний.~\newline
+Виділяється кольором мінімальний та максимальні елементи, для перевірки використовується struct \hyperlink{structPair__arr}{Pair\+\_\+arr} у якій зберігаються мінімальні та максимальні елементи.
+\begin{DoxyCode}
+293                                                                \{
+299     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+300         \textcolor{keywordflow}{if} (arr[i]==minmax->first)\{
+301             printf(\textcolor{stringliteral}{"\(\backslash\)x1b[6;30;41m"});
+302             printf(\textcolor{stringliteral}{"%d"},arr[i]);
+303             printf(\textcolor{stringliteral}{"\(\backslash\)x1b[0m "});
+304         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (arr[i]==minmax->second)\{
+305             printf(\textcolor{stringliteral}{"\(\backslash\)x1b[6;30;42m"});
+306             printf(\textcolor{stringliteral}{"%d"},arr[i]);
+307             printf(\textcolor{stringliteral}{"\(\backslash\)x1b[0m "});
+308         \} \textcolor{keywordflow}{else} \{
+309             printf(\textcolor{stringliteral}{"%d "},arr[i]);
+310         \}
+311     \}
+312     putchar(\textcolor{charliteral}{'\(\backslash\)n'});
+313     printf(\textcolor{stringliteral}{"Мінімальний елемент %d\(\backslash\)n"}
+314            \textcolor{stringliteral}{"Максимальний елемент %d\(\backslash\)n"},
+315            minmax->first,
+316            minmax->second);
+317     printf(\textcolor{stringliteral}{"Їх добуток = %d\(\backslash\)n"}, minmax->first*minmax->second);
+318 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a59de3507f445b58bf9f31f121f1dd53e}\label{main_8c_a59de3507f445b58bf9f31f121f1dd53e}} 
+\index{main.\+c@{main.\+c}!rand\+\_\+fill\+\_\+1d@{rand\+\_\+fill\+\_\+1d}}
+\index{rand\+\_\+fill\+\_\+1d@{rand\+\_\+fill\+\_\+1d}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{rand\+\_\+fill\+\_\+1d()}{rand\_fill\_1d()}}
+{\footnotesize\ttfamily void rand\+\_\+fill\+\_\+1d (\begin{DoxyParamCaption}\item[{int $\ast$}]{arr,  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+
+
+Заповнює одновимірний масив довільними числами 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em arr} & Вказівник на масив, який буде заповнювати функція \\
+\hline
+{\em N} & Розмір масива \\
+\hline
+\end{DoxyParams}
+Для виведення різних результатів при повторних запусках програми використовується функція srand(time(\+N\+U\+L\+L))~\newline
+Діапазон визначається цим виразом {\ttfamily \%20001-\/10000} 
+\begin{DoxyCode}
+232                                  \{
+237     srand(time(NULL));
+238     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i)\{
+239         arr[i] = rand()%20001-10000;
+240     \}
+241 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a3dd7ddf4e8efd6ad27441f244b6ac232}\label{main_8c_a3dd7ddf4e8efd6ad27441f244b6ac232}} 
+\index{main.\+c@{main.\+c}!rand\+\_\+fill\+\_\+2d@{rand\+\_\+fill\+\_\+2d}}
+\index{rand\+\_\+fill\+\_\+2d@{rand\+\_\+fill\+\_\+2d}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{rand\+\_\+fill\+\_\+2d()}{rand\_fill\_2d()}}
+{\footnotesize\ttfamily void rand\+\_\+fill\+\_\+2d (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{arr,  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+Заповнюється двовимірний масив довільними числами 
+\begin{DoxyParams}{Аргументи}
+{\em arr} & Сам масив \\
+\hline
+{\em N} & Одна з його розмірностей \\
+\hline
+\end{DoxyParams}
+Для виведення різних результатів при повторних запусках програми використовується функція srand(time(\+N\+U\+L\+L))~\newline
+Діапазон визначається цим виразом {\ttfamily \%21-\/10} 
+\begin{DoxyCode}
+243                                   \{
+248     srand(time(NULL));
+249     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i)\{
+250         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < N; ++j) \{
+251             arr[i][j] = rand()%21-10;
+252         \}
+253     \}
+254 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_ad126fa7239be97373c96861adc70b1d3}\label{main_8c_ad126fa7239be97373c96861adc70b1d3}} 
+\index{main.\+c@{main.\+c}!swap@{swap}}
+\index{swap@{swap}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{int $\ast$}]{first,  }\item[{int $\ast$}]{second }\end{DoxyParamCaption})}
+
+
+
+Обмін двох аргументів 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em first} & Адреса першого аргументу \\
+\hline
+{\em second} & Адреса другого аргумент \\
+\hline
+\end{DoxyParams}
+Заміна здійснюється за вказівниками
+\begin{DoxyCode}
+320                                   \{
+324     \textcolor{keywordtype}{int} temp = *first;
+325     *first = *second;
+326     *second = temp;
+327 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a6d948aa7c7e64009c7446e8010368f74}\label{main_8c_a6d948aa7c7e64009c7446e8010368f74}} 
+\index{main.\+c@{main.\+c}!swaping\+\_\+sort@{swaping\+\_\+sort}}
+\index{swaping\+\_\+sort@{swaping\+\_\+sort}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{swaping\+\_\+sort()}{swaping\_sort()}}
+{\footnotesize\ttfamily void swaping\+\_\+sort (\begin{DoxyParamCaption}\item[{int $\ast$}]{arr,  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+Сортування обміном масива 
+\begin{DoxyParams}{Аргументи}
+{\em arr} & Власне масив \\
+\hline
+{\em N} & РОзмірність масива \\
+\hline
+\end{DoxyParams}
+Сортування обміном. Послідовно порівнюється елемент a\+\_\+0 із кожним наступним a\+\_\+i . Якщо a\+\_\+i$<$a\+\_\+0 , то ці два елементи міняють місцями. Таким чином найменший елемент виявляється на своєму місці на початку масиву. Потім цей метод застосовують до елемента a 1 і т.\+д.
+\begin{DoxyCode}
+329                                   \{
+336     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N-1; ++i) \{
+337         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 1; j+i < N; ++j) \{
+338             \textcolor{keywordflow}{if} (arr[i]<arr[j+i])\{
+339                 \hyperlink{main_8c_ad126fa7239be97373c96861adc70b1d3}{swap}(&arr[i],&arr[j+i]);
+340             \}
+341         \}
+342     \}
+343 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_afde07648040c326129670547738a0c86}\label{main_8c_afde07648040c326129670547738a0c86}} 
+\index{main.\+c@{main.\+c}!task1@{task1}}
+\index{task1@{task1}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{task1()}{task1()}}
+{\footnotesize\ttfamily void task1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Виконання завдання №1. 
+
+Дивіться нижче 
+\begin{DoxyCode}
+388             \{
+389     \textcolor{keywordtype}{int} N; \textcolor{comment}{// array size}
+390     \textcolor{keywordtype}{int} choice;
+391     clear();
+392     \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Введіть розмір масива (1-348389376)\(\backslash\)n"}, &N, 1, 348389376);
+393     \textcolor{keywordtype}{int} *arr = (\textcolor{keywordtype}{int}*)malloc(N* \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+394     \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Виберіть спосіб заповнення масиву:\(\backslash\)n"}
+395               \textcolor{stringliteral}{"1 - автоматично випадковими числами\(\backslash\)n"}
+396               \textcolor{stringliteral}{"2 - власноруч\(\backslash\)n"},
+397               &choice,
+398               1,
+399               2);
+400     \textcolor{keywordflow}{switch} (choice)\{
+401         \textcolor{keywordflow}{case} 1: \hyperlink{main_8c_a59de3507f445b58bf9f31f121f1dd53e}{rand\_fill\_1d}(arr,N);
+402             \textcolor{keywordflow}{break};
+403         \textcolor{keywordflow}{case} 2: \hyperlink{main_8c_a754c278f22020e77d09cda28d2e18f4e}{usr\_fill\_1d}(arr,N);
+404             \textcolor{keywordflow}{break};
+405     \}
+406     \hyperlink{main_8c_a954f537fd937eb56b052549a1e3b4be4}{print\_arr\_minmax}(arr,N,find\_minmax(arr,N));
+407     printf(\textcolor{stringliteral}{"\(\backslash\)nВиконується сортування...\(\backslash\)n"});
+408     \hyperlink{main_8c_a6d948aa7c7e64009c7446e8010368f74}{swaping\_sort}(arr,N);
+409     printf(\textcolor{stringliteral}{"Відсортований масив має вигляд:\(\backslash\)n"});
+410     \hyperlink{main_8c_afa0f71f47bb3b8336377d2c3972613ff}{print\_arr\_1d}(arr,N);
+411     free(arr);
+412 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_afb35a54f26606b4808ac0a8d9ad55433}\label{main_8c_afb35a54f26606b4808ac0a8d9ad55433}} 
+\index{main.\+c@{main.\+c}!task2@{task2}}
+\index{task2@{task2}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{task2()}{task2()}}
+{\footnotesize\ttfamily void task2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Виконання завдання №2. 
+
+Дивіться нижче 
+\begin{DoxyCode}
+414             \{
+415     \textcolor{keywordtype}{int} N;\textcolor{comment}{// array dimensions}
+416     \textcolor{keywordtype}{int} choice;
+417     clear();
+418     \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Введіть розмірність масива NxN (1-18665)\(\backslash\)n"}, &N, 1, 18665);
+419     \textcolor{keywordtype}{int} **arr = (\textcolor{keywordtype}{int}**)malloc(N*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int} *));
+420     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+421         arr[i] = (\textcolor{keywordtype}{int} *)malloc(N * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+422     \}
+423     \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Виберіть спосіб заповнення масиву:\(\backslash\)n"}
+424               \textcolor{stringliteral}{"1 - автоматично випадковими числами\(\backslash\)n"}
+425               \textcolor{stringliteral}{"2 - власноруч\(\backslash\)n"},
+426               &choice,
+427               1,
+428               2);
+429     \textcolor{keywordflow}{switch} (choice)\{
+430         \textcolor{keywordflow}{case} 1: \hyperlink{main_8c_a3dd7ddf4e8efd6ad27441f244b6ac232}{rand\_fill\_2d}(arr,N);
+431             \textcolor{keywordflow}{break};
+432         \textcolor{keywordflow}{case} 2: \hyperlink{main_8c_abfbfcf6cfc51d4db85271a06ec30e7d3}{usr\_fill\_2d}(arr,N);
+433             \textcolor{keywordflow}{break};
+434     \}
+435     printf(\textcolor{stringliteral}{"Масив має вигляд:\(\backslash\)n"});
+436     \hyperlink{main_8c_a48d1fca4591b9e83a3cbc3bce60598ee}{print\_arr\_2d\_redzero}(arr,N);
+437     printf(\textcolor{stringliteral}{"Переміщуємо нулі паралельно головній діагоналі...\(\backslash\)n"});
+438     \hyperlink{main_8c_ad9267778aed4908cc85b34675cb83a50}{zeros\_to\_begin\_2d}(arr, N);
+439     printf(\textcolor{stringliteral}{"Масив тепер має вигляд:\(\backslash\)n"});
+440     \hyperlink{main_8c_a48d1fca4591b9e83a3cbc3bce60598ee}{print\_arr\_2d\_redzero}(arr,N);
+441     \textcolor{comment}{//free memory}
+442     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+443         free(arr[i]);
+444     \}
+445     free(arr);
+446     \textcolor{comment}{//}
+447 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}\label{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}} 
+\index{main.\+c@{main.\+c}!to\+\_\+repeat@{to\+\_\+repeat}}
+\index{to\+\_\+repeat@{to\+\_\+repeat}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{to\+\_\+repeat()}{to\_repeat()}}
+{\footnotesize\ttfamily void to\+\_\+repeat (\begin{DoxyParamCaption}\item[{void($\ast$)(void)}]{func }\end{DoxyParamCaption})}
+
+
+
+Функція, що повторює задану їй функцію за бажанням користувача. 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em func} & Функція, яка буде повторюватись \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+198                                   \{
+199     \textcolor{keywordtype}{int} choice;
+200     \textcolor{keywordflow}{do}\{
+201         (*func)();
+202         \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{"Бажаєте продовжити виконання цього завдання?:\(\backslash\)n"},&choice,0,1);
+203     \}\textcolor{keywordflow}{while} (choice);
+204 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a754c278f22020e77d09cda28d2e18f4e}\label{main_8c_a754c278f22020e77d09cda28d2e18f4e}} 
+\index{main.\+c@{main.\+c}!usr\+\_\+fill\+\_\+1d@{usr\+\_\+fill\+\_\+1d}}
+\index{usr\+\_\+fill\+\_\+1d@{usr\+\_\+fill\+\_\+1d}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{usr\+\_\+fill\+\_\+1d()}{usr\_fill\_1d()}}
+{\footnotesize\ttfamily void usr\+\_\+fill\+\_\+1d (\begin{DoxyParamCaption}\item[{int $\ast$}]{arr,  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+
+
+Заповнення масива вводом користувача 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em arr} & Власне масив \\
+\hline
+{\em N} & Розмірність масива \\
+\hline
+\end{DoxyParams}
+Виконується перевірка при введенні за допомогою функції \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\+\_\+int()}
+\begin{DoxyCode}
+256                                  \{
+260     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+261         printf(\textcolor{stringliteral}{"%i"},i);
+262         \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{": "}, &arr[i], 0, 0);
+263     \}
+264 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_abfbfcf6cfc51d4db85271a06ec30e7d3}\label{main_8c_abfbfcf6cfc51d4db85271a06ec30e7d3}} 
+\index{main.\+c@{main.\+c}!usr\+\_\+fill\+\_\+2d@{usr\+\_\+fill\+\_\+2d}}
+\index{usr\+\_\+fill\+\_\+2d@{usr\+\_\+fill\+\_\+2d}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{usr\+\_\+fill\+\_\+2d()}{usr\_fill\_2d()}}
+{\footnotesize\ttfamily void usr\+\_\+fill\+\_\+2d (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{arr,  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+Заповнення 2d масива вводом користувача 
+\begin{DoxyParams}{Аргументи}
+{\em arr} & Власне масив \\
+\hline
+{\em N} & Одна з його розмірностей \\
+\hline
+\end{DoxyParams}
+Виконується перевірка при введенні за допомогою функції \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\+\_\+int()}
+\begin{DoxyCode}
+266                                   \{
+270     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N; ++i) \{
+271         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < N; ++j) \{
+272             printf(\textcolor{stringliteral}{"[%i,%i]"},i,j);
+273             \hyperlink{main_8c_a6f453bc035d85e967bd5032eca31a155}{input\_int}(\textcolor{stringliteral}{": "}, &arr[i][j], 0, 0);
+274         \}
+275     \}
+276 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_ad9267778aed4908cc85b34675cb83a50}\label{main_8c_ad9267778aed4908cc85b34675cb83a50}} 
+\index{main.\+c@{main.\+c}!zeros\+\_\+to\+\_\+begin\+\_\+2d@{zeros\+\_\+to\+\_\+begin\+\_\+2d}}
+\index{zeros\+\_\+to\+\_\+begin\+\_\+2d@{zeros\+\_\+to\+\_\+begin\+\_\+2d}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{zeros\+\_\+to\+\_\+begin\+\_\+2d()}{zeros\_to\_begin\_2d()}}
+{\footnotesize\ttfamily void zeros\+\_\+to\+\_\+begin\+\_\+2d (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{arr,  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+
+
+Переміщує всі нулі за правилом функції \hyperlink{main_8c_a590198f8fc1086cc47278ee8ddfa08d2}{to\+\_\+repeat()}. 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em arr} & Масив, у якому здійснюватиметься заміна. \\
+\hline
+{\em N} & Розмір масиву. \\
+\hline
+\end{DoxyParams}
+Виконується прохід за допомогою функції \hyperlink{main_8c_a136eda0783a1b3202fbf6330967acec0}{go\+\_\+zigzag()} та заміна функцією \hyperlink{main_8c_ad126fa7239be97373c96861adc70b1d3}{swap()}
+\begin{DoxyCode}
+369                                         \{
+373     \textcolor{keywordtype}{int} pos\_0;
+374     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < N*N; ++i) \{
+375         \textcolor{keywordflow}{if} (*\hyperlink{main_8c_a136eda0783a1b3202fbf6330967acec0}{go\_zigzag}(arr,N,i) != 0)\{
+376             pos\_0 = i+1;
+377             \textcolor{keywordflow}{while} (pos\_0<N*N && *\hyperlink{main_8c_a136eda0783a1b3202fbf6330967acec0}{go\_zigzag}(arr,N,pos\_0)!=0)\{
+378                 pos\_0++;
+379             \}
+380             \textcolor{keywordflow}{if} (pos\_0==N*N)\{
+381                 \textcolor{keywordflow}{return};
+382             \}
+383             \hyperlink{main_8c_ad126fa7239be97373c96861adc70b1d3}{swap}(\hyperlink{main_8c_a136eda0783a1b3202fbf6330967acec0}{go\_zigzag}(arr,N,pos\_0),\hyperlink{main_8c_a136eda0783a1b3202fbf6330967acec0}{go\_zigzag}(arr,N,i));
+384         \}
+385     \}
+386 \}
+\end{DoxyCode}
